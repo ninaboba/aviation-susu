@@ -838,6 +838,18 @@ const app = {
 
     if (isRevealed) {
       expBox.classList.remove('hidden');
+
+      const quickBox = document.getElementById('explanationQuickBox');
+      const quickText = document.getElementById('explanationQuickText');
+      if (quickBox && quickText) {
+        if (q.explanation_quick) {
+          quickText.textContent = q.explanation_quick;
+          quickBox.classList.remove('hidden');
+        } else {
+          quickBox.classList.add('hidden');
+        }
+      }
+
       document.getElementById('explanationText').textContent = q.explanation;
       document.getElementById('expLODisplay').textContent = q.LO;
       document.getElementById('expCognitiveDisplay').textContent = q.cognitive || 'KNOW';
@@ -1268,12 +1280,18 @@ const app = {
           ) : '') +
         '</div>' +
 
-        '<div class="p-3 rounded-lg review-exp-box text-xs space-y-1">' +
+        '<div class="p-3 rounded-lg review-exp-box text-xs space-y-2">' +
+          (q.explanation_quick ? (
+            '<div class="p-2 rounded bg-cyan-950/40 border border-cyan-500/30 text-cyan-100 flex items-start space-x-2">' +
+              '<i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5 fill-current"></i>' +
+              '<div><strong class="text-cyan-300 font-mono text-[10px]">QUICK TAKE:</strong> <span class="text-slate-200">' + q.explanation_quick + '</span></div>' +
+            '</div>'
+          ) : '') +
           '<div class="text-[11px] font-mono font-semibold exp-header flex items-center space-x-1">' +
-            '<i data-lucide="info" class="w-3.5 h-3.5"></i>' +
-            '<span>EXPLANATION:</span>' +
+            '<i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>' +
+            '<span>DETAILED EXPLANATION:</span>' +
           '</div>' +
-          '<p class="leading-relaxed">' + q.explanation + '</p>' +
+          '<p class="leading-relaxed whitespace-pre-line text-slate-300">' + q.explanation + '</p>' +
         '</div>' +
       '</div>';
     }).join('');
@@ -1671,7 +1689,7 @@ const app = {
 
       const qText = (q.question || '').toLowerCase();
       const correctText = (q.correct || '').toLowerCase();
-      const expText = (q.explanation || '').toLowerCase();
+      const expText = ((q.explanation_quick || '') + ' ' + (q.explanation || '')).toLowerCase();
       const loText = (q.LO || '').toLowerCase();
       const topicNameText = (q.topicName || '').toLowerCase();
       const optionsText = (q.options || []).join(' ').toLowerCase();
@@ -1788,12 +1806,18 @@ const app = {
           }).join('') +
         '</div>' +
 
-        '<div class="p-3 rounded-xl search-exp-box border text-xs space-y-1">' +
+        '<div class="p-3 rounded-xl search-exp-box border text-xs space-y-2">' +
+          (q.explanation_quick ? (
+            '<div class="p-2 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-100 flex items-start space-x-2">' +
+              '<i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5 fill-current"></i>' +
+              '<div><strong class="text-cyan-300 font-mono text-[10px]">QUICK TAKE:</strong> <span class="text-slate-200">' + this.highlightText(q.explanation_quick, rawQ) + '</span></div>' +
+            '</div>'
+          ) : '') +
           '<div class="text-[11px] font-mono font-semibold exp-header flex items-center space-x-1">' +
-            '<i data-lucide="info" class="w-3.5 h-3.5"></i>' +
-            '<span>EXPLANATION:</span>' +
+            '<i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>' +
+            '<span>DETAILED EXPLANATION:</span>' +
           '</div>' +
-          '<p class="leading-relaxed">' + this.highlightText(q.explanation, rawQ) + '</p>' +
+          '<p class="leading-relaxed whitespace-pre-line text-slate-300">' + this.highlightText(q.explanation, rawQ) + '</p>' +
         '</div>' +
       '</div>';
     }).join('');

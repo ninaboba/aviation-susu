@@ -539,14 +539,37 @@
         </div>
 
         <!-- EXPLANATION PANEL (Visible in Study Mode after answer check, or review) -->
-        <div id="explanationBox" class="hidden rounded-xl p-5 bg-cockpit-900 border border-cyan-500/40 space-y-3 animate-fadeIn">
-          <div class="flex items-center space-x-2 text-cyan-400 font-bold text-sm">
-            <i data-lucide="info" class="w-4 h-4"></i>
-            <span>EXPLANATION & CAAT PRINCIPLE</span>
+        <div id="explanationBox" class="hidden rounded-xl p-5 bg-cockpit-900 border border-cyan-500/40 space-y-3.5 animate-fadeIn">
+          <div class="flex items-center justify-between border-b border-cockpit-border/60 pb-2.5">
+            <div class="flex items-center space-x-2 text-cyan-400 font-bold text-sm">
+              <i data-lucide="info" class="w-4 h-4"></i>
+              <span>EXPLANATION & CAAT PRINCIPLE</span>
+            </div>
+            <span id="expBadgeTag" class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">HIGH-YIELD</span>
           </div>
-          <p id="explanationText" class="text-sm text-slate-200 leading-relaxed font-sans">
-            Explanation text
-          </p>
+
+          <!-- QUICK TAKE / SHORT SUMMARY FOR RAPID READING -->
+          <div id="explanationQuickBox" class="p-3 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-xs text-cyan-100 flex items-start space-x-2.5 shadow-sm">
+            <div class="p-1 rounded bg-cyan-500/20 text-cyan-400 shrink-0 mt-0.5">
+              <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+            </div>
+            <div>
+              <div class="font-bold text-cyan-300 text-[11px] font-mono tracking-wider mb-0.5">QUICK TAKE / สรุปสั้นจำเร็ว:</div>
+              <p id="explanationQuickText" class="leading-relaxed font-sans text-slate-100">Quick summary</p>
+            </div>
+          </div>
+
+          <!-- DETAILED EXPLANATION -->
+          <div class="space-y-1.5">
+            <div class="text-[11px] font-mono font-semibold text-slate-400 flex items-center space-x-1.5">
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>DETAILED BREAKDOWN / คำอธิบายละเอียด:</span>
+            </div>
+            <p id="explanationText" class="text-sm text-slate-200 leading-relaxed font-sans whitespace-pre-line">
+              Explanation text
+            </p>
+          </div>
+
           <div class="pt-2 border-t border-cockpit-border/60 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
             <div><span class="text-slate-500">Learning Objective:</span> <span id="expLODisplay" class="text-cyan-300">-</span></div>
             <div><span class="text-slate-500">Cognitive Demand:</span> <span id="expCognitiveDisplay" class="text-slate-300">-</span></div>
