@@ -184,9 +184,15 @@
         
         <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div class="space-y-2">
-            <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-              <span>CAAT LO Traceability (TCAR PEL Part-FCL Revision 2025)</span>
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>CAAT LO Traceability (TCAR PEL Part-FCL Revision 2025)</span>
+              </div>
+              <div class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>v2.2.0 (15 Sep 2026, 01:55)</span>
+              </div>
             </div>
             <h1 id="heroSubjectTitle" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Principles of Flight — Examination Trainer
@@ -957,15 +963,23 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="border-t border-cockpit-border py-4 text-center text-xs text-slate-500 font-mono">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <div>Aviation MCQ Training Platform • Modular Static Web Application</div>
-      <div>Designed for CAAT / EASA Exam Readiness • Ready for GitHub Pages</div>
+  <footer class="border-t border-cockpit-border py-4 text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div class="space-y-1">
+        <div class="text-slate-400 font-medium">Aviation MCQ Training Platform • Modular Static Web Application</div>
+        <div class="text-[11px] text-slate-500">Designed for CAAT / EASA Exam Readiness • Ready for GitHub Pages</div>
+      </div>
+      <div class="flex items-center space-x-2 bg-cockpit-850 px-3 py-1.5 rounded-lg border border-cockpit-border shrink-0">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-cyan-300 font-bold">v2.2.0</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-slate-400 text-[11px]">Updated: 15 Sep 2026, 01:55 ICT</span>
+      </div>
     </div>
   </footer>
 
-  <!-- Modular ES6 Scripts (Strict Relative Paths) -->
-  <script src="./js/storage.js"></script>
-  <script src="./js/app.js"></script>
+  <!-- Modular ES6 Scripts with Cache Buster -->
+  <script src="./js/storage.js?v=20260915_0155"></script>
+  <script src="./js/app.js?v=20260915_0155"></script>
 </body>
 </html>
