@@ -1,0 +1,18 @@
+# Dependencies & Environment
+node_modules/
+.env
+.env.local
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Local PDF Question Bank Source files
+pdf/
+*.pdf
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

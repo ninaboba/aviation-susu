@@ -6,5 +6,13 @@
     "description": "200 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank",
     "file": "./data/subjects/pof.json",
     "questionCount": 200
+  },
+  {
+    "id": "human_factors",
+    "code": "040",
+    "title": "Subject 040 - Human Performance & Limitations",
+    "description": "294 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Human Factors)",
+    "file": "./data/subjects/human_factors.json",
+    "questionCount": 294
   }
 ]
