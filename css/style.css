@@ -1,0 +1,732 @@
+:root {
+      --bg-cockpit-950: #f4f7fb;
+      --bg-cockpit-900: #ffffff;
+      --bg-cockpit-850: #f8fafc;
+      --bg-cockpit-800: #e2e8f0;
+      --bg-cockpit-700: #cbd5e1;
+      --border-cockpit: #cbd5e1;
+      --glass-panel-bg: rgba(255, 255, 255, 0.94);
+      --glass-panel-border: rgba(203, 213, 225, 0.9);
+      --glass-card-bg: rgba(248, 250, 252, 0.95);
+      --glass-card-border: rgba(226, 232, 240, 0.95);
+      --grid-line-color: rgba(0, 0, 0, 0.04);
+      --scrollbar-track: #f1f5f9;
+      --scrollbar-thumb: #cbd5e1;
+      --scrollbar-hover: #94a3b8;
+    }
+
+    html.dark {
+      --bg-cockpit-950: #060913;
+      --bg-cockpit-900: #0c1222;
+      --bg-cockpit-850: #111a30;
+      --bg-cockpit-800: #162340;
+      --bg-cockpit-700: #21335a;
+      --border-cockpit: #1f2e4d;
+      --glass-panel-bg: rgba(12, 18, 34, 0.85);
+      --glass-panel-border: rgba(33, 51, 90, 0.7);
+      --glass-card-bg: rgba(17, 26, 48, 0.65);
+      --glass-card-border: rgba(31, 46, 77, 0.6);
+      --grid-line-color: rgba(255, 255, 255, 0.03);
+      --scrollbar-track: #0c1222;
+      --scrollbar-thumb: #21335a;
+      --scrollbar-hover: #3b82f6;
+    }
+
+    /* Custom scrollbar and animations */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--scrollbar-track);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-hover);
+    }
+    .glass-panel {
+      background: var(--glass-panel-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-panel-border);
+    }
+    .glass-card {
+      background: var(--glass-card-bg);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--glass-card-border);
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-slow 3s ease-in-out infinite;
+    }
+    .grid-pattern {
+      background-size: 30px 30px;
+      background-image: 
+        linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+
+    /* ============================================================ */
+    /* THEME SYSTEM: DARK MODE STYLES */
+    /* ============================================================ */
+    html.dark .review-card-correct {
+      border-color: rgba(16, 185, 129, 0.4);
+      background-color: rgba(6, 78, 59, 0.1);
+    }
+    html.dark .review-card-incorrect {
+      border-color: rgba(244, 63, 94, 0.4);
+      background-color: rgba(136, 19, 55, 0.1);
+    }
+    html.dark .review-correct-box {
+      border-color: rgba(16, 185, 129, 0.6);
+      background-color: rgba(6, 78, 59, 0.35);
+      color: #a7f3d0;
+    }
+    html.dark .review-incorrect-box {
+      border-color: rgba(244, 63, 94, 0.6);
+      background-color: rgba(136, 19, 55, 0.35);
+      color: #fecdd3;
+    }
+    html.dark .review-status-correct {
+      background-color: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+    html.dark .review-status-incorrect {
+      background-color: rgba(244, 63, 94, 0.2);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+    html.dark .review-exp-box,
+    html.dark .search-exp-box {
+      background-color: rgba(12, 18, 34, 0.8);
+      border: 1px solid #1f2e4d;
+      color: #cbd5e1;
+    }
+    html.dark .exp-header {
+      color: #22d3ee;
+    }
+
+    /* Dark Mode Search Options */
+    html.dark .search-correct-option {
+      border-color: rgba(16, 185, 129, 0.6);
+      background-color: rgba(6, 78, 59, 0.35);
+      color: #a7f3d0;
+    }
+    html.dark .search-correct-option .badge-letter {
+      background-color: #10b981;
+      color: #020617;
+    }
+    html.dark .search-correct-option .correct-tag {
+      color: #34d399;
+    }
+    html.dark .search-normal-option {
+      border-color: rgba(31, 46, 77, 0.8);
+      background-color: rgba(12, 18, 34, 0.6);
+      color: #cbd5e1;
+    }
+    html.dark .search-normal-option .badge-letter {
+      background-color: #162340;
+      color: #94a3b8;
+    }
+
+    /* Dark Mode Badges */
+    html.dark .search-badge-id {
+      background-color: rgba(6, 182, 212, 0.2);
+      color: #22d3ee;
+      border: 1px solid rgba(8, 145, 178, 0.6);
+    }
+    html.dark .search-badge-topic {
+      background-color: #111a30;
+      color: #cbd5e1;
+      border: 1px solid #1f2e4d;
+    }
+    html.dark .search-badge-lo {
+      background-color: rgba(30, 58, 138, 0.5);
+      color: #93c5fd;
+      border: 1px solid rgba(29, 78, 216, 0.5);
+    }
+    html.dark .search-badge-diff {
+      background-color: rgba(6, 78, 59, 0.5);
+      color: #6ee7b7;
+      border: 1px solid rgba(5, 150, 105, 0.5);
+    }
+    html.dark .search-badge-mistake {
+      background-color: rgba(136, 19, 55, 0.5);
+      color: #fb7185;
+      border: 1px solid rgba(225, 29, 72, 0.5);
+    }
+    html.dark mark,
+    html.dark .search-highlight {
+      background-color: rgba(6, 182, 212, 0.3);
+      color: #a5f3fc;
+      border: 1px solid rgba(34, 211, 238, 0.5);
+      font-weight: 600;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+
+    /* ============================================================ */
+    /* THEME SYSTEM: LIGHT MODE STYLES */
+    /* ============================================================ */
+    html:not(.dark) {
+      color-scheme: light;
+    }
+    html:not(.dark) body {
+      color: #0f172a;
+    }
+    html:not(.dark) h1, 
+    html:not(.dark) h2, 
+    html:not(.dark) h3, 
+    html:not(.dark) h4,
+    html:not(.dark) h5,
+    html:not(.dark) h6 {
+      color: #0f172a !important;
+    }
+    html:not(.dark) label {
+      color: #0f172a !important;
+    }
+    html:not(.dark) p {
+      color: #334155 !important;
+    }
+
+    /* All text-slate-xxx utility overrides in Light Mode */
+    html:not(.dark) .text-slate-100 {
+      color: #0f172a !important;
+    }
+    html:not(.dark) .text-slate-200 {
+      color: #1e293b !important;
+    }
+    html:not(.dark) .text-slate-300 {
+      color: #334155 !important;
+    }
+    html:not(.dark) .text-slate-400 {
+      color: #475569 !important;
+    }
+    html:not(.dark) .text-slate-500 {
+      color: #64748b !important;
+    }
+    html:not(.dark) .text-slate-600 {
+      color: #475569 !important;
+    }
+    html:not(.dark) .text-slate-700 {
+      color: #334155 !important;
+    }
+    html:not(.dark) .text-white {
+      color: #0f172a !important;
+    }
+
+    /* Modal Backdrop */
+    html:not(.dark) .bg-cockpit-950\/80,
+    html:not(.dark) .bg-cockpit-950\/85 {
+      background-color: rgba(15, 23, 42, 0.6) !important;
+    }
+
+    /* Inputs & Selects */
+    html:not(.dark) select,
+    html:not(.dark) input[type="text"] {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) input[type="text"]::placeholder {
+      color: #94a3b8 !important;
+    }
+
+    /* Solid & Gradient Action Buttons (Always White text) */
+    html:not(.dark) #btnFinishExam,
+    html:not(.dark) #btnFinishExam *,
+    html:not(.dark) #btnNextQ,
+    html:not(.dark) #btnNextQ *,
+    html:not(.dark) #btnRetrySessionMistakes,
+    html:not(.dark) #btnRetrySessionMistakes *,
+    html:not(.dark) #searchActionButtons button,
+    html:not(.dark) #searchActionButtons button *,
+    html:not(.dark) #badgeModeExam,
+    html:not(.dark) .bg-emerald-600,
+    html:not(.dark) .bg-rose-600,
+    html:not(.dark) .bg-blue-600,
+    html:not(.dark) .bg-gradient-to-tr,
+    html:not(.dark) header .w-10.h-10 i {
+      color: #ffffff !important;
+    }
+
+    /* Start Practice Button */
+    html:not(.dark) #btnStartExam {
+      color: #020617 !important;
+    }
+    html:not(.dark) #btnStartExam span,
+    html:not(.dark) #btnStartExam i {
+      color: #020617 !important;
+    }
+
+    /* Check Answer Button */
+    html:not(.dark) #btnCheckStudy {
+      background-color: #0284c7 !important;
+      color: #ffffff !important;
+    }
+    html:not(.dark) #btnCheckStudy:hover {
+      background-color: #0369a1 !important;
+    }
+
+    /* Header Logo text */
+    html:not(.dark) header .w-10.h-10 {
+      color: #ffffff !important;
+    }
+
+    /* Question Quantity Display & Notices */
+    html:not(.dark) #questionCountDisplay {
+      background-color: #e0f2fe !important;
+      color: #0284c7 !important;
+      border-color: #7dd3fc !important;
+    }
+    html:not(.dark) #matchingCountNotice {
+      color: #0f172a !important;
+    }
+    html:not(.dark) #estimatedTimeNotice {
+      color: #64748b !important;
+    }
+
+    /* Preset Buttons on Slider */
+    html:not(.dark) button[onclick*="setCountPreset"] {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #1e293b !important;
+    }
+    html:not(.dark) button[onclick*="setCountPreset"]:hover {
+      background-color: #f1f5f9 !important;
+      color: #0f172a !important;
+    }
+
+    /* Target Options Switches & Cards */
+    html:not(.dark) #toggleMistakesOnly ~ div,
+    html:not(.dark) #toggleBookmarksOnly ~ div {
+      background-color: #cbd5e1 !important;
+    }
+    html:not(.dark) #toggleMistakesOnly:checked ~ div {
+      background-color: #f43f5e !important;
+    }
+    html:not(.dark) #toggleBookmarksOnly:checked ~ div {
+      background-color: #f59e0b !important;
+    }
+
+    /* Question Badges in Exam Screen */
+    html:not(.dark) #questionPromptText {
+      color: #0f172a !important;
+    }
+    html:not(.dark) #badgeQuestionId {
+      background-color: #f1f5f9 !important;
+      color: #334155 !important;
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) #badgeLO {
+      background-color: #eff6ff !important;
+      color: #1d4ed8 !important;
+      border-color: #bfdbfe !important;
+    }
+    html:not(.dark) #badgeDifficulty {
+      background-color: #ecfdf5 !important;
+      color: #047857 !important;
+      border-color: #a7f3d0 !important;
+    }
+    html:not(.dark) #badgeCognitive {
+      background-color: #faf5ff !important;
+      color: #7e22ce !important;
+      border-color: #e9d5ff !important;
+    }
+    html:not(.dark) #examActiveModeBadge {
+      background-color: #e0f2fe !important;
+      color: #0369a1 !important;
+      border-color: #7dd3fc !important;
+    }
+    html:not(.dark) #currentQuestionNumBadge {
+      color: #0284c7 !important;
+    }
+    html:not(.dark) #liveTimerText {
+      color: #0f172a !important;
+    }
+
+    /* Mode Selection Badges */
+    html:not(.dark) #badgeModeStudy {
+      background-color: #06b6d4 !important;
+      color: #020617 !important;
+    }
+    html:not(.dark) #badgeModeExam {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+    }
+
+    /* Option Cards in Practice Screen */
+    html:not(.dark) #optionsContainer > div:not(.border-cyan-400):not(.border-emerald-500):not(.border-rose-500) {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #1e293b !important;
+    }
+    html:not(.dark) #optionsContainer > div:not(.border-cyan-400):not(.border-emerald-500):not(.border-rose-500) > div:first-child {
+      background-color: #f1f5f9 !important;
+      color: #475569 !important;
+    }
+    html:not(.dark) #optionsContainer > div.border-cyan-400 {
+      background-color: #f0f9ff !important;
+      border-color: #0284c7 !important;
+      color: #0c4a6e !important;
+    }
+    html:not(.dark) #optionsContainer > div.border-cyan-400 > div:first-child {
+      background-color: #0284c7 !important;
+      color: #ffffff !important;
+    }
+    html:not(.dark) #optionsContainer > div.border-emerald-500 {
+      background-color: #ecfdf5 !important;
+      border-color: #10b981 !important;
+      color: #064e3b !important;
+    }
+    html:not(.dark) #optionsContainer > div.border-emerald-500 > div:first-child {
+      background-color: #10b981 !important;
+      color: #ffffff !important;
+    }
+    html:not(.dark) #optionsContainer > div.border-rose-500 {
+      background-color: #fff1f2 !important;
+      border-color: #f43f5e !important;
+      color: #881337 !important;
+    }
+    html:not(.dark) #optionsContainer > div.border-rose-500 > div:first-child {
+      background-color: #f43f5e !important;
+      color: #ffffff !important;
+    }
+
+    /* Explanation Panel */
+    html:not(.dark) #explanationBox {
+      background-color: #f8fafc !important;
+      border-color: #7dd3fc !important;
+    }
+    html:not(.dark) #explanationText {
+      color: #1e293b !important;
+    }
+
+    /* Topic Grid Items */
+    html:not(.dark) #topicGridContainer label {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) #topicGridContainer label:hover {
+      background-color: #f8fafc !important;
+      border-color: #94a3b8 !important;
+    }
+    html:not(.dark) #topicGridContainer p {
+      color: #1e293b !important;
+    }
+    html:not(.dark) #topicGridContainer .text-cyan-300 {
+      color: #0284c7 !important;
+    }
+
+    /* Light Mode Review Cards */
+    html:not(.dark) .review-card-correct {
+      border-color: #a7f3d0 !important;
+      background-color: #ffffff !important;
+    }
+    html:not(.dark) .review-card-incorrect {
+      border-color: #fecdd3 !important;
+      background-color: #ffffff !important;
+    }
+    html:not(.dark) .review-id-badge.text-emerald-400 {
+      color: #047857 !important;
+    }
+    html:not(.dark) .review-id-badge.text-rose-400 {
+      color: #be123c !important;
+    }
+    html:not(.dark) .review-correct-box {
+      border-color: #10b981 !important;
+      background-color: #ecfdf5 !important;
+      color: #064e3b !important;
+    }
+    html:not(.dark) .review-correct-box * {
+      color: #064e3b !important;
+    }
+    html:not(.dark) .review-incorrect-box {
+      border-color: #f43f5e !important;
+      background-color: #fff1f2 !important;
+      color: #881337 !important;
+    }
+    html:not(.dark) .review-incorrect-box * {
+      color: #881337 !important;
+    }
+    html:not(.dark) .review-status-correct {
+      background-color: #d1fae5 !important;
+      color: #047857 !important;
+      border: 1px solid #6ee7b7 !important;
+    }
+    html:not(.dark) .review-status-incorrect {
+      background-color: #ffe4e6 !important;
+      color: #be123c !important;
+      border: 1px solid #fda4af !important;
+    }
+    html:not(.dark) .review-exp-box,
+    html:not(.dark) .search-exp-box {
+      background-color: #f8fafc !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #1e293b !important;
+    }
+    html:not(.dark) .review-exp-box p,
+    html:not(.dark) .search-exp-box p {
+      color: #334155 !important;
+    }
+    html:not(.dark) .exp-header {
+      color: #0284c7 !important;
+    }
+
+    /* Light Mode Search Options */
+    html:not(.dark) .search-correct-option {
+      border-color: #10b981 !important;
+      background-color: #ecfdf5 !important;
+      color: #064e3b !important;
+    }
+    html:not(.dark) .search-correct-option * {
+      color: #064e3b !important;
+    }
+    html:not(.dark) .search-correct-option .badge-letter {
+      background-color: #10b981 !important;
+      color: #ffffff !important;
+    }
+    html:not(.dark) .search-correct-option .correct-tag {
+      color: #047857 !important;
+    }
+    html:not(.dark) .search-normal-option {
+      border-color: #cbd5e1 !important;
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    html:not(.dark) .search-normal-option * {
+      color: #0f172a !important;
+    }
+    html:not(.dark) .search-normal-option .badge-letter {
+      background-color: #f1f5f9 !important;
+      color: #334155 !important;
+    }
+
+    /* Light Mode Badges */
+    html:not(.dark) .search-badge-id {
+      background-color: #e0f2fe !important;
+      color: #0369a1 !important;
+      border: 1px solid #7dd3fc !important;
+    }
+    html:not(.dark) .search-badge-topic {
+      background-color: #f8fafc !important;
+      color: #1e293b !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+    html:not(.dark) .search-badge-lo {
+      background-color: #eff6ff !important;
+      color: #1d4ed8 !important;
+      border: 1px solid #bfdbfe !important;
+    }
+    html:not(.dark) .search-badge-diff {
+      background-color: #ecfdf5 !important;
+      color: #047857 !important;
+      border: 1px solid #a7f3d0 !important;
+    }
+    html:not(.dark) .search-badge-mistake {
+      background-color: #fff1f2 !important;
+      color: #be123c !important;
+      border: 1px solid #fecdd3 !important;
+    }
+    html:not(.dark) mark,
+    html:not(.dark) .search-highlight {
+      background-color: #fef08a !important;
+      color: #713f12 !important;
+      border: 1px solid #facc15 !important;
+      font-weight: 700 !important;
+      padding: 1px 4px !important;
+      border-radius: 3px !important;
+    }
+
+    /* Search Scope Active Tab */
+    html:not(.dark) #searchScopeTab_all.bg-cyan-600,
+    html:not(.dark) #searchScopeTab_question.bg-cyan-600,
+    html:not(.dark) #searchScopeTab_correct.bg-cyan-600,
+    html:not(.dark) #searchScopeTab_explanation.bg-cyan-600 {
+      background-color: #0284c7 !important;
+      color: #ffffff !important;
+    }
+
+    /* Question Palette Buttons */
+    html:not(.dark) #paletteGridButtons button {
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) #paletteGridButtons .bg-emerald-500 {
+      background-color: #10b981 !important;
+      color: #ffffff !important;
+    }
+    html:not(.dark) #paletteGridButtons .bg-amber-500 {
+      background-color: #f59e0b !important;
+      color: #ffffff !important;
+    }
+    html:not(.dark) #paletteGridButtons .bg-cockpit-800 {
+      background-color: #f1f5f9 !important;
+      color: #475569 !important;
+    }
+
+    /* Summary & Review Screen */
+    html:not(.dark) #summaryScoreCircle {
+      background-color: #ffffff !important;
+    }
+    html:not(.dark) #summaryPercentScore {
+      color: #0f172a !important;
+    }
+    html:not(.dark) #summaryFractionScore {
+      color: #475569 !important;
+    }
+    html:not(.dark) #summaryTimeTaken {
+      color: #0284c7 !important;
+    }
+    html:not(.dark) #summaryCorrectCount {
+      color: #047857 !important;
+    }
+    html:not(.dark) #summaryIncorrectCount {
+      color: #be123c !important;
+    }
+    html:not(.dark) #summaryUnansweredCount {
+      color: #475569 !important;
+    }
+    html:not(.dark) #reviewQuestionsContainer .glass-card {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+    }
+    html:not(.dark) #reviewQuestionsContainer h4 {
+      color: #0f172a !important;
+    }
+
+    /* Review Tabs */
+    html:not(.dark) #tabReviewAll.bg-cyan-600,
+    html:not(.dark) #tabReviewIncorrect.bg-cyan-600,
+    html:not(.dark) #tabReviewCorrect.bg-cyan-600,
+    html:not(.dark) #tabReviewFlagged.bg-cyan-600 {
+      background-color: #0284c7 !important;
+      color: #ffffff !important;
+    }
+
+    /* Header Counters & Stats */
+    html:not(.dark) #headerMistakeCount {
+      color: #e11d48 !important;
+    }
+    html:not(.dark) #headerBookmarkCount {
+      color: #d97706 !important;
+    }
+    html:not(.dark) #heroAvgScore {
+      color: #d97706 !important;
+    }
+
+    /* Keyboard kbd helper */
+    html:not(.dark) kbd {
+      background-color: #f1f5f9 !important;
+      color: #475569 !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    /* Donation Card & Pagination Light Mode */
+    html:not(.dark) #donationCard {
+      background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%) !important;
+      border-color: #fcd34d !important;
+    }
+    html:not(.dark) #donationCard h3 {
+      color: #78350f !important;
+    }
+    html:not(.dark) #donationCard p {
+      color: #451a03 !important;
+    }
+    html:not(.dark) .pagination-btn-active {
+      background-color: #0284c7 !important;
+      color: #ffffff !important;
+      border-color: #0284c7 !important;
+    }
+    html:not(.dark) .pagination-btn-inactive {
+      background-color: #ffffff !important;
+      color: #334155 !important;
+      border-color: #cbd5e1 !important;
+    }
+    html:not(.dark) .pagination-btn-inactive:hover {
+      background-color: #f1f5f9 !important;
+      color: #0f172a !important;
+    }
+
+    /* ============================================================ */
+    /* FONT SIZE SCALING SYSTEM */
+    /* ============================================================ */
+    :root {
+      --font-prompt: 1.25rem;
+      --font-option: 0.9375rem;
+      --font-exp: 0.875rem;
+    }
+
+    html.font-size-sm {
+      --font-prompt: 1.05rem;
+      --font-option: 0.8125rem;
+      --font-exp: 0.8rem;
+    }
+
+    html.font-size-normal {
+      --font-prompt: 1.25rem;
+      --font-option: 0.9375rem;
+      --font-exp: 0.875rem;
+    }
+
+    html.font-size-lg {
+      --font-prompt: 1.45rem;
+      --font-option: 1.1rem;
+      --font-exp: 1.025rem;
+    }
+
+    html.font-size-xl {
+      --font-prompt: 1.7rem;
+      --font-option: 1.25rem;
+      --font-exp: 1.15rem;
+    }
+
+    /* Exam Mode Question Area */
+    #questionPromptText {
+      font-size: var(--font-prompt) !important;
+      line-height: 1.6 !important;
+    }
+    #optionsContainer .leading-relaxed {
+      font-size: var(--font-option) !important;
+      line-height: 1.55 !important;
+    }
+    #explanationText {
+      font-size: var(--font-exp) !important;
+      line-height: 1.65 !important;
+    }
+
+    /* Review Screen */
+    #reviewQuestionsContainer h4 {
+      font-size: var(--font-prompt) !important;
+      line-height: 1.55 !important;
+    }
+    #reviewQuestionsContainer .review-correct-box,
+    #reviewQuestionsContainer .review-incorrect-box,
+    #reviewQuestionsContainer .review-exp-box p {
+      font-size: var(--font-option) !important;
+      line-height: 1.55 !important;
+    }
+
+    /* Search Results Modal */
+    #searchResultsContainer h4 {
+      font-size: var(--font-prompt) !important;
+      line-height: 1.5 !important;
+    }
+    #searchResultsContainer .search-correct-option,
+    #searchResultsContainer .search-normal-option,
+    #searchResultsContainer .search-exp-box p {
+      font-size: var(--font-option) !important;
+      line-height: 1.5 !important;
+    }

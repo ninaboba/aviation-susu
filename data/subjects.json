@@ -1,0 +1,10 @@
+[
+  {
+    "id": "pof",
+    "code": "081",
+    "title": "Subject 081 - Principles of Flight (Aeroplanes)",
+    "description": "200 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank",
+    "file": "./data/subjects/pof.json",
+    "questionCount": 200
+  }
+]
