@@ -699,6 +699,7 @@ const app = {
         difficulty: q.difficulty,
         cognitive: q.cognitive,
         verb: q.verb,
+        explanation_quick: q.explanation_quick,
         explanation: q.explanation,
         shuffledOptions: shuffleArray(q.options)
       };
