@@ -80,6 +80,7 @@ const app = {
   mode: 'study',
   selectedTopics: new Set(),
   questionCount: 20,
+  unattemptedOnly: false,
   mistakesOnly: false,
   bookmarksOnly: false,
 
@@ -91,6 +92,7 @@ const app = {
   timeElapsedSeconds: 0,
 
   // User History & Bookmarks (scoped to active subject)
+  attempted: new Set(),
   mistakes: new Set(),
   bookmarks: new Set(),
   examHistory: [],
@@ -221,6 +223,7 @@ const app = {
       this.selectedTopics = new Set(this.topicMetadata.map(t => t.code));
 
       // Load user storage data for this subject
+      this.attempted = QuizStorage.getAttempted(subject.id);
       this.mistakes = QuizStorage.getMistakes(subject.id);
       this.bookmarks = QuizStorage.getBookmarks(subject.id);
       this.examHistory = QuizStorage.getHistory(subject.id);
@@ -461,6 +464,7 @@ const app = {
 
   saveUserData() {
     if (!this.currentSubject) return;
+    QuizStorage.saveAttempted(this.currentSubject.id, this.attempted);
     QuizStorage.saveMistakes(this.currentSubject.id, this.mistakes);
     QuizStorage.saveBookmarks(this.currentSubject.id, this.bookmarks);
     QuizStorage.saveHistory(this.currentSubject.id, this.examHistory);
@@ -468,8 +472,12 @@ const app = {
   },
 
   updateHeaderStats() {
+    const unattemptedCount = this.questions ? this.questions.filter(q => !this.attempted.has(q.id)).length : 0;
     const mistakeCount = this.mistakes ? this.mistakes.size : 0;
     const bookmarkCount = this.bookmarks ? this.bookmarks.size : 0;
+
+    const elPanelUnattempted = document.getElementById('panelUnattemptedCount');
+    if (elPanelUnattempted) elPanelUnattempted.textContent = unattemptedCount;
 
     const elHeaderMistakes = document.getElementById('headerMistakeCount');
     if (elHeaderMistakes) elHeaderMistakes.textContent = mistakeCount;
@@ -564,8 +572,23 @@ const app = {
     this.updateFilterCounts();
   },
 
+  toggleUnattemptedOnly() {
+    this.unattemptedOnly = document.getElementById('toggleUnattemptedOnly').checked;
+    if (this.unattemptedOnly && this.mistakesOnly) {
+      this.mistakesOnly = false;
+      const mistakesEl = document.getElementById('toggleMistakesOnly');
+      if (mistakesEl) mistakesEl.checked = false;
+    }
+    this.updateFilterCounts();
+  },
+
   toggleMistakesOnly() {
     this.mistakesOnly = document.getElementById('toggleMistakesOnly').checked;
+    if (this.mistakesOnly && this.unattemptedOnly) {
+      this.unattemptedOnly = false;
+      const unattemptedEl = document.getElementById('toggleUnattemptedOnly');
+      if (unattemptedEl) unattemptedEl.checked = false;
+    }
     this.updateFilterCounts();
   },
 
@@ -576,6 +599,9 @@ const app = {
 
   getFilteredCandidateQuestions() {
     let list = this.questions.filter(q => this.selectedTopics.has(q.topic));
+    if (this.unattemptedOnly) {
+      list = list.filter(q => !this.attempted.has(q.id));
+    }
     if (this.mistakesOnly) {
       list = list.filter(q => this.mistakes.has(q.id));
     }
@@ -849,6 +875,10 @@ const app = {
     this.userAnswers[this.currentIndex] = optionText;
 
     const currentQ = this.sessionQuestions[this.currentIndex];
+    if (currentQ && currentQ.id !== undefined) {
+      this.attempted.add(currentQ.id);
+    }
+
     if (this.mode === 'study') {
       this.revealedInStudy[this.currentIndex] = true;
       if (optionText === currentQ.correct) {
@@ -856,12 +886,16 @@ const app = {
         if (this.mistakes.has(currentQ.id)) {
           this.mistakes.delete(currentQ.id);
           this.saveUserData();
+        } else {
+          this.saveUserData();
         }
       } else {
         sound.incorrect();
         this.mistakes.add(currentQ.id);
         this.saveUserData();
       }
+    } else {
+      this.saveUserData();
     }
 
     this.renderCurrentQuestion();
@@ -1034,15 +1068,18 @@ const app = {
         t.unanswered++;
         this.mistakes.add(q.id);
         sessionMistakesList.push(q);
-      } else if (userAns === q.correct) {
-        correctCount++;
-        t.correct++;
-        if (this.mistakes.has(q.id)) this.mistakes.delete(q.id);
       } else {
-        incorrectCount++;
-        t.incorrect++;
-        this.mistakes.add(q.id);
-        sessionMistakesList.push(q);
+        this.attempted.add(q.id);
+        if (userAns === q.correct) {
+          correctCount++;
+          t.correct++;
+          if (this.mistakes.has(q.id)) this.mistakes.delete(q.id);
+        } else {
+          incorrectCount++;
+          t.incorrect++;
+          this.mistakes.add(q.id);
+          sessionMistakesList.push(q);
+        }
       }
     });
 
@@ -1419,9 +1456,13 @@ const app = {
       onOk: () => {
         if (this.currentSubject) {
           QuizStorage.clearSubjectData(this.currentSubject.id);
+          this.attempted.clear();
           this.mistakes.clear();
           this.bookmarks.clear();
           this.examHistory = [];
+          this.unattemptedOnly = false;
+          const unattemptedEl = document.getElementById('toggleUnattemptedOnly');
+          if (unattemptedEl) unattemptedEl.checked = false;
           this.updateHeaderStats();
           this.updateFilterCounts();
           this.checkResumeSession();

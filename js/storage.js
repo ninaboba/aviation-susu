@@ -9,6 +9,7 @@ const QuizStorage = {
   SESSION_PREFIX: 'quiz_session_',
   MISTAKES_PREFIX: 'quiz_mistakes_',
   BOOKMARKS_PREFIX: 'quiz_bookmarks_',
+  ATTEMPTED_PREFIX: 'quiz_attempted_',
   HISTORY_PREFIX: 'quiz_history_',
   THEME_KEY: 'quiz_theme',
   FONT_SIZE_KEY: 'quiz_font_size',
@@ -160,6 +161,39 @@ const QuizStorage = {
   },
 
   /**
+   * Get attempted/answered question IDs for a subject
+   * @param {string} subjectId
+   * @returns {Set<number|string>}
+   */
+  getAttempted(subjectId) {
+    try {
+      const key = this.ATTEMPTED_PREFIX + subjectId;
+      const raw = localStorage.getItem(key);
+      if (raw) {
+        const arr = JSON.parse(raw);
+        if (Array.isArray(arr)) return new Set(arr);
+      }
+    } catch (e) {
+      console.warn('QuizStorage.getAttempted failed:', e);
+    }
+    return new Set();
+  },
+
+  /**
+   * Save attempted/answered question IDs for a subject
+   * @param {string} subjectId
+   * @param {Set|Array} attempted
+   */
+  saveAttempted(subjectId, attempted) {
+    try {
+      const arr = Array.from(attempted || []);
+      localStorage.setItem(this.ATTEMPTED_PREFIX + subjectId, JSON.stringify(arr));
+    } catch (e) {
+      console.warn('QuizStorage.saveAttempted failed:', e);
+    }
+  },
+
+  /**
    * Get exam history records for a subject
    * @param {string} subjectId
    * @returns {Array}
@@ -207,6 +241,7 @@ const QuizStorage = {
       localStorage.removeItem(this.SESSION_PREFIX + subjectId);
       localStorage.removeItem(this.MISTAKES_PREFIX + subjectId);
       localStorage.removeItem(this.BOOKMARKS_PREFIX + subjectId);
+      localStorage.removeItem(this.ATTEMPTED_PREFIX + subjectId);
       localStorage.removeItem(this.HISTORY_PREFIX + subjectId);
       if (subjectId === 'pof') {
         localStorage.removeItem('pof_mistakes');

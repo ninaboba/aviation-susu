@@ -344,6 +344,18 @@
               <span>ตัวเลือกเสริม (Target Options)</span>
             </h3>
 
+            <!-- Unattempted Only Toggle -->
+            <div class="p-3.5 rounded-xl border border-cockpit-border bg-cockpit-850/50 flex items-center justify-between">
+              <div>
+                <span class="text-xs font-semibold text-white block">Unattempted Only</span>
+                <span class="text-[11px] text-slate-400">ทำเฉพาะข้อที่ยังไม่ได้ทำ (<span id="panelUnattemptedCount" class="text-cyan-400 font-bold">0</span> ข้อ)</span>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="toggleUnattemptedOnly" onchange="app.toggleUnattemptedOnly()" class="sr-only peer">
+                <div class="w-9 h-5 bg-cockpit-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-cyan-500"></div>
+              </label>
+            </div>
+
             <!-- Retry Mistakes Only Toggle -->
             <div class="p-3.5 rounded-xl border border-cockpit-border bg-cockpit-850/50 flex items-center justify-between">
               <div>
