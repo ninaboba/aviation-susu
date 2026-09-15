@@ -993,12 +993,12 @@
 
             <!-- Slider -->
             <div class="space-y-2">
-              <input type="range" id="countSlider" min="5" max="200" step="5" value="20" oninput="app.updateQuestionCount(this.value)" class="w-full h-2 bg-cockpit-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+              <input type="range" id="countSlider" min="5" max="200" step="1" value="20" oninput="app.updateQuestionCount(this.value)" class="w-full h-2 bg-cockpit-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
               <div class="flex justify-between text-[11px] font-mono text-slate-400">
                 <span>5 ข้อ</span>
                 <span>50 ข้อ</span>
                 <span>100 ข้อ</span>
-                <span id="maxAvailableLabel">200 ข้อ</span>
+                <span id="maxAvailableLabel" onclick="app.setCountPreset('max')" class="cursor-pointer hover:text-cyan-400 transition" title="คลิกเพื่อเลือกจำนวนข้อทั้งหมด (Max)">200 ข้อ</span>
               </div>
             </div>
 
@@ -1008,7 +1008,7 @@
               <button type="button" onclick="app.setCountPreset(20)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">20 ข้อ (Quick)</button>
               <button type="button" onclick="app.setCountPreset(50)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">50 ข้อ (Medium)</button>
               <button type="button" onclick="app.setCountPreset(60)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">60 ข้อ (Standard Exam)</button>
-              <button type="button" onclick="app.setCountPreset(200)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">All (ทั้งหมด)</button>
+              <button type="button" onclick="app.setCountPreset('max')" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">Max (ทั้งหมด)</button>
             </div>
           </div>
 
@@ -5601,9 +5601,16 @@
         const matching = this.getFilteredCandidateQuestions();
         const max = matching.length;
         const slider = document.getElementById('countSlider');
+        if (!slider) return;
 
+        slider.min = Math.min(5, Math.max(1, max));
         slider.max = Math.max(1, max);
-        document.getElementById('maxAvailableLabel').textContent = max + ' ข้อ';
+        slider.step = 1;
+
+        const maxLabel = document.getElementById('maxAvailableLabel');
+        if (maxLabel) {
+          maxLabel.textContent = max + ' ข้อ';
+        }
 
         if (this.questionCount > max) {
           this.questionCount = Math.max(1, max);
@@ -5640,8 +5647,19 @@
       setCountPreset(val) {
         const matching = this.getFilteredCandidateQuestions();
         const max = matching.length;
-        const target = Math.min(val, max);
-        document.getElementById('countSlider').value = target;
+        let target;
+        if (val === 'all' || val === 'max' || val === Infinity || (typeof val === 'number' && val === 200 && max > 200)) {
+          target = max;
+        } else if (typeof val === 'number') {
+          target = Math.min(val, max);
+        } else {
+          target = max;
+        }
+        target = Math.max(1, target);
+        const slider = document.getElementById('countSlider');
+        if (slider) {
+          slider.value = target;
+        }
         this.updateQuestionCount(target);
         sound.click();
       },
@@ -5790,8 +5808,7 @@
             }
           }
 
-          const escapedOpt = opt.replace(/'/g, "\'");
-          return '<div onclick="app.selectOption(\'' + escapedOpt + '\')" class="' + cardClass + '">' +
+          return '<div onclick="app.selectOptionByIndex(' + idx + ')" class="' + cardClass + '">' +
             '<div class="' + badgeClass + '">' + letter + '</div>' +
             '<div class="flex-grow pt-0.5 leading-relaxed">' + opt + '</div>' +
             (isRevealed ? (
@@ -5836,6 +5853,12 @@
         }
 
         lucide.createIcons();
+      },
+
+      selectOptionByIndex(idx) {
+        const q = this.sessionQuestions[this.currentIndex];
+        if (!q || !q.shuffledOptions || idx < 0 || idx >= q.shuffledOptions.length) return;
+        this.selectOption(q.shuffledOptions[idx]);
       },
 
       selectOption(optionText) {

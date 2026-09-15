@@ -139,7 +139,7 @@ const app = {
   /* ============================================================ */
   async loadSubjects() {
     try {
-      const res = await fetch('./data/subjects.json');
+      const res = await fetch('./data/subjects.json?v=20260916_0025');
       if (!res.ok) throw new Error(`HTTP ${res.status} loading subjects.json`);
       this.subjects = await res.json();
       
@@ -192,7 +192,7 @@ const app = {
 
     // Load question data for this subject
     try {
-      const res = await fetch(subject.file);
+      const res = await fetch(subject.file + '?v=20260916_0025');
       if (!res.ok) throw new Error(`HTTP ${res.status} loading ${subject.file}`);
       const rawQuestions = await res.json();
 
@@ -512,19 +512,55 @@ const app = {
   renderTopicGrid() {
     const container = document.getElementById('topicGridContainer');
     if (!container) return;
+
+    // Calculate mistakes per topic in O(N) where N = ~271 (< 0.05ms)
+    const mistakeCountByTopic = {};
+    if (this.questions && this.mistakes) {
+      this.questions.forEach(q => {
+        if (this.mistakes.has(q.id)) {
+          mistakeCountByTopic[q.topic] = (mistakeCountByTopic[q.topic] || 0) + 1;
+        }
+      });
+    }
+
+    const badgeEl = document.getElementById('topicMistakeTotalCount');
+    if (badgeEl) {
+      badgeEl.textContent = this.mistakes ? this.mistakes.size : 0;
+    }
+
     container.innerHTML = this.topicMetadata.map(t => {
       const checked = this.selectedTopics.has(t.code) ? 'checked' : '';
-      return '<label class="flex items-center space-x-3 p-3 rounded-xl border border-cockpit-border bg-cockpit-850/60 hover:bg-cockpit-800/80 cursor-pointer transition">' +
+      const mistakesInTopic = mistakeCountByTopic[t.code] || 0;
+
+      let mistakeBadges = '';
+      if (mistakesInTopic > 0) {
+        mistakeBadges = '<div class="flex items-center space-x-1.5 shrink-0">' +
+          '<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-500/20 border border-rose-500/40 text-rose-300" title="เคยตอบผิดในบทนี้ ' + mistakesInTopic + ' ข้อ">' +
+            'ผิด ' + mistakesInTopic + ' ข้อ' +
+          '</span>' +
+          '<button type="button" onclick="event.preventDefault(); event.stopPropagation(); app.practiceTopicMistakes(\'' + t.code + '\')" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-600 hover:bg-rose-500 text-white shadow-sm transition active:scale-95 flex items-center space-x-1" title="ทำเฉพาะข้อที่เคยตอบผิดในบท ' + t.code + ' ทันที">' +
+            '<i data-lucide="rotate-ccw" class="w-2.5 h-2.5"></i>' +
+            '<span>Retry</span>' +
+          '</button>' +
+        '</div>';
+      }
+
+      return '<label class="flex items-center space-x-3 p-3 rounded-xl border border-cockpit-border bg-cockpit-850/60 hover:bg-cockpit-800/80 cursor-pointer transition ' + (mistakesInTopic > 0 ? 'hover:border-rose-500/40' : '') + '">' +
         '<input type="checkbox" value="' + t.code + '" ' + checked + ' onchange="app.handleTopicToggle(\'' + t.code + '\', this.checked)" class="w-4 h-4 rounded text-cyan-500 bg-cockpit-700 border-cockpit-border focus:ring-cyan-500">' +
         '<div class="flex-grow min-w-0">' +
-          '<div class="flex items-center justify-between">' +
+          '<div class="flex items-center justify-between gap-1 flex-wrap">' +
             '<span class="text-xs font-mono font-bold text-cyan-300">' + t.code + '</span>' +
-            '<span class="text-[11px] font-mono text-slate-400">' + t.count + ' Qs</span>' +
+            '<div class="flex items-center space-x-2">' +
+              mistakeBadges +
+              '<span class="text-[11px] font-mono text-slate-400">' + t.count + ' Qs</span>' +
+            '</div>' +
           '</div>' +
-          '<p class="text-xs text-slate-200 truncate">' + t.name + '</p>' +
+          '<p class="text-xs text-slate-200 truncate mt-0.5" title="' + t.name + '">' + t.name + '</p>' +
         '</div>' +
       '</label>';
     }).join('');
+
+    lucide.createIcons();
   },
 
   handleTopicToggle(code, checked) {
@@ -542,6 +578,42 @@ const app = {
     this.renderTopicGrid();
     this.updateFilterCounts();
     sound.click();
+  },
+
+  selectMistakeTopicsOnly() {
+    sound.click();
+    const topicsWithMistakes = new Set();
+    if (this.questions && this.mistakes) {
+      this.questions.forEach(q => {
+        if (this.mistakes.has(q.id)) {
+          topicsWithMistakes.add(q.topic);
+        }
+      });
+    }
+
+    if (topicsWithMistakes.size === 0) {
+      alert('ยินดีด้วย! ยังไม่มีข้อที่ตอบผิดสะสมในวิชานี้');
+      return;
+    }
+
+    this.selectedTopics = topicsWithMistakes;
+    this.mistakesOnly = true;
+    const mistakesToggle = document.getElementById('toggleMistakesOnly');
+    if (mistakesToggle) mistakesToggle.checked = true;
+
+    this.renderTopicGrid();
+    this.updateFilterCounts();
+  },
+
+  practiceTopicMistakes(topicCode) {
+    sound.click();
+    const mistakeQuestions = this.questions.filter(q => q.topic === topicCode && this.mistakes.has(q.id));
+    if (mistakeQuestions.length === 0) {
+      alert('ไม่มีข้อที่เคยตอบผิดในบทนี้');
+      return;
+    }
+    this.setMode('study');
+    this.startPracticeSession(mistakeQuestions);
   },
 
   setMode(mode) {
@@ -617,8 +689,14 @@ const app = {
     const slider = document.getElementById('countSlider');
     if (!slider) return;
 
+    slider.min = Math.min(5, Math.max(1, max));
     slider.max = Math.max(1, max);
-    document.getElementById('maxAvailableLabel').textContent = max + ' ข้อ';
+    slider.step = 1;
+
+    const maxLabel = document.getElementById('maxAvailableLabel');
+    if (maxLabel) {
+      maxLabel.textContent = max + ' ข้อ';
+    }
 
     if (this.questionCount > max) {
       this.questionCount = Math.max(1, max);
@@ -659,8 +737,19 @@ const app = {
   setCountPreset(val) {
     const matching = this.getFilteredCandidateQuestions();
     const max = matching.length;
-    const target = Math.min(val, max);
-    document.getElementById('countSlider').value = target;
+    let target;
+    if (val === 'all' || val === 'max' || val === Infinity || (typeof val === 'number' && val === 200 && max > 200)) {
+      target = max;
+    } else if (typeof val === 'number') {
+      target = Math.min(val, max);
+    } else {
+      target = max;
+    }
+    target = Math.max(1, target);
+    const slider = document.getElementById('countSlider');
+    if (slider) {
+      slider.value = target;
+    }
     this.updateQuestionCount(target);
     sound.click();
   },
@@ -823,8 +912,7 @@ const app = {
         }
       }
 
-      const escapedOpt = opt.replace(/'/g, "\\'");
-      return '<div onclick="app.selectOption(\'' + escapedOpt + '\')" class="' + cardClass + '">' +
+      return '<div onclick="app.selectOptionByIndex(' + idx + ')" class="' + cardClass + '">' +
         '<div class="' + badgeClass + '">' + letter + '</div>' +
         '<div class="flex-grow pt-0.5 leading-relaxed">' + opt + '</div>' +
         (isRevealed ? (
@@ -851,7 +939,7 @@ const app = {
         }
       }
 
-      document.getElementById('explanationText').textContent = q.explanation;
+      this.renderExplanationMath(document.getElementById('explanationText'), q.explanation);
       document.getElementById('expLODisplay').textContent = q.LO;
       document.getElementById('expCognitiveDisplay').textContent = q.cognitive || 'KNOW';
       document.getElementById('expVerbDisplay').textContent = q.verb || 'Identify';
@@ -881,6 +969,12 @@ const app = {
     }
 
     lucide.createIcons();
+  },
+
+  selectOptionByIndex(idx) {
+    const q = this.sessionQuestions[this.currentIndex];
+    if (!q || !q.shuffledOptions || idx < 0 || idx >= q.shuffledOptions.length) return;
+    this.selectOption(q.shuffledOptions[idx]);
   },
 
   selectOption(optionText) {
@@ -1292,7 +1386,7 @@ const app = {
             '<i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>' +
             '<span>DETAILED EXPLANATION:</span>' +
           '</div>' +
-          '<p class="leading-relaxed whitespace-pre-line text-slate-300">' + q.explanation + '</p>' +
+          '<div class="leading-relaxed whitespace-pre-line text-slate-300 text-xs font-sans">' + this.formatExplanationHtml(q.explanation) + '</div>' +
         '</div>' +
       '</div>';
     }).join('');
@@ -1437,6 +1531,7 @@ const app = {
     document.getElementById('viewSummary').classList.add('hidden');
     document.getElementById('viewSetup').classList.remove('hidden');
     this.updateHeaderStats();
+    this.renderTopicGrid();
     this.updateFilterCounts();
     this.checkResumeSession();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1623,6 +1718,68 @@ const app = {
     } catch (e) {
       return escapedText;
     }
+  },
+
+  formatExplanationHtml(text, query = '') {
+    if (!text) return '';
+    let escaped = query ? this.highlightText(text, query) : this.escapeHtml(text);
+
+    // Convert display math $$...$$
+    escaped = escaped.replace(/\$\$([\s\S]*?)\$\$/g, (match, formula) => {
+      let clean = formula
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\times/g, ' × ')
+        .replace(/\\approx/g, ' ≈ ')
+        .replace(/\\pm/g, ' ± ')
+        .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 ÷ $2)')
+        .replace(/\^2/g, '²')
+        .replace(/\^3/g, '³')
+        .replace(/\\/g, '')
+        .trim();
+      return `<div class="my-2.5 px-4 py-2.5 rounded-xl bg-cockpit-900/90 border border-cyan-500/40 font-mono text-cyan-300 font-bold text-center text-sm shadow-sm tracking-wide select-all">${clean}</div>`;
+    });
+
+    // Convert inline math $...$
+    escaped = escaped.replace(/\$([^\$]+?)\$/g, (match, inlineFormula) => {
+      let clean = inlineFormula
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\times/g, '×')
+        .replace(/\\approx/g, '≈')
+        .replace(/\^2/g, '²')
+        .replace(/\^3/g, '³')
+        .replace(/\\/g, '')
+        .trim();
+      return `<span class="px-1.5 py-0.5 rounded bg-cockpit-900 border border-cyan-500/30 font-mono text-cyan-300 text-xs font-semibold">${clean}</span>`;
+    });
+
+    return escaped;
+  },
+
+  renderExplanationMath(el, text) {
+    if (!el) return;
+    if (!text) {
+      el.innerHTML = '';
+      return;
+    }
+
+    const hasMath = /\$\$[\s\S]*?\$\$|\$[^\$]+?\$/.test(text);
+    if (hasMath && window.renderMathInElement) {
+      el.textContent = text;
+      try {
+        renderMathInElement(el, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+        return;
+      } catch (err) {
+        console.warn('KaTeX render error, falling back:', err);
+      }
+    }
+
+    el.innerHTML = this.formatExplanationHtml(text);
   },
 
   executeSearch() {
@@ -1818,7 +1975,7 @@ const app = {
             '<i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>' +
             '<span>DETAILED EXPLANATION:</span>' +
           '</div>' +
-          '<p class="leading-relaxed whitespace-pre-line text-slate-300">' + this.highlightText(q.explanation, rawQ) + '</p>' +
+          '<div class="leading-relaxed whitespace-pre-line text-slate-300 text-xs font-sans">' + this.formatExplanationHtml(q.explanation, rawQ) + '</div>' +
         '</div>' +
       '</div>';
     }).join('');

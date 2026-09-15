@@ -63,6 +63,11 @@
     }
   </script>
 
+  <!-- KaTeX for Math Equations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -296,6 +301,11 @@
                 <button type="button" onclick="app.selectAllTopics(true)" class="text-[11px] text-cyan-400 hover:underline">Select All</button>
                 <span class="text-slate-600">•</span>
                 <button type="button" onclick="app.selectAllTopics(false)" class="text-[11px] text-slate-400 hover:underline">Clear</button>
+                <span class="text-slate-600">•</span>
+                <button type="button" onclick="app.selectMistakeTopicsOnly()" class="text-[11px] text-rose-400 hover:underline flex items-center space-x-1" title="เลือกเฉพาะบทที่มีข้อสอบที่เคยตอบผิด">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span>เฉพาะบทที่ผิด (<span id="topicMistakeTotalCount">0</span>)</span>
+                </button>
               </div>
             </div>
 
@@ -319,12 +329,12 @@
 
             <!-- Slider -->
             <div class="space-y-2">
-              <input type="range" id="countSlider" min="5" max="200" step="5" value="20" oninput="app.updateQuestionCount(this.value)" class="w-full h-2 bg-cockpit-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+              <input type="range" id="countSlider" min="5" max="200" step="1" value="20" oninput="app.updateQuestionCount(this.value)" class="w-full h-2 bg-cockpit-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
               <div class="flex justify-between text-[11px] font-mono text-slate-400">
                 <span>5 ข้อ</span>
                 <span>50 ข้อ</span>
                 <span>100 ข้อ</span>
-                <span id="maxAvailableLabel">200 ข้อ</span>
+                <span id="maxAvailableLabel" onclick="app.setCountPreset('max')" class="cursor-pointer hover:text-cyan-400 transition" title="คลิกเพื่อเลือกจำนวนข้อทั้งหมด (Max)">200 ข้อ</span>
               </div>
             </div>
 
@@ -334,7 +344,7 @@
               <button type="button" onclick="app.setCountPreset(20)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">20 ข้อ (Quick)</button>
               <button type="button" onclick="app.setCountPreset(50)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">50 ข้อ (Medium)</button>
               <button type="button" onclick="app.setCountPreset(60)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">60 ข้อ (Standard Exam)</button>
-              <button type="button" onclick="app.setCountPreset(200)" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">All (ทั้งหมด)</button>
+              <button type="button" onclick="app.setCountPreset('max')" class="px-3 py-1 text-xs rounded-lg bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-300 font-mono">Max (ทั้งหมด)</button>
             </div>
           </div>
 
@@ -971,15 +981,15 @@
       </div>
       <div class="flex items-center space-x-2 bg-cockpit-850 px-3 py-1.5 rounded-lg border border-cockpit-border shrink-0">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-cyan-300 font-bold">v2.2.0</span>
+        <span class="text-cyan-300 font-bold">v2.3.1</span>
         <span class="text-slate-600">•</span>
-        <span class="text-slate-400 text-[11px]">Updated: 15 Sep 2026, 01:55 ICT</span>
+        <span class="text-slate-400 text-[11px]">Updated: 16 Sep 2026, 00:25 ICT</span>
       </div>
     </div>
   </footer>
 
   <!-- Modular ES6 Scripts with Cache Buster -->
-  <script src="./js/storage.js?v=20260915_0155"></script>
-  <script src="./js/app.js?v=20260915_0155"></script>
+  <script src="./js/storage.js?v=20260916_0025"></script>
+  <script src="./js/app.js?v=20260916_0025"></script>
 </body>
 </html>

@@ -1380,16 +1380,16 @@
       "Liquid Air Air",
       "Liquid Liquid Air"
     ],
-    "answer": 1,
-    "explanation": "กายวิภาคศาสตร์ของระบบการได้ยิน:\n1. หูชั้นนอก (Outer ear): ใบหูและรูหู บรรจุ 'อากาศ' (Air)\n2. หูชั้นกลาง (Middle ear): โพรงอากาศหลังเยื่อแก้วหูที่มีกระดูก 3 ชิ้น (Malleus, Incus, Stapes) ปรับความดันผ่านท่อ Eustachian บรรจุ 'อากาศ' (Air)\n3. หูชั้นใน (Inner ear): ก้นหอย (Cochlea) และท่อครึ่งวงกลม (Semicircular canals) บรรจุ 'ของเหลว' Endolymph และ Perilymph (Liquid)\n*ข้อควรระวัง: ทางวิชาการตอบ Air-Air-Liquid (A) แต่ในคลังข้อสอบเก่าของ CAAT เฉลยระบุ B ไว้ โดยคำอธิบายพิมพ์ว่า 'outer=air, middle=air, inner=fluid'",
-    "correct": "Air Liquid Liquid",
+    "answer": 0,
+    "explanation": "กายวิภาคศาสตร์ของระบบการได้ยิน:\n1. หูชั้นนอก (Outer ear): ใบหูและรูหู บรรจุ 'อากาศ' (Air)\n2. หูชั้นกลาง (Middle ear): โพรงอากาศหลังเยื่อแก้วหูที่มีกระดูก 3 ชิ้น (Malleus, Incus, Stapes) ปรับความดันผ่านท่อ Eustachian บรรจุ 'อากาศ' (Air)\n3. หูชั้นใน (Inner ear): ก้นหอย (Cochlea) และท่อครึ่งวงกลม (Semicircular canals) บรรจุ 'ของเหลว' Endolymph และ Perilymph (Liquid)\nสรุป: Outer = Air, Middle = Air, Inner = Liquid จึงตอบ Air Air Liquid",
+    "correct": "Air Air Liquid",
     "topic": "040 05",
     "topicName": "Ear Anatomy & Conductive Hearing",
     "LO": "040 02 02 04 (01–08)",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
     "verb": "Explain",
-    "explanation_quick": "โครงสร้างหู: หูชั้นนอก = อากาศ (Air), หูชั้นกลาง = อากาศ (Air), หูชั้นใน = ของเหลว (Liquid) -> จำ Air-Air-Liquid (⚠️ระวัง: คลังข้อสอบเก่าบางชุดเฉลยล็อกไว้ที่ B Air Liquid Liquid)"
+    "explanation_quick": "โครงสร้างหู: หูชั้นนอก = อากาศ (Air), หูชั้นกลาง = อากาศ (Air), หูชั้นใน = ของเหลว (Liquid) -> ตอบ Air Air Liquid"
   },
   {
     "id": 71,
@@ -3468,16 +3468,16 @@
       "True",
       "False"
     ],
-    "answer": 1,
-    "explanation": "ความแตกต่างของการสแกนกลางวัน vs กลางคืน: \n- กลางวัน (Cones): มองตรงไปที่วัตถุ (Direct central viewing) เพราะ Fovea ชัดที่สุด\n- กลางคืน (Rods): ต้องมองเฉียงจากวัตถุ 10°-15° (Off-centre viewing) เพราะ Fovea บอดกลางคืนจากที่ไม่มี Rods",
-    "correct": "False",
+    "answer": 0,
+    "explanation": "ความแตกต่างของการสแกนสายตากลางวัน vs กลางคืน:\n- กลางวัน (Cones): มองตรงไปที่วัตถุ (Direct central viewing) เพราะ Fovea มีความคมชัดสูงสุด\n- กลางคืน (Rods): ต้องมองเฉียงจากวัตถุ 10°–15° (Off-centre viewing) เพราะ Fovea มีจุดบอดกลางคืน (Night blind spot) จากการไม่มีเซลล์ Rods\nดังนั้นเทคนิคการสแกนสายตาระหว่างกลางวันและกลางคืนจึงต้องแตกต่างกัน ข้อความนี้จึงเป็น 'True'",
+    "correct": "True",
     "topic": "040 09",
     "topicName": "Cognition in Aviation — Visual Illusions & Perception",
     "LO": "040 02 02 03 (08–11)",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
     "verb": "Explain",
-    "explanation_quick": "เทคนิคการสแกนสายตาระหว่างกลางวันและกลางคืนควรจะแตกต่างกัน ข้อความที่บอกว่า 'ไม่แตกต่างกัน' จึงเป็น 'False'"
+    "explanation_quick": "เทคนิคการสแกนสายตาระหว่างกลางวันและกลางคืน 'ต้องแตกต่างกัน' (True) โดยกลางคืนต้องใช้ Off-centre viewing 10°–15° เพื่อหลีกเลี่ยง Night blind spot"
   },
   {
     "id": 176,
@@ -4143,14 +4143,14 @@
     "id": 209,
     "question": "What is Jens Rasmussen's Model?",
     "options": [
-      "\"KRS\"",
-      "\"SKR\"",
-      "\"SRK\"",
-      "\"KSR\""
+      "KRS",
+      "SKR",
+      "SRK",
+      "KSR"
     ],
     "answer": 2,
     "explanation": "กรอบแนวคิด Rasmussen's SRK Framework:\n- Skill-based: พฤติกรรมทักษะอัตโนมัติ รวดเร็ว ไม่เปลืองความคิด\n- Rule-based: พฤติกรรมทำตามกฎ ขั้นตอน SOP และเงื่อนไข ถ้า...แล้ว...\n- Knowledge-based: พฤติกรรมแก้ปัญหาใหม่ที่ไม่มีกฎเกณฑ์ ต้องใช้การวิเคราะห์ขั้นสูง",
-    "correct": "\"SRK\"",
+    "correct": "SRK",
     "topic": "040 11",
     "topicName": "Behaviour & Motivation",
     "LO": "040 03 01 Learning (03–12)",
