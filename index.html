@@ -810,17 +810,18 @@
   <!-- APP HEADER -->
   <header class="sticky top-0 z-40 border-b border-cockpit-border glass-panel transition-colors duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <!-- Logo & Subject Badge -->
+      <!-- Logo & Subject Dropdown -->
       <div class="flex items-center space-x-3 cursor-pointer" onclick="app.goHome()">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-500 flex items-center justify-center shadow-glow-cyan text-white">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-500 flex items-center justify-center shadow-glow-cyan text-white shrink-0">
           <i data-lucide="plane" class="w-5 h-5"></i>
         </div>
-        <div>
+        <div class="flex flex-col justify-center">
           <div class="flex items-center space-x-2">
-            <span class="font-mono font-bold text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-300">SUBJECT 081</span>
-            <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 font-mono">POF (Aeroplanes)</span>
+            <span id="headerSubjectCode" class="font-mono font-bold text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-300 hidden sm:inline">081</span>
+            <select id="headerSubjectSelect" onchange="app.handleSubjectChange(this.value)" onclick="event.stopPropagation()" class="text-xs sm:text-sm font-mono font-bold px-2 py-1 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-cyan-300 border border-cockpit-border cursor-pointer focus:outline-none focus:border-cyan-400 transition max-w-[200px] sm:max-w-none truncate">
+              <!-- Rendered dynamically -->
+            </select>
           </div>
-          <p class="text-xs text-slate-400 font-medium">CAAT / EASA 200 MCQ Bank</p>
         </div>
       </div>
 
@@ -900,11 +901,11 @@
               <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
               <span>CAAT LO Traceability (TCAR PEL Part-FCL Revision 2025)</span>
             </div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h1 id="heroSubjectTitle" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Principles of Flight — Examination Trainer
             </h1>
-            <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
-              ชุดข้อสอบ 200 ข้อพร้อมระบบสุ่มคำตอบแบบ <span class="text-cyan-400 font-medium">Fisher-Yates Shuffle</span>, เฉลยละเอียดแยกตามบทเรียน (081 01 ถึง 081 08), ระบบจับเวลา และการวิเคราะห์ผลลัพธ์เพื่อเตรียมสอบอย่างมั่นใจ
+            <p id="heroSubjectDescription" class="text-sm text-slate-300 max-w-2xl leading-relaxed">
+              ชุดข้อสอบ 200 ข้อพร้อมระบบสุ่มคำตอบแบบ <span class="text-cyan-400 font-medium">Fisher-Yates Shuffle</span>, เฉลยรายละเอียดแยกตามบทเรียน, ระบบจับเวลา และการวิเคราะห์ผลลัพธ์เพื่อเตรียมสอบอย่างมั่นใจ
             </p>
           </div>
 
@@ -912,7 +913,7 @@
           <div class="grid grid-cols-3 gap-3 shrink-0">
             <div class="bg-cockpit-850/80 p-3.5 rounded-xl border border-cockpit-border text-center">
               <span class="text-xs text-slate-400 block font-medium">Bank Total</span>
-              <span class="text-xl font-bold font-mono text-cyan-400">200</span>
+              <span id="heroBankTotal" class="text-xl font-bold font-mono text-cyan-400">200</span>
               <span class="text-[10px] text-slate-500 block">Questions</span>
             </div>
             <div class="bg-cockpit-850/80 p-3.5 rounded-xl border border-cockpit-border text-center">
@@ -934,6 +935,19 @@
         
         <!-- LEFT 2 COLUMNS: FILTERS & SETTINGS -->
         <div class="lg:col-span-2 space-y-6">
+
+          <!-- 0. SUBJECT SELECTION CARD -->
+          <div class="glass-panel p-6 rounded-2xl border border-cockpit-border space-y-3">
+            <label class="text-sm font-semibold text-slate-200 flex items-center justify-between">
+              <span class="flex items-center space-x-2">
+                <i data-lucide="book-open" class="w-4 h-4 text-cyan-400"></i>
+                <span>เลือกรายวิชาที่ต้องการฝึกซ้อม (Select Subject)</span>
+              </span>
+            </label>
+            <select id="dashboardSubjectSelect" onchange="app.handleSubjectChange(this.value)" class="w-full bg-cockpit-850 hover:bg-cockpit-800 text-cyan-300 font-mono font-bold text-sm border border-cockpit-border rounded-xl p-3 focus:outline-none focus:border-cyan-400 transition cursor-pointer">
+              <!-- Rendered dynamically -->
+            </select>
+          </div>
 
           <!-- 1. MODE SELECTION CARDS -->
           <div class="glass-panel p-6 rounded-2xl border border-cockpit-border space-y-4">
