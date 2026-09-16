@@ -467,6 +467,49 @@ const app = {
     if (sound.enabled) sound.click();
   },
 
+  /* ============================================================ */
+  /* HEADER OVERFLOW MENU                                         */
+  /* ============================================================ */
+  toggleHeaderMenu() {
+    const dropdown = document.getElementById('headerOverflowDropdown');
+    if (!dropdown) return;
+    const isHidden = dropdown.classList.contains('hidden');
+    if (isHidden) {
+      dropdown.classList.remove('hidden');
+      // Close when clicking outside
+      setTimeout(() => {
+        document.addEventListener('click', this._headerMenuOutsideHandler = (e) => {
+          const wrap = document.getElementById('headerOverflowMenuWrap');
+          if (wrap && !wrap.contains(e.target)) {
+            this.closeHeaderMenu();
+          }
+        });
+      }, 0);
+    } else {
+      this.closeHeaderMenu();
+    }
+  },
+
+  closeHeaderMenu() {
+    const dropdown = document.getElementById('headerOverflowDropdown');
+    if (dropdown) dropdown.classList.add('hidden');
+    if (this._headerMenuOutsideHandler) {
+      document.removeEventListener('click', this._headerMenuOutsideHandler);
+      this._headerMenuOutsideHandler = null;
+    }
+  },
+
+  updateMenuDot() {
+    const dot = document.getElementById('headerMenuDot');
+    if (!dot) return;
+    const mistakeCount = this.mistakes ? this.mistakes.size : 0;
+    if (mistakeCount > 0) {
+      dot.classList.remove('hidden');
+    } else {
+      dot.classList.add('hidden');
+    }
+  },
+
   updateSoundIcon() {
     const icon = document.getElementById('soundIcon');
     if (!icon) return;
@@ -524,6 +567,8 @@ const app = {
         elHeroAvg.textContent = '-%';
       }
     }
+
+    this.updateMenuDot();
   },
 
   /* ============================================================ */
@@ -945,8 +990,12 @@ const app = {
     const expBox = document.getElementById('explanationBox');
     const statusPill = document.getElementById('studyAnswerStatusPill');
 
+    const nextBtnBottom = document.getElementById('btnNextQBottom');
+    const nextBtnBottomLabel = document.getElementById('btnNextQBottomLabel');
+
     if (isRevealed) {
       expBox.classList.remove('hidden');
+      if (nextBtnBottom) nextBtnBottom.classList.remove('hidden');
 
       const quickBox = document.getElementById('explanationQuickBox');
       const quickText = document.getElementById('explanationQuickText');
@@ -975,6 +1024,7 @@ const app = {
     } else {
       expBox.classList.add('hidden');
       statusPill.classList.add('hidden');
+      if (nextBtnBottom) nextBtnBottom.classList.add('hidden');
     }
 
     document.getElementById('btnPrevQ').disabled = (this.currentIndex === 0);
@@ -984,8 +1034,16 @@ const app = {
     const nextBtn = document.getElementById('btnNextQ');
     if (isLast) {
       nextBtn.innerHTML = '<span>Review / Submit</span> <i data-lucide="check" class="w-4 h-4"></i>';
+      if (nextBtnBottomLabel) nextBtnBottomLabel.textContent = 'Review / Submit';
+      if (nextBtnBottom) {
+        nextBtnBottom.innerHTML = '<span id="btnNextQBottomLabel">Review / Submit</span> <i data-lucide="check" class="w-4 h-4"></i>';
+      }
     } else {
       nextBtn.innerHTML = '<span>Next</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
+      if (nextBtnBottomLabel) nextBtnBottomLabel.textContent = 'Next';
+      if (nextBtnBottom) {
+        nextBtnBottom.innerHTML = '<span id="btnNextQBottomLabel">Next</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
+      }
     }
 
     lucide.createIcons();
