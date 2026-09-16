@@ -572,6 +572,14 @@
           <!-- Rendered dynamically -->
         </div>
 
+        <!-- Quick Next Button (Directly below options, revealed when answered) -->
+        <div class="flex justify-end pt-1">
+          <button id="btnNextQBottom" onclick="app.nextQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5 animate-fadeIn">
+            <span id="btnNextQBottomLabel">Next</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
         <!-- EXPLANATION PANEL (Visible in Study Mode after answer check, or review) -->
         <div id="explanationBox" class="hidden rounded-xl p-5 bg-cockpit-900 border border-cyan-500/40 space-y-3.5 animate-fadeIn">
           <div class="flex items-center justify-between border-b border-cockpit-border/60 pb-2.5">
@@ -608,14 +616,6 @@
             <div><span class="text-slate-500">Learning Objective:</span> <span id="expLODisplay" class="text-cyan-300">-</span></div>
             <div><span class="text-slate-500">Cognitive Demand:</span> <span id="expCognitiveDisplay" class="text-slate-300">-</span></div>
             <div><span class="text-slate-500">Action Verb:</span> <span id="expVerbDisplay" class="text-slate-300">-</span></div>
-          </div>
-
-          <!-- In-Explanation Next Button (shown when explanation is shown) -->
-          <div class="pt-3 border-t border-cockpit-border/60 flex justify-end">
-            <button id="btnNextQBottom" onclick="app.nextQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5">
-              <span id="btnNextQBottomLabel">Next</span>
-              <i data-lucide="chevron-right" class="w-4 h-4"></i>
-            </button>
           </div>
         </div>
 
