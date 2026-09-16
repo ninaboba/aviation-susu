@@ -124,7 +124,12 @@ const app = {
   searchCurrentPage: 1,
   searchPageSize: 10,
 
+  // Application Version & Release Metadata
+  version: 'v2.3.1',
+  releaseDate: '16 Sep 2026, 00:25',
+
   async init() {
+    this.initVersionInfo();
     this.initTheme();
     this.initFontSize();
     this.setupKeyboardShortcuts();
@@ -132,6 +137,21 @@ const app = {
 
     await this.loadSubjects();
     lucide.createIcons();
+  },
+
+  initVersionInfo() {
+    const heroVer = document.getElementById('heroAppVersion');
+    if (heroVer) {
+      heroVer.textContent = `${this.version} (${this.releaseDate})`;
+    }
+    const footerVer = document.getElementById('footerAppVersion');
+    if (footerVer) {
+      footerVer.textContent = this.version;
+    }
+    const footerDate = document.getElementById('footerAppDate');
+    if (footerDate) {
+      footerDate.textContent = `Updated: ${this.releaseDate} ICT`;
+    }
   },
 
   /* ============================================================ */
