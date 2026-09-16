@@ -838,29 +838,45 @@
           <i id="themeIcon" data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
         </button>
 
-        <!-- Audio Toggle -->
-        <button id="soundToggleBtn" onclick="app.toggleSound()" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs flex items-center space-x-1" title="Toggle Sound">
-          <i id="soundIcon" data-lucide="volume-2" class="w-4 h-4"></i>
-        </button>
-
         <!-- Font Size Cycle Button -->
         <button id="fontSizeHeaderBtn" onclick="app.cycleFontSize()" class="px-2.5 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm active:scale-95" title="ปรับขนาดตัวอักษร (คลิกเพื่อเปลี่ยนขนาด: 90% / 100% / 115% / 130%)">
           <i data-lucide="type" class="w-3.5 h-3.5 text-cyan-400"></i>
           <span id="fontSizeHeaderBadge" class="text-[11px] font-bold text-cyan-300">100%</span>
         </button>
 
-        <!-- Stored Mistakes Counter -->
-        <button onclick="app.openMistakesManager()" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5" title="View Mistake Bank">
-          <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-          <span class="hidden sm:inline">Mistakes:</span>
-          <span id="headerMistakeCount" class="text-rose-400 font-bold">0</span>
-        </button>
+        <!-- Header Overflow Menu (...) -->
+        <div id="headerOverflowMenuWrap" class="relative">
+          <button id="headerOverflowBtn" onclick="app.toggleHeaderMenu()" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs flex items-center justify-center relative" title="More Options">
+            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+            <span id="headerMenuDot" class="hidden absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse border border-cockpit-900"></span>
+          </button>
 
-        <!-- Bookmarks Counter -->
-        <button onclick="app.openBookmarksManager()" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5" title="View Flagged Questions">
-          <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span id="headerBookmarkCount" class="text-amber-400 font-bold">0</span>
-        </button>
+          <!-- Dropdown Menu -->
+          <div id="headerOverflowDropdown" class="hidden absolute right-0 mt-2 w-48 py-1.5 rounded-xl glass-panel border border-cockpit-border shadow-xl z-50 text-xs font-mono space-y-0.5">
+            <!-- Audio Toggle -->
+            <button id="soundToggleBtn" onclick="app.toggleSound(); app.closeHeaderMenu();" class="w-full px-3 py-2 text-left hover:bg-cockpit-800/80 text-slate-300 hover:text-cyan-400 flex items-center space-x-2 transition">
+              <i id="soundIcon" data-lucide="volume-2" class="w-4 h-4 text-cyan-400"></i>
+              <span>Sound Effects</span>
+            </button>
+            <div class="border-t border-cockpit-border/50 my-1"></div>
+            <!-- Mistakes Manager -->
+            <button onclick="app.openMistakesManager(); app.closeHeaderMenu();" class="w-full px-3 py-2 text-left hover:bg-cockpit-800/80 text-slate-300 flex items-center justify-between transition">
+              <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                <span>Mistake Bank</span>
+              </div>
+              <span id="headerMistakeCount" class="text-rose-400 font-bold">0</span>
+            </button>
+            <!-- Bookmarks Manager -->
+            <button onclick="app.openBookmarksManager(); app.closeHeaderMenu();" class="w-full px-3 py-2 text-left hover:bg-cockpit-800/80 text-slate-300 flex items-center justify-between transition">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Bookmarks</span>
+              </div>
+              <span id="headerBookmarkCount" class="text-amber-400 font-bold">0</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -1226,10 +1242,16 @@
           <p id="explanationText" class="text-sm text-slate-200 leading-relaxed font-sans">
             Density is mass per unit volume, kg/m³.
           </p>
-          <div class="pt-2 border-t border-cockpit-border/60 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
-            <div><span class="text-slate-500">Learning Objective:</span> <span id="expLODisplay" class="text-cyan-300">081 01 01 01</span></div>
-            <div><span class="text-slate-500">Cognitive Demand:</span> <span id="expCognitiveDisplay" class="text-slate-300">KNOW</span></div>
-            <div><span class="text-slate-500">Action Verb:</span> <span id="expVerbDisplay" class="text-slate-300">Identify</span></div>
+          <div class="pt-3 border-t border-cockpit-border/60 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-400">
+            <div class="flex flex-wrap gap-4">
+              <div><span class="text-slate-500">Learning Objective:</span> <span id="expLODisplay" class="text-cyan-300">081 01 01 01</span></div>
+              <div><span class="text-slate-500">Cognitive Demand:</span> <span id="expCognitiveDisplay" class="text-slate-300">KNOW</span></div>
+              <div><span class="text-slate-500">Action Verb:</span> <span id="expVerbDisplay" class="text-slate-300">Identify</span></div>
+            </div>
+            <button id="btnNextQBottom" onclick="app.nextQuestion()" class="hidden ml-auto px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5">
+              <span id="btnNextQBottomLabel">Next</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
         </div>
 
@@ -5386,6 +5408,48 @@
         this.setFontSize(this.fontSizes[nextIndex], true);
       },
 
+      /* ============================================================ */
+      /* HEADER OVERFLOW MENU                                         */
+      /* ============================================================ */
+      toggleHeaderMenu() {
+        const dropdown = document.getElementById('headerOverflowDropdown');
+        if (!dropdown) return;
+        const isHidden = dropdown.classList.contains('hidden');
+        if (isHidden) {
+          dropdown.classList.remove('hidden');
+          setTimeout(() => {
+            document.addEventListener('click', this._headerMenuOutsideHandler = (e) => {
+              const wrap = document.getElementById('headerOverflowMenuWrap');
+              if (wrap && !wrap.contains(e.target)) {
+                this.closeHeaderMenu();
+              }
+            });
+          }, 0);
+        } else {
+          this.closeHeaderMenu();
+        }
+      },
+
+      closeHeaderMenu() {
+        const dropdown = document.getElementById('headerOverflowDropdown');
+        if (dropdown) dropdown.classList.add('hidden');
+        if (this._headerMenuOutsideHandler) {
+          document.removeEventListener('click', this._headerMenuOutsideHandler);
+          this._headerMenuOutsideHandler = null;
+        }
+      },
+
+      updateMenuDot() {
+        const dot = document.getElementById('headerMenuDot');
+        if (!dot) return;
+        const mistakeCount = this.mistakes ? this.mistakes.size : 0;
+        if (mistakeCount > 0) {
+          dot.classList.remove('hidden');
+        } else {
+          dot.classList.add('hidden');
+        }
+      },
+
       adjustFontSizeStep(delta) {
         const currentIndex = this.fontSizes.indexOf(this.fontSize);
         let nextIndex = currentIndex + delta;
@@ -5471,6 +5535,8 @@
         } else {
           document.getElementById('heroAvgScore').textContent = '-%';
         }
+
+        this.updateMenuDot();
       },
 
       toggleSound() {
@@ -5821,8 +5887,13 @@
         const expBox = document.getElementById('explanationBox');
         const statusPill = document.getElementById('studyAnswerStatusPill');
 
+        const nextBtnBottom = document.getElementById('btnNextQBottom');
+        const nextBtnBottomLabel = document.getElementById('btnNextQBottomLabel');
+
         if (isRevealed) {
           expBox.classList.remove('hidden');
+          if (nextBtnBottom) nextBtnBottom.classList.remove('hidden');
+
           document.getElementById('explanationText').textContent = q.explanation;
           document.getElementById('expLODisplay').textContent = q.LO;
           document.getElementById('expCognitiveDisplay').textContent = q.cognitive || 'KNOW';
@@ -5839,6 +5910,7 @@
         } else {
           expBox.classList.add('hidden');
           statusPill.classList.add('hidden');
+          if (nextBtnBottom) nextBtnBottom.classList.add('hidden');
         }
 
         document.getElementById('btnPrevQ').disabled = (this.currentIndex === 0);
@@ -5848,8 +5920,16 @@
         const nextBtn = document.getElementById('btnNextQ');
         if (isLast) {
           nextBtn.innerHTML = '<span>Review / Submit</span> <i data-lucide="check" class="w-4 h-4"></i>';
+          if (nextBtnBottomLabel) nextBtnBottomLabel.textContent = 'Review / Submit';
+          if (nextBtnBottom) {
+            nextBtnBottom.innerHTML = '<span id="btnNextQBottomLabel">Review / Submit</span> <i data-lucide="check" class="w-4 h-4"></i>';
+          }
         } else {
           nextBtn.innerHTML = '<span>Next</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
+          if (nextBtnBottomLabel) nextBtnBottomLabel.textContent = 'Next';
+          if (nextBtnBottom) {
+            nextBtnBottom.innerHTML = '<span id="btnNextQBottomLabel">Next</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
+          }
         }
 
         lucide.createIcons();
