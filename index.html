@@ -106,58 +106,58 @@
       <!-- Right Controls: Search, Theme Toggle, Font Size, Coffee Button, Overflow Menu -->
       <div class="flex items-center space-x-1.5 sm:space-x-2">
         <!-- Search Button in Header -->
-        <button onclick="app.openSearchModal()" class="px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm group" title="Search Questions (Ctrl + K)">
-          <i data-lucide="search" class="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+        <button onclick="app.openSearchModal()" aria-label="Search Questions" class="px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm group" title="Search Questions (Ctrl + K)">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
           <span class="font-sans font-medium text-slate-200 hidden xs:inline">Search</span>
           <span class="hidden sm:inline-block px-1.5 py-0.2 rounded bg-cockpit-900 border border-cockpit-border text-[10px] text-slate-400 font-mono">Ctrl+K</span>
         </button>
 
         <!-- Light / Dark Theme Toggle Button -->
-        <button id="themeToggleBtn" onclick="app.toggleTheme()" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-amber-400 border border-cockpit-border transition text-xs flex items-center justify-center" title="Toggle Light / Dark Mode">
-          <i id="themeIcon" data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+        <button id="themeToggleBtn" onclick="app.toggleTheme()" aria-label="Toggle Light or Dark Mode" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-amber-400 border border-cockpit-border transition text-xs flex items-center justify-center" title="Toggle Light / Dark Mode">
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
         </button>
 
         <!-- Font Size Cycle Button -->
-        <button id="fontSizeHeaderBtn" onclick="app.cycleFontSize()" class="px-2.5 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm active:scale-95" title="ปรับขนาดตัวอักษร (คลิกเพื่อเปลี่ยนขนาด: 90% / 100% / 115% / 130%)">
-          <i data-lucide="type" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <button id="fontSizeHeaderBtn" onclick="app.cycleFontSize()" aria-label="Adjust Font Size" class="px-2.5 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm active:scale-95" title="ปรับขนาดตัวอักษร (คลิกเพื่อเปลี่ยนขนาด: 90% / 100% / 115% / 130%)">
+          <i data-lucide="type" class="w-3.5 h-3.5 text-cyan-400" aria-hidden="true"></i>
           <span id="fontSizeHeaderBadge" class="text-[11px] font-bold text-cyan-300">100%</span>
         </button>
 
         <!-- Coffee / Donate Button in Header (Opens Coffee Modal) -->
-        <button onclick="app.openDonationModal()" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/40 hover:border-amber-400 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm active:scale-95 group" title="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน ☕✈️">
-          <span class="text-sm group-hover:rotate-12 transition-transform">☕</span>
+        <button onclick="app.openDonationModal()" aria-label="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/40 hover:border-amber-400 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm active:scale-95 group" title="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน ☕✈️">
+          <span class="text-sm group-hover:rotate-12 transition-transform" aria-hidden="true">☕</span>
           <span class="hidden sm:inline font-sans font-medium text-amber-200">เลี้ยงกาแฟ</span>
         </button>
 
         <!-- Overflow Menu (...) for Sound, Mistakes, Bookmarks, Donate -->
         <div class="relative" id="headerOverflowMenuWrap">
-          <button id="headerOverflowBtn" onclick="app.toggleHeaderMenu()" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-white border border-cockpit-border transition text-xs flex items-center justify-center relative" title="More Options">
-            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
-            <span id="headerMenuDot" class="w-2 h-2 rounded-full bg-rose-500 absolute -top-0.5 -right-0.5 hidden"></span>
+          <button id="headerOverflowBtn" onclick="app.toggleHeaderMenu()" aria-label="More Options" aria-haspopup="true" aria-expanded="false" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-white border border-cockpit-border transition text-xs flex items-center justify-center relative" title="More Options">
+            <i data-lucide="more-horizontal" class="w-4 h-4" aria-hidden="true"></i>
+            <span id="headerMenuDot" class="w-2 h-2 rounded-full bg-rose-500 absolute -top-0.5 -right-0.5 hidden" aria-hidden="true"></span>
           </button>
 
           <!-- Dropdown Menu -->
-          <div id="headerOverflowDropdown" class="hidden absolute right-0 mt-2 w-52 rounded-xl bg-cockpit-900 border border-cockpit-border shadow-2xl p-1.5 z-50 space-y-1">
+          <div id="headerOverflowDropdown" role="menu" aria-orientation="vertical" class="hidden absolute right-0 mt-2 w-52 rounded-xl bg-cockpit-900 border border-cockpit-border shadow-2xl p-1.5 z-50 space-y-1">
             <!-- Audio Toggle Item -->
-            <button id="soundToggleBtn" onclick="app.toggleSound()" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 transition text-xs flex items-center justify-between" title="Toggle Sound">
+            <button id="soundToggleBtn" onclick="app.toggleSound()" role="menuitem" aria-label="Toggle Sound Effects" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 transition text-xs flex items-center justify-between" title="Toggle Sound">
               <span class="flex items-center space-x-2">
-                <i id="soundIcon" data-lucide="volume-2" class="w-4 h-4"></i>
+                <i id="soundIcon" data-lucide="volume-2" class="w-4 h-4" aria-hidden="true"></i>
                 <span>Sound Effects</span>
               </span>
             </button>
             <div class="border-t border-cockpit-border/60 my-1"></div>
             <!-- Mistake Bank Item -->
-            <button onclick="app.closeHeaderMenu(); app.openMistakesManager()" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-rose-400 transition text-xs flex items-center justify-between" title="View Mistake Bank">
+            <button onclick="app.closeHeaderMenu(); app.openMistakesManager()" role="menuitem" aria-label="View Mistake Bank" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-rose-400 transition text-xs flex items-center justify-between" title="View Mistake Bank">
               <span class="flex items-center space-x-2">
-                <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                <span class="w-2 h-2 rounded-full bg-rose-500" aria-hidden="true"></span>
                 <span>Mistake Bank</span>
               </span>
               <span id="headerMistakeCount" class="text-rose-400 font-bold font-mono">0</span>
             </button>
             <!-- Bookmarks Item -->
-            <button onclick="app.closeHeaderMenu(); app.openBookmarksManager()" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-amber-400 transition text-xs flex items-center justify-between" title="View Flagged Questions">
+            <button onclick="app.closeHeaderMenu(); app.openBookmarksManager()" role="menuitem" aria-label="View Bookmarks" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-amber-400 transition text-xs flex items-center justify-between" title="View Flagged Questions">
               <span class="flex items-center space-x-2">
-                <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-400"></i>
+                <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i>
                 <span>Bookmarks</span>
               </span>
               <span id="headerBookmarkCount" class="text-amber-400 font-bold font-mono">0</span>
@@ -1075,15 +1075,15 @@
       </div>
       <div class="flex items-center space-x-2 bg-cockpit-850 px-3 py-1.5 rounded-lg border border-cockpit-border shrink-0">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-cyan-300 font-bold" id="footerAppVersion">v2.3.1</span>
+        <span class="text-cyan-300 font-bold" id="footerAppVersion">v2.3.2</span>
         <span class="text-slate-600">•</span>
-        <span class="text-slate-400 text-[11px]" id="footerAppDate">Updated: 16 Sep 2026, 00:25 ICT</span>
+        <span class="text-slate-400 text-[11px]" id="footerAppDate">Updated: 17 Sep 2026, 01:00 ICT</span>
       </div>
     </div>
   </footer>
 
   <!-- Modular ES6 Scripts with Cache Buster -->
-  <script src="./js/storage.js?v=20260916_0025"></script>
-  <script src="./js/app.js?v=20260916_0025"></script>
+  <script src="./js/storage.js?v=20260917_0100"></script>
+  <script src="./js/app.js?v=20260917_0100"></script>
 </body>
 </html>
