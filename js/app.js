@@ -125,8 +125,12 @@ const app = {
   searchPageSize: 10,
 
   // Application Version & Release Metadata
-  version: 'v2.3.1',
-  releaseDate: '16 Sep 2026, 00:25',
+  version: 'v2.3.2',
+  releaseDate: '17 Sep 2026, 01:25',
+
+  get currentSubjectId() {
+    return this.currentSubject ? this.currentSubject.id : (this.subjects[0] ? this.subjects[0].id : 'pof');
+  },
 
   async init() {
     this.initVersionInfo();
@@ -939,6 +943,19 @@ const app = {
     );
     document.getElementById('badgeCognitive').textContent = q.cognitive || 'KNOW';
 
+    // Mistake History Count Badge
+    const mistakeCount = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
+    const badgeMistake = document.getElementById('badgeMistakeCount');
+    const badgeMistakeText = document.getElementById('badgeMistakeCountText');
+    if (badgeMistake && badgeMistakeText) {
+      if (mistakeCount > 0) {
+        badgeMistake.classList.remove('hidden');
+        badgeMistakeText.textContent = 'เคยตอบผิด ' + mistakeCount + ' ครั้ง';
+      } else {
+        badgeMistake.classList.add('hidden');
+      }
+    }
+
     const isBookmarked = this.bookmarks.has(q.id);
     const btnB = document.getElementById('btnBookmark');
     const iconB = document.getElementById('bookmarkIcon');
@@ -1010,7 +1027,7 @@ const app = {
       const quickText = document.getElementById('explanationQuickText');
       if (quickBox && quickText) {
         if (q.explanation_quick) {
-          quickText.textContent = q.explanation_quick;
+          this.renderExplanationMath(quickText, q.explanation_quick);
           quickBox.classList.remove('hidden');
         } else {
           quickBox.classList.add('hidden');
@@ -1077,6 +1094,7 @@ const app = {
       this.revealedInStudy[this.currentIndex] = true;
       if (optionText === currentQ.correct) {
         sound.correct();
+        QuizStorage.recordQuestionAttempt(this.currentSubjectId, currentQ.id, true);
         if (this.mistakes.has(currentQ.id)) {
           this.mistakes.delete(currentQ.id);
           this.saveUserData();
@@ -1085,6 +1103,7 @@ const app = {
         }
       } else {
         sound.incorrect();
+        QuizStorage.recordQuestionAttempt(this.currentSubjectId, currentQ.id, false);
         this.mistakes.add(currentQ.id);
         this.saveUserData();
       }
@@ -1262,17 +1281,20 @@ const app = {
         t.unanswered++;
         this.mistakes.add(q.id);
         sessionMistakesList.push(q);
+        QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
       } else {
         this.attempted.add(q.id);
         if (userAns === q.correct) {
           correctCount++;
           t.correct++;
           if (this.mistakes.has(q.id)) this.mistakes.delete(q.id);
+          QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, true);
         } else {
           incorrectCount++;
           t.incorrect++;
           this.mistakes.add(q.id);
           sessionMistakesList.push(q);
+          QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
         }
       }
     });
@@ -1432,6 +1454,7 @@ const app = {
     const pagedItems = this.reviewFilteredList.slice(startIndex, endIndex);
 
     container.innerHTML = pagedItems.map(({ q, idx, userAns, isCorrect, isFlagged }) => {
+      const qMistakeCount = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
       return '<div class="glass-card p-5 rounded-xl border space-y-4 ' + (isCorrect ? 'review-card-correct' : 'review-card-incorrect') + '">' +
         '<div class="flex flex-wrap items-center justify-between gap-2">' +
           '<div class="flex items-center space-x-2">' +
@@ -1440,6 +1463,7 @@ const app = {
             '</span>' +
             '<span class="search-badge-topic text-[10px] font-mono px-2 py-0.5 rounded">' + q.topic + '</span>' +
             '<span class="search-badge-lo text-[10px] font-mono px-2 py-0.5 rounded">LO: ' + q.LO + '</span>' +
+            (qMistakeCount > 0 ? '<span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40" title="เคยตอบข้อนี้ผิดทั้งหมด ' + qMistakeCount + ' ครั้ง">🔴 ผิดสะสม ' + qMistakeCount + 'x</span>' : '') +
           '</div>' +
           '<div class="flex items-center space-x-2">' +
             (isFlagged ? '<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center space-x-1"><i data-lucide="bookmark" class="w-3 h-3 fill-current"></i><span>Flagged</span></span>' : '') +
@@ -1842,35 +1866,67 @@ const app = {
     }
   },
 
+  cleanMathFormula(formula) {
+    if (!formula) return '';
+    return formula
+      .replace(/\\text\{([^}]+)\}/g, '$1')
+      .replace(/\\mathrm\{([^}]+)\}/g, '$1')
+      .replace(/\\left/g, '')
+      .replace(/\\right/g, '')
+      .replace(/\\times/g, ' × ')
+      .replace(/\\cdot/g, ' · ')
+      .replace(/\\approx/g, ' ≈ ')
+      .replace(/\\pm/g, ' ± ')
+      .replace(/\\neq/g, ' ≠ ')
+      .replace(/\\le/g, ' ≤ ')
+      .replace(/\\ge/g, ' ≥ ')
+      .replace(/\\propto/g, ' ∝ ')
+      .replace(/\\implies/g, ' ⟹ ')
+      .replace(/\\sqrt\{([^}]+)\}/g, '√($1)')
+      .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 ÷ $2)')
+      .replace(/\\rho_0/g, 'ρ₀')
+      .replace(/\\rho/g, 'ρ')
+      .replace(/\\alpha_0/g, 'α₀')
+      .replace(/\\alpha_{crit}/g, 'α_crit')
+      .replace(/\\alpha/g, 'α')
+      .replace(/\\beta/g, 'β')
+      .replace(/\\gamma/g, 'γ')
+      .replace(/\\phi/g, 'φ')
+      .replace(/\\theta/g, 'θ')
+      .replace(/\\lambda/g, 'λ')
+      .replace(/\\Lambda/g, 'Λ')
+      .replace(/\\sigma/g, 'σ')
+      .replace(/\\Delta/g, 'Δ')
+      .replace(/\\delta/g, 'δ')
+      .replace(/\\epsilon/g, 'ε')
+      .replace(/\\omega/g, 'ω')
+      .replace(/\\Omega/g, 'Ω')
+      .replace(/\\pi/g, 'π')
+      .replace(/\\perp/g, '⊥')
+      .replace(/\\parallel/g, '∥')
+      .replace(/\^2/g, '²')
+      .replace(/\^3/g, '³')
+      .replace(/_0/g, '₀')
+      .replace(/_1/g, '₁')
+      .replace(/_2/g, '₂')
+      .replace(/\\circ/g, '°')
+      .replace(/\\/g, '')
+      .trim();
+  },
+
   formatExplanationHtml(text, query = '') {
     if (!text) return '';
     let escaped = query ? this.highlightText(text, query) : this.escapeHtml(text);
 
     // Convert display math $$...$$
     escaped = escaped.replace(/\$\$([\s\S]*?)\$\$/g, (match, formula) => {
-      let clean = formula
-        .replace(/\\text\{([^}]+)\}/g, '$1')
-        .replace(/\\times/g, ' × ')
-        .replace(/\\approx/g, ' ≈ ')
-        .replace(/\\pm/g, ' ± ')
-        .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 ÷ $2)')
-        .replace(/\^2/g, '²')
-        .replace(/\^3/g, '³')
-        .replace(/\\/g, '')
-        .trim();
+      let clean = this.cleanMathFormula(formula);
       return `<div class="my-2.5 px-4 py-2.5 rounded-xl bg-cockpit-900/90 border border-cyan-500/40 font-mono text-cyan-300 font-bold text-center text-sm shadow-sm tracking-wide select-all">${clean}</div>`;
     });
 
     // Convert inline math $...$
     escaped = escaped.replace(/\$([^\$]+?)\$/g, (match, inlineFormula) => {
-      let clean = inlineFormula
-        .replace(/\\text\{([^}]+)\}/g, '$1')
-        .replace(/\\times/g, '×')
-        .replace(/\\approx/g, '≈')
-        .replace(/\^2/g, '²')
-        .replace(/\^3/g, '³')
-        .replace(/\\/g, '')
-        .trim();
+      let clean = this.cleanMathFormula(inlineFormula);
       return `<span class="px-1.5 py-0.5 rounded bg-cockpit-900 border border-cyan-500/30 font-mono text-cyan-300 text-xs font-semibold">${clean}</span>`;
     });
 
@@ -2048,6 +2104,7 @@ const app = {
     container.innerHTML = pagedResults.map((q) => {
       const isFlagged = this.bookmarks.has(q.id);
       const isMistake = this.mistakes.has(q.id);
+      const searchMistakeCount = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
 
       return '<div class="p-4 sm:p-5 rounded-2xl glass-card border border-cockpit-border hover:border-cyan-500/40 transition space-y-3.5 search-result-card">' +
         '<div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-cockpit-border/60">' +
@@ -2057,6 +2114,7 @@ const app = {
             '<span class="search-badge-lo px-2 py-0.5 rounded-md">' + q.LO + '</span>' +
             '<span class="search-badge-diff px-2 py-0.5 rounded-md">' + q.difficulty + '</span>' +
             (isMistake ? '<span class="search-badge-mistake px-2 py-0.5 rounded-md">Mistake Bank</span>' : '') +
+            (searchMistakeCount > 0 ? '<span class="px-2 py-0.5 rounded-md bg-rose-500/20 text-rose-300 border border-rose-500/40 font-bold" title="เคยตอบข้อนี้ผิด ' + searchMistakeCount + ' ครั้ง">🔴 ผิด ' + searchMistakeCount + 'x</span>' : '') +
           '</div>' +
           '<button type="button" onclick="app.toggleBookmarkFromSearch(' + q.id + ', event)" class="p-1.5 rounded-lg border transition flex items-center space-x-1 text-xs font-mono ' +
             (isFlagged ? 'bg-amber-500/20 text-amber-300 border-amber-500/50' : 'bg-cockpit-850 text-slate-400 hover:text-amber-300 border-cockpit-border') + '" title="' + (isFlagged ? 'Remove Bookmark' : 'Bookmark Question') + '">' +

@@ -11,6 +11,7 @@ const QuizStorage = {
   BOOKMARKS_PREFIX: 'quiz_bookmarks_',
   ATTEMPTED_PREFIX: 'quiz_attempted_',
   HISTORY_PREFIX: 'quiz_history_',
+  QUESTION_STATS_PREFIX: 'quiz_qstats_',
   THEME_KEY: 'quiz_theme',
   FONT_SIZE_KEY: 'quiz_font_size',
   SOUND_KEY: 'quiz_sound_enabled',
@@ -233,7 +234,80 @@ const QuizStorage = {
   },
 
   /**
-   * Reset user analytics data for a subject (bookmarks, mistakes, history)
+   * Get question attempt statistics map for a subject
+   * @param {string} subjectId
+   * @returns {Object<string, { wrong: number, correct: number, total: number, lastAttempt: number }>}
+   */
+  getQuestionStats(subjectId) {
+    if (!subjectId) return {};
+    try {
+      const key = this.QUESTION_STATS_PREFIX + subjectId;
+      const raw = localStorage.getItem(key);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') return parsed;
+      }
+    } catch (e) {
+      console.warn('QuizStorage.getQuestionStats failed:', e);
+    }
+    return {};
+  },
+
+  /**
+   * Record a question answer attempt (incrementing wrong/correct count)
+   * @param {string} subjectId
+   * @param {number|string} questionId
+   * @param {boolean} isCorrect
+   * @returns {{ wrong: number, correct: number, total: number }}
+   */
+  recordQuestionAttempt(subjectId, questionId, isCorrect) {
+    if (!subjectId || questionId === undefined) return { wrong: 0, correct: 0, total: 0 };
+    try {
+      const stats = this.getQuestionStats(subjectId);
+      const qKey = String(questionId);
+      const cur = stats[qKey] || { wrong: 0, correct: 0, total: 0 };
+      cur.total = (cur.total || 0) + 1;
+      if (isCorrect) {
+        cur.correct = (cur.correct || 0) + 1;
+      } else {
+        cur.wrong = (cur.wrong || 0) + 1;
+      }
+      cur.lastAttempt = Date.now();
+      stats[qKey] = cur;
+      localStorage.setItem(this.QUESTION_STATS_PREFIX + subjectId, JSON.stringify(stats));
+      return cur;
+    } catch (e) {
+      console.warn('QuizStorage.recordQuestionAttempt failed:', e);
+      return { wrong: 0, correct: 0, total: 0 };
+    }
+  },
+
+  /**
+   * Get mistake count for a single question
+   * @param {string} subjectId
+   * @param {number|string} questionId
+   * @returns {number}
+   */
+  getMistakeCount(subjectId, questionId) {
+    const stats = this.getQuestionStats(subjectId);
+    const qKey = String(questionId);
+    return stats[qKey] ? (stats[qKey].wrong || 0) : 0;
+  },
+
+  /**
+   * Get total attempt count for a single question
+   * @param {string} subjectId
+   * @param {number|string} questionId
+   * @returns {number}
+   */
+  getAttemptCount(subjectId, questionId) {
+    const stats = this.getQuestionStats(subjectId);
+    const qKey = String(questionId);
+    return stats[qKey] ? (stats[qKey].total || 0) : 0;
+  },
+
+  /**
+   * Reset user analytics data for a subject (bookmarks, mistakes, history, question stats)
    * @param {string} subjectId
    */
   clearSubjectData(subjectId) {
@@ -243,6 +317,7 @@ const QuizStorage = {
       localStorage.removeItem(this.BOOKMARKS_PREFIX + subjectId);
       localStorage.removeItem(this.ATTEMPTED_PREFIX + subjectId);
       localStorage.removeItem(this.HISTORY_PREFIX + subjectId);
+      localStorage.removeItem(this.QUESTION_STATS_PREFIX + subjectId);
       if (subjectId === 'pof') {
         localStorage.removeItem('pof_mistakes');
         localStorage.removeItem('pof_bookmarks');
