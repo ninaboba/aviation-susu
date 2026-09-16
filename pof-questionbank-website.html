@@ -103,8 +103,8 @@
         </div>
       </div>
 
-      <!-- Right Controls: Search, Theme Toggle, Font Size, Overflow Menu -->
-      <div class="flex items-center space-x-1.5 sm:space-x-2.5">
+      <!-- Right Controls: Search, Theme Toggle, Font Size, Coffee Button, Overflow Menu -->
+      <div class="flex items-center space-x-1.5 sm:space-x-2">
         <!-- Search Button in Header -->
         <button onclick="app.openSearchModal()" class="px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm group" title="Search Questions (Ctrl + K)">
           <i data-lucide="search" class="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform"></i>
@@ -123,7 +123,13 @@
           <span id="fontSizeHeaderBadge" class="text-[11px] font-bold text-cyan-300">100%</span>
         </button>
 
-        <!-- Overflow Menu (...) for Sound, Mistakes, Bookmarks -->
+        <!-- Coffee / Donate Button in Header (Opens Coffee Modal) -->
+        <button onclick="app.openDonationModal()" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/40 hover:border-amber-400 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm active:scale-95 group" title="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน ☕✈️">
+          <span class="text-sm group-hover:rotate-12 transition-transform">☕</span>
+          <span class="hidden sm:inline font-sans font-medium text-amber-200">เลี้ยงกาแฟ</span>
+        </button>
+
+        <!-- Overflow Menu (...) for Sound, Mistakes, Bookmarks, Donate -->
         <div class="relative" id="headerOverflowMenuWrap">
           <button id="headerOverflowBtn" onclick="app.toggleHeaderMenu()" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-white border border-cockpit-border transition text-xs flex items-center justify-center relative" title="More Options">
             <i data-lucide="more-horizontal" class="w-4 h-4"></i>
@@ -131,7 +137,7 @@
           </button>
 
           <!-- Dropdown Menu -->
-          <div id="headerOverflowDropdown" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-cockpit-900 border border-cockpit-border shadow-2xl p-1.5 z-50 space-y-1">
+          <div id="headerOverflowDropdown" class="hidden absolute right-0 mt-2 w-52 rounded-xl bg-cockpit-900 border border-cockpit-border shadow-2xl p-1.5 z-50 space-y-1">
             <!-- Audio Toggle Item -->
             <button id="soundToggleBtn" onclick="app.toggleSound()" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 transition text-xs flex items-center justify-between" title="Toggle Sound">
               <span class="flex items-center space-x-2">
@@ -155,6 +161,15 @@
                 <span>Bookmarks</span>
               </span>
               <span id="headerBookmarkCount" class="text-amber-400 font-bold font-mono">0</span>
+            </button>
+            <div class="border-t border-cockpit-border/60 my-1"></div>
+            <!-- Coffee / Donate Item -->
+            <button onclick="app.closeHeaderMenu(); app.openDonationModal()" class="w-full px-3 py-2 rounded-lg hover:bg-amber-950/40 text-amber-300 hover:text-amber-200 transition text-xs flex items-center justify-between" title="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน">
+              <span class="flex items-center space-x-2">
+                <span>☕</span>
+                <span>เลี้ยงกาแฟกัปตัน</span>
+              </span>
+              <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Mayday</span>
             </button>
           </div>
         </div>
@@ -994,6 +1009,68 @@
         <button id="confirmModalOkBtn" class="px-5 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-xs">
           Confirm
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COFFEE & DONATION POPUP MODAL -->
+  <div id="modalDonate" class="fixed inset-0 z-50 bg-cockpit-950/85 backdrop-blur-md hidden flex items-center justify-center p-4 animate-fadeIn" onclick="if (event.target === this) app.closeDonationModal()">
+    <div class="glass-panel max-w-lg w-full rounded-2xl border border-amber-500/40 p-5 sm:p-6 space-y-4 shadow-2xl relative overflow-hidden bg-gradient-to-br from-cockpit-900 via-cockpit-850 to-amber-950/30">
+      <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Header with Close Button -->
+      <div class="flex items-center justify-between pb-3 border-b border-cockpit-border/70 relative z-10">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-base border border-amber-500/30">
+            ☕
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white leading-tight">กองทุนต่อชีวิตกัปตัน: เลี้ยงกาแฟ & ช่วยค่าสอบแก้</h3>
+            <span class="text-[11px] font-mono text-amber-400 font-semibold">MAYDAY! AIR LAW RETAKE FUND</span>
+          </div>
+        </div>
+        <button onclick="app.closeDonationModal()" class="p-1.5 rounded-lg hover:bg-cockpit-800 text-slate-400 hover:text-white transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col sm:flex-row items-center gap-5 relative z-10 py-1">
+        <!-- QR Code -->
+        <div class="shrink-0 flex flex-col items-center">
+          <div class="p-2 bg-white rounded-2xl shadow-xl border-2 border-amber-400/60 transition hover:scale-105">
+            <img src="./donate_qr.jpg" alt="PromptPay QR Code 0825743651" class="w-36 h-36 object-contain rounded-xl block">
+          </div>
+          <span class="text-[10px] font-mono text-amber-300/90 mt-1.5 flex items-center gap-1">
+            <i data-lucide="scan-line" class="w-3 h-3"></i>
+            <span>Scan via Banking App</span>
+          </span>
+        </div>
+
+        <!-- Copy & Description -->
+        <div class="flex-1 text-center sm:text-left space-y-2.5">
+          <p class="text-xs text-slate-300 leading-relaxed">
+            คนทำเว็บก็ยังไม่ได้สอบ POF แถม <strong class="text-amber-300">Air Law ก็ส่อแววได้ไปบินรอบสอง... 💀</strong><br>
+            ร่วมสมทบทุนค่าลงทะเบียนสอบซ่อม หรือค่ากาแฟแก้ง่วงให้ผู้พัฒนาได้นะค้าบ เพื่อไม่ให้กัปตันโดน Ground ถาวร 🥺
+          </p>
+
+          <div class="space-y-2 pt-1">
+            <div class="bg-cockpit-900/90 border border-cockpit-border px-3 py-1.5 rounded-xl flex items-center justify-between font-mono text-xs">
+              <span class="text-slate-400">พร้อมเพย์:</span>
+              <span class="text-cyan-400 font-bold tracking-wider select-all text-sm">082-574-3651</span>
+            </div>
+
+            <button type="button" onclick="app.copyPromptPay('0825743651')" id="btnCopyPromptPayModal" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold text-xs font-mono transition flex items-center justify-center gap-1.5 shadow-md active:scale-95">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span id="btnCopyPromptPayModalText">คัดลอกเบอร์พร้อมเพย์</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Note -->
+      <div class="pt-2 border-t border-cockpit-border/60 text-center text-[11px] text-slate-400 italic relative z-10">
+        *ไม่สะดวกเปย์ไม่เป็นไรเลยครับ แค่คุณสอบผ่านกัปตันก็ดีใจแล้ว! (แต่ถ้าเลี้ยงกาแฟจะแฮปปี้มาก 😆)*
       </div>
     </div>
   </div>
@@ -2925,24 +3002,59 @@ const app = {
     return html;
   },
 
+  /* ============================================================ */
+  /* COFFEE & DONATION MODAL                                      */
+  /* ============================================================ */
+  openDonationModal() {
+    sound.click();
+    const modal = document.getElementById('modalDonate');
+    if (modal) {
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+  },
+
+  closeDonationModal() {
+    sound.click();
+    const modal = document.getElementById('modalDonate');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  },
+
   copyPromptPay(number) {
     sound.click();
     const copyAction = () => {
-      const btn = document.getElementById('btnCopyPromptPay');
-      const btnText = document.getElementById('btnCopyPromptPayText');
-      if (btn && btnText) {
-        const originalContent = btn.innerHTML;
-        btn.classList.remove('bg-cyan-600', 'hover:bg-cyan-500');
-        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
-        btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>คัดลอกสำเร็จ!</span>';
-        lucide.createIcons();
-        setTimeout(() => {
-          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
-          btn.classList.add('bg-cyan-600', 'hover:bg-cyan-500');
-          btn.innerHTML = originalContent;
+      const targets = [
+        { btn: document.getElementById('btnCopyPromptPay'), text: document.getElementById('btnCopyPromptPayText'), isModal: false },
+        { btn: document.getElementById('btnCopyPromptPayModal'), text: document.getElementById('btnCopyPromptPayModalText'), isModal: true }
+      ];
+
+      targets.forEach(({ btn, text, isModal }) => {
+        if (btn) {
+          const originalHTML = btn.innerHTML;
+          if (isModal) {
+            btn.classList.remove('from-amber-500', 'to-orange-500');
+            btn.classList.add('from-emerald-500', 'to-teal-500');
+          } else {
+            btn.classList.remove('bg-cyan-600', 'hover:bg-cyan-500');
+            btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
+          }
+          btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>คัดลอกสำเร็จ!</span>';
           lucide.createIcons();
-        }, 2200);
-      }
+          setTimeout(() => {
+            if (isModal) {
+              btn.classList.remove('from-emerald-500', 'to-teal-500');
+              btn.classList.add('from-amber-500', 'to-orange-500');
+            } else {
+              btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
+              btn.classList.add('bg-cyan-600', 'hover:bg-cyan-500');
+            }
+            btn.innerHTML = originalHTML;
+            lucide.createIcons();
+          }, 2200);
+        }
+      });
     };
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -3490,14 +3602,17 @@ const app = {
       const isGridOpen = gridModal && !gridModal.classList.contains('hidden');
       const confirmModal = document.getElementById('modalConfirm');
       const isConfirmOpen = confirmModal && !confirmModal.classList.contains('hidden');
+      const donateModal = document.getElementById('modalDonate');
+      const isDonateOpen = donateModal && !donateModal.classList.contains('hidden');
 
       if (e.key === 'Escape') {
         if (isSearchOpen) { this.closeSearchModal(); return; }
         if (isGridOpen) { gridModal.classList.add('hidden'); return; }
         if (isConfirmOpen) { confirmModal.classList.add('hidden'); return; }
+        if (isDonateOpen) { this.closeDonationModal(); return; }
       }
 
-      if (isSearchOpen || isGridOpen || isConfirmOpen) return;
+      if (isSearchOpen || isGridOpen || isConfirmOpen || isDonateOpen) return;
 
       const examScreen = document.getElementById('viewExam');
       const isExamScreen = examScreen && !examScreen.classList.contains('hidden');

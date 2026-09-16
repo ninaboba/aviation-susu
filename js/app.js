@@ -1570,24 +1570,59 @@ const app = {
     return html;
   },
 
+  /* ============================================================ */
+  /* COFFEE & DONATION MODAL                                      */
+  /* ============================================================ */
+  openDonationModal() {
+    sound.click();
+    const modal = document.getElementById('modalDonate');
+    if (modal) {
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+  },
+
+  closeDonationModal() {
+    sound.click();
+    const modal = document.getElementById('modalDonate');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  },
+
   copyPromptPay(number) {
     sound.click();
     const copyAction = () => {
-      const btn = document.getElementById('btnCopyPromptPay');
-      const btnText = document.getElementById('btnCopyPromptPayText');
-      if (btn && btnText) {
-        const originalContent = btn.innerHTML;
-        btn.classList.remove('bg-cyan-600', 'hover:bg-cyan-500');
-        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
-        btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>คัดลอกสำเร็จ!</span>';
-        lucide.createIcons();
-        setTimeout(() => {
-          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
-          btn.classList.add('bg-cyan-600', 'hover:bg-cyan-500');
-          btn.innerHTML = originalContent;
+      const targets = [
+        { btn: document.getElementById('btnCopyPromptPay'), text: document.getElementById('btnCopyPromptPayText'), isModal: false },
+        { btn: document.getElementById('btnCopyPromptPayModal'), text: document.getElementById('btnCopyPromptPayModalText'), isModal: true }
+      ];
+
+      targets.forEach(({ btn, text, isModal }) => {
+        if (btn) {
+          const originalHTML = btn.innerHTML;
+          if (isModal) {
+            btn.classList.remove('from-amber-500', 'to-orange-500');
+            btn.classList.add('from-emerald-500', 'to-teal-500');
+          } else {
+            btn.classList.remove('bg-cyan-600', 'hover:bg-cyan-500');
+            btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
+          }
+          btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>คัดลอกสำเร็จ!</span>';
           lucide.createIcons();
-        }, 2200);
-      }
+          setTimeout(() => {
+            if (isModal) {
+              btn.classList.remove('from-emerald-500', 'to-teal-500');
+              btn.classList.add('from-amber-500', 'to-orange-500');
+            } else {
+              btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
+              btn.classList.add('bg-cyan-600', 'hover:bg-cyan-500');
+            }
+            btn.innerHTML = originalHTML;
+            lucide.createIcons();
+          }, 2200);
+        }
+      });
     };
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2129,14 +2164,17 @@ const app = {
       const isGridOpen = gridModal && !gridModal.classList.contains('hidden');
       const confirmModal = document.getElementById('modalConfirm');
       const isConfirmOpen = confirmModal && !confirmModal.classList.contains('hidden');
+      const donateModal = document.getElementById('modalDonate');
+      const isDonateOpen = donateModal && !donateModal.classList.contains('hidden');
 
       if (e.key === 'Escape') {
         if (isSearchOpen) { this.closeSearchModal(); return; }
         if (isGridOpen) { gridModal.classList.add('hidden'); return; }
         if (isConfirmOpen) { confirmModal.classList.add('hidden'); return; }
+        if (isDonateOpen) { this.closeDonationModal(); return; }
       }
 
-      if (isSearchOpen || isGridOpen || isConfirmOpen) return;
+      if (isSearchOpen || isGridOpen || isConfirmOpen || isDonateOpen) return;
 
       const examScreen = document.getElementById('viewExam');
       const isExamScreen = examScreen && !examScreen.classList.contains('hidden');
