@@ -159,9 +159,13 @@ const app = {
   /* ============================================================ */
   async loadSubjects() {
     try {
-      const res = await fetch('./data/subjects.json?v=20260916_0025');
-      if (!res.ok) throw new Error(`HTTP ${res.status} loading subjects.json`);
-      this.subjects = await res.json();
+      if (window.EMBEDDED_SUBJECTS && Array.isArray(window.EMBEDDED_SUBJECTS)) {
+        this.subjects = window.EMBEDDED_SUBJECTS;
+      } else {
+        const res = await fetch('./data/subjects.json?v=20260916_0025');
+        if (!res.ok) throw new Error(`HTTP ${res.status} loading subjects.json`);
+        this.subjects = await res.json();
+      }
       
       this.renderSubjectSelectors();
 
@@ -212,9 +216,14 @@ const app = {
 
     // Load question data for this subject
     try {
-      const res = await fetch(subject.file + '?v=20260916_0025');
-      if (!res.ok) throw new Error(`HTTP ${res.status} loading ${subject.file}`);
-      const rawQuestions = await res.json();
+      let rawQuestions;
+      if (window.EMBEDDED_DATA && window.EMBEDDED_DATA[subject.id]) {
+        rawQuestions = window.EMBEDDED_DATA[subject.id];
+      } else {
+        const res = await fetch(subject.file + '?v=20260916_0025');
+        if (!res.ok) throw new Error(`HTTP ${res.status} loading ${subject.file}`);
+        rawQuestions = await res.json();
+      }
 
       // Normalize questions to ensure options, correct, answer index
       this.questions = rawQuestions.map(q => {
