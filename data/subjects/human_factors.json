@@ -2336,9 +2336,9 @@
       "increases as latitude decreases",
       "increases as longitude increases"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "ผลของละติจูดและความสูงต่อรังสีคอสมิก: สนามแม่เหล็กโลกทำหน้าที่เบี่ยงเบนอนุภาคของรังสีคอสมิก โดยสนามแม่เหล็กจะหนาแน่นที่เส้นศูนย์สูตรและเปิดออกที่ขั้วโลก ดังนั้นรังสีคอสมิกจึงมีระดับความเข้มข้นต่ำสุดที่แถบศูนย์สูตร และเพิ่มสูงขึ้นมากเมื่อบินในเส้นทางละติจูดสูงหรือข้ามขั้วโลก (Polar routes)",
-    "correct": "increases as latitude decreases",
+    "correct": "increases as latitude increases",
     "topic": "040 06",
     "topicName": "Flying & Health",
     "LO": "040 02 01 03 (02–03)",
