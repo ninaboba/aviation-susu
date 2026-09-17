@@ -1313,7 +1313,10 @@
       outline-color: #0284c7;
     }
 
-    /* --- TOUCH ACTION: eliminate 300ms iOS Safari tap delay --- */
+    /* --- TOUCH ACTION & TAP HIGHLIGHT: eliminate tap delay and grey flash on iOS --- */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
     button,
     [onclick],
     [role="button"],
@@ -1353,16 +1356,25 @@
       select {
         min-height: 44px;
       }
-      /* Search modal close button */
+      /* Modal close & action buttons */
       #modalSearch button,
       #modalDonate button,
       #modalQuestionGrid button,
-      #confirmModal button {
+      #modalConfirm button {
         min-height: 44px;
       }
       /* Topic checkboxes tap area */
       #topicGridContainer label {
         min-height: 44px;
+      }
+      /* Review filter tabs on Summary page */
+      #tabReviewAll,
+      #tabReviewIncorrect,
+      #tabReviewCorrect,
+      #tabReviewFlagged {
+        min-height: 40px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
       }
     }
 
@@ -1381,9 +1393,18 @@
       }
     }
 
-    /* --- SEARCH MODAL: backdrop tap-to-close hint for iPad --- */
-    #modalSearch {
+    /* --- MODALS: backdrop tap-to-close & overscroll containment for iPad --- */
+    #modalSearch,
+    #modalQuestionGrid,
+    #modalConfirm,
+    #modalDonate {
       cursor: default;
+    }
+    #searchResultsContainer,
+    #paletteGridButtons,
+    #headerOverflowDropdown {
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* --- SAFE AREA INSETS: iPad with home bar (iPad Pro) --- */

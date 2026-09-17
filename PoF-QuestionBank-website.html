@@ -2,9 +2,13 @@
 <html lang="th" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Aviation MCQ Examination Training Platform</title>
   <meta name="description" content="Interactive aviation MCQ training application with Study & Exam modes, dynamic subject loading, LO traceability, and detailed performance analytics.">
+  <meta name="theme-color" content="#060913" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- Anti-FOUC theme & font size detector -->
   <script>
@@ -1392,7 +1396,10 @@
       outline-color: #0284c7;
     }
 
-    /* --- TOUCH ACTION: eliminate 300ms iOS Safari tap delay --- */
+    /* --- TOUCH ACTION & TAP HIGHLIGHT: eliminate tap delay and grey flash on iOS --- */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
     button,
     [onclick],
     [role="button"],
@@ -1432,16 +1439,25 @@
       select {
         min-height: 44px;
       }
-      /* Search modal close button */
+      /* Modal close & action buttons */
       #modalSearch button,
       #modalDonate button,
       #modalQuestionGrid button,
-      #confirmModal button {
+      #modalConfirm button {
         min-height: 44px;
       }
       /* Topic checkboxes tap area */
       #topicGridContainer label {
         min-height: 44px;
+      }
+      /* Review filter tabs on Summary page */
+      #tabReviewAll,
+      #tabReviewIncorrect,
+      #tabReviewCorrect,
+      #tabReviewFlagged {
+        min-height: 40px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
       }
     }
 
@@ -1460,9 +1476,18 @@
       }
     }
 
-    /* --- SEARCH MODAL: backdrop tap-to-close hint for iPad --- */
-    #modalSearch {
+    /* --- MODALS: backdrop tap-to-close & overscroll containment for iPad --- */
+    #modalSearch,
+    #modalQuestionGrid,
+    #modalConfirm,
+    #modalDonate {
       cursor: default;
+    }
+    #searchResultsContainer,
+    #paletteGridButtons,
+    #headerOverflowDropdown {
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* --- SAFE AREA INSETS: iPad with home bar (iPad Pro) --- */
@@ -1481,55 +1506,55 @@
 
   <!-- APP HEADER -->
   <header class="sticky top-0 z-40 border-b border-cockpit-border glass-panel transition-colors duration-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
       
       <!-- Logo & Subject Selector -->
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-500 flex items-center justify-center shadow-glow-cyan text-white cursor-pointer" onclick="app.goHome()">
+      <div class="flex items-center space-x-2 sm:space-x-3 min-w-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-500 flex items-center justify-center shadow-glow-cyan text-white cursor-pointer shrink-0" onclick="app.goHome()">
           <i data-lucide="plane" class="w-5 h-5"></i>
         </div>
-        <div>
-          <div class="flex items-center space-x-2">
-            <span id="headerSubjectCode" class="font-mono font-bold text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-300">SUBJECT 081</span>
+        <div class="min-w-0">
+          <div class="flex items-center space-x-1.5 sm:space-x-2">
+            <span id="headerSubjectCode" class="font-mono font-bold text-xs sm:text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-300 shrink-0">SUBJECT 081</span>
             <!-- Header Subject Dropdown -->
-            <div class="relative inline-block">
-              <select id="headerSubjectSelect" onchange="app.handleSubjectChange(this.value)" class="text-[11px] font-mono font-bold bg-cockpit-850 hover:bg-cockpit-800 text-cyan-300 border border-cockpit-border rounded-lg pl-2 pr-6 py-1 focus:outline-none focus:ring-1 focus:ring-cyan-500 cursor-pointer appearance-none transition" title="สลับรายวิชา (Select Subject)">
+            <div class="relative inline-block min-w-0">
+              <select id="headerSubjectSelect" onchange="app.handleSubjectChange(this.value)" class="text-[11px] font-mono font-bold bg-cockpit-850 hover:bg-cockpit-800 text-cyan-300 border border-cockpit-border rounded-lg pl-2 pr-6 py-1 focus:outline-none focus:ring-1 focus:ring-cyan-500 cursor-pointer appearance-none transition max-w-[125px] xs:max-w-[160px] sm:max-w-[200px] md:max-w-[280px] lg:max-w-none truncate" title="สลับรายวิชา (Select Subject)">
               </select>
               <i data-lucide="chevron-down" class="w-3 h-3 text-cyan-400 absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
             </div>
           </div>
-          <p class="text-xs text-slate-400 font-medium hidden sm:block">CAAT / EASA MCQ Training Platform</p>
+          <p class="text-xs text-slate-400 font-medium hidden sm:block truncate">CAAT / EASA MCQ Training Platform</p>
         </div>
       </div>
 
       <!-- Right Controls: Search, Theme Toggle, Font Size, Coffee Button, Overflow Menu -->
-      <div class="flex items-center space-x-1.5 sm:space-x-2">
+      <div class="flex items-center space-x-1 sm:space-x-1.5 md:space-x-2 shrink-0">
         <!-- Search Button in Header -->
-        <button onclick="app.openSearchModal()" aria-label="Search Questions" class="px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm group" title="Search Questions (Ctrl + K)">
+        <button onclick="app.openSearchModal()" aria-label="Search Questions" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm group" title="Search Questions (Ctrl + K)">
           <i data-lucide="search" class="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
-          <span class="font-sans font-medium text-slate-200 hidden xs:inline">Search</span>
-          <span class="hidden sm:inline-block px-1.5 py-0.2 rounded bg-cockpit-900 border border-cockpit-border text-[10px] text-slate-400 font-mono">Ctrl+K</span>
+          <span class="font-sans font-medium text-slate-200 hidden md:inline">Search</span>
+          <span class="hidden lg:inline-block px-1.5 py-0.2 rounded bg-cockpit-900 border border-cockpit-border text-[10px] text-slate-400 font-mono">Ctrl+K</span>
         </button>
 
         <!-- Light / Dark Theme Toggle Button -->
-        <button id="themeToggleBtn" onclick="app.toggleTheme()" aria-label="Toggle Light or Dark Mode" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-amber-400 border border-cockpit-border transition text-xs flex items-center justify-center" title="Toggle Light / Dark Mode">
+        <button id="themeToggleBtn" onclick="app.toggleTheme()" aria-label="Toggle Light or Dark Mode" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-amber-400 border border-cockpit-border transition text-xs flex items-center justify-center shrink-0" title="Toggle Light / Dark Mode">
           <i id="themeIcon" data-lucide="sun" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
         </button>
 
         <!-- Font Size Cycle Button -->
-        <button id="fontSizeHeaderBtn" onclick="app.cycleFontSize()" aria-label="Adjust Font Size" class="px-2.5 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1.5 shadow-sm active:scale-95" title="ปรับขนาดตัวอักษร (คลิกเพื่อเปลี่ยนขนาด: 90% / 100% / 115% / 130%)">
+        <button id="fontSizeHeaderBtn" onclick="app.cycleFontSize()" aria-label="Adjust Font Size" class="px-2 sm:px-2.5 py-1.5 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-cyan-400 border border-cockpit-border transition text-xs font-mono flex items-center space-x-1 sm:space-x-1.5 shadow-sm active:scale-95 shrink-0" title="ปรับขนาดตัวอักษร (คลิกเพื่อเปลี่ยนขนาด: 90% / 100% / 115% / 130%)">
           <i data-lucide="type" class="w-3.5 h-3.5 text-cyan-400" aria-hidden="true"></i>
           <span id="fontSizeHeaderBadge" class="text-[11px] font-bold text-cyan-300">100%</span>
         </button>
 
         <!-- Coffee / Donate Button in Header (Opens Coffee Modal) -->
-        <button onclick="app.openDonationModal()" aria-label="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/40 hover:border-amber-400 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm active:scale-95 group" title="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน ☕✈️">
+        <button onclick="app.openDonationModal()" aria-label="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน" class="px-2 sm:px-2.5 md:px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/40 hover:border-amber-400 transition text-xs font-semibold flex items-center space-x-1.5 shadow-sm active:scale-95 group shrink-0" title="เลี้ยงกาแฟ & ช่วยค่าสอบแก้ Air Law กัปตัน ☕✈️">
           <span class="text-sm group-hover:rotate-12 transition-transform" aria-hidden="true">☕</span>
-          <span class="hidden sm:inline font-sans font-medium text-amber-200">เลี้ยงกาแฟ</span>
+          <span class="hidden md:inline font-sans font-medium text-amber-200">เลี้ยงกาแฟ</span>
         </button>
 
         <!-- Overflow Menu (...) for Sound, Mistakes, Bookmarks, Donate -->
-        <div class="relative" id="headerOverflowMenuWrap">
+        <div class="relative shrink-0" id="headerOverflowMenuWrap">
           <button id="headerOverflowBtn" onclick="app.toggleHeaderMenu()" aria-label="More Options" aria-haspopup="true" aria-expanded="false" class="p-2 rounded-lg bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 hover:text-white border border-cockpit-border transition text-xs flex items-center justify-center relative" title="More Options">
             <i data-lucide="more-horizontal" class="w-4 h-4" aria-hidden="true"></i>
             <span id="headerMenuDot" class="w-2 h-2 rounded-full bg-rose-500 absolute -top-0.5 -right-0.5 hidden" aria-hidden="true"></span>
@@ -2267,7 +2292,7 @@
   <!-- ============================================================ -->
   <!-- SEARCH MODAL / QUESTION BANK EXPLORER -->
   <!-- ============================================================ -->
-  <div id="modalSearch" class="fixed inset-0 z-50 bg-cockpit-950/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4">
+  <div id="modalSearch" onclick="if (event.target === this) app.closeSearchModal()" class="fixed inset-0 z-50 bg-cockpit-950/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4">
     <div class="glass-panel max-w-4xl w-full h-[90vh] rounded-2xl border border-cockpit-border p-4 sm:p-6 flex flex-col space-y-4 shadow-2xl overflow-hidden animate-fadeIn">
       
       <!-- Modal Header -->
@@ -2368,7 +2393,7 @@
   </div>
 
   <!-- QUESTION PALETTE / GRID MODAL -->
-  <div id="modalQuestionGrid" class="fixed inset-0 z-50 bg-cockpit-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div id="modalQuestionGrid" onclick="if (event.target === this) app.toggleGridDrawer(false)" class="fixed inset-0 z-50 bg-cockpit-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="glass-panel max-w-2xl w-full max-h-[85vh] rounded-2xl border border-cockpit-border p-6 flex flex-col space-y-4 shadow-2xl">
       <div class="flex items-center justify-between border-b border-cockpit-border pb-3">
         <h3 class="text-base font-bold text-white flex items-center space-x-2">
@@ -2414,7 +2439,7 @@
   </div>
 
   <!-- GENERIC CONFIRMATION MODAL -->
-  <div id="modalConfirm" class="fixed inset-0 z-50 bg-cockpit-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div id="modalConfirm" onclick="if (event.target === this) app.closeConfirmModal(false)" class="fixed inset-0 z-50 bg-cockpit-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="glass-panel max-w-md w-full rounded-2xl border border-cockpit-border p-6 space-y-4 shadow-2xl">
       <div class="flex items-center space-x-3 text-cyan-400">
         <i id="confirmModalIcon" data-lucide="alert-triangle" class="w-6 h-6 text-amber-400"></i>
@@ -3554,8 +3579,8 @@ const app = {
           '<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-500/20 border border-rose-500/40 text-rose-300" title="เคยตอบผิดในบทนี้ ' + mistakesInTopic + ' ข้อ">' +
             'ผิด ' + mistakesInTopic + ' ข้อ' +
           '</span>' +
-          '<button type="button" onclick="event.preventDefault(); event.stopPropagation(); app.practiceTopicMistakes(\'' + t.code + '\')" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-600 hover:bg-rose-500 text-white shadow-sm transition active:scale-95 flex items-center space-x-1" title="ทำเฉพาะข้อที่เคยตอบผิดในบท ' + t.code + ' ทันที">' +
-            '<i data-lucide="rotate-ccw" class="w-2.5 h-2.5"></i>' +
+          '<button type="button" onclick="event.preventDefault(); event.stopPropagation(); app.practiceTopicMistakes(\'' + t.code + '\')" class="px-2.5 py-1 min-h-[28px] rounded-md text-[11px] font-mono font-bold bg-rose-600 hover:bg-rose-500 text-white shadow-sm transition active:scale-95 flex items-center space-x-1" title="ทำเฉพาะข้อที่เคยตอบผิดในบท ' + t.code + ' ทันที">' +
+            '<i data-lucide="rotate-ccw" class="w-3 h-3"></i>' +
             '<span>Retry</span>' +
           '</button>' +
         '</div>';

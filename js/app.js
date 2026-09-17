@@ -626,8 +626,8 @@ const app = {
           '<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-500/20 border border-rose-500/40 text-rose-300" title="เคยตอบผิดในบทนี้ ' + mistakesInTopic + ' ข้อ">' +
             'ผิด ' + mistakesInTopic + ' ข้อ' +
           '</span>' +
-          '<button type="button" onclick="event.preventDefault(); event.stopPropagation(); app.practiceTopicMistakes(\'' + t.code + '\')" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-600 hover:bg-rose-500 text-white shadow-sm transition active:scale-95 flex items-center space-x-1" title="ทำเฉพาะข้อที่เคยตอบผิดในบท ' + t.code + ' ทันที">' +
-            '<i data-lucide="rotate-ccw" class="w-2.5 h-2.5"></i>' +
+          '<button type="button" onclick="event.preventDefault(); event.stopPropagation(); app.practiceTopicMistakes(\'' + t.code + '\')" class="px-2.5 py-1 min-h-[28px] rounded-md text-[11px] font-mono font-bold bg-rose-600 hover:bg-rose-500 text-white shadow-sm transition active:scale-95 flex items-center space-x-1" title="ทำเฉพาะข้อที่เคยตอบผิดในบท ' + t.code + ' ทันที">' +
+            '<i data-lucide="rotate-ccw" class="w-3 h-3"></i>' +
             '<span>Retry</span>' +
           '</button>' +
         '</div>';
