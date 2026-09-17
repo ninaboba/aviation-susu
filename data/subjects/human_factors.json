@@ -3152,16 +3152,16 @@
       "It is likely to be too fast",
       "It is likely to be too slow"
     ],
-    "answer": 1,
-    "explanation": "ภาพลวงตา Downslope Runway: เมื่อมองรันเวย์ที่ลาดเทลง รันเวย์จะดูแบนราบและสั้นกว่าปกติ คล้ายกับมุมมองเวลาที่เราบินต่ำ ทำให้นักบินประเมินผิดว่าเครื่องบินอยู่ต่ำ และตอบสนองด้วยการบินในแนวร่อนที่ต่ำกว่าปกติ (Too low approach) ซึ่งเสี่ยงต่อการร่อนตกรันเวย์ (Undershoot)",
-    "correct": "It is likely to be too low",
+    "answer": 0,
+    "explanation": "ภาพลวงตา Downslope Runway: เมื่อมองรันเวย์ที่ลาดเทลง รันเวย์จะดูสั้นและแคบลง คล้ายกับมุมมองเวลาที่เราบินต่ำ ทำให้นักบินประเมินผิดว่าเครื่องบินอยู่ต่ำกว่าปกติ จึงชดเชยด้วยการดึงหัวหรือยกแนวร่อนขึ้น ส่งผลให้การบินเข้าใกล้จริงสูงกว่าปกติ (Too high approach) ซึ่งเสี่ยงต่อการร่อนเลยจุดสัมผัสพื้น (Overshoot)",
+    "correct": "It is likely to be too high",
     "topic": "040 09",
     "topicName": "Cognition in Aviation — Visual Illusions & Perception",
     "LO": "040 02 02 06 (03–05)",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
     "verb": "Explain",
-    "explanation_quick": "ทางวิ่งลาดลง (Downslope runway) จะหลอกตาว่าเครื่องบินอยู่ 'ต่ำกว่าความเป็นจริง' นักบินจึงมีแนวโน้มบินเข้า Approach 'ต่ำเกินไป' (Too low / Undershoot risk)"
+    "explanation_quick": "ทางวิ่งลาดลง (Downslope runway) จะหลอกตาว่าเครื่องบิน 'ต่ำเกินไป' นักบินจึงแก้มุมร่อนให้สูงขึ้น ทำให้บินเข้า Approach จริง 'สูงเกินไป' (Too high / Overshoot risk)"
   },
   {
     "id": 160,
@@ -3172,16 +3172,16 @@
       "It is likely to be too fast",
       "It is likely to be too slow"
     ],
-    "answer": 0,
-    "explanation": "ภาพลวงตา Upslope Runway: ปลายรันเวย์ที่ยกตัวสูงขึ้นทำให้เห็นรันเวย์ตั้งชันกว่าปกติ คล้ายกับมุมมองเวลาที่เราบินสูงเกินไป นักบินจึงมักเข้า Approach สูงกว่าปกติ (Too high) จนอาจร่อนลงเลยจุดแตะพื้น (Overshoot / Long landing)",
-    "correct": "It is likely to be too high",
+    "answer": 1,
+    "explanation": "ภาพลวงตา Upslope Runway: ปลายรันเวย์ที่ยกตัวสูงขึ้นทำให้เห็นรันเวย์ตั้งชันกว่าปกติ หลอกตานักบินว่าเครื่องบินอยู่สูงเกินไป นักบินจึงตอบสนองด้วยการกดหัวลงเพื่อลดระดับ ทำให้แนวร่อนจริงต่ำกว่าปกติ (Too low approach) ซึ่งเสี่ยงต่อการร่อนตกก่อนถึงรันเวย์ (Undershoot)",
+    "correct": "It is likely to be too low",
     "topic": "040 09",
     "topicName": "Cognition in Aviation — Visual Illusions & Perception",
     "LO": "040 02 02 06 (03–05)",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
     "verb": "Explain",
-    "explanation_quick": "ทางวิ่งลาดขึ้น (Upslope runway) จะหลอกตาว่าเครื่องบินอยู่ 'สูงกว่าความเป็นจริง' นักบินจึงมีแนวโน้มบินเข้า Approach 'สูงเกินไป' (Too high / Overshoot risk)"
+    "explanation_quick": "ทางวิ่งลาดขึ้น (Upslope runway) หลอกตาว่าเครื่องบินอยู่ 'สูงเกินไป' นักบินจึงกดหัวลง ส่งผลให้แนวร่อนจริง 'ต่ำเกินไป' (Too low / Undershoot risk)"
   },
   {
     "id": 161,
@@ -4846,16 +4846,16 @@
       "The three point altimeter",
       "The four point altimeter"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "Altimeter Misreading: เครื่องวัดความสูงรุ่นเก่าที่มีเข็มสั้น เข็มยาว และเข็มบางชี้พันฟุต หมื่นฟุต มักทำให้นักบินสับสนและอ่านค่าผิดไป 10,000 ฟุต นำไปสู่อุบัติเหตุ CFIT ปัจจุบันจึงเปลี่ยนเป็นแบบ Drum-pointer หรือแถบความสูงดิจิทัลบน PFD",
-    "correct": "The four point altimeter",
+    "correct": "The three point altimeter",
     "topic": "040 13",
     "topicName": "Man & Machine",
     "LO": "040 03 02 04 (05–07)",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
     "verb": "Explain",
-    "explanation_quick": "เครื่องวัดระบบ Pitot-static ที่มีโอกาสอ่านค่าผิดพลาดบ่อยที่สุดคือ 'เครื่องวัดความสูงแบบ 3-4 เข็ม' (Three/Four point altimeter)"
+    "explanation_quick": "เครื่องวัดระบบ Pitot-static ที่มีโอกาสอ่านค่าผิดพลาดบ่อยที่สุดคือ 'เครื่องวัดความสูงแบบ 3-4 เข็ม' (Three point altimeter)"
   },
   {
     "id": 245,
