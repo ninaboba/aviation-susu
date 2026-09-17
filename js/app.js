@@ -84,6 +84,7 @@ const app = {
   mistakesOnly: false,
   bookmarksOnly: false,
   isRetrySession: false,
+  minMistakes: 1,
 
   sessionQuestions: [],
   currentIndex: 0,
@@ -552,7 +553,13 @@ const app = {
 
   updateHeaderStats() {
     const unattemptedCount = this.questions ? this.questions.filter(q => !this.attempted.has(q.id)).length : 0;
+    const minN = Math.max(1, parseInt(this.minMistakes, 10) || 1);
     const mistakeCount = this.mistakes ? this.mistakes.size : 0;
+    const filteredMistakeCount = this.questions ? this.questions.filter(q => {
+      const cnt = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
+      const effectiveCount = Math.max(cnt, this.mistakes.has(q.id) ? 1 : 0);
+      return effectiveCount >= minN;
+    }).length : 0;
     const bookmarkCount = this.bookmarks ? this.bookmarks.size : 0;
 
     const elPanelUnattempted = document.getElementById('panelUnattemptedCount');
@@ -561,7 +568,7 @@ const app = {
     const elHeaderMistakes = document.getElementById('headerMistakeCount');
     if (elHeaderMistakes) elHeaderMistakes.textContent = mistakeCount;
     const elPanelMistakes = document.getElementById('panelMistakeCount');
-    if (elPanelMistakes) elPanelMistakes.textContent = mistakeCount;
+    if (elPanelMistakes) elPanelMistakes.textContent = this.mistakesOnly ? filteredMistakeCount : mistakeCount;
 
     const elHeaderBookmarks = document.getElementById('headerBookmarkCount');
     if (elHeaderBookmarks) elHeaderBookmarks.textContent = bookmarkCount;
@@ -681,6 +688,8 @@ const app = {
     this.mistakesOnly = true;
     const mistakesToggle = document.getElementById('toggleMistakesOnly');
     if (mistakesToggle) mistakesToggle.checked = true;
+    const minContainer = document.getElementById('minMistakesContainer');
+    if (minContainer) minContainer.classList.remove('hidden');
 
     this.renderTopicGrid();
     this.updateFilterCounts();
@@ -742,6 +751,44 @@ const app = {
       const unattemptedEl = document.getElementById('toggleUnattemptedOnly');
       if (unattemptedEl) unattemptedEl.checked = false;
     }
+    const minContainer = document.getElementById('minMistakesContainer');
+    if (minContainer) {
+      if (this.mistakesOnly) {
+        minContainer.classList.remove('hidden');
+      } else {
+        minContainer.classList.add('hidden');
+      }
+    }
+    this.updateHeaderStats();
+    this.updateFilterCounts();
+  },
+
+  setMinMistakes(n) {
+    n = Math.max(1, parseInt(n, 10) || 1);
+    this.minMistakes = n;
+
+    [1, 2, 3, 5].forEach(val => {
+      const btn = document.getElementById('btnMistakeThreshold' + val);
+      if (btn) {
+        if (val === n) {
+          btn.className = 'flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-bold border border-rose-500 bg-rose-500/20 text-rose-300 shadow-glow-rose transition';
+        } else {
+          btn.className = 'flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-semibold border border-cockpit-border bg-cockpit-800 text-slate-400 hover:text-white transition';
+        }
+      }
+    });
+
+    const input = document.getElementById('inputMinMistakes');
+    if (input && parseInt(input.value, 10) !== n) {
+      input.value = n;
+    }
+
+    const label = document.getElementById('minMistakesLabel');
+    if (label) {
+      label.textContent = '≥ ' + n + ' ครั้ง';
+    }
+
+    this.updateHeaderStats();
     this.updateFilterCounts();
   },
 
@@ -756,7 +803,12 @@ const app = {
       list = list.filter(q => !this.attempted.has(q.id));
     }
     if (this.mistakesOnly) {
-      list = list.filter(q => this.mistakes.has(q.id));
+      const minN = Math.max(1, parseInt(this.minMistakes, 10) || 1);
+      list = list.filter(q => {
+        const cnt = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
+        const effectiveCount = Math.max(cnt, this.mistakes.has(q.id) ? 1 : 0);
+        return effectiveCount >= minN;
+      });
     }
     if (this.bookmarksOnly) {
       list = list.filter(q => this.bookmarks.has(q.id));

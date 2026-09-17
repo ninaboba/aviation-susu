@@ -401,6 +401,26 @@
       background-color: #f59e0b !important;
     }
 
+    /* Min Mistakes Threshold Controls */
+    html:not(.dark) #minMistakesContainer button {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #334155 !important;
+    }
+    html:not(.dark) #minMistakesContainer button[class*="border-rose-500"] {
+      background-color: #ffe4e6 !important;
+      border-color: #f43f5e !important;
+      color: #e11d48 !important;
+    }
+    html:not(.dark) #minMistakesContainer input {
+      color: #0f172a !important;
+    }
+    html:not(.dark) #minMistakesLabel {
+      background-color: #ffe4e6 !important;
+      border-color: #fca5a5 !important;
+      color: #be123c !important;
+    }
+
     /* Question Badges in Exam Screen */
     html:not(.dark) #questionPromptText {
       color: #0f172a !important;
@@ -1130,16 +1150,40 @@
               </label>
             </div>
 
-            <!-- Retry Mistakes Only Toggle -->
-            <div class="p-3.5 rounded-xl border border-cockpit-border bg-cockpit-850/50 flex items-center justify-between">
-              <div>
-                <span class="text-xs font-semibold text-white block">Retry Mistakes Only</span>
-                <span class="text-[11px] text-slate-400">ทำเฉพาะข้อที่เคยตอบผิด (<span id="panelMistakeCount" class="text-rose-400 font-bold">0</span> ข้อ)</span>
+            <!-- Retry Mistakes Only Toggle & Min Threshold -->
+            <div class="p-3.5 rounded-xl border border-cockpit-border bg-cockpit-850/50 space-y-2.5 transition">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold text-white block">Retry Mistakes Only</span>
+                  <span class="text-[11px] text-slate-400">ทำเฉพาะข้อที่เคยตอบผิด (<span id="panelMistakeCount" class="text-rose-400 font-bold">0</span> ข้อ)</span>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="toggleMistakesOnly" onchange="app.toggleMistakesOnly()" class="sr-only peer">
+                  <div class="w-9 h-5 bg-cockpit-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-rose-500"></div>
+                </label>
               </div>
-              <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" id="toggleMistakesOnly" onchange="app.toggleMistakesOnly()" class="sr-only peer">
-                <div class="w-9 h-5 bg-cockpit-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-rose-500"></div>
-              </label>
+
+              <!-- Min Mistakes Threshold Selector (ตั้งแต่ n ครั้ง) -->
+              <div id="minMistakesContainer" class="hidden pt-2.5 border-t border-cockpit-border/60 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-medium text-slate-300 flex items-center space-x-1">
+                    <i data-lucide="filter" class="w-3 h-3 text-rose-400"></i>
+                    <span>เคยตอบผิดตั้งแต่:</span>
+                  </span>
+                  <span id="minMistakesLabel" class="text-xs font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded border border-rose-800/60">≥ 1 ครั้ง</span>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <button type="button" onclick="app.setMinMistakes(1)" id="btnMistakeThreshold1" class="flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-bold border border-rose-500 bg-rose-500/20 text-rose-300 shadow-glow-rose transition">≥1x</button>
+                  <button type="button" onclick="app.setMinMistakes(2)" id="btnMistakeThreshold2" class="flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-semibold border border-cockpit-border bg-cockpit-800 text-slate-400 hover:text-white transition">≥2x</button>
+                  <button type="button" onclick="app.setMinMistakes(3)" id="btnMistakeThreshold3" class="flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-semibold border border-cockpit-border bg-cockpit-800 text-slate-400 hover:text-white transition">≥3x</button>
+                  <button type="button" onclick="app.setMinMistakes(5)" id="btnMistakeThreshold5" class="flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-semibold border border-cockpit-border bg-cockpit-800 text-slate-400 hover:text-white transition">≥5x</button>
+                  <div class="flex items-center space-x-1 border border-cockpit-border rounded-lg bg-cockpit-800 px-2 py-0.5 shrink-0">
+                    <span class="text-[10px] text-slate-400 font-mono">≥</span>
+                    <input type="number" id="inputMinMistakes" min="1" max="99" value="1" oninput="app.setMinMistakes(this.value)" class="w-7 bg-transparent text-center text-[11px] font-mono font-bold text-white focus:outline-none" title="ระบุจำนวนครั้งที่เคยตอบผิดขั้นต่ำ">
+                    <span class="text-[10px] text-slate-400 font-mono">x</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Bookmarked Only Toggle -->
@@ -2321,6 +2365,7 @@ const app = {
   mistakesOnly: false,
   bookmarksOnly: false,
   isRetrySession: false,
+  minMistakes: 1,
 
   sessionQuestions: [],
   currentIndex: 0,
@@ -2789,7 +2834,13 @@ const app = {
 
   updateHeaderStats() {
     const unattemptedCount = this.questions ? this.questions.filter(q => !this.attempted.has(q.id)).length : 0;
+    const minN = Math.max(1, parseInt(this.minMistakes, 10) || 1);
     const mistakeCount = this.mistakes ? this.mistakes.size : 0;
+    const filteredMistakeCount = this.questions ? this.questions.filter(q => {
+      const cnt = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
+      const effectiveCount = Math.max(cnt, this.mistakes.has(q.id) ? 1 : 0);
+      return effectiveCount >= minN;
+    }).length : 0;
     const bookmarkCount = this.bookmarks ? this.bookmarks.size : 0;
 
     const elPanelUnattempted = document.getElementById('panelUnattemptedCount');
@@ -2798,7 +2849,7 @@ const app = {
     const elHeaderMistakes = document.getElementById('headerMistakeCount');
     if (elHeaderMistakes) elHeaderMistakes.textContent = mistakeCount;
     const elPanelMistakes = document.getElementById('panelMistakeCount');
-    if (elPanelMistakes) elPanelMistakes.textContent = mistakeCount;
+    if (elPanelMistakes) elPanelMistakes.textContent = this.mistakesOnly ? filteredMistakeCount : mistakeCount;
 
     const elHeaderBookmarks = document.getElementById('headerBookmarkCount');
     if (elHeaderBookmarks) elHeaderBookmarks.textContent = bookmarkCount;
@@ -2918,6 +2969,8 @@ const app = {
     this.mistakesOnly = true;
     const mistakesToggle = document.getElementById('toggleMistakesOnly');
     if (mistakesToggle) mistakesToggle.checked = true;
+    const minContainer = document.getElementById('minMistakesContainer');
+    if (minContainer) minContainer.classList.remove('hidden');
 
     this.renderTopicGrid();
     this.updateFilterCounts();
@@ -2979,6 +3032,44 @@ const app = {
       const unattemptedEl = document.getElementById('toggleUnattemptedOnly');
       if (unattemptedEl) unattemptedEl.checked = false;
     }
+    const minContainer = document.getElementById('minMistakesContainer');
+    if (minContainer) {
+      if (this.mistakesOnly) {
+        minContainer.classList.remove('hidden');
+      } else {
+        minContainer.classList.add('hidden');
+      }
+    }
+    this.updateHeaderStats();
+    this.updateFilterCounts();
+  },
+
+  setMinMistakes(n) {
+    n = Math.max(1, parseInt(n, 10) || 1);
+    this.minMistakes = n;
+
+    [1, 2, 3, 5].forEach(val => {
+      const btn = document.getElementById('btnMistakeThreshold' + val);
+      if (btn) {
+        if (val === n) {
+          btn.className = 'flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-bold border border-rose-500 bg-rose-500/20 text-rose-300 shadow-glow-rose transition';
+        } else {
+          btn.className = 'flex-1 min-w-[42px] py-1 rounded-lg text-[11px] font-mono font-semibold border border-cockpit-border bg-cockpit-800 text-slate-400 hover:text-white transition';
+        }
+      }
+    });
+
+    const input = document.getElementById('inputMinMistakes');
+    if (input && parseInt(input.value, 10) !== n) {
+      input.value = n;
+    }
+
+    const label = document.getElementById('minMistakesLabel');
+    if (label) {
+      label.textContent = '≥ ' + n + ' ครั้ง';
+    }
+
+    this.updateHeaderStats();
     this.updateFilterCounts();
   },
 
@@ -2993,7 +3084,12 @@ const app = {
       list = list.filter(q => !this.attempted.has(q.id));
     }
     if (this.mistakesOnly) {
-      list = list.filter(q => this.mistakes.has(q.id));
+      const minN = Math.max(1, parseInt(this.minMistakes, 10) || 1);
+      list = list.filter(q => {
+        const cnt = QuizStorage.getMistakeCount(this.currentSubjectId, q.id);
+        const effectiveCount = Math.max(cnt, this.mistakes.has(q.id) ? 1 : 0);
+        return effectiveCount >= minN;
+      });
     }
     if (this.bookmarksOnly) {
       list = list.filter(q => this.bookmarks.has(q.id));

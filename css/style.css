@@ -322,6 +322,26 @@
       background-color: #f59e0b !important;
     }
 
+    /* Min Mistakes Threshold Controls */
+    html:not(.dark) #minMistakesContainer button {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #334155 !important;
+    }
+    html:not(.dark) #minMistakesContainer button[class*="border-rose-500"] {
+      background-color: #ffe4e6 !important;
+      border-color: #f43f5e !important;
+      color: #e11d48 !important;
+    }
+    html:not(.dark) #minMistakesContainer input {
+      color: #0f172a !important;
+    }
+    html:not(.dark) #minMistakesLabel {
+      background-color: #ffe4e6 !important;
+      border-color: #fca5a5 !important;
+      color: #be123c !important;
+    }
+
     /* Question Badges in Exam Screen */
     html:not(.dark) #questionPromptText {
       color: #0f172a !important;
