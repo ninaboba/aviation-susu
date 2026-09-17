@@ -624,16 +624,16 @@
       "An early onset of hypoxia due to an apparent increase in altitude up to a maximum of 40,000 ft",
       "An early onset of hypoxia due to an apparent increase in altitude with a resulting risk of anaemia"
     ],
-    "answer": 1,
-    "explanation": "บุหรี่กับระดับความสูงเสมือน (Physiological Altitude): ผู้สูบบุหรี่เป็นประจำจะมีระดับ Carboxyhaemoglobin ในเลือดสูงถึง 5-10% ทำให้ความสามารถในการนำพาออกซิเจนลดลง นักบินที่สูบบุหรี่เมื่อบินที่ระดับน้ำทะเล ร่างกายจะมีระดับออกซิเจนเทียบเท่ากับคนที่อยู่บนความสูง 4,000–5,000 ฟุตอยู่แล้ว",
-    "correct": "An early onset of hypoxia due to an apparent increase in altitude",
+    "answer": 0,
+    "explanation": "ผลกระทบของการสูบบุหรี่ในการบิน:\n1. ภาวะขาดออกซิเจนเร็วขึ้น (Early Onset of Hypoxia): ก๊าซคาร์บอนมอนอกไซด์ (CO) ในควันบุหรี่จับกับฮีโมโกลบินเกิดเป็น Carboxyhaemoglobin (HbCO 5–10%) ลดความสามารถในการนำพา O₂ ทำให้ระดับความสูงทางสรีรวิทยา (Physiological Altitude) สูงขึ้น 4,000–5,000 ฟุต แม้อยู่ที่ระดับน้ำทะเล\n2. การมองเห็นในเวลากลางคืนเสื่อมลง (Degradation of Night Vision): เซลล์รับแสง Rods ในเรตินาต้องการออกซิเจนสูงมาก การขาดออกซิเจนจากการสูบบุหรี่ทำให้ประสิทธิภาพ Night Vision / Dark Adaptation ลดลงอย่างมีนัยสำคัญ",
+    "correct": "An early onset of hypoxia due to an apparent increase in altitude and a degradation of night vision",
     "topic": "040 02",
     "topicName": "Circulatory System",
     "LO": "040 02 03 04 (01–11)",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
     "verb": "Explain",
-    "explanation_quick": "ผลของการสูบบุหรี่ในการบิน: ทำให้เกิดภาวะขาดออกซิเจน (Hypoxia) เร็วกว่าปกติ เสมือนบินอยู่ที่ระดับความสูงที่สูงกว่าความเป็นจริง 4,000–5,000 ฟุต"
+    "explanation_quick": "ผลของการสูบบุหรี่ในการบิน: ทำให้เกิด Hypoxia เร็วขึ้น (ความสูงเสมือนเพิ่มขึ้น 4,000–5,000 ฟุต) และทำให้การมองเห็นในเวลากลางคืน (Night Vision) ลดลง"
   },
   {
     "id": 33,
