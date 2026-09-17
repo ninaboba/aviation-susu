@@ -1059,12 +1059,18 @@ const app = {
         }
       }
 
-      return '<div onclick="app.selectOptionByIndex(' + idx + ')" class="' + cardClass + '">' +
+      return '<div role="radio" ' +
+        'aria-checked="' + (isSelected ? 'true' : 'false') + '" ' +
+        'aria-label="ตัวเลือก ' + letter + ': ' + opt.replace(/"/g, '&quot;') + (isRevealed ? (isCorrect ? ' — ถูกต้อง' : (isSelected ? ' — ผิด' : '')) : '') + '" ' +
+        'tabindex="' + (isSelected || idx === 0 ? '0' : '-1') + '" ' +
+        'onclick="app.selectOptionByIndex(' + idx + ')" ' +
+        'onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();app.selectOptionByIndex(' + idx + ');}" ' +
+        'class="' + cardClass + '">' +
         '<div class="' + badgeClass + '">' + letter + '</div>' +
         '<div class="flex-grow pt-0.5 leading-relaxed">' + opt + '</div>' +
         (isRevealed ? (
-          isCorrect ? '<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0"></i>' :
-          (isSelected ? '<i data-lucide="x-circle" class="w-5 h-5 text-rose-400 shrink-0"></i>' : '')
+          isCorrect ? '<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0" aria-hidden="true"></i>' :
+          (isSelected ? '<i data-lucide="x-circle" class="w-5 h-5 text-rose-400 shrink-0" aria-hidden="true"></i>' : '')
         ) : '') +
       '</div>';
     }).join('');

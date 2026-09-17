@@ -603,7 +603,7 @@
         </div>
 
         <!-- Multiple Choice Options (A, B, C, D) -->
-        <div id="optionsContainer" class="space-y-3 pt-2">
+        <div id="optionsContainer" role="radiogroup" aria-labelledby="questionPromptText" class="space-y-3 pt-2">
           <!-- Rendered dynamically -->
         </div>
 
@@ -755,59 +755,7 @@
 
       </div>
 
-      <!-- ============================================================ -->
-      <!-- DONATION CARD: MAYDAY AIR LAW & COFFEE FUND -->
-      <!-- ============================================================ -->
-      <div id="donationCard" class="glass-panel p-5 sm:p-7 rounded-2xl border border-amber-500/40 relative overflow-hidden bg-gradient-to-br from-cockpit-900 via-cockpit-850 to-amber-950/25 shadow-lg">
-        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
-          
-          <!-- Left / Text Info -->
-          <div class="flex-1 text-center md:text-left space-y-3">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/35 text-amber-400 text-xs font-mono font-bold tracking-wide">
-              <span class="animate-pulse">🚨</span>
-              <span>MAYDAY MAYDAY! กัปตันต้องการความช่วยเหลือฉุกเฉิน</span>
-            </div>
 
-            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight flex flex-wrap items-center justify-center md:justify-start gap-2">
-              <span>กองทุนต่อชีวิตกัปตัน: ช่วยค่าสอบแก้ Air Law</span>
-              <span class="text-lg">✈️☕</span>
-            </h3>
-
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
-              คนทำเว็บก็ยังไม่ได้สอบ POF แถม <strong class="text-amber-300">Air Law ก็ส่อแววได้ไปบินรอบสอง... 💀</strong><br class="hidden sm:inline">
-              หากเว็บฝึกข้อสอบนี้มีประโยชน์กับคุณ ร่วมสมทบทุนค่าลงทะเบียนสอบซ่อม Air Law (หรือค่ากาแฟแก้ง่วงตอนนั่งอ่าน Annex) ให้ผู้พัฒนาได้นะค้าบ เพื่อไม่ให้กัปตันโดน Ground ถาวร 🥺
-            </p>
-
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-1 text-xs">
-              <div class="bg-cockpit-900/90 border border-cockpit-border px-3.5 py-2 rounded-xl flex items-center gap-2 font-mono shadow-inner">
-                <span class="text-slate-400 text-xs">พร้อมเพย์:</span>
-                <span class="text-cyan-400 font-bold text-sm tracking-wider select-all">082-574-3651</span>
-              </div>
-              <button type="button" onclick="app.copyPromptPay('0825743651')" id="btnCopyPromptPay" class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold font-mono transition flex items-center gap-1.5 shadow-glow-cyan active:scale-95">
-                <i data-lucide="copy" class="w-4 h-4"></i>
-                <span id="btnCopyPromptPayText">คัดลอกเบอร์พร้อมเพย์</span>
-              </button>
-            </div>
-
-            <p class="text-[11px] text-slate-400 italic">
-              *ไม่สะดวกเปย์ไม่เป็นไรเลยครับ แค่คุณสอบผ่านกัปตันก็ดีใจแล้ว! (แต่ถ้าเลี้ยงกาแฟจะแฮปปี้มาก 😆)
-            </p>
-          </div>
-
-          <!-- Right / QR Box (Strict Relative Path) -->
-          <div class="shrink-0 flex flex-col items-center">
-            <div class="p-2.5 bg-white rounded-2xl shadow-2xl border-2 border-amber-400/70 transition transform hover:scale-105">
-              <img src="./donate_qr.jpg" alt="PromptPay QR Code 0825743651" class="w-36 h-36 sm:w-44 sm:h-44 object-contain rounded-xl block">
-            </div>
-            <span class="text-[10px] font-mono text-amber-300/90 mt-2 flex items-center gap-1">
-              <i data-lucide="scan-line" class="w-3 h-3"></i>
-              <span>Scan via Mobile Banking</span>
-            </span>
-          </div>
-
-        </div>
-      </div>
 
       <!-- TOPIC BREAKDOWN ACCURACY -->
       <div class="glass-panel p-6 rounded-2xl border border-cockpit-border space-y-4">
@@ -856,6 +804,60 @@
         <!-- Bottom Pagination Controls -->
         <div id="reviewPaginationBottom" class="hidden pt-4 border-t border-cockpit-border/60">
           <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- DONATION CARD: MAYDAY AIR LAW & COFFEE FUND (moved to bottom) -->
+      <!-- ============================================================ -->
+      <div id="donationCard" class="glass-panel p-5 sm:p-7 rounded-2xl border border-amber-500/40 relative overflow-hidden bg-gradient-to-br from-cockpit-900 via-cockpit-850 to-amber-950/25 shadow-lg">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+          
+          <!-- Left / Text Info -->
+          <div class="flex-1 text-center md:text-left space-y-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/35 text-amber-400 text-xs font-mono font-bold tracking-wide">
+              <span class="animate-pulse" aria-hidden="true">🚨</span>
+              <span>MAYDAY MAYDAY! กัปตันต้องการความช่วยเหลือฉุกเฉิน</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <span>กองทุนต่อชีวิตกัปตัน: ช่วยค่าสอบแก้ Air Law</span>
+              <span class="text-lg" aria-hidden="true">✈️☕</span>
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
+              คนทำเว็บก็ยังไม่ได้สอบ POF แถม <strong class="text-amber-300">Air Law ก็ส่อแววได้ไปบินรอบสอง... 💀</strong><br class="hidden sm:inline">
+              หากเว็บฝึกข้อสอบนี้มีประโยชน์กับคุณ ร่วมสมทบทุนค่าลงทะเบียนสอบซ่อม Air Law (หรือค่ากาแฟแก้ง่วงตอนนั่งอ่าน Annex) ให้ผู้พัฒนาได้นะค้าบ เพื่อไม่ให้กัปตันโดน Ground ถาวร 🥺
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-1 text-xs">
+              <div class="bg-cockpit-900/90 border border-cockpit-border px-3.5 py-2 rounded-xl flex items-center gap-2 font-mono shadow-inner">
+                <span class="text-slate-400 text-xs">พร้อมเพย์:</span>
+                <span class="text-cyan-400 font-bold text-sm tracking-wider select-all">082-574-3651</span>
+              </div>
+              <button type="button" onclick="app.copyPromptPay('0825743651')" id="btnCopyPromptPay" aria-label="คัดลอกเบอร์พร้อมเพย์ 082-574-3651" class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold font-mono transition flex items-center gap-1.5 shadow-glow-cyan active:scale-95">
+                <i data-lucide="copy" class="w-4 h-4" aria-hidden="true"></i>
+                <span id="btnCopyPromptPayText">คัดลอกเบอร์พร้อมเพย์</span>
+              </button>
+            </div>
+
+            <p class="text-[11px] text-slate-400 italic">
+              *ไม่สะดวกเปย์ไม่เป็นไรเลยครับ แค่คุณสอบผ่านกัปตันก็ดีใจแล้ว! (แต่ถ้าเลี้ยงกาแฟจะแฮปปี้มาก 😆)
+            </p>
+          </div>
+
+          <!-- Right / QR Box (Strict Relative Path) -->
+          <div class="shrink-0 flex flex-col items-center">
+            <div class="p-2.5 bg-white rounded-2xl shadow-2xl border-2 border-amber-400/70 transition transform hover:scale-105">
+              <img src="./donate_qr.jpg" alt="PromptPay QR Code สำหรับโอนเงินสนับสนุน 082-574-3651" class="w-36 h-36 sm:w-44 sm:h-44 object-contain rounded-xl block">
+            </div>
+            <span class="text-[10px] font-mono text-amber-300/90 mt-2 flex items-center gap-1">
+              <i data-lucide="scan-line" class="w-3 h-3" aria-hidden="true"></i>
+              <span>Scan via Mobile Banking</span>
+            </span>
+          </div>
+
         </div>
       </div>
 
