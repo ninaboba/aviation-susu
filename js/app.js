@@ -83,6 +83,7 @@ const app = {
   unattemptedOnly: false,
   mistakesOnly: false,
   bookmarksOnly: false,
+  isRetrySession: false,
 
   sessionQuestions: [],
   currentIndex: 0,
@@ -317,6 +318,7 @@ const app = {
     const payload = {
       subjectId: this.currentSubject.id,
       mode: this.mode,
+      isRetrySession: this.isRetrySession,
       currentIndex: this.currentIndex,
       userAnswers: this.userAnswers,
       revealedInStudy: this.revealedInStudy,
@@ -360,6 +362,7 @@ const app = {
     if (!session || !session.sessionQuestions) return;
 
     this.mode = session.mode || 'exam';
+    this.isRetrySession = session.isRetrySession || false;
     this.sessionQuestions = session.sessionQuestions;
     this.currentIndex = session.currentIndex || 0;
     this.userAnswers = session.userAnswers || {};
@@ -691,7 +694,7 @@ const app = {
       return;
     }
     this.setMode('study');
-    this.startPracticeSession(mistakeQuestions);
+    this.startPracticeSession(mistakeQuestions, true);
   },
 
   setMode(mode) {
@@ -835,8 +838,9 @@ const app = {
   /* ============================================================ */
   /* QUIZ EXECUTION ENGINE                                        */
   /* ============================================================ */
-  startPracticeSession(customQuestionList = null) {
+  startPracticeSession(customQuestionList = null, isRetry = false) {
     sound.click();
+    this.isRetrySession = Boolean(isRetry || this.mistakesOnly || (customQuestionList && customQuestionList === this.sessionMistakesList));
     let candidatePool = customQuestionList || this.getFilteredCandidateQuestions();
     if (candidatePool.length === 0) {
       alert('ไม่พบข้อสอบที่ตรงกับเงื่อนไขที่เลือก กรุณาปรับตัวกรองใหม่');
@@ -1091,10 +1095,13 @@ const app = {
     }
 
     if (this.mode === 'study') {
+      const isFirstAttemptOnThisQuestion = !this.revealedInStudy[this.currentIndex];
       this.revealedInStudy[this.currentIndex] = true;
       if (optionText === currentQ.correct) {
         sound.correct();
-        QuizStorage.recordQuestionAttempt(this.currentSubjectId, currentQ.id, true);
+        if (isFirstAttemptOnThisQuestion && !this.isRetrySession) {
+          QuizStorage.recordQuestionAttempt(this.currentSubjectId, currentQ.id, true);
+        }
         if (this.mistakes.has(currentQ.id)) {
           this.mistakes.delete(currentQ.id);
           this.saveUserData();
@@ -1103,7 +1110,9 @@ const app = {
         }
       } else {
         sound.incorrect();
-        QuizStorage.recordQuestionAttempt(this.currentSubjectId, currentQ.id, false);
+        if (isFirstAttemptOnThisQuestion && !this.isRetrySession) {
+          QuizStorage.recordQuestionAttempt(this.currentSubjectId, currentQ.id, false);
+        }
         this.mistakes.add(currentQ.id);
         this.saveUserData();
       }
@@ -1121,11 +1130,22 @@ const app = {
       return;
     }
     const q = this.sessionQuestions[this.currentIndex];
+    const isFirstAttemptOnThisQuestion = !this.revealedInStudy[this.currentIndex];
     this.revealedInStudy[this.currentIndex] = true;
     if (this.userAnswers[this.currentIndex] === q.correct) {
       sound.correct();
+      if (isFirstAttemptOnThisQuestion && !this.isRetrySession) {
+        QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, true);
+      }
+      if (this.mistakes.has(q.id)) {
+        this.mistakes.delete(q.id);
+        this.saveUserData();
+      }
     } else {
       sound.incorrect();
+      if (isFirstAttemptOnThisQuestion && !this.isRetrySession) {
+        QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+      }
       this.mistakes.add(q.id);
       this.saveUserData();
     }
@@ -1281,20 +1301,26 @@ const app = {
         t.unanswered++;
         this.mistakes.add(q.id);
         sessionMistakesList.push(q);
-        QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+        if (this.mode === 'exam' && !this.isRetrySession) {
+          QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+        }
       } else {
         this.attempted.add(q.id);
         if (userAns === q.correct) {
           correctCount++;
           t.correct++;
           if (this.mistakes.has(q.id)) this.mistakes.delete(q.id);
-          QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, true);
+          if (this.mode === 'exam' && !this.isRetrySession) {
+            QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, true);
+          }
         } else {
           incorrectCount++;
           t.incorrect++;
           this.mistakes.add(q.id);
           sessionMistakesList.push(q);
-          QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+          if (this.mode === 'exam' && !this.isRetrySession) {
+            QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+          }
         }
       }
     });
@@ -1663,16 +1689,17 @@ const app = {
       alert('ไม่มีข้อที่ตอบผิดในรอบนี้');
       return;
     }
-    this.startPracticeSession(this.sessionMistakesList);
+    this.startPracticeSession(this.sessionMistakesList, true);
   },
 
   retakeCurrentConfig() {
-    this.startPracticeSession();
+    this.startPracticeSession(null, this.isRetrySession);
   },
 
   goHome() {
     sound.click();
     this.stopTimer();
+    this.isRetrySession = false;
     document.getElementById('viewExam').classList.add('hidden');
     document.getElementById('viewSummary').classList.add('hidden');
     document.getElementById('viewSetup').classList.remove('hidden');
@@ -1692,7 +1719,7 @@ const app = {
     this.mistakesOnly = true;
     document.getElementById('toggleMistakesOnly').checked = true;
     this.updateFilterCounts();
-    this.startPracticeSession();
+    this.startPracticeSession(null, true);
   },
 
   openBookmarksManager() {
