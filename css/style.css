@@ -78,6 +78,22 @@
       animation: fadeIn 0.25s ease-out forwards;
     }
 
+    /* Slide in animations for question navigation / swipe */
+    @keyframes slideInFromRight {
+      from { opacity: 0.35; transform: translateX(28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInFromLeft {
+      from { opacity: 0.35; transform: translateX(-28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-slide-left {
+      animation: slideInFromRight 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-slide-right {
+      animation: slideInFromLeft 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
     /* ============================================================ */
     /* THEME SYSTEM: DARK MODE STYLES */
     /* ============================================================ */
@@ -595,21 +611,34 @@
       color: #ffffff !important;
     }
 
-    /* Question Palette Buttons */
-    html:not(.dark) #paletteGridButtons button {
+    /* Question Palette Buttons (Modal & Sidebar) */
+    html:not(.dark) #paletteGridButtons button,
+    html:not(.dark) #sidebarPaletteButtons button {
       border-color: #cbd5e1 !important;
     }
-    html:not(.dark) #paletteGridButtons .bg-emerald-500 {
+    html:not(.dark) #paletteGridButtons .bg-emerald-500,
+    html:not(.dark) #sidebarPaletteButtons .bg-emerald-500,
+    html:not(.dark) #paletteGridButtons .bg-emerald-600,
+    html:not(.dark) #sidebarPaletteButtons .bg-emerald-600 {
       background-color: #10b981 !important;
       color: #ffffff !important;
     }
-    html:not(.dark) #paletteGridButtons .bg-amber-500 {
+    html:not(.dark) #paletteGridButtons .bg-amber-500,
+    html:not(.dark) #sidebarPaletteButtons .bg-amber-500 {
       background-color: #f59e0b !important;
       color: #ffffff !important;
     }
-    html:not(.dark) #paletteGridButtons .bg-cockpit-800 {
+    html:not(.dark) #paletteGridButtons .bg-cockpit-850,
+    html:not(.dark) #sidebarPaletteButtons .bg-cockpit-850,
+    html:not(.dark) #paletteGridButtons .bg-cockpit-800,
+    html:not(.dark) #sidebarPaletteButtons .bg-cockpit-800 {
       background-color: #f1f5f9 !important;
       color: #475569 !important;
+    }
+    html:not(.dark) #examSidebar {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06) !important;
     }
 
     /* Summary & Review Screen */
@@ -1402,6 +1431,7 @@
     }
     #searchResultsContainer,
     #paletteGridButtons,
+    #sidebarPaletteButtons,
     #headerOverflowDropdown {
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;

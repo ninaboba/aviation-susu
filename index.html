@@ -569,122 +569,186 @@
 
       </div>
 
-      <!-- QUESTION CARD -->
-      <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-cockpit-border relative space-y-6">
-        
-        <!-- Metadata Badges -->
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-cockpit-border/60">
-          <div class="flex flex-wrap items-center gap-2">
-            <span id="badgeQuestionId" class="px-2.5 py-1 rounded-md bg-cockpit-850 border border-cockpit-border text-slate-300 text-xs font-mono font-semibold">Bank ID: #1</span>
-            <span id="badgeLO" class="px-2.5 py-1 rounded-md bg-blue-950/60 border border-blue-800/60 text-blue-300 text-xs font-mono font-medium">LO: 081 01 01 01</span>
-            <span id="badgeDifficulty" class="px-2.5 py-1 rounded-md bg-emerald-950/60 border border-emerald-800/60 text-emerald-300 text-xs font-mono font-medium">Easy</span>
-            <span id="badgeCognitive" class="px-2.5 py-1 rounded-md bg-purple-950/60 border border-purple-800/60 text-purple-300 text-xs font-mono font-medium">KNOW</span>
-            <!-- Mistake History Counter Badge -->
-            <span id="badgeMistakeCount" class="hidden px-2.5 py-1 rounded-md bg-rose-950/80 border border-rose-500/60 text-rose-300 text-xs font-mono font-bold flex items-center space-x-1.5 shadow-sm" title="จำนวนครั้งที่เคยตอบข้อนี้ผิดในเครื่องนี้">
-              <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-              <span id="badgeMistakeCountText">เคยตอบผิด 1 ครั้ง</span>
-            </span>
-          </div>
+      <!-- MAIN EXAM LAYOUT: 2-COLUMN ON IPAD LANDSCAPE & DESKTOP (lg:), 1-COLUMN ON MOBILE/PORTRAIT -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-          <div class="flex items-center space-x-2">
-            <!-- Answer Status Pill in Study Mode -->
-            <div id="studyAnswerStatusPill" class="hidden text-xs font-mono px-3 py-0.5 rounded-full font-bold"></div>
+        <!-- LEFT COLUMN: QUESTION CARD & EXPLANATION -->
+        <div class="lg:col-span-8 space-y-6 min-w-0">
+          <div id="questionCardContainer" class="glass-panel p-6 sm:p-8 rounded-2xl border border-cockpit-border relative space-y-6">
+            
+            <!-- Metadata Badges -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-cockpit-border/60">
+              <div class="flex flex-wrap items-center gap-2">
+                <span id="badgeQuestionId" class="px-2.5 py-1 rounded-md bg-cockpit-850 border border-cockpit-border text-slate-300 text-xs font-mono font-semibold">Bank ID: #1</span>
+                <span id="badgeLO" class="px-2.5 py-1 rounded-md bg-blue-950/60 border border-blue-800/60 text-blue-300 text-xs font-mono font-medium">LO: 081 01 01 01</span>
+                <span id="badgeDifficulty" class="px-2.5 py-1 rounded-md bg-emerald-950/60 border border-emerald-800/60 text-emerald-300 text-xs font-mono font-medium">Easy</span>
+                <span id="badgeCognitive" class="px-2.5 py-1 rounded-md bg-purple-950/60 border border-purple-800/60 text-purple-300 text-xs font-mono font-medium">KNOW</span>
+                <!-- Mistake History Counter Badge -->
+                <span id="badgeMistakeCount" class="hidden px-2.5 py-1 rounded-md bg-rose-950/80 border border-rose-500/60 text-rose-300 text-xs font-mono font-bold flex items-center space-x-1.5 shadow-sm" title="จำนวนครั้งที่เคยตอบข้อนี้ผิดในเครื่องนี้">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span id="badgeMistakeCountText">เคยตอบผิด 1 ครั้ง</span>
+                </span>
+              </div>
 
-            <!-- In-card Quick Font Size Controller -->
-            <div class="flex items-center space-x-1 bg-cockpit-900 border border-cockpit-border rounded-lg p-0.5 text-xs font-mono" title="ปรับขนาดตัวอักษรของโจทย์และคำตอบ">
-              <button type="button" onclick="app.adjustFontSizeStep(-1)" class="w-6 h-6 rounded flex items-center justify-center hover:bg-cockpit-800 text-slate-400 hover:text-white transition font-bold" title="ลดขนาดตัวอักษร (A-)">A-</button>
-              <span id="fontSizeExamIndicator" class="px-1 text-[10px] text-cyan-400 font-bold select-none min-w-[32px] text-center">100%</span>
-              <button type="button" onclick="app.adjustFontSizeStep(1)" class="w-6 h-6 rounded flex items-center justify-center hover:bg-cockpit-800 text-slate-400 hover:text-white transition font-bold" title="เพิ่มขนาดตัวอักษร (A+)">A+</button>
+              <div class="flex items-center space-x-2">
+                <!-- Answer Status Pill in Study Mode -->
+                <div id="studyAnswerStatusPill" class="hidden text-xs font-mono px-3 py-0.5 rounded-full font-bold"></div>
+
+                <!-- In-card Quick Font Size Controller -->
+                <div class="flex items-center space-x-1 bg-cockpit-900 border border-cockpit-border rounded-lg p-0.5 text-xs font-mono" title="ปรับขนาดตัวอักษรของโจทย์และคำตอบ">
+                  <button type="button" onclick="app.adjustFontSizeStep(-1)" class="w-6 h-6 rounded flex items-center justify-center hover:bg-cockpit-800 text-slate-400 hover:text-white transition font-bold" title="ลดขนาดตัวอักษร (A-)">A-</button>
+                  <span id="fontSizeExamIndicator" class="px-1 text-[10px] text-cyan-400 font-bold select-none min-w-[32px] text-center">100%</span>
+                  <button type="button" onclick="app.adjustFontSizeStep(1)" class="w-6 h-6 rounded flex items-center justify-center hover:bg-cockpit-800 text-slate-400 hover:text-white transition font-bold" title="เพิ่มขนาดตัวอักษร (A+)">A+</button>
+                </div>
+              </div>
             </div>
+
+            <!-- Question Prompt Text -->
+            <div class="space-y-2">
+              <h2 id="questionPromptText" class="text-lg sm:text-xl md:text-2xl font-bold text-white leading-relaxed">
+                Question Prompt
+              </h2>
+            </div>
+
+            <!-- Multiple Choice Options (A, B, C, D) -->
+            <div id="optionsContainer" role="radiogroup" aria-labelledby="questionPromptText" class="space-y-3 pt-2">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Quick Next Button (Directly below options, revealed when answered) -->
+            <div class="flex justify-end pt-1">
+              <button id="btnNextQBottom" onclick="app.nextQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5 animate-fadeIn">
+                <span id="btnNextQBottomLabel">Next</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- EXPLANATION PANEL (Visible in Study Mode after answer check, or review) -->
+            <div id="explanationBox" class="hidden rounded-xl p-5 bg-cockpit-900 border border-cyan-500/40 space-y-3.5 animate-fadeIn">
+              <div class="flex items-center justify-between border-b border-cockpit-border/60 pb-2.5">
+                <div class="flex items-center space-x-2 text-cyan-400 font-bold text-sm">
+                  <i data-lucide="info" class="w-4 h-4"></i>
+                  <span>EXPLANATION & CAAT PRINCIPLE</span>
+                </div>
+                <span id="expBadgeTag" class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">HIGH-YIELD</span>
+              </div>
+
+              <!-- QUICK TAKE / SHORT SUMMARY FOR RAPID READING -->
+              <div id="explanationQuickBox" class="p-3 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-xs text-cyan-100 flex items-start space-x-2.5 shadow-sm">
+                <div class="p-1 rounded bg-cyan-500/20 text-cyan-400 shrink-0 mt-0.5">
+                  <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-cyan-300 text-[11px] font-mono tracking-wider mb-0.5">QUICK TAKE / สรุปสั้นจำเร็ว:</div>
+                  <p id="explanationQuickText" class="leading-relaxed font-sans text-slate-100">Quick summary</p>
+                </div>
+              </div>
+
+              <!-- DETAILED EXPLANATION -->
+              <div class="space-y-1.5">
+                <div class="text-[11px] font-mono font-semibold text-slate-400 flex items-center space-x-1.5">
+                  <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>DETAILED BREAKDOWN / คำอธิบายละเอียด:</span>
+                </div>
+                <p id="explanationText" class="text-sm text-slate-200 leading-relaxed font-sans whitespace-pre-line">
+                  Explanation text
+                </p>
+              </div>
+
+              <div class="pt-2 border-t border-cockpit-border/60 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
+                <div><span class="text-slate-500">Learning Objective:</span> <span id="expLODisplay" class="text-cyan-300">-</span></div>
+                <div><span class="text-slate-500">Cognitive Demand:</span> <span id="expCognitiveDisplay" class="text-slate-300">-</span></div>
+                <div><span class="text-slate-500">Action Verb:</span> <span id="expVerbDisplay" class="text-slate-300">-</span></div>
+              </div>
+            </div>
+
+            <!-- BOTTOM NAV CONTROLS -->
+            <div class="pt-4 border-t border-cockpit-border/60 flex flex-wrap items-center justify-between gap-3">
+              <!-- Keyboard shortcut guide helper -->
+              <div class="hidden sm:flex items-center space-x-3 text-xs text-slate-400 font-mono">
+                <span>Keys: <kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">1-4</kbd> / <kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">A-D</kbd> Select</span>
+                <span><kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">Space</kbd> Check</span>
+                <span><kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">Enter</kbd> Next</span>
+              </div>
+
+              <div class="flex items-center space-x-2 ml-auto">
+                <button id="btnPrevQ" onclick="app.prevQuestion()" class="px-4 py-2 rounded-xl bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-200 text-xs font-semibold transition flex items-center space-x-1.5">
+                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                  <span>Prev</span>
+                </button>
+
+                <!-- In Study mode: Check Answer / Next Question Button -->
+                <button id="btnCheckStudy" onclick="app.checkCurrentStudyAnswer()" class="px-5 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                  <span>Check Answer</span>
+                </button>
+
+                <button id="btnNextQ" onclick="app.nextQuestion()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5">
+                  <span>Next</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- Question Prompt Text -->
-        <div class="space-y-2">
-          <h2 id="questionPromptText" class="text-lg sm:text-xl md:text-2xl font-bold text-white leading-relaxed">
-            Question Prompt
-          </h2>
-        </div>
-
-        <!-- Multiple Choice Options (A, B, C, D) -->
-        <div id="optionsContainer" role="radiogroup" aria-labelledby="questionPromptText" class="space-y-3 pt-2">
-          <!-- Rendered dynamically -->
-        </div>
-
-        <!-- Quick Next Button (Directly below options, revealed when answered) -->
-        <div class="flex justify-end pt-1">
-          <button id="btnNextQBottom" onclick="app.nextQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5 animate-fadeIn">
-            <span id="btnNextQBottomLabel">Next</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-
-        <!-- EXPLANATION PANEL (Visible in Study Mode after answer check, or review) -->
-        <div id="explanationBox" class="hidden rounded-xl p-5 bg-cockpit-900 border border-cyan-500/40 space-y-3.5 animate-fadeIn">
-          <div class="flex items-center justify-between border-b border-cockpit-border/60 pb-2.5">
-            <div class="flex items-center space-x-2 text-cyan-400 font-bold text-sm">
-              <i data-lucide="info" class="w-4 h-4"></i>
-              <span>EXPLANATION & CAAT PRINCIPLE</span>
+        <!-- RIGHT COLUMN: COCKPIT FLIGHT NAVIGATOR SIDEBAR (PERSISTENT ON lg:) -->
+        <aside id="examSidebar" class="hidden lg:flex flex-col lg:col-span-4 sticky top-20 glass-panel p-5 rounded-2xl border border-cockpit-border space-y-4 shadow-xl">
+          
+          <!-- Sidebar Header -->
+          <div class="flex items-center justify-between border-b border-cockpit-border/70 pb-3">
+            <div class="flex items-center space-x-2 text-white font-bold text-sm">
+              <i data-lucide="compass" class="w-4 h-4 text-cyan-400"></i>
+              <span>Flight Navigator</span>
             </div>
-            <span id="expBadgeTag" class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">HIGH-YIELD</span>
+            <span id="sidebarProgressCount" class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">1 / 20</span>
           </div>
 
-          <!-- QUICK TAKE / SHORT SUMMARY FOR RAPID READING -->
-          <div id="explanationQuickBox" class="p-3 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-xs text-cyan-100 flex items-start space-x-2.5 shadow-sm">
-            <div class="p-1 rounded bg-cyan-500/20 text-cyan-400 shrink-0 mt-0.5">
-              <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+          <!-- Mini Legend -->
+          <div class="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300 bg-cockpit-900/60 p-2.5 rounded-xl border border-cockpit-border">
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded bg-emerald-500 shrink-0"></span>
+              <span>Answered</span>
             </div>
-            <div>
-              <div class="font-bold text-cyan-300 text-[11px] font-mono tracking-wider mb-0.5">QUICK TAKE / สรุปสั้นจำเร็ว:</div>
-              <p id="explanationQuickText" class="leading-relaxed font-sans text-slate-100">Quick summary</p>
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded bg-cockpit-800 border border-cockpit-border shrink-0"></span>
+              <span>Unanswered</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded bg-amber-500 shrink-0"></span>
+              <span>Flagged</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded border-2 border-cyan-400 shrink-0"></span>
+              <span>Current</span>
             </div>
           </div>
 
-          <!-- DETAILED EXPLANATION -->
+          <!-- Question Grid Numbers (Live Sync) -->
           <div class="space-y-1.5">
-            <div class="text-[11px] font-mono font-semibold text-slate-400 flex items-center space-x-1.5">
-              <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
-              <span>DETAILED BREAKDOWN / คำอธิบายละเอียด:</span>
+            <div class="flex justify-between text-[11px] font-mono text-slate-400 px-0.5">
+              <span>Question Palette</span>
+              <span class="text-cyan-400 text-[10px]">Tap to jump</span>
             </div>
-            <p id="explanationText" class="text-sm text-slate-200 leading-relaxed font-sans whitespace-pre-line">
-              Explanation text
-            </p>
+            <div id="sidebarPaletteButtons" class="grid grid-cols-5 gap-2 overflow-y-auto max-h-[46vh] pr-1 py-1">
+              <!-- Rendered dynamically by JS -->
+            </div>
           </div>
 
-          <div class="pt-2 border-t border-cockpit-border/60 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
-            <div><span class="text-slate-500">Learning Objective:</span> <span id="expLODisplay" class="text-cyan-300">-</span></div>
-            <div><span class="text-slate-500">Cognitive Demand:</span> <span id="expCognitiveDisplay" class="text-slate-300">-</span></div>
-            <div><span class="text-slate-500">Action Verb:</span> <span id="expVerbDisplay" class="text-slate-300">-</span></div>
-          </div>
-        </div>
-
-        <!-- BOTTOM NAV CONTROLS -->
-        <div class="pt-4 border-t border-cockpit-border/60 flex flex-wrap items-center justify-between gap-3">
-          <!-- Keyboard shortcut guide helper -->
-          <div class="hidden sm:flex items-center space-x-3 text-xs text-slate-400 font-mono">
-            <span>Keys: <kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">1-4</kbd> / <kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">A-D</kbd> Select</span>
-            <span><kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">Space</kbd> Check</span>
-            <span><kbd class="px-1.5 py-0.5 rounded bg-cockpit-850 border border-cockpit-border text-slate-300">Enter</kbd> Next</span>
-          </div>
-
-          <div class="flex items-center space-x-2 ml-auto">
-            <button id="btnPrevQ" onclick="app.prevQuestion()" class="px-4 py-2 rounded-xl bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-slate-200 text-xs font-semibold transition flex items-center space-x-1.5">
-              <i data-lucide="chevron-left" class="w-4 h-4"></i>
-              <span>Prev</span>
+          <!-- Sidebar Quick Action Buttons -->
+          <div class="pt-2 border-t border-cockpit-border/70 flex items-center gap-2">
+            <button onclick="app.toggleBookmarkCurrent()" class="flex-1 py-2 px-3 rounded-xl bg-cockpit-850 hover:bg-cockpit-800 border border-cockpit-border text-xs font-semibold text-slate-300 hover:text-amber-400 transition flex items-center justify-center space-x-1.5" title="Flag this question">
+              <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>Flag Q</span>
             </button>
-
-            <!-- In Study mode: Check Answer / Next Question Button -->
-            <button id="btnCheckStudy" onclick="app.checkCurrentStudyAnswer()" class="px-5 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5">
-              <i data-lucide="eye" class="w-4 h-4"></i>
-              <span>Check Answer</span>
-            </button>
-
-            <button id="btnNextQ" onclick="app.nextQuestion()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs shadow-glow-cyan transition flex items-center space-x-1.5">
-              <span>Next</span>
-              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            <button onclick="app.confirmFinishExam()" class="flex-1 py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center justify-center space-x-1.5 shadow-sm" title="Submit Exam">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              <span>Submit</span>
             </button>
           </div>
-        </div>
+
+        </aside>
 
       </div>
 

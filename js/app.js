@@ -139,6 +139,7 @@ const app = {
     this.initTheme();
     this.initFontSize();
     this.setupKeyboardShortcuts();
+    this.setupSwipeGestures();
     this.updateSoundIcon();
 
     await this.loadSubjects();
@@ -1134,6 +1135,7 @@ const app = {
       }
     }
 
+    this.renderPaletteGrid();
     lucide.createIcons();
   },
 
@@ -1211,10 +1213,24 @@ const app = {
     this.autoSaveSession();
   },
 
+  triggerSlideAnimation(direction) {
+    const card = document.getElementById('questionCardContainer');
+    if (!card) return;
+    card.classList.remove('animate-slide-left', 'animate-slide-right');
+    // Force DOM reflow so CSS animation can re-play
+    void card.offsetWidth;
+    if (direction === 'left') {
+      card.classList.add('animate-slide-left');
+    } else if (direction === 'right') {
+      card.classList.add('animate-slide-right');
+    }
+  },
+
   nextQuestion() {
     sound.click();
     if (this.currentIndex < this.sessionQuestions.length - 1) {
       this.currentIndex++;
+      this.triggerSlideAnimation('left');
       this.renderCurrentQuestion();
       this.autoSaveSession();
     } else {
@@ -1226,6 +1242,7 @@ const app = {
     sound.click();
     if (this.currentIndex > 0) {
       this.currentIndex--;
+      this.triggerSlideAnimation('right');
       this.renderCurrentQuestion();
       this.autoSaveSession();
     }
@@ -1233,7 +1250,10 @@ const app = {
 
   jumpToQuestion(index) {
     sound.click();
+    if (index < 0 || index >= this.sessionQuestions.length) return;
+    const direction = index > this.currentIndex ? 'left' : (index < this.currentIndex ? 'right' : null);
     this.currentIndex = index;
+    if (direction) this.triggerSlideAnimation(direction);
     this.toggleGridDrawer(false);
     this.renderCurrentQuestion();
     this.autoSaveSession();
@@ -1264,15 +1284,24 @@ const app = {
   },
 
   renderPaletteGrid() {
-    const container = document.getElementById('paletteGridButtons');
-    container.innerHTML = this.sessionQuestions.map((q, idx) => {
+    const modalContainer = document.getElementById('paletteGridButtons');
+    const sidebarContainer = document.getElementById('sidebarPaletteButtons');
+    const sidebarCount = document.getElementById('sidebarProgressCount');
+
+    if (sidebarCount) {
+      sidebarCount.textContent = (this.currentIndex + 1) + ' / ' + this.sessionQuestions.length;
+    }
+
+    if (!modalContainer && !sidebarContainer) return;
+
+    const html = this.sessionQuestions.map((q, idx) => {
       const isAnswered = !!this.userAnswers[idx];
       const isFlagged = this.bookmarks.has(q.id);
       const isCurrent = idx === this.currentIndex;
 
       let btnClass = 'h-10 rounded-xl font-mono text-xs font-bold transition flex items-center justify-center relative ';
       if (isCurrent) {
-        btnClass += 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-cockpit-950 ';
+        btnClass += 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-cockpit-950 scale-105 shadow-glow-cyan ';
       }
       if (isFlagged) {
         btnClass += 'bg-amber-500 text-slate-950 ';
@@ -1282,11 +1311,14 @@ const app = {
         btnClass += 'bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 border border-cockpit-border ';
       }
 
-      return '<button onclick="app.jumpToQuestion(' + idx + ')" class="' + btnClass + '">' +
+      return '<button onclick="app.jumpToQuestion(' + idx + ')" class="' + btnClass + '" title="ข้อที่ ' + (idx + 1) + '">' +
         (idx + 1) +
         (isFlagged ? '<span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-white"></span>' : '') +
       '</button>';
     }).join('');
+
+    if (modalContainer) modalContainer.innerHTML = html;
+    if (sidebarContainer) sidebarContainer.innerHTML = html;
   },
 
   confirmExitExam() {
@@ -2355,6 +2387,53 @@ const app = {
         this.prevQuestion();
       }
     });
+  },
+
+  /* ============================================================ */
+  /* TOUCH SWIPE GESTURES FOR IPAD / MOBILE                        */
+  /* ============================================================ */
+  setupSwipeGestures() {
+    const card = document.getElementById('questionCardContainer');
+    if (!card) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    card.addEventListener('touchstart', (e) => {
+      // Only track single-finger touch
+      if (e.touches.length !== 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    }, { passive: true });
+
+    card.addEventListener('touchend', (e) => {
+      if (!touchStartX || !touchStartY) return;
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      const elapsedTime = Date.now() - touchStartTime;
+
+      touchStartX = 0;
+      touchStartY = 0;
+
+      // Must be a quick flick gesture within 600ms
+      if (elapsedTime > 600) return;
+
+      // Threshold: horizontal swipe >= 55px and horizontally dominant (dx > 1.5 * dy)
+      // This prevents triggering when user is simply scrolling vertically
+      if (Math.abs(deltaX) >= 55 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        if (deltaX < 0) {
+          // Swipe Left -> Next Question
+          this.nextQuestion();
+        } else {
+          // Swipe Right -> Previous Question
+          this.prevQuestion();
+        }
+      }
+    }, { passive: true });
   }
 };
 
