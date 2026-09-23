@@ -14,5 +14,13 @@
     "description": "271 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Human Factors, Deduplicated)",
     "file": "./data/subjects/human_factors.json",
     "questionCount": 271
+  },
+  {
+    "id": "air_law",
+    "code": "010",
+    "title": "Subject 010 - Air Law",
+    "description": "200 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Air Law & Operational Regulations)",
+    "file": "./data/subjects/air_law.json",
+    "questionCount": 200
   }
 ]
