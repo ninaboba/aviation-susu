@@ -128,8 +128,8 @@ const app = {
   searchPageSize: 10,
 
   // Application Version & Release Metadata
-  version: 'v2.3.2',
-  releaseDate: '17 Sep 2026, 01:25',
+  version: 'v2.4.0',
+  releaseDate: '28 Sep 2026, 16:45',
 
   get currentSubjectId() {
     return this.currentSubject ? this.currentSubject.id : (this.subjects[0] ? this.subjects[0].id : 'pof');

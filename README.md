@@ -1,4 +1,4 @@
-﻿# ✈️ Aviation MCQ Examination Training Platform
+# ✈️ Aviation MCQ Examination Training Platform
 
 > ชุดข้อสอบฝึกหัดสำหรับการสอบใบอนุญาตนักบิน CAAT TCAR PEL Part-FCL (Revision 2025)
 > รองรับหลายวิชา · ออฟไลน์ได้ · ไม่ต้องติดตั้ง · เปิดในเบราว์เซอร์เลย
@@ -242,4 +242,4 @@ GitHub Pages จะ deploy อัตโนมัติหลัง push ภา�
 
 ## App Version
 
-Current: **v2.3.2** — ดูได้ที่ `app.version` และ `app.releaseDate` ใน `js/app.js`
+Current: **v2.4.0** — ดูได้ที่ `app.version` และ `app.releaseDate` ใน `js/app.js`
