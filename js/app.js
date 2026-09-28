@@ -1888,6 +1888,201 @@ const app = {
       this.topicMetadata.map(t => `<option value="${t.code}">${t.code} ${t.name}</option>`).join('');
   },
 
+  /* ============================================================ */
+  /* Q-SEARCH: MOBILE QUICK ANSWER BOTTOM SHEET                   */
+  /* ============================================================ */
+  openQSearch() {
+    sound.click();
+    const modal = document.getElementById('modalQSearch');
+    const panel = document.getElementById('qsearchPanel');
+    if (!modal || !panel) return;
+
+    // Show modal backdrop
+    modal.classList.remove('hidden');
+    // Trigger slide-up animation on next frame
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        panel.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Focus input after animation starts
+    setTimeout(() => {
+      const input = document.getElementById('qsearchInput');
+      if (input) input.focus();
+    }, 120);
+
+    // Setup swipe-down-to-close gesture on panel
+    this._qsearchSetupSwipe(panel);
+    lucide.createIcons();
+  },
+
+  closeQSearch() {
+    const modal = document.getElementById('modalQSearch');
+    const panel = document.getElementById('qsearchPanel');
+    if (!modal || !panel) return;
+
+    panel.style.transform = 'translateY(100%)';
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      // Reset state
+      const input = document.getElementById('qsearchInput');
+      if (input) input.value = '';
+      const clearBtn = document.getElementById('qsearchClearBtn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      this._qsearchRenderEmpty();
+    }, 300);
+  },
+
+  _qsearchSetupSwipe(panel) {
+    if (panel._qsSwipeReady) return;
+    panel._qsSwipeReady = true;
+    let startY = 0;
+    let isDragging = false;
+    panel.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }, { passive: true });
+    panel.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const dy = e.touches[0].clientY - startY;
+      if (dy > 0) {
+        panel.style.transition = 'none';
+        panel.style.transform = `translateY(${dy}px)`;
+      }
+    }, { passive: true });
+    panel.addEventListener('touchend', (e) => {
+      isDragging = false;
+      panel.style.transition = 'transform 0.28s cubic-bezier(0.32,0.72,0,1)';
+      const dy = e.changedTouches[0].clientY - startY;
+      if (dy > 80) {
+        this.closeQSearch();
+      } else {
+        panel.style.transform = 'translateY(0)';
+      }
+    }, { passive: true });
+  },
+
+  _qsearchRenderEmpty() {
+    const container = document.getElementById('qsearchResults');
+    const countEl = document.getElementById('qsearchCount');
+    if (countEl) { countEl.textContent = ''; countEl.classList.add('hidden'); }
+    if (!container) return;
+    container.innerHTML = `
+      <div id="qsearchEmptyState" class="flex flex-col items-center justify-center py-8 text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center">
+          <i data-lucide="search" class="w-6 h-6 text-violet-400"></i>
+        </div>
+        <p class="text-sm font-semibold text-white">พิมพ์คำ เห็นคำตอบทันที</p>
+        <p class="text-xs text-slate-400">ค้นหาจากคำถาม, คำตอบ, explanation<br>เห็นเฉลยถูกต้องโดยไม่ต้องเปิด modal ใหม่</p>
+      </div>`;
+    lucide.createIcons();
+  },
+
+  handleQSearchInput(val) {
+    const clearBtn = document.getElementById('qsearchClearBtn');
+    if (clearBtn) {
+      if (val && val.length > 0) clearBtn.classList.remove('hidden');
+      else clearBtn.classList.add('hidden');
+    }
+    this._executeQSearch(val.trim());
+  },
+
+  clearQSearch() {
+    const input = document.getElementById('qsearchInput');
+    if (input) { input.value = ''; input.focus(); }
+    const clearBtn = document.getElementById('qsearchClearBtn');
+    if (clearBtn) clearBtn.classList.add('hidden');
+    this._qsearchRenderEmpty();
+  },
+
+  _executeQSearch(query) {
+    const container = document.getElementById('qsearchResults');
+    const countEl = document.getElementById('qsearchCount');
+    if (!container) return;
+
+    const q = query.toLowerCase();
+
+    if (q.length < 2) {
+      this._qsearchRenderEmpty();
+      return;
+    }
+
+    // Search across question, options, correct answer, explanation, LO
+    const results = this.questions.filter(item => {
+      const qText = (item.question || '').toLowerCase();
+      const correct = (item.correct || '').toLowerCase();
+      const exp = ((item.explanation_quick || '') + ' ' + (item.explanation || '')).toLowerCase();
+      const lo = (item.LO || '').toLowerCase();
+      const opts = (item.options || []).join(' ').toLowerCase();
+      const topic = (item.topicName || '').toLowerCase();
+      return qText.includes(q) || correct.includes(q) || exp.includes(q)
+          || lo.includes(q) || opts.includes(q) || topic.includes(q);
+    }).slice(0, 30);
+
+    // Update count badge
+    if (countEl) {
+      if (results.length > 0) {
+        countEl.textContent = `${results.length} ผล`;
+        countEl.classList.remove('hidden');
+      } else {
+        countEl.textContent = '';
+        countEl.classList.add('hidden');
+      }
+    }
+
+    if (results.length === 0) {
+      container.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-10 text-center space-y-2">
+          <div class="w-10 h-10 rounded-2xl bg-slate-800 flex items-center justify-center">
+            <i data-lucide="search-x" class="w-5 h-5 text-slate-500"></i>
+          </div>
+          <p class="text-sm text-slate-400">ไม่พบคำว่า "<span class="text-white font-bold">${this.escapeHtml(query)}</span>"</p>
+          <p class="text-xs text-slate-500">ลองใช้คำอื่น หรือพิมพ์ภาษาอังกฤษ</p>
+        </div>`;
+      lucide.createIcons();
+      return;
+    }
+
+    const highlight = (text, kw) => {
+      if (!text || !kw) return this.escapeHtml(text || '');
+      const escaped = this.escapeHtml(text);
+      const escapedKw = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return escaped.replace(new RegExp(escapedKw, 'gi'), m => `<mark class="bg-violet-500/30 text-violet-200 rounded px-0.5">${m}</mark>`);
+    };
+
+    const diffColor = { Easy: 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50', Medium: 'text-amber-400 bg-amber-950/50 border-amber-800/50', Hard: 'text-rose-400 bg-rose-950/50 border-rose-800/50' };
+
+    container.innerHTML = results.map((item, idx) => {
+      const diff = item.difficulty || 'Easy';
+      const diffCls = diffColor[diff] || diffColor.Easy;
+      const topicLabel = item.topicName ? `${item.topic} · ${item.topicName}` : (item.topic || '');
+      const qNum = item.id ? `#${item.id}` : `#${idx+1}`;
+
+      return `
+        <div class="rounded-xl border border-cockpit-border bg-cockpit-850/60 p-3 space-y-2 active:bg-cockpit-800/80 transition">
+          <!-- Top row: Q# + topic + difficulty -->
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <span class="text-[10px] font-mono text-slate-500">${qNum}</span>
+            <span class="text-[10px] font-mono text-slate-400 flex-1 truncate">${this.escapeHtml(topicLabel)}</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded border ${diffCls} shrink-0">${diff}</span>
+          </div>
+          <!-- Question text -->
+          <p class="text-xs text-slate-200 leading-relaxed">${highlight(item.question, query)}</p>
+          <!-- Correct Answer pill — always visible, prominent -->
+          <div class="flex items-start space-x-2 bg-emerald-950/40 border border-emerald-700/40 rounded-lg px-2.5 py-2">
+            <span class="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <p class="text-xs font-bold text-emerald-300 leading-snug">${highlight(item.correct, query)}</p>
+          </div>
+          ${item.explanation_quick ? `<p class="text-[11px] text-slate-400 italic leading-relaxed border-l-2 border-violet-500/40 pl-2">${highlight(item.explanation_quick, query)}</p>` : ''}
+        </div>`;
+    }).join('');
+
+    lucide.createIcons();
+  },
+
   openSearchModal(initialQuery = '') {
     sound.click();
     const modal = document.getElementById('modalSearch');
@@ -2343,6 +2538,9 @@ const app = {
       const isDonateOpen = donateModal && !donateModal.classList.contains('hidden');
 
       if (e.key === 'Escape') {
+        const qsModal = document.getElementById('modalQSearch');
+        const isQSearchOpen = qsModal && !qsModal.classList.contains('hidden');
+        if (isQSearchOpen) { this.closeQSearch(); return; }
         if (isSearchOpen) { this.closeSearchModal(); return; }
         if (isGridOpen) { gridModal.classList.add('hidden'); return; }
         if (isConfirmOpen) { confirmModal.classList.add('hidden'); return; }

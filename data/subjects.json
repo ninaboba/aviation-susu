@@ -22,5 +22,13 @@
     "description": "200 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Air Law & Operational Regulations)",
     "file": "./data/subjects/air_law.json",
     "questionCount": 200
+  },
+  {
+    "id": "meteorology",
+    "code": "050",
+    "title": "Subject 050 - Meteorology",
+    "description": "200 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Meteorology)",
+    "file": "./data/subjects/meteorology.json",
+    "questionCount": 200
   }
 ]

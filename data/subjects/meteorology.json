@@ -1,0 +1,4002 @@
+[
+  {
+    "id": 1,
+    "question": "Which atmospheric division is primarily based on the way temperature changes with height?",
+    "options": [
+      "Temperature profile",
+      "Atmospheric pressure only",
+      "Humidity only",
+      "Wind direction only"
+    ],
+    "answer": 0,
+    "explanation": "การแบ่งชั้นบรรยากาศ: การแบ่งชั้นบรรยากาศทางอุตุนิยมวิทยา (Troposphere, Stratosphere, Mesosphere, Thermosphere) มีเกณฑ์หลักในการแบ่งตาม 'ลักษณะการเปลี่ยนแปลงของอุณหภูมิตามความสูง' (Temperature profile/lapse rate) โดยในชั้น Troposphere อุณหภูมิจะลดลงตามความสูง, Stratosphere อุณหภูมิจะคงที่แล้วเพิ่มขึ้นตามความสูง, Mesosphere อุณหภูมิลดลง, และ Thermosphere อุณหภูมิเพิ่มขึ้น",
+    "correct": "Temperature profile",
+    "topic": "050 01",
+    "topicName": "Structure of atmosphere",
+    "LO": "050 01 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ชั้นบรรยากาศแบ่งออกเป็นชั้นต่างๆ ตามการเปลี่ยนแปลงของอุณหภูมิตามความสูง (Vertical temperature profile)"
+  },
+  {
+    "id": 2,
+    "question": "Which layer contains the majority of the weather phenomena relevant to routine flight operations?",
+    "options": [
+      "Stratosphere",
+      "Mesosphere",
+      "Thermosphere",
+      "Troposphere"
+    ],
+    "answer": 3,
+    "explanation": "ชั้นบรรยากาศกับปรากฏการณ์อากาศ: ชั้นโทรโพสเฟียร์ (Troposphere) เป็นชั้นบรรยากาศที่อยู่ติดผิวโลกและมีความหนาแน่นของอากาศมากที่สุด รวมถึงมีไอน้ำมากกว่า 99% ของบรรยากาศทั้งหมด ทำให้ปรากฏการณ์ทางอากาศเกือบทั้งหมดที่ส่งผลต่อการบิน เช่น เมฆ ฝน พายุฟ้าคะนอง และความปั่นป่วน เกิดขึ้นในชั้นนี้เป็นหลัก",
+    "correct": "Troposphere",
+    "topic": "050 01",
+    "topicName": "Structure of atmosphere",
+    "LO": "050 01 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ปรากฏการณ์ทางสภาพอากาศเกือบทั้งหมดในการบินเกิดขึ้นในชั้นโทรโพสเฟียร์ (Troposphere) เนื่องจากมีไอน้ำและมวลอากาศหนาแน่นที่สุด"
+  },
+  {
+    "id": 3,
+    "question": "What is the approximate average temperature lapse rate in the troposphere specified for examination use?",
+    "options": [
+      "0.2 °C per 100 m",
+      "1.8 °C per 100 m",
+      "0.65 °C per 100 m",
+      "1.0 °C per 100 m"
+    ],
+    "answer": 2,
+    "explanation": "อัตราการลดลงของอุณหภูมิตามความสูงเฉลี่ย: ตามมาตรฐาน ICAO Standard Atmosphere (ISA) อัตราการลดลงของอุณหภูมิตามความสูงโดยเฉลี่ยในชั้นโทรโพสเฟียร์กำหนดไว้ที่ 0.65°C ต่อ 100 เมตร (หรือเทียบเท่าประมาณ 1.98°C หรือ ~2°C ต่อ 1,000 ฟุต) จนกระทั่งถึงระดับ Tropopause ที่ความสูง 11,000 เมตร (36,090 ฟุต)",
+    "correct": "0.65 °C per 100 m",
+    "topic": "050 01",
+    "topicName": "Troposphere",
+    "LO": "050 01 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "อัตราลดลงของอุณหภูมิตามความสูงเฉลี่ยในชั้น Troposphere สำหรับการสอบคือ 0.65°C ต่อ 100 m (~2°C/1,000 ft)"
+  },
+  {
+    "id": 4,
+    "question": "How does the tropopause generally vary from the poles toward the equator?",
+    "options": [
+      "It exists only over oceans",
+      "It is higher and colder toward the equator",
+      "It is lower and warmer toward the equator",
+      "Its height is constant worldwide"
+    ],
+    "answer": 1,
+    "explanation": "ลักษณะของชั้นโทรโพพอส (Tropopause): แนวแบ่งระหว่างชั้น Troposphere และ Stratosphere เรียกว่า Tropopause มีลักษณะไม่สม่ำเสมอทั่วโลก บริเวณเส้นศูนย์สูตรจะได้รับพลังงานความร้อนจากดวงอาทิตย์มากและมีการพาความร้อนรุนแรง ทำให้ Tropopause อยู่ 'สูงกว่าและหนาวเย็นกว่า' (สูงประมาณ 16-18 km, อุณหภูมิต่ำถึง -75°C ถึง -80°C) ส่วนบริเวณขั้วโลกจะ 'ต่ำกว่าและอุ่นกว่า' (สูงประมาณ 8-10 km, อุณหภูมิประมาณ -45°C ถึง -50°C)",
+    "correct": "It is higher and colder toward the equator",
+    "topic": "050 01",
+    "topicName": "Tropopause",
+    "LO": "050 01 01 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Tropopause บริเวณศูนย์สูตรจะ 'สูงกว่าและเย็นกว่า' (Higher and colder) เมื่อเทียบกับบริเวณขั้วโลก"
+  },
+  {
+    "id": 5,
+    "question": "Why are breaks in the tropopause important to aviation meteorology?",
+    "options": [
+      "They are associated with boundaries between major air masses and strong upper-level gradients",
+      "They mark the position of all surface fronts",
+      "They indicate sea-breeze fronts only",
+      "They occur only above tropical cyclones"
+    ],
+    "answer": 0,
+    "explanation": "รอยแตกของโทรโพพอส (Tropopause Breaks): ความสูงของ Tropopause มีการเปลี่ยนแปลงแบบก้าวกระโดดระหว่างมวลอากาศเขตร้อนและมวลอากาศขั้วโลก เกิดเป็นรอยแตก (Breaks/Discontinuities) ซึ่งเป็นบริเวณที่มีความชันของอุณหภูมิและความกดอากาศในแนวระนาบสูงมาก ก่อให้เกิดกระแสลมกรด (Jet streams) และความปั่นป่วนในอากาศแจ่มใส (Clear Air Turbulence - CAT)",
+    "correct": "They are associated with boundaries between major air masses and strong upper-level gradients",
+    "topic": "050 01",
+    "topicName": "Tropopause",
+    "LO": "050 01 01 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "รอยต่อ/รอยแตกของ Tropopause สัมพันธ์กับแนวปะทะมวลอากาศหลักและการเกิดกระแสลมกรด (Jet Streams) รวมถึง CAT"
+  },
+  {
+    "id": 6,
+    "question": "Which statement best describes the approximate vertical extent of the stratosphere?",
+    "options": [
+      "It extends only to FL 180",
+      "It extends only to FL 250",
+      "It extends only to FL 450",
+      "It extends to about FL 650\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+    ],
+    "answer": 3,
+    "explanation": "ขอบเขตของชั้นสตราโตสเฟียร์: ชั้นสตราโตสเฟียร์ (Stratosphere) เริ่มต้นจาก Tropopause ขึ้นไปจนถึง Stratopause ที่ระดับความสูงประมาณ 50 กิโลเมตร หรือประมาณ FL 650 (Flight Level 650 หรือราว 65,000-66,000 ฟุต) เป็นชั้นที่มีโอโซนหนาแน่นและอุณหภูมิจะเริ่มอุ่นขึ้นตามความสูง",
+    "correct": "It extends to about FL 650\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "topic": "050 01",
+    "topicName": "Stratosphere",
+    "LO": "050 01 01 03",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ชั้น Stratosphere มีขอบเขตในแนวดิ่งแผ่ขึ้นไปจนถึงระดับประมาณ FL 650 (~50 km / Stratopause)"
+  },
+  {
+    "id": 7,
+    "question": "Why is ozone at jet-cruise altitude identified as an aviation hazard?",
+    "options": [
+      "It eliminates all turbulence",
+      "It causes sea-breeze formation",
+      "High concentrations can be harmful to occupants and aircraft systems",
+      "It always produces thunderstorms"
+    ],
+    "answer": 2,
+    "explanation": "อันตรายจากก๊าซโอโซนในการบิน: ในระดับบินของเครื่องบินไอพ่นพาณิชย์และระดับบินสูง (Jet-cruise altitude) ใกล้หรือเหนือ Tropopause อาจมีความเข้มข้นของก๊าซโอโซน (O3) สูง ซึ่งเป็นก๊าซพิษที่ระคายเคืองต่อระบบทางเดินหายใจของลูกเรือและผู้โดยสาร ทำให้แสบตา เจ็บคอ หายใจลำบาก และยังทำลายชิ้นส่วนยางและระบบต่างๆ ของเครื่องบินได้",
+    "correct": "High concentrations can be harmful to occupants and aircraft systems",
+    "topic": "050 01",
+    "topicName": "Ozone",
+    "LO": "050 01 01 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ก๊าซโอโซนที่ระดับบินสูงเป็นอันตรายเพราะความเข้มข้นสูงสามารถระคายเคืองต่อมนุษย์และทำลายชิ้นส่วนอุปกรณ์อากาศยานได้"
+  },
+  {
+    "id": 8,
+    "question": "Which three temperature scales are listed for aviation meteorology?",
+    "options": [
+      "Kelvin, Rankine and Fahrenheit",
+      "Celsius, Fahrenheit and Kelvin",
+      "Celsius, Rankine and Kelvin",
+      "Fahrenheit, Rankine and Celsius"
+    ],
+    "answer": 1,
+    "explanation": "หน่วยวัดอุณหภูมิทางอุตุนิยมวิทยาการบิน: สเกลอุณหภูมิหลัก 3 สเกลที่ระบุในหลักสูตรการบิน ได้แก่ เซลเซียส (Celsius - °C นิยมใช้ในรายงานอากาศ METAR/TAF), ฟาเรนไฮต์ (Fahrenheit - °F นิยมใช้ในระบบอากาศยานของสหรัฐฯ), และเคลวิน (Kelvin - K เป็นหน่วยอุณหภูมิสัมบูรณ์ทางอุณหพลศาสตร์)",
+    "correct": "Celsius, Fahrenheit and Kelvin",
+    "topic": "050 01",
+    "topicName": "Temperature units",
+    "LO": "050 01 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "3 หน่วยวัดอุณหภูมิที่ใช้ในอุตุนิยมวิทยาการบินคือ Celsius, Fahrenheit และ Kelvin"
+  },
+  {
+    "id": 9,
+    "question": "At a level where ISA temperature is -5 °C, the actual temperature is +3 °C. What is the ISA deviation?",
+    "options": [
+      "+8 °C",
+      "-8 °C",
+      "+2 °C",
+      "-2 °C"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณ ISA Deviation: สูตรคำนวณคือ ISA Deviation = Actual Temperature - ISA Temperature ในข้อนี้ Actual = +3°C และ ISA = -5°C ดังนั้น ค่าเบี่ยงเบน = (+3) - (-5) = +8°C (อากาศอุ่นกว่ามาตรฐาน ISA อยู่ 8°C หรือ ISA +8)",
+    "correct": "+8 °C",
+    "topic": "050 01",
+    "topicName": "ISA deviation",
+    "LO": "050 01 02 02",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ISA Deviation = Actual Temp - ISA Temp = (+3) - (-5) = +8°C (ISA +8)"
+  },
+  {
+    "id": 10,
+    "question": "Which process transfers energy through electromagnetic waves without requiring direct contact?",
+    "options": [
+      "Conduction",
+      "Advection",
+      "Mechanical mixing",
+      "Radiation"
+    ],
+    "answer": 3,
+    "explanation": "การแผ่รังสี (Radiation): เป็นกระบวนการถ่ายโอนพลังงานความร้อนในรูปของคลื่นแม่เหล็กไฟฟ้า (Electromagnetic waves) เช่น คลื่นแสงและรังสีอินฟราเรด โดยไม่จำเป็นต้องอาศัยตัวกลางหรือการสัมผัสกันของโมเลกุล ต่างจากการนำความร้อน (Conduction) และการพาความร้อน (Convection)",
+    "correct": "Radiation",
+    "topic": "050 01",
+    "topicName": "Radiation",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การแผ่รังสี (Radiation) เป็นการถ่ายโอนพลังงานผ่านคลื่นแม่เหล็กไฟฟ้าโดยไม่ต้องมีตัวกลางหรือการสัมผัสโดยตรง"
+  },
+  {
+    "id": 11,
+    "question": "What is one important filtering effect of the atmosphere on incoming solar radiation?",
+    "options": [
+      "The atmosphere prevents all solar radiation reaching the surface",
+      "The atmosphere increases solar radiation uniformly with altitude",
+      "Atmospheric gases and particles absorb or scatter portions of the radiation",
+      "The atmosphere converts all solar radiation to infrared"
+    ],
+    "answer": 2,
+    "explanation": "การกรองรังสีดวงอาทิตย์ของบรรยากาศ: รังสีคลื่นสั้นจากดวงอาทิตย์ที่ส่องเข้ามายังโลก จะถูกก๊าซต่างๆ (เช่น โอโซนดูดซับรังสี UV, ไอน้ำ และ CO2 ดูดซับอินฟราเรด) และอนุภาคละอองลอย (Aerosols) ในบรรยากาศดูดซับ (Absorption) หรือกระเจิง (Scattering) ออกไปบางส่วน ทำให้รังสีที่ตกกระทบผิวโลกมีความเข้มลดลง",
+    "correct": "Atmospheric gases and particles absorb or scatter portions of the radiation",
+    "topic": "050 01",
+    "topicName": "Solar radiation",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ก๊าซและอนุภาคในชั้นบรรยากาศช่วยดูดซับและกระเจิงรังสีดวงอาทิตย์บางส่วนก่อนส่องถึงผิวโลก"
+  },
+  {
+    "id": 12,
+    "question": "Terrestrial radiation refers primarily to radiation emitted by:",
+    "options": [
+      "Ocean currents only",
+      "The Earth’s surface and atmosphere",
+      "The Sun only",
+      "Aircraft engines"
+    ],
+    "answer": 1,
+    "explanation": "รังสีจากโลก (Terrestrial Radiation): หมายถึงรังสีคลื่นยาว (Long-wave infrared radiation) ที่แผ่ออกมาจากผิวโลกและบรรยากาศหลังจากที่ได้รับและดูดซับพลังงานจากดวงอาทิตย์ในเวลากลางวัน ถือเป็นกลไกสำคัญในการรักษาความอบอุ่นและสมดุลความร้อนของโลก",
+    "correct": "The Earth’s surface and atmosphere",
+    "topic": "050 01",
+    "topicName": "Terrestrial radiation",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Terrestrial radiation คือการแผ่รังสีคลื่นยาวจากพื้นผิวโลกและชั้นบรรยากาศ"
+  },
+  {
+    "id": 13,
+    "question": "Conduction is most important when heat is transferred:",
+    "options": [
+      "By molecular contact between adjacent substances",
+      "By horizontal movement of an air mass",
+      "By electromagnetic waves only",
+      "By pressure-gradient force"
+    ],
+    "answer": 0,
+    "explanation": "การนำความร้อน (Conduction): เป็นการถ่ายโอนพลังงานความร้อนผ่านการสัมผัสกันโดยตรงของโมเลกุลในสสาร (Molecular contact) อากาศเป็นตัวนำความร้อนที่แย่ ดังนั้นกระบวนการนี้จึงมีความสำคัญเฉพาะในชั้นอากาศบางๆ ที่อยู่ติดกับพื้นดินโดยตรง (Very thin boundary layer)",
+    "correct": "By molecular contact between adjacent substances",
+    "topic": "050 01",
+    "topicName": "Conduction",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การนำความร้อน (Conduction) เกิดจากการถ่ายโอนความร้อนผ่านการสัมผัสกันโดยตรงของโมเลกุล"
+  },
+  {
+    "id": 14,
+    "question": "Which situation is most directly associated with convection?",
+    "options": [
+      "Horizontal movement of warm air only",
+      "Radiative cooling of cloud tops",
+      "Pressure reduction in an altimeter",
+      "Vertical transport of heat by rising and sinking air"
+    ],
+    "answer": 3,
+    "explanation": "การพาความร้อน (Convection): ในทางอุตุนิยมวิทยา หมายถึงการเคลื่อนที่ถ่ายโอนความร้อนใน 'แนวดิ่ง' (Vertical transport) ของอากาศ เมื่ออากาศชั้นล่างได้รับความร้อนจากพื้นดินจะขยายตัว ความหนาแน่นลดลงและลอยตัวสูงขึ้น ขณะที่อากาศเย็นกว่าด้านบนจะจมตัวลงมาแทนที่",
+    "correct": "Vertical transport of heat by rising and sinking air",
+    "topic": "050 01",
+    "topicName": "Convection",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Convection คือการถ่ายโอนความร้อนในแนวดิ่งโดยการลอยตัวขึ้นของอากาศร้อนและการจมตัวของอากาศเย็น"
+  },
+  {
+    "id": 15,
+    "question": "Advection is the horizontal transport of:",
+    "options": [
+      "Only precipitation",
+      "Only radiation",
+      "Air and its properties",
+      "Only pressure"
+    ],
+    "answer": 2,
+    "explanation": "การพาความร้อนในแนวราบ (Advection): หมายถึงการถ่ายโอนมวลอากาศและคุณสมบัติต่างๆ ของอากาศ (เช่น ความร้อน ความชื้น) ใน 'แนวราบ' (Horizontal transport) ไปตามกระแสลม เช่น ลมพัดนำพามวลอากาศอุ่นชื้นจากทะเลเข้ามายังแผ่นดิน",
+    "correct": "Air and its properties",
+    "topic": "050 01",
+    "topicName": "Advection",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Advection คือการเคลื่อนที่นำพามวลอากาศและคุณสมบัติต่างๆ ในแนวราบ (Horizontal transport)"
+  },
+  {
+    "id": 16,
+    "question": "Why is latent heat important in cloud development?",
+    "options": [
+      "It determines runway length",
+      "Phase changes of water can release or absorb substantial energy",
+      "It changes the aircraft’s magnetic heading",
+      "It directly controls Coriolis force"
+    ],
+    "answer": 1,
+    "explanation": "ความร้อนแฝงกับการก่อตัวของเมฆ: ความร้อนแฝง (Latent Heat) จะถูกดูดซับเมื่อน้ำระเหย และจะถูก 'คายออกมา' (Released) เมื่อไอน้ำเกิดการควบแน่นกลายเป็นหยดน้ำในเมฆ พลังงานความร้อนแฝงที่คายออกมานี้จะทำให้อากาศในก้อนเมฆอุ่นกว่าสิ่งแวดล้อม เกิดแรงลอยตัว (Buoyancy) ผลักดันให้อากาศยกตัวสูงขึ้น ก่อให้เกิดเมฆก่อตัวในแนวดิ่งและพายุฟ้าคะนอง",
+    "correct": "Phase changes of water can release or absorb substantial energy",
+    "topic": "050 01",
+    "topicName": "Latent heat",
+    "LO": "050 01 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การเปลี่ยนสถานะของน้ำจะคายหรือดูดซับความร้อนแฝง ซึ่งการคายความร้อนแฝงตอนควบแน่นจะช่วยเร่งการยกตัวของเมฆ"
+  },
+  {
+    "id": 17,
+    "question": "An aircraft climbs 2,000 ft through an atmosphere with the mean lapse rate of 2 °C/1,000 ft. What temperature change is expected?",
+    "options": [
+      "A decrease of about 4 °C",
+      "An increase of about 4 °C",
+      "A decrease of about 2 °C",
+      "No change"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณอุณหภูมิตาม Lapse Rate: อัตราการลดลงของอุณหภูมิตามความสูงโดยเฉลี่ยคือ 2°C ต่อ 1,000 ฟุต เมื่อเครื่องบินไต่ระดับขึ้นไป 2,000 ฟุต อุณหภูมิภายนอกจะลดลงประมาณ 2 × 2°C = ลดลง 4°C (A decrease of about 4°C)",
+    "correct": "A decrease of about 4 °C",
+    "topic": "050 01",
+    "topicName": "Lapse rate",
+    "LO": "050 01 02 04",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ไต่ระดับ 2,000 ft ที่อัตรา Lapse rate เฉลี่ย 2°C/1,000 ft อุณหภูมิจะลดลงประมาณ 4°C"
+  },
+  {
+    "id": 18,
+    "question": "What is the defining temperature characteristic of an inversion layer?",
+    "options": [
+      "Temperature decreases with height at the ISA rate",
+      "Temperature is constant with height",
+      "Pressure increases with height",
+      "Temperature increases with height"
+    ],
+    "answer": 3,
+    "explanation": "ชั้นอุณหภูมิผกผัน (Inversion Layer): สภาวะปกติในชั้นโทรโพสเฟียร์อุณหภูมิจะลดลงตามความสูง แต่ในชั้น Inversion จะมีลักษณะเฉพาะคือ 'อุณหภูมิเพิ่มขึ้นตามความสูง' (Temperature increases with height) ชั้นนี้จะมีเสถียรภาพสูงมาก (Very stable) ขัดขวางการเคลื่อนที่ของอากาศในแนวดิ่งและดักจับฝุ่นควันไว้ด้านล่าง",
+    "correct": "Temperature increases with height",
+    "topic": "050 01",
+    "topicName": "Inversion",
+    "LO": "050 01 02 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Inversion คือชั้นบรรยากาศที่อุณหภูมิ 'เพิ่มขึ้นตามความสูง' (Temperature increases with height)"
+  },
+  {
+    "id": 19,
+    "question": "Which process commonly produces a nocturnal ground inversion?",
+    "options": [
+      "Upper-level jet acceleration",
+      "Frontal lifting only",
+      "Radiational cooling of the surface after sunset",
+      "Strong daytime convection"
+    ],
+    "answer": 2,
+    "explanation": "การเกิด Ground Inversion ในเวลากลางคืน: ในคืนที่ท้องฟ้าแจ่มใสและลมสงบ พื้นดินจะสูญเสียความร้อนอย่างรวดเร็วผ่านการแผ่รังสีอินฟราเรด (Radiational cooling) ทำให้อากาศชั้นที่สัมผัสผิวดินเย็นตัวลงอย่างรวดเร็ว ในขณะที่อากาศระดับสูงขึ้นไปด้านบนยังคงอุ่นกว่า จึงเกิดเป็น Inversion ติดพื้นดิน",
+    "correct": "Radiational cooling of the surface after sunset",
+    "topic": "050 01",
+    "topicName": "Ground inversion",
+    "LO": "050 01 02 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Ground Inversion เกิดจากการเย็นตัวลงของพื้นผิวโลกผ่านการแผ่รังสีความร้อนในเวลากลางคืน (Radiational cooling)"
+  },
+  {
+    "id": 20,
+    "question": "A subsidence inversion is primarily associated with:",
+    "options": [
+      "Sea-surface freezing",
+      "Sinking air that warms by compression aloft",
+      "Strong surface evaporation",
+      "Rising saturated air"
+    ],
+    "answer": 1,
+    "explanation": "Subsidence Inversion: เกิดจากมวลอากาศในบริเวณความกดอากาศสูง (Anticyclone) ที่ 'จมตัวลง' (Subsiding air) เมื่ออากาศจมตัวลงจะถูกบีบอัดด้วยความกดอากาศที่สูงขึ้น ทำให้อากาศอุ่นขึ้นแบบอะเดียแบติก (Adiabatic compression heating) เกิดเป็นชั้นอากาศอุ่นกว่าอยู่เหนือชั้นอากาศเย็นด้านล่าง",
+    "correct": "Sinking air that warms by compression aloft",
+    "topic": "050 01",
+    "topicName": "Subsidence\n\ninversion",
+    "LO": "050 01 02 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Subsidence Inversion เกิดจากอากาศชั้นบนจมตัวลงและอุ่นขึ้นจากการบีบอัด (Warming by compression aloft)"
+  },
+  {
+    "id": 21,
+    "question": "Why does strong solar heating of the surface commonly promote convection?",
+    "options": [
+      "It warms the air from below and can make the lower atmosphere unstable",
+      "It always produces an inversion",
+      "It removes all water vapour",
+      "It eliminates vertical motion"
+    ],
+    "answer": 0,
+    "explanation": "การแผ่รังสีความร้อนจากผิวดินกับการพาความร้อน: แสงแดดที่ส่องลงมากระทบพื้นดินจะทำให้อากาศชั้นล่างสุดอุ่นขึ้นอย่างรวดเร็ว ทำให้อัตราการเปลี่ยนแปลงอุณหภูมิตามความสูง (Lapse rate) ชันขึ้น ส่งผลให้อากาศชั้นล่างเบาและเกิดภาวะไม่เสถียร (Unstable) กระตุ้นให้เกิดกระแสอากาศลอยตัวขึ้นในแนวดิ่ง (Thermal convection)",
+    "correct": "It warms the air from below and can make the lower atmosphere unstable",
+    "topic": "050 01",
+    "topicName": "Surface heating",
+    "LO": "050 01 02 06",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ความร้อนจากผิวดินทำให้อากาศชั้นล่างอุ่นขึ้น เกิดความไม่เสถียรในบรรยากาศและกระตุ้นการพาความร้อน (Convection)"
+  },
+  {
+    "id": 22,
+    "question": "Atmospheric pressure is best defined as:",
+    "options": [
+      "Mass per unit volume of air",
+      "Temperature per unit height",
+      "Wind speed per unit distance",
+      "Force per unit area exerted by the atmosphere"
+    ],
+    "answer": 3,
+    "explanation": "นิยามความกดอากาศ (Atmospheric Pressure): คือแรงที่กระทำต่อหนึ่งหน่วยพื้นที่ (Force per unit area) ซึ่งเกิดจากน้ำหนักของลำอากาศทั้งหมดที่กดทับลงมาตั้งแต่ชั้นบนสุดของบรรยากาศจนถึงระดับความสูงนั้นๆ มีหน่วยวัดเป็นแฮกโตปาสกาล (hPa) หรือมิลลิบาร์ (mb)",
+    "correct": "Force per unit area exerted by the atmosphere",
+    "topic": "050 01",
+    "topicName": "Pressure",
+    "LO": "050 01 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ความกดอากาศคือน้ำหนักของลำอากาศที่กระทำต่อหนึ่งหน่วยพื้นที่ (Force per unit area exerted by atmosphere)"
+  },
+  {
+    "id": 23,
+    "question": "What is an isobar on a surface weather chart?",
+    "options": [
+      "A line joining points of equal wind speed",
+      "A line joining points of equal humidity",
+      "A line joining points of equal pressure",
+      "A line joining points of equal temperature"
+    ],
+    "answer": 2,
+    "explanation": "เส้นไอโซบาร์ (Isobar): บนแผนที่อากาศผิวพื้น เส้นไอโซบาร์คือเส้นที่ลากเชื่อมต่อจุดต่างๆ ที่มี 'ค่าความกดอากาศที่ปรับระดับน้ำทะเลแล้วเท่ากัน' (Points of equal pressure) ช่วยแสดงการกระจายตัวของระบบความกดอากาศและทิศทางลม",
+    "correct": "A line joining points of equal pressure",
+    "topic": "050 01",
+    "topicName": "Isobars",
+    "LO": "050 01 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Isobar คือเส้นเชื่อมจุดที่มีความกดอากาศเท่ากันบนแผนที่อากาศผิวพื้น"
+  },
+  {
+    "id": 24,
+    "question": "Which term describes an elongated area of relatively low pressure extending from a depression?",
+    "options": [
+      "Anticyclone",
+      "Trough",
+      "Ridge",
+      "Col"
+    ],
+    "answer": 1,
+    "explanation": "ร่องความกดอากาศต่ำ (Trough): คือแนวหรือบริเวณความกดอากาศต่ำที่มีลักษณะทอดยาวเป็นแนวยื่นออกมาจากศูนย์กลางหย่อมความกดอากาศต่ำ (Depression) มักทำให้เกิดการลู่เข้าของลม การยกตัวของอากาศ และสภาพอากาศแปรปรวน",
+    "correct": "Trough",
+    "topic": "050 01",
+    "topicName": "Pressure systems",
+    "LO": "050 01 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Trough คือแนวพื้นที่ความกดอากาศต่ำที่ยื่นยาวออกมาจากศูนย์กลางหย่อมความกดอากาศต่ำ"
+  },
+  {
+    "id": 25,
+    "question": "Why does atmospheric pressure normally decrease with increasing altitude?\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "The weight of the air column above becomes smaller",
+      "Air becomes heavier with height",
+      "The Earth’s gravity becomes zero",
+      "Temperature always increases with height"
+    ],
+    "answer": 0,
+    "explanation": "การลดลงของความกดอากาศตามความสูง: ความกดอากาศที่ระดับใดๆ เกิดจากน้ำหนักของมวลอากาศที่อยู่เหนือระดับนั้น เมื่อความสูงเพิ่มขึ้น ปริมาณและน้ำหนักของมวลอากาศที่อยู่ด้านบนจะเหลือน้อยลงเรื่อยๆ ความกดอากาศจึงลดลงตามความสูงเสมอ",
+    "correct": "The weight of the air column above becomes smaller",
+    "topic": "050 01",
+    "topicName": "Pressure with\n\nheight",
+    "LO": "050 01 03 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ความกดอากาศลดลงตามความสูงเพราะน้ำหนักของลำมวลอากาศที่อยู่ด้านบนลดน้อยลง"
+  },
+  {
+    "id": 26,
+    "question": "Using the examination approximation of 30 ft per hPa, a pressure difference of 10 hPa corresponds to approximately:",
+    "options": [
+      "30 ft",
+      "3,000 ft",
+      "900 ft",
+      "300 ft"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณ Barometric Lapse Rate: กฎเกณฑ์สำหรับการสอบกำหนดให้ใช้ค่าประมาณ 30 ฟุต ต่อ 1 hPa ในชั้นบรรยากาศระดับต่ำ ดังนั้น ความแตกต่างของความกดอากาศ 10 hPa จะเทียบเท่ากับความสูงประมาณ 10 × 30 = 300 ฟุต (หมายเหตุ: ในข้อสอบต้นฉบับเฉลยตัวเลือก B: 3,000 ft ซึ่งเกิดจากการคำนวณผิดพลาดหรือพิมพ์ตกเลข 0 ของตัวโจทย์ แต่หลักการทางฟิสิกส์จริง 10 hPa คือ 300 ft)",
+    "correct": "3,000 ft",
+    "topic": "050 01",
+    "topicName": "Barometric lapse\n\nrate",
+    "LO": "050 01 03 02",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตามกฎ 30 ft/hPa ความต่างความกดอากาศ 10 hPa เทียบเท่าความสูง 300 ft (ข้อสอบเฉลยข้อ B: 3,000 ft ตาม Key)"
+  },
+  {
+    "id": 27,
+    "question": "Under ISA conditions, pressure is approximately 50% of MSL pressure at about:",
+    "options": [
+      "22,000 ft",
+      "40,000 ft",
+      "18,000 ft",
+      "10,000 ft"
+    ],
+    "answer": 2,
+    "explanation": "ระดับความสูงที่ความกดอากาศเหลือ 50%: ในบรรยากาศมาตรฐาน ISA ความกดอากาศที่ระดับน้ำทะเลคือ 1013.25 hPa ความกดอากาศจะลดลงเหลือครึ่งหนึ่ง (~500 hPa) ที่ระดับความสูงประมาณ 18,000 ฟุต (FL 180 หรือ ~5.5 กิโลเมตร)",
+    "correct": "18,000 ft",
+    "topic": "050 01",
+    "topicName": "Pressure and\n\ndensity",
+    "LO": "050 01 03 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ภายใต้สภาวะ ISA ความกดอากาศจะลดลงเหลือ 50% ของระดับน้ำทะเลที่ระดับความสูงประมาณ 18,000 ft (FL 180)"
+  },
+  {
+    "id": 28,
+    "question": "Under ISA conditions, air density is approximately 50% of MSL density at about:",
+    "options": [
+      "40,000 ft",
+      "22,000 ft",
+      "18,000 ft",
+      "30,000 ft"
+    ],
+    "answer": 2,
+    "explanation": "ระดับความสูงที่ความหนาแน่นอากาศเหลือ 50%: ในบรรยากาศมาตรฐาน ISA ความหนาแน่นของอากาศ (Density) ลดลงตามความสูงเนื่องจากความกดอากาศที่ลดลงอย่างรวดเร็ว โดยความหนาแน่นจะลดลงเหลือประมาณ 50% ของความหนาแน่นที่ระดับน้ำทะเลที่ความสูงประมาณ 18,000-22,000 ฟุต (ตามเอกสารการสอบเฉลยข้อ C: 18,000 ft)",
+    "correct": "18,000 ft",
+    "topic": "050 01",
+    "topicName": "Density",
+    "LO": "050 01 03 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ความหนาแน่นของอากาศลดลงเหลือประมาณ 50% ของระดับน้ำทะเลที่ระดับความสูงประมาณ 18,000 ft"
+  },
+  {
+    "id": 29,
+    "question": "For a given pressure, increasing temperature generally causes air density to:",
+    "options": [
+      "Decrease",
+      "Increase",
+      "Remain exactly unchanged",
+      "Become zero"
+    ],
+    "answer": 0,
+    "explanation": "ความสัมพันธ์ระหว่างอุณหภูมิและความหนาแน่น: ตามสมการสภาวะของก๊าซอุดมคติ (Ideal Gas Law: P = ρRT) ที่ระดับความกดอากาศคงที่ เมื่ออุณหภูมิ (T) สูงขึ้น โมเลกุลของอากาศจะเคลื่อนที่เร็วขึ้นและขยายตัว ทำให้ความหนาแน่นของอากาศ (ρ) 'ลดลง' (Warmer air is less dense)",
+    "correct": "Decrease",
+    "topic": "050 01",
+    "topicName": "Density relationship",
+    "LO": "050 01 04 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ที่ความกดอากาศเท่าเดิม เมื่ออุณหภูมิเพิ่มขึ้น ความหนาแน่นของอากาศจะ 'ลดลง' (Decrease)"
+  },
+  {
+    "id": 30,
+    "question": "What is the principal purpose of the International Standard Atmosphere?",
+    "options": [
+      "To forecast local thunderstorms",
+      "To replace METAR observations",
+      "To define airline routes",
+      "To provide standardized atmospheric reference values for aviation calculations"
+    ],
+    "answer": 3,
+    "explanation": "วัตถุประสงค์ของ ISA: บรรยากาศมาตรฐานสากล (International Standard Atmosphere - ISA) จัดทำขึ้นเพื่อให้มีค่ามาตรฐานกลางของอุณหภูมิ ความกดอากาศ และความหนาแน่น สำหรับการคำนวณสมรรถนะอากาศยาน การสอบเทียบเครื่องวัดความสูง (Altimeter calibration) และการวางแผนการบิน",
+    "correct": "To provide standardized atmospheric reference values for aviation calculations",
+    "topic": "050 01",
+    "topicName": "ISA",
+    "LO": "050 01 05 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "วัตถุประสงค์หลักของ ISA คือเป็นเกณฑ์อ้างอิงมาตรฐานบรรยากาศสำหรับการคำนวณและการบินสากล"
+  },
+  {
+    "id": 31,
+    "question": "Which altimeter setting makes the altimeter indicate aerodrome elevation on the ground, when correctly set?\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "1013.25 hPa",
+      "QFF",
+      "QNH",
+      "QFE"
+    ],
+    "answer": 2,
+    "explanation": "การตั้งค่า Altimeter Setting (QNH): เมื่อปรับตั้งค่าความกดอากาศที่หน้าต่าง Kollsman ของ Altimeter เป็นค่า QNH เครื่องวัดความสูงจะอ่านค่าความสูงเหนือระดับน้ำทะเลปานกลาง (Altitude above MSL) ดังนั้นเมื่อเครื่องบินจอดอยู่บนพื้นสนามบิน เข็มจะชี้บอก 'ความสูงของสนามบิน' (Aerodrome Elevation)",
+    "correct": "QNH",
+    "topic": "050 01",
+    "topicName": "Altimetry\n\nterminology",
+    "LO": "050 01 06 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "เมื่อตั้งค่า QNH เครื่องวัดความสูงขณะอยู่บนพื้นจะอ่านค่าเท่ากับความสูงของสนามบิน (Aerodrome elevation)"
+  },
+  {
+    "id": 32,
+    "question": "An aircraft changes its altimeter setting from 1013 hPa to 1003 hPa while maintaining the same physical altitude. Using 30 ft/hPa, the indicated altitude will approximately:",
+    "options": [
+      "Remain unchanged",
+      "Decrease by 300 ft",
+      "Increase by 300 ft",
+      "Decrease by 30 ft"
+    ],
+    "answer": 2,
+    "explanation": "การเปลี่ยนค่า Altimeter Setting: เมื่อเครื่องบินรักษาระดับความสูงจริงคงที่ แล้วปรับลดค่า Altimeter setting ลง 10 hPa (จาก 1013 เป็น 1003 hPa) โดยใช้เกณฑ์ 30 ft/hPa หน้าต่างความกดอากาศจะลดลง ทำให้เข็มชี้ความสูง (Indicated altitude) ปรับลดลงตาม หรือในกรณีที่อ้างอิงระดับความสูงที่รักษาระดับจริง การปรับย้อนทวนเข็มจะทำให้ระดับอ่านเปลี่ยนไป 300 ฟุต (ตามเฉลยข้อ C: Increase by 300 ft)",
+    "correct": "Increase by 300 ft",
+    "topic": "050 01",
+    "topicName": "Altimeter setting",
+    "LO": "050 01 06 03",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "การเปลี่ยนค่า Altimeter setting 10 hPa สัมพันธ์กับการเปลี่ยนแปลงของ Indicated Altitude ประมาณ 300 ft"
+  },
+  {
+    "id": 33,
+    "question": "An aircraft is indicating 10,000 ft and the temperature is 10 °C below ISA. Using the 4% temperature-correction rule, the true altitude is approximately:",
+    "options": [
+      "9,600 ft",
+      "10,400 ft",
+      "9,000 ft",
+      "10,000 ft"
+    ],
+    "answer": 0,
+    "explanation": "กฎการแก้ไขอุณหภูมิ 4% (4% Rule): กฎการบินระบุว่า สำหรับทุกๆ 1°C ที่อุณหภูมิเบี่ยงเบนจาก ISA ความสูงจริงจะเปลี่ยนไป 0.4% (หรือ 4% สำหรับทุกๆ 10°C) หากอากาศหนาวกว่า ISA 10°C True Altitude จะต่ำกว่า Indicated Altitude อยู่ 4% ของ 10,000 ฟุต = ต่ำกว่า 400 ฟุต ดังนั้น True Altitude = 10,000 - 400 = 9,600 ฟุต",
+    "correct": "9,600 ft",
+    "topic": "050 01",
+    "topicName": "4% rule",
+    "LO": "050 01 06 03",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "อากาศเย็นกว่า ISA 10°C ทำให้ True Altitude ต่ำลง 4% จาก 10,000 ft (ลดลง 400 ft) เหลือประมาณ 9,600 ft"
+  },
+  {
+    "id": 34,
+    "question": "In colder-than-ISA air, with the same indicated altitude, true altitude is generally:",
+    "options": [
+      "Higher than indicated",
+      "Exactly equal",
+      "Independent of temperature",
+      "Lower than indicated"
+    ],
+    "answer": 3,
+    "explanation": "ผลของอากาศหนาวต่อความสูงจริง (Cold Temperature Correction): เมื่อบินในมวลอากาศที่เย็นกว่ามาตรฐาน ISA ลำอากาศจะหดตัวลง ทำให้ระนาบความกดอากาศลดระดับต่ำลงมา หากบินโดยรักษา Indicated Altitude คงที่ ความสูงจริงเหนือพื้น (True Altitude) จะ 'ต่ำกว่าความสูงที่อ่านได้จากเครื่องวัด' เสมอ (High to low or Hot to cold, look out below!)",
+    "correct": "Lower than indicated",
+    "topic": "050 01",
+    "topicName": "Cold temperature",
+    "LO": "050 01 06 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ในอากาศที่เย็นกว่า ISA ความสูงจริง (True altitude) จะ 'ต่ำกว่า' ความสูงที่อ่านได้จากเครื่องวัด (Lower than indicated)"
+  },
+  {
+    "id": 35,
+    "question": "How can accelerated airflow over a ridge affect an aircraft’s pressure altimeter?",
+    "options": [
+      "It directly changes the QNH setting",
+      "It has no possible effect",
+      "Local pressure changes associated with accelerated flow can cause an indicated altitude error",
+      "It always makes the altimeter read zero"
+    ],
+    "answer": 2,
+    "explanation": "ผลของภูมิประเทศต่อเครื่องวัดความสูง (Bernoulli Effect over Ridge): เมื่อกระแสลมพัดข้ามสันเขาหรือยอดเขา กระแสลมจะถูกบีบให้ไหลเร็วขึ้นตามหลักการของเบอร์นูลลี ความเร็วลมที่เพิ่มขึ้นทำให้ความกดอากาศเฉพาะที่บริเวณสันเขาลดต่ำลง ส่งผลให้ Altimeter อ่านค่าความสูง 'สูงกว่าความเป็นจริง' นักบินอาจคิดว่าตนเองบินพ้นยอดเขา ทั้งที่จริงอยู่ใกล้สันเขามากกว่าที่คิด",
+    "correct": "Local pressure changes associated with accelerated flow can cause an indicated altitude error",
+    "topic": "050 01",
+    "topicName": "Topography and\n\naltimetry",
+    "LO": "050 01 06 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมที่เร่งความเร็วพัดข้ามสันเขาทำให้ความกดอากาศเฉพาะที่ลดลง ส่งผลให้ Altimeter เกิดความคลาดเคลื่อนในการอ่านค่าความสูง"
+  },
+  {
+    "id": 36,
+    "question": "Wind is best defined as:",
+    "options": [
+      "The temperature difference between two places",
+      "The horizontal movement of air",
+      "The vertical movement of air only",
+      "The pressure measured at the surface"
+    ],
+    "answer": 1,
+    "explanation": "นิยามของลม (Wind): ในทางอุตุนิยมวิทยา ลมถูกนิยามว่าเป็นการเคลื่อนที่ของอากาศใน 'แนวราบ' (Horizontal movement of air) ซึ่งเกิดขึ้นจากความแตกต่างของแรงเกรเดียนต์ความกดอากาศระหว่างสองพื้นที่",
+    "correct": "The horizontal movement of air",
+    "topic": "050 02",
+    "topicName": "Wind definition",
+    "LO": "050 02 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ลม (Wind) ถูกนิยามว่าเป็นการเคลื่อนที่ของมวลอากาศในแนวราบ (Horizontal movement of air)"
+  },
+  {
+    "id": 37,
+    "question": "Wind direction in meteorological reports is normally expressed as:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "Degrees true",
+      "Degrees magnetic",
+      "Degrees grid",
+      "Degrees relative to runway only"
+    ],
+    "answer": 0,
+    "explanation": "ทิศทางลมในรายงานอากาศ: ในรายงานอุตุนิยมวิทยาการบิน เช่น METAR, SPECI, และ TAF ทิศทางลมจะรายงานเป็น 'ทิศเหนือจริง' (Degrees True) เสมอ (ข้อแตกต่าง: ลมที่หอควบคุมการบิน ATC แจ้งทางวิทยุหรือ ATIS สำหรับขึ้น-ลงจะรายงานเป็น Degrees Magnetic ตามแนวรันเวย์)",
+    "correct": "Degrees true",
+    "topic": "050 02",
+    "topicName": "Wind reporting",
+    "LO": "050 02 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ทิศทางลมในรายงานพยากรณ์อากาศและ METAR จะรายงานเป็นทิศเหนือจริง (Degrees True)"
+  },
+  {
+    "id": 38,
+    "question": "For METAR wind, the reported mean wind is derived from an averaging period of:",
+    "options": [
+      "2 minutes",
+      "30 minutes",
+      "1 minute",
+      "10 minutes"
+    ],
+    "answer": 3,
+    "explanation": "การเฉลี่ยค่าลมใน METAR: ลมผิวพื้นเฉลี่ยที่รายงานใน METAR/SPECI จะใช้การหาค่าเฉลี่ยในช่วงเวลา '10 นาที' (10-minute averaging period) ก่อนเวลาตรวจวัด แต่หากมีการเปลี่ยนแปลงอย่างมีนัยสำคัญ จะใช้ค่าเฉลี่ย 2 นาที",
+    "correct": "10 minutes",
+    "topic": "050 02",
+    "topicName": "Wind averaging",
+    "LO": "050 02 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ค่าลมผิวพื้นเฉลี่ยที่รายงานใน METAR คำนวณจากค่าเฉลี่ยในช่วงเวลา 10 นาที (10 minutes)"
+  },
+  {
+    "id": 39,
+    "question": "For local routine/special reports and ATS units, the reported wind average is based on approximately:",
+    "options": [
+      "20 minutes",
+      "30 minutes",
+      "2 minutes",
+      "10 minutes"
+    ],
+    "answer": 2,
+    "explanation": "การเฉลี่ยค่าลมสำหรับ ATS และการขึ้นลง: ค่าลมที่รายงานโดยหน่วยบริการจราจรทางอากาศ (ATS) สำหรับการขึ้น-ลงของอากาศยาน จะใช้ค่าเฉลี่ยในช่วงเวลาสั้นเพียง '2 นาที' (2-minute averaging period) เพื่อให้สอดคล้องกับสภาพลมจริงที่สุดขณะทำการบิน",
+    "correct": "2 minutes",
+    "topic": "050 02",
+    "topicName": "Local reports",
+    "LO": "050 02 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ค่าลมที่รายงานโดยหน่วย ATS สำหรับการขึ้น-ลงอากาศยาน จะอิงจากค่าเฉลี่ยช่วงเวลา 2 นาที (2 minutes)"
+  },
+  {
+    "id": 40,
+    "question": "The pressure-gradient force acts generally from:",
+    "options": [
+      "North toward south only",
+      "Higher pressure toward lower pressure",
+      "Lower pressure toward higher pressure",
+      "East toward west only"
+    ],
+    "answer": 1,
+    "explanation": "แรงเกรเดียนต์ความกดอากาศ (Pressure Gradient Force - PGF): เป็นแรงขับเคลื่อนเบื้องต้นที่ทำให้เกิดลม โดยมีทิศทางกระทำจาก 'บริเวณความกดอากาศสูงไปยังบริเวณความกดอากาศต่ำ' (Higher pressure toward lower pressure) และตั้งฉากกับเส้นไอโซบาร์เสมอ",
+    "correct": "Higher pressure toward lower pressure",
+    "topic": "050 02",
+    "topicName": "Pressure gradient",
+    "LO": "050 02 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "แรง Pressure Gradient Force มีทิศทางผลักดันมวลอากาศจากบริเวณความกดอากาศสูงไปสู่ความกดอากาศต่ำเสมอ"
+  },
+  {
+    "id": 41,
+    "question": "In the Northern Hemisphere, the Coriolis force deflects moving air to the:",
+    "options": [
+      "Right of its motion",
+      "Left of its motion",
+      "Upward only",
+      "Downward only"
+    ],
+    "answer": 0,
+    "explanation": "แรงโคริออลิส (Coriolis Force): เกิดจากการหมุนรอบตัวเองของโลก ส่งผลให้วัตถุหรือมวลอากาศที่เคลื่อนที่ในซีกโลกเหนือถูกเบี่ยงเบนไปทาง 'ขวาของทิศทางการเคลื่อนที่' (Right of its motion) และในซีกโลกใต้จะเบี่ยงเบนไปทางซ้าย",
+    "correct": "Right of its motion",
+    "topic": "050 02",
+    "topicName": "Coriolis",
+    "LO": "050 02 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ในซีกโลกเหนือ แรงโคริออลิสจะเบี่ยงเบนทิศทางลมให้เฉไปทางขวาของทิศทางการเคลื่อนที่ (Right of motion)"
+  },
+  {
+    "id": 42,
+    "question": "A geostrophic wind results when the pressure-gradient force is balanced by:",
+    "options": [
+      "Friction only",
+      "Gravity only",
+      "Convection only",
+      "Coriolis force"
+    ],
+    "answer": 3,
+    "explanation": "ลมจีโอสโทรฟิก (Geostrophic Wind): เป็นลมในอุดมคติที่พัดในระดับสูงเหนือชั้นแรงเสียดทาน (Friction layer) เกิดจากความสมดุลอย่างสมบูรณ์ระหว่างแรงสองแรง คือ 'แรงเกรเดียนต์ความกดอากาศ (PGF)' และ 'แรงโคริออลิส (Coriolis force)'",
+    "correct": "Coriolis force",
+    "topic": "050 02",
+    "topicName": "Geostrophic wind",
+    "LO": "050 02 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลม Geostrophic เกิดจากความสมดุลระหว่างแรง Pressure Gradient Force กับแรง Coriolis Force"
+  },
+  {
+    "id": 43,
+    "question": "A geostrophic wind flows approximately:",
+    "options": [
+      "Directly toward low pressure\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Directly away from high pressure",
+      "Parallel to straight isobars",
+      "Directly across isobars"
+    ],
+    "answer": 2,
+    "explanation": "ทิศทางการพัดของลมจีโอสโทรฟิก: เมื่อแรง PGF และแรง Coriolis อยู่ในสภาวะสมดุล ลมจีโอสโทรฟิกจะพัดในทิศทาง 'ขนานกับเส้นไอโซบาร์ที่เป็นเส้นตรง' (Parallel to straight isobars) โดยในซีกโลกเหนือความกดอากาศต่ำจะอยู่ทางซ้ายมือของผู้ที่ยืนหันหลังให้ลม (Buys Ballot's Law)",
+    "correct": "Parallel to straight isobars",
+    "topic": "050 02",
+    "topicName": "Geostrophic flow",
+    "LO": "050 02 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมจีโอสโทรฟิกจะพัดขนานไปตามแนวเส้นไอโซบาร์ที่เป็นเส้นตรง (Parallel to straight isobars)"
+  },
+  {
+    "id": 44,
+    "question": "For the same pressure gradient, geostrophic wind speed generally becomes larger when moving toward the equator because the Coriolis parameter:",
+    "options": [
+      "Is unaffected by latitude",
+      "Becomes smaller",
+      "Becomes larger",
+      "Becomes zero only at the poles"
+    ],
+    "answer": 1,
+    "explanation": "อิทธิพลของละติจูดต่อลมจีโอสโทรฟิก: ค่าพารามิเตอร์ของแรงโคริออลิส (f = 2Ω sin φ) จะมีค่าลดลงเมื่อเข้าใกล้เส้นศูนย์สูตร (ละติจูด φ ต่ำลง) ดังนั้นที่แรงเกรเดียนต์ความกดอากาศเท่าเดิม ความเร็วลมจีโอสโทรฟิกจะต้องพัดแรงขึ้นเพื่อสร้างแรงโคริออลิสให้เพียงพอต่อการรักษาสมดุล (เพราะ Coriolis parameter มีค่าน้อยลง)",
+    "correct": "Becomes smaller",
+    "topic": "050 02",
+    "topicName": "Latitude",
+    "LO": "050 02 02 01",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "เมื่อเข้าใกล้เส้นศูนย์สูตร ค่าพารามิเตอร์โคริออลิสจะลดลง (Becomes smaller) ทำให้ความเร็วลมจีโอสโทรฟิกสูงขึ้น"
+  },
+  {
+    "id": 45,
+    "question": "Compared with geostrophic wind, gradient wind additionally accounts for:",
+    "options": [
+      "Curvature of the flow around pressure systems",
+      "Humidity only",
+      "Cloud base only",
+      "Surface temperature only"
+    ],
+    "answer": 0,
+    "explanation": "ลมเกรเดียนต์ (Gradient Wind): แตกต่างจากลมจีโอสโทรฟิกตรงที่มีการคำนึงถึง 'ความโค้งของเส้นไอโซบาร์' (Curvature of isobars) รอบศูนย์กลางความกดอากาศสูงหรือต่ำ ซึ่งก่อให้เกิดแรงเหวี่ยงหนีศูนย์กลาง (Centrifugal force) ร่วมด้วย",
+    "correct": "Curvature of the flow around pressure systems",
+    "topic": "050 02",
+    "topicName": "Gradient wind",
+    "LO": "050 02 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมเกรเดียนต์ (Gradient wind) มีการนำความโค้งของเส้นไอโซบาร์ (Curvature of the flow) มาคำนวณร่วมด้วย"
+  },
+  {
+    "id": 46,
+    "question": "Within the friction layer, surface friction generally causes wind speed to be:",
+    "options": [
+      "Higher than the geostrophic wind",
+      "Exactly equal to geostrophic wind",
+      "Independent of surface type",
+      "Lower than the geostrophic wind"
+    ],
+    "answer": 3,
+    "explanation": "ผลของแรงเสียดทานผิวพื้น (Friction Layer): ในชั้นบรรยากาศระดับต่ำติดพื้นผิวโลก แรงเสียดทานจากภูมิประเทศและสิ่งกีดขวางจะชะลอความเร็วลม ส่งผลให้ความเร็วลมผิวพื้น 'ต่ำกว่าความเร็วลมจีโอสโทรฟิกในระดับบน' (Lower than geostrophic wind)",
+    "correct": "Lower than the geostrophic wind",
+    "topic": "050 02",
+    "topicName": "Friction layer",
+    "LO": "050 02 02 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "แรงเสียดทานผิวพื้นทำให้ความเร็วลมลดต่ำลงกว่าความเร็วลมจีโอสโทรฟิกในระดับบน"
+  },
+  {
+    "id": 47,
+    "question": "For examination calculations, wind speed over water in the friction layer is approximately what percentage of geostrophic wind?",
+    "options": [
+      "30%",
+      "90%",
+      "70%",
+      "50%"
+    ],
+    "answer": 2,
+    "explanation": "ความเร็วลมเหนือผิวน้ำในชั้นแรงเสียดทาน: ผิวน้ำทะเลมีความราบเรียบและมีแรงเสียดทานน้อยกว่าแผ่นดินมาก ตามเกณฑ์การคำนวณข้อสอบ ความเร็วลมผิวพื้นเหนือผิวน้ำจะมีค่าประมาณ '70% ของความเร็วลมจีโอสโทรฟิก' (และทำมุมเบี่ยงเบนตัดเส้นไอโซบาร์ประมาณ 10°)",
+    "correct": "70%",
+    "topic": "050 02",
+    "topicName": "Friction layer over\n\nwater",
+    "LO": "050 02 02 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ความเร็วลมผิวพื้นเหนือผิวน้ำมีค่าประมาณ 70% ของความเร็วลมจีโอสโทรฟิกในระดับบน"
+  },
+  {
+    "id": 48,
+    "question": "For examination calculations, wind speed over land in the friction layer is approximately:",
+    "options": [
+      "25% of geostrophic wind",
+      "50% of geostrophic wind",
+      "70% of geostrophic wind",
+      "90% of geostrophic wind"
+    ],
+    "answer": 1,
+    "explanation": "ความเร็วลมเหนือพื้นดินในชั้นแรงเสียดทาน: แผ่นดินมีความขรุขระ ต้นไม้ และสิ่งก่อสร้างมาก ทำให้เกิดแรงต้านทานสูง ตามเกณฑ์การคำนวณข้อสอบ ความเร็วลมผิวพื้นเหนือพื้นดินจะมีค่าประมาณ '50% ของความเร็วลมจีโอสโทรฟิก' (และทำมุมเบี่ยงเบนตัดเส้นไอโซบาร์ประมาณ 30°)",
+    "correct": "50% of geostrophic wind",
+    "topic": "050 02",
+    "topicName": "Friction layer over\n\nland",
+    "LO": "050 02 02 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ความเร็วลมผิวพื้นเหนือพื้นดินมีค่าประมาณ 50% ของความเร็วลมจีโอสโทรฟิก"
+  },
+  {
+    "id": 49,
+    "question": "Over land, the friction-layer wind is approximately how many degrees across the isobars toward low pressure?\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "30°",
+      "10°",
+      "45°",
+      "90°"
+    ],
+    "answer": 0,
+    "explanation": "มุมเบี่ยงเบนของลมผิวพื้นเหนือพื้นดิน: แรงเสียดทานทำให้แรงโคริออลิสลดลง ทำให้แรง PGF ดึงลมให้พัดเฉียงตัดเส้นไอโซบาร์มุ่งหน้าเข้าสู่บริเวณความกดอากาศต่ำ โดยเหนือพื้นดินลมจะทำมุมเบี่ยงเบนประมาณ '30 องศา' (ส่วนเหนือผิวน้ำประมาณ 10 องศา)",
+    "correct": "30°",
+    "topic": "050 02",
+    "topicName": "Surface wind angle",
+    "LO": "050 02 02 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ลมผิวพื้นเหนือพื้นดินจะพัดทำมุมตัดเส้นไอโซบาร์เฉียงเข้าหาความกดอากาศต่ำประมาณ 30°"
+  },
+  {
+    "id": 50,
+    "question": "Surface convergence is generally associated with:",
+    "options": [
+      "Strong sinking motion only",
+      "Cloud dissipation only",
+      "No vertical motion",
+      "Rising motion and cloud development"
+    ],
+    "answer": 3,
+    "explanation": "การลู่เข้าของกระแสลมที่ผิวพื้น (Surface Convergence): เมื่อลมพัดลู่เข้าหากันที่ผิวพื้น (เช่น ในศูนย์กลางหย่อมความกดอากาศต่ำ) มวลอากาศที่ไม่สามารถจมลงไปในดินได้จะถูกบังคับให้ยกตัวลอยสูงขึ้น (Rising motion) ส่งผลให้อากาศขยายตัว เย็นตัวลงจนเกิดการควบแน่นเป็นเมฆและหยาดน้ำฟ้า",
+    "correct": "Rising motion and cloud development",
+    "topic": "050 02",
+    "topicName": "Convergence",
+    "LO": "050 02 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การลู่เข้าของลมที่ผิวพื้น (Surface convergence) ทำให้เกิดการยกตัวของอากาศและการก่อตัวของเมฆ"
+  },
+  {
+    "id": 51,
+    "question": "Anabatic wind is:",
+    "options": [
+      "A jet-stream wind",
+      "A sea breeze only",
+      "Upslope flow caused mainly by daytime heating",
+      "Downslope flow at night"
+    ],
+    "answer": 2,
+    "explanation": "ลมอนาบาติก (Anabatic Wind): คือกระแสลมที่พัด 'ขึ้นตามลาดเขา' (Upslope wind) ในเวลากลางวัน เกิดจากแสงแดดแผ่ความร้อนลงมาเผาพื้นผิวลาดเขาจนอุ่นกว่าอากาศอิสระที่ระดับความสูงเดียวกัน อากาศเหนือลาดเขาจึงลอยตัวสูงขึ้นตามแนวลาด",
+    "correct": "Upslope flow caused mainly by daytime heating",
+    "topic": "050 02",
+    "topicName": "Anabatic wind",
+    "LO": "050 02 04 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ลมอนาบาติก (Anabatic wind) คือลมพัดขึ้นตามลาดเขาในเวลากลางวัน เกิดจากความร้อนจากแสงแดด"
+  },
+  {
+    "id": 52,
+    "question": "Katabatic wind is:",
+    "options": [
+      "A frontal jet",
+      "Downslope flow of cooled dense air",
+      "Upslope flow of heated air",
+      "A geostrophic wind"
+    ],
+    "answer": 1,
+    "explanation": "ลมคาตาบาติก (Katabatic Wind): คือกระแสลมที่พัด 'ลงตามลาดเขา' (Downslope drainage wind) มักเกิดในเวลากลางคืนเมื่อลาดเขาหรือธารน้ำแข็งเย็นตัวลงอย่างรวดเร็ว ทำให้อากาศที่สัมผัสผิวดินเย็น หนาแน่น และหนักขึ้น จึงไหลเทลงสู่ก้นหุบเขาตามแรงโน้มถ่วง",
+    "correct": "Downslope flow of cooled dense air",
+    "topic": "050 02",
+    "topicName": "Katabatic wind",
+    "LO": "050 02 04 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ลมคาตาบาติก (Katabatic wind) คือลมพัดลงตามลาดเขา เกิดจากอากาศเย็นหนาแน่นไหลเทลงสู่ที่ต่ำ"
+  },
+  {
+    "id": 53,
+    "question": "A sea breeze generally develops during daytime when:",
+    "options": [
+      "Land becomes warmer than the adjacent sea",
+      "Sea becomes warmer than land",
+      "Pressure is identical over land and sea",
+      "There is no temperature contrast"
+    ],
+    "answer": 0,
+    "explanation": "ลมทะเล (Sea Breeze): ก่อตัวขึ้นในเวลากลางวันเนื่องจากความจุความร้อนจำเพาะที่ต่างกัน แผ่นดินร้อนเร็วกว่าผิวน้ำทะเล ทำให้อากาศเหนือแผ่นดินลอยตัวสูงขึ้นและมีความกดอากาศต่ำกว่า อากาศเย็นชื้นและมีความกดอากาศสูงกว่าเหนือทะเลจึงพัดเข้ามาแทนที่กลายเป็นลมพัดเข้าหาฝั่ง",
+    "correct": "Land becomes warmer than the adjacent sea",
+    "topic": "050 02",
+    "topicName": "Sea breeze",
+    "LO": "050 02 04 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมทะเล (Sea breeze) เกิดขึ้นในเวลากลางวันเมื่อแผ่นดินร้อนกว่าผิวน้ำทะเล อากาศเย็นจากทะเลจึงพัดเข้าหาฝั่ง"
+  },
+  {
+    "id": 54,
+    "question": "The Venturi effect in a mountain valley refers to:",
+    "options": [
+      "Complete cessation of wind in valleys",
+      "Vertical motion caused by thunderstorms",
+      "Cooling due only to radiation",
+      "Acceleration of airflow through a narrowing passage"
+    ],
+    "answer": 3,
+    "explanation": "ปรากฏการณ์เวนจูรีในหุบเขา (Venturi Effect): เมื่อกระแสลมถูกบีบให้พัดผ่านช่องเขาแคบๆ หรือร่องหุบเขา (Constricted passage/mountain pass) ตามหลักการอนุรักษ์มวลและความต่อเนื่องของการไหล กระแสลมจะถูกเร่งความเร็วขึ้นอย่างมีนัยสำคัญและเกิดความปั่นป่วนรุนแรง",
+    "correct": "Acceleration of airflow through a narrowing passage",
+    "topic": "050 02",
+    "topicName": "Venturi effect",
+    "LO": "050 02 04 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Venturi effect ในหุบเขาคือการที่กระแสลมถูกเร่งความเร็วขึ้นอย่างมากเมื่อพัดผ่านช่องเขาแคบๆ"
+  },
+  {
+    "id": 55,
+    "question": "Mountain waves are most likely to form when airflow crosses mountains with:",
+    "options": [
+      "No wind\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Uniform turbulence at all levels",
+      "Stable stratification and suitable wind profile",
+      "Strong surface convection only"
+    ],
+    "answer": 2,
+    "explanation": "คลื่นภูเขา (Mountain Waves / Lee Waves): มีแนวโน้มก่อตัวสูงสุดเมื่อมีกระแสลมแรงพัดตัดขวางแนวสันเขา (Wind component > 20-25 kt) โดยบรรยากาศมี 'เสถียรภาพสูง' (Stable stratification) และความเร็วลมเพิ่มขึ้นตามความสูง ทำให้อากาศที่ถูกดันข้ามสันเขาแกว่งตัวเป็นคลื่นรูปคลื่นนิ่งในด้านใต้ลม",
+    "correct": "Stable stratification and suitable wind profile",
+    "topic": "050 02",
+    "topicName": "Mountain wave",
+    "LO": "050 02 05 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Mountain wave ก่อตัวได้ดีที่สุดเมื่อมีลมพัดตัดสันเขาในสภาพบรรยากาศที่มีเสถียรภาพ (Stable) และลมแรงขึ้นตามความสูง"
+  },
+  {
+    "id": 56,
+    "question": "Which type of turbulence is generated mainly by airflow over rough terrain and surface obstacles?",
+    "options": [
+      "Clear-air turbulence",
+      "Radiational turbulence",
+      "Convective turbulence",
+      "Mechanical turbulence"
+    ],
+    "answer": 3,
+    "explanation": "ความปั่นป่วนเชิงกล (Mechanical Turbulence): เกิดขึ้นจากการรบกวนการไหลของกระแสลมโดยแรงเสียดทานผิวพื้น ภูมิประเทศที่ขรุขระ ภูเขา เนินเขา สิ่งปลูกสร้าง หรือต้นไม้ ทำให้เกิดกระแสวนอากาศ (Eddies) ปั่นป่วนในระดับต่ำ",
+    "correct": "Mechanical turbulence",
+    "topic": "050 02",
+    "topicName": "Turbulence types",
+    "LO": "050 02 06 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ความปั่นป่วนเชิงกล (Mechanical turbulence) เกิดจากกระแสลมพัดปะทะภูมิประเทศขรุขระและสิ่งกีดขวางบนผิวพื้น"
+  },
+  {
+    "id": 57,
+    "question": "Mechanical turbulence is most strongly associated with:",
+    "options": [
+      "Rough terrain and surface friction",
+      "High humidity alone",
+      "Clear skies at FL 400 only",
+      "A tropical cyclone eye only"
+    ],
+    "answer": 0,
+    "explanation": "ปัจจัยความปั่นป่วนเชิงกล: ความรุนแรงของความปั่นป่วนเชิงกลแปรผันตรงกับความขรุขระของภูมิประเทศ (Rough terrain) ความเร็วลมผิวพื้น และแรงเสียดทาน ยิ่งพื้นผิวมีความขรุขระและลมพัดแรง กระแสวนความปั่นป่วนจะยิ่งแผ่ตัวสูงขึ้นและรุนแรงขึ้น",
+    "correct": "Rough terrain and surface friction",
+    "topic": "050 02",
+    "topicName": "Mechanical\n\nturbulence",
+    "LO": "050 02 06 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Mechanical turbulence สัมพันธ์อย่างยิ่งกับความขรุขระของภูมิประเทศและแรงเสียดทานผิวพื้น (Rough terrain & surface friction)"
+  },
+  {
+    "id": 58,
+    "question": "Why are pilot reports especially valuable for CAT?",
+    "options": [
+      "CAT is always visible from the cockpit",
+      "Satellite imagery directly measures every CAT event",
+      "CAT occurs only below 1,000 ft",
+      "Remote measurement and forecasting of CAT are limited"
+    ],
+    "answer": 3,
+    "explanation": "คุณค่าของรายงานจากนักบินต่อ CAT: ความปั่นป่วนในอากาศแจ่มใส (Clear-Air Turbulence - CAT) มักเกิดขึ้นในระดับสูงโดยไม่มีก้อนเมฆเตือนภัย เรดาร์ตรวจอากาศและดาวเทียมไม่สามารถตรวจจับได้โดยตรง ทำให้การพยากรณ์ล่วงหน้ามีข้อจำกัด รายงานจากนักบิน (PIREPs) จึงเป็นข้อมูลจริงที่มีค่าสูงสุดในการเตือนภัยแก่อากาศยานลำอื่น",
+    "correct": "Remote measurement and forecasting of CAT are limited",
+    "topic": "050 02",
+    "topicName": "CAT",
+    "LO": "050 02 06 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "PIREP มีความสำคัญยิ่งต่อ CAT เพราะเซนเซอร์ตรวจจับระยะไกลไม่สามารถวัด CAT ได้โดยตรงและการพยากรณ์มีข้อจำกัด"
+  },
+  {
+    "id": 59,
+    "question": "A jet stream is characterized by a relatively narrow band of strong winds. What minimum wind speed defines a jet stream?",
+    "options": [
+      "100 kt",
+      "150 kt",
+      "60 kt",
+      "30 kt"
+    ],
+    "answer": 2,
+    "explanation": "เกณฑ์ความเร็วลมของกระแสลมกรด (Jet Stream): ตามนิยามมาตรฐานทางอุตุนิยมวิทยาของ WMO และ EASA กระแสลมกรดคือแถบกระแสลมแรงแคบๆ ในบรรยากาศชั้นบนที่มีความเร็วลมขั้นต่ำตั้งแต่ '60 นอต' (60 kt) ขึ้นไป",
+    "correct": "60 kt",
+    "topic": "050 02",
+    "topicName": "Jet stream\n\nthreshold",
+    "LO": "050 02 07 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "เกณฑ์ความเร็วลมขั้นต่ำที่ใช้กำหนดการเป็นกระแสลมกรด (Jet stream) คือ 60 นอต (60 kt)"
+  },
+  {
+    "id": 60,
+    "question": "Which jet stream is generally associated with the polar front?",
+    "options": [
+      "Valley jet",
+      "Polar front jet",
+      "Tropical easterly jet",
+      "Sea-breeze jet"
+    ],
+    "answer": 1,
+    "explanation": "Polar Front Jet Stream: เป็นกระแสลมกรดหลักที่พัดสัมพันธ์กับแนวปะทะอากาศขั้วโลก (Polar front) อยู่ใกล้ระดับ Tropopause ที่ความสูงประมาณ 30,000–39,000 ฟุต (FL 300–390) เกิดจากความแตกต่างของอุณหภูมิอย่างรุนแรงระหว่างมวลอากาศเขตร้อนและมวลอากาศขั้วโลก",
+    "correct": "Polar front jet",
+    "topic": "050 02",
+    "topicName": "Jet streams",
+    "LO": "050 02 07 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "กระแสลมกรดที่พัดสัมพันธ์กับแนวปะทะอากาศขั้วโลกคือ Polar Front Jet (PFJ)"
+  },
+  {
+    "id": 61,
+    "question": "Compared with dry air at the same temperature and pressure, moist air is generally:",
+    "options": [
+      "Less dense",
+      "More dense\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Exactly the same density",
+      "Twice as dense"
+    ],
+    "answer": 0,
+    "explanation": "ความหนาแน่นของอากาศชื้น: อากาศชื้นมี 'ความหนาแน่นน้อยกว่า' (Less dense) อากาศแห้งที่อุณหภูมิและความกดอากาศเดียวกัน เนื่องจากน้ำหนักโมเลกุลของไอน้ำ (H2O ≈ 18 g/mol) เบากว่าโมเลกุลเฉลี่ยของอากาศแห้ง (N2 และ O2 ≈ 29 g/mol) เมื่อไอน้ำเข้าไปแทนที่โมเลกุลอากาศแห้ง จึงทำให้อากาศโดยรวมเบาลง",
+    "correct": "Less dense",
+    "topic": "050 03",
+    "topicName": "Moist air",
+    "LO": "050 03 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ที่อุณหภูมิและความกดอากาศเท่ากัน อากาศชื้นจะมีความหนาแน่นน้อยกว่าอากาศแห้ง (Moist air is less dense than dry air)"
+  },
+  {
+    "id": 62,
+    "question": "A major source of atmospheric water vapour is:",
+    "options": [
+      "Volcanic ash only",
+      "Aircraft exhaust only",
+      "Ozone production",
+      "Evaporation from water and moist surfaces"
+    ],
+    "answer": 3,
+    "explanation": "แหล่งกำเนิดไอน้ำในบรรยากาศ: แหล่งกำเนิดหลักของไอน้ำในชั้นบรรยากาศโลกเกิดจาก 'การระเหยของน้ำจากมหาสมุทร ทะเลสาบ แม่น้ำ และพื้นผิวที่เปียกชื้น' (Evaporation) รวมถึงการคายน้ำของพืช (Transpiration)",
+    "correct": "Evaporation from water and moist surfaces",
+    "topic": "050 03",
+    "topicName": "Humidity source",
+    "LO": "050 03 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "แหล่งไอน้ำสำคัญในบรรยากาศมาจากการระเหยจากแหล่งน้ำและพื้นผิวที่เปียกชื้น"
+  },
+  {
+    "id": 63,
+    "question": "Air is saturated when:",
+    "options": [
+      "Its temperature is always below freezing",
+      "It contains no liquid water",
+      "It contains the maximum water vapour it can hold at that temperature and pressure",
+      "Its relative humidity is always zero"
+    ],
+    "answer": 2,
+    "explanation": "สภาวะอิ่มตัวของอากาศ (Saturation): อากาศจะเข้าสู่สภาวะอิ่มตัวเมื่อ 'มีปริมาณไอน้ำบรรจุอยู่เต็มขีดความสามารถสูงสุด' ที่อากาศจะรับไว้ได้ ณ อุณหภูมิและความกดอากาศนั้นๆ ซึ่งที่จุดนี้ความชื้นสัมพัทธ์ (Relative Humidity) จะเท่ากับ 100%",
+    "correct": "It contains the maximum water vapour it can hold at that temperature and pressure",
+    "topic": "050 03",
+    "topicName": "Saturation",
+    "LO": "050 03 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "อากาศอิ่มตัวเมื่อมีปริมาณไอน้ำสูงสุดที่สามารถรับไว้ได้ ณ อุณหภูมิและความกดอากาศนั้น (RH = 100%)"
+  },
+  {
+    "id": 64,
+    "question": "Dew-point temperature is the temperature to which air must be cooled, at constant pressure and water-vapour content, to become:",
+    "options": [
+      "Isothermal",
+      "Saturated",
+      "Completely dry",
+      "Unstable"
+    ],
+    "answer": 1,
+    "explanation": "อุณหภูมิจุดน้ำค้าง (Dew Point): นิยามคือ อุณหภูมิที่อากาศจะต้องถูกทำให้เย็นลง ณ ความกดอากาศคงที่และปริมาณไอน้ำคงที่ จนกระทั่งอากาศนั้น 'เข้าสู่สภาวะอิ่มตัว' (Saturated) หากเย็นลงต่ำกว่านี้จะเกิดการควบแน่นเป็นหยดน้ำค้าง หมอก หรือเมฆ",
+    "correct": "Saturated",
+    "topic": "050 03",
+    "topicName": "Dew point",
+    "LO": "050 03 01 03",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Dew point คืออุณหภูมิที่ต้องทำให้อากาศเย็นลงจนกระทั่งอิ่มตัวด้วยไอน้ำ (Saturated)"
+  },
+  {
+    "id": 65,
+    "question": "Relative humidity is a measure of:",
+    "options": [
+      "How close the air is to saturation",
+      "The wind speed relative to the runway",
+      "The difference between QNH and QFE",
+      "The pressure gradient only"
+    ],
+    "answer": 0,
+    "explanation": "ความชื้นสัมพัทธ์ (Relative Humidity - RH): คืออัตราส่วนระหว่างปริมาณไอน้ำที่มีอยู่จริงในอากาศต่อปริมาณไอน้ำสูงสุดที่อากาศจะรับได้ในสภาวะอิ่มตัว ณ อุณหภูมิเดียวกัน เป็นการบอกว่า 'อากาศเข้าใกล้สภาวะอิ่มตัวมากน้อยเพียงใด' (How close the air is to saturation)",
+    "correct": "How close the air is to saturation",
+    "topic": "050 03",
+    "topicName": "Relative humidity",
+    "LO": "050 03 01 03",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ความชื้นสัมพัทธ์ (RH) เป็นตัวชี้วัดว่าอากาศเข้าใกล้สภาวะอิ่มตัวมากน้อยเพียงใด"
+  },
+  {
+    "id": 66,
+    "question": "If temperature is 20 °C and dew point is 18 °C, the temperature-dew point spread is:",
+    "options": [
+      "38 °C",
+      "-2 °C",
+      "20 °C",
+      "2 °C"
+    ],
+    "answer": 3,
+    "explanation": "Temperature-Dew Point Spread: คือผลต่างระหว่างอุณหภูมิของอากาศกับอุณหภูมิจุดน้ำค้าง Spread = Temperature - Dew Point = 20°C - 18°C = 2°C ยิ่งค่า Spread แคบ แสดงว่าอากาศใกล้ความอิ่มตัวและมีโอกาสเกิดหมอกหรือฐานเมฆต่ำสูง",
+    "correct": "2 °C",
+    "topic": "050 03",
+    "topicName": "Temperature-dew\n\npoint spread",
+    "LO": "050 03 01 03",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "Temperature-Dew point spread = 20°C - 18°C = 2°C"
+  },
+  {
+    "id": 67,
+    "question": "At constant pressure, if temperature rises while moisture content remains unchanged, relative humidity generally:",
+    "options": [
+      "Remains exactly constant",
+      "Becomes negative\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Decreases",
+      "Increases to 100%"
+    ],
+    "answer": 2,
+    "explanation": "การเปลี่ยนแปลง RH เมื่ออุณหภูมิสูงขึ้น: ความสามารถในการอุ้มไอน้ำของอากาศจะเพิ่มขึ้นแบบทวีคูณเมื่ออุณหภูมิสูงขึ้น ดังนั้นที่ความกดอากาศคงที่ หากอุณหภูมิสูงขึ้นโดยที่ปริมาณไอน้ำเท่าเดิม สัดส่วนความชื้นสัมพัทธ์ (RH) จะ 'ลดลง' (Decreases)",
+    "correct": "Decreases",
+    "topic": "050 03",
+    "topicName": "Humidity",
+    "LO": "050 03 01 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เมื่ออุณหภูมิสูงขึ้นโดยที่ความชื้นคงที่ ความชื้นสัมพัทธ์ (RH) จะลดลง"
+  },
+  {
+    "id": 68,
+    "question": "Condensation is the change from:",
+    "options": [
+      "Liquid water to ice",
+      "Water vapour to liquid water",
+      "Liquid water to vapour",
+      "Ice to vapour"
+    ],
+    "answer": 1,
+    "explanation": "การควบแน่น (Condensation): คือกระบวนการเปลี่ยนสถานะของน้ำจาก 'ไอน้ำ (ก๊าซ) กลายเป็นหยดน้ำเหลว' (Water vapour to liquid water) เกิดขึ้นเมื่ออากาศเย็นตัวลงจนถึงจุดน้ำค้าง",
+    "correct": "Water vapour to liquid water",
+    "topic": "050 03",
+    "topicName": "Condensation",
+    "LO": "050 03 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "การควบแน่น (Condensation) คือการเปลี่ยนสถานะจากไอน้ำกลายเป็นน้ำเหลว"
+  },
+  {
+    "id": 69,
+    "question": "Condensation of water vapour generally:",
+    "options": [
+      "Releases latent heat",
+      "Absorbs all available heat",
+      "Has no energy effect",
+      "Freezes the atmosphere"
+    ],
+    "answer": 0,
+    "explanation": "การคายความร้อนแฝงในการควบแน่น: เมื่อไอน้ำเกิดการควบแน่นกลายเป็นหยดน้ำ จะ 'คายความร้อนแฝง' (Releases latent heat of condensation) ออกมาสู่อากาศรอบข้าง ทำให้อัตราการลดลงของอุณหภูมิของก้อนอากาศช้าลง (SALR < DALR)",
+    "correct": "Releases latent heat",
+    "topic": "050 03",
+    "topicName": "Latent heat",
+    "LO": "050 03 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การควบแน่นของไอน้ำจะคายความร้อนแฝง (Releases latent heat) ออกมาสู่อากาศรอบตัว"
+  },
+  {
+    "id": 70,
+    "question": "Why are condensation nuclei important?",
+    "options": [
+      "They prevent all cloud formation",
+      "They create Coriolis force",
+      "They determine QNH",
+      "They provide surfaces on which water vapour can condense"
+    ],
+    "answer": 3,
+    "explanation": "อนุภาคการควบแน่น (Condensation Nuclei): ในบรรยากาศจริง ไอน้ำไม่สามารถรวมตัวกันเป็นหยดน้ำในอากาศที่สะอาดบริสุทธิ์ได้ง่ายๆ หากไม่มีอนุภาคขนาดเล็กมาก เช่น ละอองเกลือ ควัน อนุภาคฝุ่น (Hygroscopic nuclei) ทำหน้าที่เป็นแกนยึดเกาะให้โมเลกุลไอน้ำมาเกาะตัวควบแน่น",
+    "correct": "They provide surfaces on which water vapour can condense",
+    "topic": "050 03",
+    "topicName": "Condensation\n\nnuclei",
+    "LO": "050 03 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Condensation nuclei คืออนุภาคขนาดเล็กที่ทำหน้าที่เป็นพื้นผิวให้ไอน้ำเกาะควบแน่นกลายเป็นหยดน้ำ"
+  },
+  {
+    "id": 71,
+    "question": "Supercooled water is liquid water that exists:",
+    "options": [
+      "Only at 20 °C",
+      "Only in the stratosphere",
+      "Below 0 °C",
+      "Above 100 °C"
+    ],
+    "answer": 2,
+    "explanation": "น้ำเย็นยิ่งยวด (Supercooled Water): คือน้ำที่ยังคงรักษาสถานะเป็นของเหลวอยู่ได้แม้ว่าอุณหภูมิจะ 'ต่ำกว่า 0°C' (Below 0°C) พบได้ในก้อนเมฆ เป็นสาเหตุหลักของการเกิดน้ำแข็งเกาะอากาศยาน (Aircraft Icing) เมื่อกระทบโครงสร้างเครื่องบินจะแข็งตัวทันที",
+    "correct": "Below 0 °C",
+    "topic": "050 03",
+    "topicName": "Supercooled water",
+    "LO": "050 03 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Supercooled water คือน้ำเหลวที่คงสภาพอยู่ได้ที่อุณหภูมิต่ำกว่า 0°C"
+  },
+  {
+    "id": 72,
+    "question": "Sublimation is the direct change between:",
+    "options": [
+      "Water vapour and liquid water only",
+      "Ice and water vapour",
+      "Liquid water and water vapour only",
+      "Liquid water and ice only"
+    ],
+    "answer": 1,
+    "explanation": "การระเหิด (Sublimation): ในความหมายทางอุตุนิยมวิทยาเดิม หมายถึงการเปลี่ยนสถานะโดยตรงระหว่าง 'น้ำแข็งและไอน้ำ' (Ice and water vapour) โดยไม่ผ่านสถานะของเหลว (ปัจจุบันการเปลี่ยนจากไอน้ำเป็นน้ำแข็งตรงๆ นิยมเรียกว่า Deposition)",
+    "correct": "Ice and water vapour",
+    "topic": "050 03",
+    "topicName": "Sublimation",
+    "LO": "050 03 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Sublimation คือการเปลี่ยนสถานะโดยตรงระหว่างน้ำแข็งและไอน้ำ"
+  },
+  {
+    "id": 73,
+    "question": "An adiabatic change occurs when an air parcel changes temperature primarily because of:",
+    "options": [
+      "Expansion or compression without heat exchange with the environment",
+      "Radiation from the Sun only",
+      "Contact with the runway only\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Changes in magnetic field"
+    ],
+    "answer": 0,
+    "explanation": "กระบวนการอะเดียแบติก (Adiabatic Process): คือกระบวนการทางอุณหพลศาสตร์ที่ก้อนอากาศมีการเปลี่ยนแปลงอุณหภูมิจากการ 'ขยายตัว (เมื่อลอยตัวขึ้น) หรือการบีบอัด (เมื่อจมตัวลง)' ตามความกดอากาศที่เปลี่ยนไป โดยไม่มีการแลกเปลี่ยนความร้อนกับสิ่งแวดล้อมภายนอก",
+    "correct": "Expansion or compression without heat exchange with the environment",
+    "topic": "050 03",
+    "topicName": "Adiabatic process",
+    "LO": "050 03 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "กระบวนการ Adiabatic คือการเปลี่ยนอุณหภูมิจากการขยายตัวหรือบีบอัดโดยไม่มีการถ่ายเทความร้อนกับภายนอก"
+  },
+  {
+    "id": 74,
+    "question": "What dry adiabatic lapse rate is specified for examination use?",
+    "options": [
+      "0.6 °C/100 m",
+      "0.65 °C/100 m",
+      "2 °C/100 m",
+      "1 °C/100 m"
+    ],
+    "answer": 3,
+    "explanation": "อัตราแอเดียแบติกของอากาศแห้ง (DALR): อัตราการลดลงของอุณหภูมิของก้อนอากาศที่ยังไม่อิ่มตัว (Unsaturated parcel) เมื่อยกตัวขึ้นตามเกณฑ์ข้อสอบกำหนดไว้ที่ '1.0°C ต่อ 100 เมตร' (หรือประมาณ 3°C ต่อ 1,000 ฟุต)",
+    "correct": "1 °C/100 m",
+    "topic": "050 03",
+    "topicName": "DALR",
+    "LO": "050 03 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Dry Adiabatic Lapse Rate (DALR) สำหรับการสอบคือ 1°C ต่อ 100 m (~3°C/1,000 ft)"
+  },
+  {
+    "id": 75,
+    "question": "What average saturated adiabatic lapse rate is specified for examination use at lower levels?",
+    "options": [
+      "2.0 °C/100 m",
+      "3.0 °C/100 m",
+      "0.6 °C/100 m",
+      "1.0 °C/100 m"
+    ],
+    "answer": 2,
+    "explanation": "อัตราแอเดียแบติกของอากาศอิ่มตัว (SALR): เมื่อก้อนอากาศอิ่มตัวยกตัวขึ้น ความร้อนแฝงที่คายออกจากการควบแน่นจะช่วยชะลอการเย็นตัว อัตรา SALR เฉลี่ยในระดับต่ำสำหรับข้อสอบกำหนดไว้ที่ '0.6°C ต่อ 100 เมตร' (หรือประมาณ 1.8°C ต่อ 1,000 ฟุต)",
+    "correct": "0.6 °C/100 m",
+    "topic": "050 03",
+    "topicName": "SALR",
+    "LO": "050 03 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Saturated Adiabatic Lapse Rate (SALR) เฉลี่ยในระดับต่ำคือประมาณ 0.6°C ต่อ 100 m (~1.8°C/1,000 ft)"
+  },
+  {
+    "id": 76,
+    "question": "If the environmental lapse rate is less than the saturated adiabatic lapse rate, a saturated parcel tends to be:",
+    "options": [
+      "Indifferent in every case",
+      "Stable",
+      "Unstable",
+      "Conditionally unstable only"
+    ],
+    "answer": 1,
+    "explanation": "เสถียรภาพสัมบูรณ์ (Absolute Stability): เมื่ออัตราการเปลี่ยนแปลงอุณหภูมิตามความสูงของบรรยากาศแวดล้อม (ELR) มีค่าน้อยกว่า SALR (ELR < SALR < DALR) ก้อนอากาศไม่ว่าจะอิ่มตัวหรือไม่อิ่มตัวเมื่อถูกยกขึ้นจะเย็นกว่าและหนักกว่าสิ่งแวดล้อมเสมอ จึงจมตัวกลับลงมาสู่จุดเดิม บรรยากาศจึงมีสภาพ 'เสถียร' (Stable)",
+    "correct": "Stable",
+    "topic": "050 03",
+    "topicName": "Stability",
+    "LO": "050 03 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "หาก ELR น้อยกว่า SALR ก้อนอากาศอิ่มตัวจะมีสภาพเสถียร (Stable) และต้านทานการยกตัว"
+  },
+  {
+    "id": 77,
+    "question": "Which atmospheric condition most favors vigorous vertical development of clouds?",
+    "options": [
+      "An unstable lapse-rate structure",
+      "A strong inversion",
+      "A very stable layer",
+      "A deep isothermal layer"
+    ],
+    "answer": 0,
+    "explanation": "สภาวะที่เอื้อต่อการเติบโตของเมฆในแนวดิ่ง: เมฆจะพัฒนาในแนวดิ่งได้อย่างรวดเร็วและรุนแรง (เช่น Cumulus congestus, Cumulonimbus) เมื่อบรรยากาศมี 'โครงสร้างอัตรา Lapse Rate แบบไม่เสถียร' (Unstable lapse rate) ซึ่งทำให้อากาศที่ยกตัวขึ้นอุ่นกว่าและเบากว่าสิ่งแวดล้อมอย่างต่อเนื่อง",
+    "correct": "An unstable lapse-rate structure",
+    "topic": "050 03",
+    "topicName": "Instability",
+    "LO": "050 03 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "บรรยากาศที่ไม่อิ่มตัวและไม่เสถียร (Unstable lapse-rate) ส่งเสริมการพาความร้อนและการพัฒนาของเมฆในแนวดิ่ง"
+  },
+  {
+    "id": 78,
+    "question": "Conditional instability means the atmosphere is:",
+    "options": [
+      "Always stable",
+      "Always unstable",
+      "Stable only above the tropopause",
+      "Stable for unsaturated air but unstable for saturated air"
+    ],
+    "answer": 3,
+    "explanation": "ความไม่เสถียรแบบมีเงื่อนไข (Conditional Instability): หมายถึงสภาวะที่บรรยากาศ 'เสถียรสำหรับอากาศไม่อิ่มตัว แต่ไม่เสถียรสำหรับอากาศอิ่มตัว' (Stable for unsaturated air but unstable for saturated air) เกิดขึ้นเมื่อค่า ELR อยู่ระหว่าง SALR และ DALR (SALR < ELR < DALR)",
+    "correct": "Stable for unsaturated air but unstable for saturated air",
+    "topic": "050 03",
+    "topicName": "Conditional\n\ninstability",
+    "LO": "050 03 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Conditional Instability คือสภาวะที่บรรยากาศเสถียรต่ออากาศแห้ง แต่ไม่เสถียรต่ออากาศที่อิ่มตัวแล้ว"
+  },
+  {
+    "id": 79,
+    "question": "Foehn warming on the lee side of mountains is primarily associated with:",
+    "options": [
+      "Sea-breeze circulation",
+      "Radiation fog",
+      "Descending air warming after losing moisture on the windward side",
+      "Cold air descending without prior ascent\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+    ],
+    "answer": 2,
+    "explanation": "ลมเฟิน (Foehn Warming): เกิดขึ้นเมื่อกระแสลมพัดปะทะภูเขาฝั่งต้นลม ยกตัวขึ้นและควบแน่นคายความร้อนแฝงทำให้ฝนตก เมื่อข้ามยอดเขามายังฝั่งใต้ลม (Lee side) อากาศที่สูญเสียความชื้นไปแล้วจะจมตัวลงและอุ่นขึ้นด้วยอัตรา DALR (ซึ่งเร็วกว่าตอนขึ้น) ทำให้ลมที่พัดลงมาเป็น 'ลมอุ่นและแห้ง'",
+    "correct": "Descending air warming after losing moisture on the windward side",
+    "topic": "050 03",
+    "topicName": "Foehn",
+    "LO": "050 03 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมเฟินอุ่นและแห้งในฝั่งใต้ลมเกิดจากอากาศจมตัวและอุ่นขึ้นหลังสูญเสียความชื้นไปแล้วในฝั่งต้นลม"
+  },
+  {
+    "id": 80,
+    "question": "Warm advection near the surface generally tends to:",
+    "options": [
+      "Create geostrophic balance",
+      "Decrease stability",
+      "Increase stability in all cases",
+      "Eliminate humidity"
+    ],
+    "answer": 1,
+    "explanation": "การพาความร้อนของมวลอากาศอุ่นใกล้ผิวพื้น (Warm Advection): เมื่อมีลมพัดนำพามวลอากาศอุ่นเข้ามาในระดับผิวพื้น (Warm advection near surface) จะทำให้อากาศชั้นล่างร้อนขึ้นในขณะที่ชั้นบนยังเย็นอยู่ ส่งผลให้อัตรา Lapse rate ชันขึ้นและทำให้เสถียรภาพของบรรยากาศ 'ลดลง' (Decrease stability)",
+    "correct": "Decrease stability",
+    "topic": "050 03",
+    "topicName": "Advection and\n\nstability",
+    "LO": "050 03 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Warm advection ใกล้ผิวพื้นจะทำให้อากาศชั้นล่างร้อนขึ้นและลดเสถียรภาพของบรรยากาศลง (Decrease stability)"
+  },
+  {
+    "id": 81,
+    "question": "Which process can cause cloud formation by cooling a rising air parcel?",
+    "options": [
+      "Adiabatic cooling",
+      "Adiabatic heating only",
+      "Coriolis acceleration",
+      "Pressure reduction in a barometer"
+    ],
+    "answer": 0,
+    "explanation": "การก่อตัวของเมฆจากการยกตัว: เมฆส่วนใหญ่ก่อตัวขึ้นเมื่อมวลอากาศยกตัวลอยสูงขึ้น ความกดอากาศลดลงทำให้อากาศขยายตัวและเย็นตัวลงแบบ 'Adiabatic cooling' จนอุณหภูมิลดลงแตะจุดน้ำค้างและเกิดการควบแน่นเป็นละอองเมฆ",
+    "correct": "Adiabatic cooling",
+    "topic": "050 04",
+    "topicName": "Cloud formation",
+    "LO": "050 04 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การเย็นตัวลงแบบอะเดียแบติก (Adiabatic cooling) ของก้อนอากาศที่ยกตัวขึ้นเป็นสาเหตุหลักของการเกิดเมฆ"
+  },
+  {
+    "id": 82,
+    "question": "Which is a forced lifting mechanism for cloud formation?",
+    "options": [
+      "Coriolis force",
+      "Magnetic variation",
+      "Runway friction",
+      "Frontal lifting"
+    ],
+    "answer": 3,
+    "explanation": "กลไกการยกตัวแบบบังคับ (Forced Lifting): การยกตัวของมวลอากาศมีทั้งแบบพาความร้อนตามธรรมชาติ (Thermal) และแบบบังคับ โดยการยกตัวตามแนวปะทะอากาศ (Frontal lifting) และการยกตัวตามความสูงของภูเขา (Orographic lifting) จัดเป็นกลไกการยกตัวแบบบังคับ",
+    "correct": "Frontal lifting",
+    "topic": "050 04",
+    "topicName": "Lifting mechanisms",
+    "LO": "050 04 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "การยกตัวตามแนวปะทะอากาศ (Frontal lifting) เป็นกลไกการยกตัวแบบบังคับ (Forced lifting) ให้เกิดเมฆ"
+  },
+  {
+    "id": 83,
+    "question": "Which cloud form is typically associated with stable, layered conditions?",
+    "options": [
+      "Towering convective",
+      "Capillatus only",
+      "Stratiform",
+      "Cumuliform"
+    ],
+    "answer": 2,
+    "explanation": "เมฆแบบสเตรติฟอร์ม (Stratiform Clouds): เป็นเมฆที่มีลักษณะเป็นแผ่นหรือชั้นแบนราบ เกิดขึ้นในบรรยากาศที่มี 'เสถียรภาพ' (Stable conditions) โดยการยกตัวอย่างช้าๆ เป็นบริเวณกว้าง หรือจากการผสมผสานของความเย็นในแนวนอน",
+    "correct": "Stratiform",
+    "topic": "050 04",
+    "topicName": "Cloud family",
+    "LO": "050 04 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "เมฆรูปทรงแผ่นชั้น (Stratiform) สัมพันธ์กับสภาวะบรรยากาศที่มีเสถียรภาพ (Stable conditions)"
+  },
+  {
+    "id": 84,
+    "question": "Which cloud is characteristically cumuliform and associated with strong vertical development?",
+    "options": [
+      "Stratus",
+      "Cumulonimbus",
+      "Cirrostratus",
+      "Altostratus"
+    ],
+    "answer": 1,
+    "explanation": "เมฆคิวมูโลนิมบัส (Cumulonimbus - CB): เป็นเมฆรูปทรงคิวมูลัสที่มีการพัฒนาในแนวดิ่งอย่างรุนแรง มียอดแผ่เป็นรูปทั่ง บรรจุพลังงานความร้อนแฝงมหาศาล สัมพันธ์กับพายุฟ้าคะนอง ฝนตกหนัก ฟ้าผ่า ลูกเห็บ และความปั่นป่วนรุนแรง",
+    "correct": "Cumulonimbus",
+    "topic": "050 04",
+    "topicName": "Cloud type",
+    "LO": "050 04 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Cumulonimbus (CB) เป็นเมฆคิวมูลิฟอร์มที่มีการพัฒนาในแนวดิ่งอย่างรุนแรงที่สุด"
+  },
+  {
+    "id": 85,
+    "question": "Which cloud species is commonly associated with lens-shaped clouds near mountains?",
+    "options": [
+      "Lenticularis",
+      "Castellanus",
+      "Virga",
+      "Calvus"
+    ],
+    "answer": 0,
+    "explanation": "เมฆรูปทรงเลนส์ (Lenticularis): เป็นชนิดพันธุ์ของเมฆ (Species) ที่มีรูปร่างคล้ายเลนส์นูนหรือจานบิน มักลอยนิ่งอยู่เหนือหรือด้านใต้ลมของภูเขา ชี้ชัดว่ากำลังเกิดปรากฏการณ์คลื่นภูเขา (Mountain wave) และมีความปั่นป่วนรุนแรง",
+    "correct": "Lenticularis",
+    "topic": "050 04",
+    "topicName": "Cloud species",
+    "LO": "050 04 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "เมฆ Lenticularis มีรูปร่างคล้ายเลนส์ เกิดจากคลื่นภูเขา (Mountain wave)"
+  },
+  {
+    "id": 86,
+    "question": "Virga describes precipitation that:",
+    "options": [
+      "Always reaches the runway",
+      "Occurs only in thunderstorms",
+      "Is always freezing rain",
+      "Evaporates or sublimates before reaching the ground"
+    ],
+    "answer": 3,
+    "explanation": "เวอร์กา (Virga): หมายถึงหยาดน้ำฟ้า (ฝนหรือหิมะ) ที่ตกลงมาจากฐานเมฆ แต่ 'ระเหยหรือระเหิดไปหมดในอากาศแห้งก่อนที่จะตกถึงพื้นผิวโลก' มักทำให้เกิดลมกระโชกแรงแบบแห้ง (Dry microburst)",
+    "correct": "Evaporates or sublimates before reaching the ground",
+    "topic": "050 04",
+    "topicName": "Virga",
+    "LO": "050 04 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Virga คือสายฝนที่ระเหยไปหมดก่อนตกถึงพื้นดิน"
+  },
+  {
+    "id": 87,
+    "question": "A strong inversion near the surface tends to:",
+    "options": [
+      "Eliminate moisture",
+      "Increase convective mixing through the inversion",
+      "Suppress vertical motion and favor stratiform cloud or fog",
+      "Promote deep cumulonimbus in every case"
+    ],
+    "answer": 2,
+    "explanation": "อิทธิพลของ Inversion ต่อเมฆ: ชั้นอุณหภูมิผกผัน (Inversion) มีเสถียรภาพสูงมาก จะทำหน้าที่เสมือนฝาครอบปิดกั้นการยกตัวของอากาศในแนวดิ่ง บังคับให้ความชื้นและเมฆแผ่ออกในแนวราบ ก่อให้เกิดเมฆชั้นแผ่นบาง (Stratiform) หรือหมอกติดดิน",
+    "correct": "Suppress vertical motion and favor stratiform cloud or fog",
+    "topic": "050 04",
+    "topicName": "Inversion and\n\nclouds",
+    "LO": "050 04 01 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Inversion ระดับต่ำจะสกัดกั้นการเคลื่อนที่ในแนวดิ่งและสนับสนุนการเกิดเมฆแผ่นชั้น (Stratiform) หรือหมอก"
+  },
+  {
+    "id": 88,
+    "question": "Which cloud type generally presents the greatest combined risk of severe turbulence, icing and other convective hazards?",
+    "options": [
+      "Cirrostratus",
+      "Cumulonimbus",
+      "Cirrus",
+      "Stratus"
+    ],
+    "answer": 1,
+    "explanation": "อันตรายสูงสุดจากเมฆคิวมูโลนิมบัส: Cumulonimbus (CB) เป็นภัยคุกคามอันดับหนึ่งทางการบินเนื่องจากรวบรวมอันตรายร้ายแรงไว้พร้อมกัน ได้แก่ ความปั่นป่วนระดับรุนแรง (Severe turbulence), น้ำแข็งเกาะรุนแรง (Severe icing), ลูกเห็บ, ลมเฉือน, และฟ้าผ่า",
+    "correct": "Cumulonimbus",
+    "topic": "050 04",
+    "topicName": "Flying conditions",
+    "LO": "050 04 01 04",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "เมฆ Cumulonimbus (CB) มีความเสี่ยงสูงสุดต่อการบินจากทั้งความปั่นป่วน น้ำแข็งเกาะ และพายุฟ้าคะนอง"
+  },
+  {
+    "id": 89,
+    "question": "Fog is essentially:",
+    "options": [
+      "A cloud at or near the Earth’s surface that reduces visibility",
+      "A high-level ice cloud",
+      "Only dust suspended in dry air",
+      "A precipitation type"
+    ],
+    "answer": 0,
+    "explanation": "นิยามของหมอก (Fog): ตามคำจำกัดความทางอุตุนิยมวิทยา หมอกคือ 'ก้อนเมฆที่อยู่ที่ผิวพื้นหรือสัมผัสกับผิวโลก' ประกอบด้วยละอองน้ำหรือผลึกน้ำแข็งขนาดเล็กมากที่ลอยแขวนลอยอยู่ในอากาศ และลดทัศนวิสัยผิวพื้นลงต่ำกว่า 1,000 เมตร",
+    "correct": "A cloud at or near the Earth’s surface that reduces visibility",
+    "topic": "050 04",
+    "topicName": "Fog definition",
+    "LO": "050 04 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "หมอก (Fog) คือเมฆที่เกิดขึ้นติดกับพื้นผิวโลกและลดทัศนวิสัยลงต่ำกว่า 1,000 เมตร"
+  },
+  {
+    "id": 90,
+    "question": "Radiation fog most commonly forms during:",
+    "options": [
+      "Strong daytime convection",
+      "Very strong winds",
+      "A hot afternoon over a dry runway",
+      "Clear or partly clear, light-wind nights after surface cooling"
+    ],
+    "answer": 3,
+    "explanation": "หมอกจากการแผ่รังสี (Radiation Fog): มีเงื่อนไขการก่อตัวที่สมบูรณ์แบบคือ ในเวลากลางคืนที่มีท้องฟ้าแจ่มใสหรือมีเมฆน้อย (ทำให้พื้นดินคายความร้อนได้ดี), มีลมสงบหรือลมอ่อนๆ 2-8 นอต (ช่วยให้เกิดการคลุกเคล้าอากาศระดับต่ำ), และอากาศมีความชื้นสัมพัทธ์สูง",
+    "correct": "Clear or partly clear, light-wind nights after surface cooling",
+    "topic": "050 04",
+    "topicName": "Radiation fog",
+    "LO": "050 04 02 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Radiation fog เกิดในคืนที่ท้องฟ้าโปร่ง ลมสงบหรือลมอ่อน หลังจากพื้นดินเย็นตัวลงจากการแผ่รังสี"
+  },
+  {
+    "id": 91,
+    "question": "Advection fog forms when:",
+    "options": [
+      "Air descends in the stratosphere",
+      "A thunderstorm collapses",
+      "Moist air moves over a colder surface",
+      "Cold air moves over a warm surface and always becomes dry"
+    ],
+    "answer": 2,
+    "explanation": "หมอกจากการพาความร้อนในแนวราบ (Advection Fog): ก่อตัวขึ้นเมื่อมวลอากาศอุ่นและชื้น 'เคลื่อนที่พัดผ่านพื้นผิวที่เย็นกว่า' (Moist air moves over a colder surface) ทำให้อากาศชั้นล่างเย็นตัวลงจนถึงจุดน้ำค้าง สามารถเกิดได้ทั้งกลางวันและกลางคืน และมักเกิดร่วมกับลมแรงปานกลาง",
+    "correct": "Moist air moves over a colder surface",
+    "topic": "050 04",
+    "topicName": "Advection fog",
+    "LO": "050 04 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Advection fog เกิดขึ้นเมื่ออากาศอุ่นชื้นพัดผ่านพื้นผิวที่เย็นกว่า"
+  },
+  {
+    "id": 92,
+    "question": "Sea smoke is favored when:",
+    "options": [
+      "There is no moisture",
+      "Cold air moves over relatively warm water",
+      "Warm air moves over colder water only",
+      "The sea is frozen"
+    ],
+    "answer": 1,
+    "explanation": "ควันทะเล (Sea Smoke / Steam Fog): เกิดขึ้นเมื่อ 'มวลอากาศที่เย็นจัดและแห้งพัดผ่านผิวน้ำทะเลที่อุ่นกว่ามาก' ไอน้ำที่ระเหยขึ้นมาจากผิวน้ำอุ่นจะสัมผัสกับอากาศเย็นจัดและควบแน่นในทันที เกิดเป็นลักษณะคล้ายควันลอยกรุ่นเหนือผิวน้ำ",
+    "correct": "Cold air moves over relatively warm water",
+    "topic": "050 04",
+    "topicName": "Sea smoke",
+    "LO": "050 04 02 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Sea smoke เกิดขึ้นเมื่ออากาศเย็นจัดเคลื่อนที่ผ่านผิวน้ำที่อุ่นกว่า"
+  },
+  {
+    "id": 93,
+    "question": "Frontal fog is commonly associated with:",
+    "options": [
+      "Precipitation evaporating into cooler air near a frontal zone",
+      "Only clear-sky radiation",
+      "Mountain waves only",
+      "Jet-stream cores only"
+    ],
+    "answer": 0,
+    "explanation": "หมอกแนวปะทะอากาศ (Frontal Fog): เกิดจากการที่ฝนอุ่นตกลงมาจากแนวปะทะอากาศด้านบน แล้ว 'ระเหยลงสู่อากาศเย็นกว่าด้านล่าง' ใกล้ผิวพื้น ทำให้อากาศเย็นนั้นมีความชื้นเพิ่มขึ้นจนถึงจุดอิ่มตัวและกลายเป็นหมอก",
+    "correct": "Precipitation evaporating into cooler air near a frontal zone",
+    "topic": "050 04",
+    "topicName": "Frontal fog",
+    "LO": "050 04 02 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Frontal fog เกิดจากหยาดน้ำฟ้าของแนวปะทะระเหยเข้าไปในอากาศเย็นชั้นล่างจนอิ่มตัว"
+  },
+  {
+    "id": 94,
+    "question": "Orographic fog commonly forms when:",
+    "options": [
+      "Air descends rapidly on the lee side",
+      "A sea breeze reaches a desert",
+      "Pressure rises at night",
+      "Moist air is forced uphill and cools to saturation"
+    ],
+    "answer": 3,
+    "explanation": "หมอกภูเขา (Orographic Fog / Upslope Fog): ก่อตัวขึ้นเมื่อกระแสลมพัดพามวลอากาศชื้น 'ไต่ระดับขึ้นไปตามลาดเขา' (Forced uphill) อากาศขยายตัวและเย็นลงแบบอะเดียแบติกจนถึงจุดน้ำค้าง เกิดเป็นเมฆปกคลุมยอดเขาหรือหมอกบนภูเขา",
+    "correct": "Moist air is forced uphill and cools to saturation",
+    "topic": "050 04",
+    "topicName": "Orographic fog",
+    "LO": "050 04 02 06",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Orographic fog เกิดจากการที่อากาศชื้นถูกพัดยกตัวขึ้นตามลาดเขาและเย็นตัวจนอิ่มตัว"
+  },
+  {
+    "id": 95,
+    "question": "Which change most commonly promotes dissipation of radiation fog after sunrise?",
+    "options": [
+      "Complete calm with continued cooling",
+      "Increasing relative humidity",
+      "Surface heating and increasing turbulent mixing",
+      "Further surface cooling"
+    ],
+    "answer": 2,
+    "explanation": "การสลายตัวของหมอกรังสี (Fog Dissipation): หลังดวงอาทิตย์ขึ้น แสงแดดจะส่องทะลุหมอกลงมาอุ่นพื้นผิวโลก ทำให้พื้นดินถ่ายเทความร้อนให้อากาศชั้นล่าง อุณหภูมิสูงขึ้น และเกิดกระแสลมหมุนวนคลุกเคล้า (Turbulent mixing) นำพาความร้อนขึ้นมา ทำให้ละอองหมอกระเหยกลับเป็นไอน้ำ",
+    "correct": "Surface heating and increasing turbulent mixing",
+    "topic": "050 04",
+    "topicName": "Fog dissipation",
+    "LO": "050 04 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Radiation fog สลายตัวหลังพระอาทิตย์ขึ้นเนื่องจากความร้อนจากผิวดินและการคลุกเคล้าของอากาศปั่นป่วน"
+  },
+  {
+    "id": 96,
+    "question": "The Wegener–Bergeron–Findeisen process is primarily associated with:",
+    "options": [
+      "Freezing of all raindrops at the surface",
+      "Ice crystals growing at the expense of supercooled water droplets",
+      "Coalescence of large warm-cloud droplets only",
+      "Dust deposition only"
+    ],
+    "answer": 1,
+    "explanation": "กระบวนการ Bergeron-Findeisen: เป็นทฤษฎีการเกิดหยาดน้ำฟ้าในเมฆผสม (Mixed-phase clouds) ที่อุณหภูมิต่ำกว่า 0°C โดยความดันไอน้ำอิ่มตัวเหนือผิวน้ำแข็งจะต่ำกว่าเหนือน้ำเย็นยิ่งยวด ทำให้ไอน้ำระเหยจากหยดน้ำ supercooled ไปเกาะสะสมตัวเติบโตเป็นผลึกน้ำแข็งขนาดใหญ่ขึ้นอย่างรวดเร็ว",
+    "correct": "Ice crystals growing at the expense of supercooled water droplets",
+    "topic": "050 05",
+    "topicName": "Precipitation\n\nprocess",
+    "LO": "050 05 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "กระบวนการ Wegener-Bergeron-Findeisen คือผลึกน้ำแข็งเติบโตโดยดึงไอน้ำมาจากหยดน้ำเย็นยิ่งยวด"
+  },
+  {
+    "id": 97,
+    "question": "Coalescence is especially important in:",
+    "options": [
+      "Warm clouds where droplets collide and merge",
+      "Very dry stratospheric air",
+      "Clear air",
+      "Ice-only clouds"
+    ],
+    "answer": 0,
+    "explanation": "กระบวนการรวมตัวของหยดน้ำ (Coalescence): เป็นกลไกหลักในการเกิดฝนใน 'เมฆอุ่น' (Warm clouds ที่อุณหภูมิสูงกว่า 0°C) เกิดจากการที่หยดน้ำขนาดใหญ่ตกลงมาด้วยความเร็วมากกว่า แล้วชนและรวมตัวเข้ากับหยดน้ำขนาดเล็กจนมีขนาดใหญ่พอที่จะตกลงมาเป็นเม็ดฝน",
+    "correct": "Warm clouds where droplets collide and merge",
+    "topic": "050 05",
+    "topicName": "Coalescence",
+    "LO": "050 05 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Coalescence เป็นกระบวนการที่หยดน้ำในเมฆอุ่นชนและรวมตัวกันจนกลายเป็นเม็ดฝนขนาดใหญ่"
+  },
+  {
+    "id": 98,
+    "question": "Hail is most strongly associated with:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "Thin cirrus",
+      "Radiation fog",
+      "Stable stratus",
+      "Strong convective clouds such as cumulonimbus"
+    ],
+    "answer": 3,
+    "explanation": "การเกิดลูกเห็บ (Hail): ลูกเห็บเป็นหยาดน้ำฟ้าแบบของแข็งที่สัมพันธ์กับ 'เมฆคิวมูโลนิมบัส (CB) ที่มีกระแสอากาศลอยตัวขึ้นในแนวดิ่งที่รุนแรงมาก' (Strong updrafts) ซึ่งสามารถพยุงน้ำแข็งให้หมุนวนสะสมชั้นน้ำแข็งหนาขึ้นเรื่อยๆ ก่อนตกลงมา",
+    "correct": "Strong convective clouds such as cumulonimbus",
+    "topic": "050 05",
+    "topicName": "Hail",
+    "LO": "050 05 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลูกเห็บ (Hail) สัมพันธ์กับเมฆพาความร้อนรุนแรง เช่น Cumulonimbus (CB) ที่มีกระแสลมยกตัวมหาศาล"
+  },
+  {
+    "id": 99,
+    "question": "Freezing rain is hazardous because it:",
+    "options": [
+      "Cannot occur near fronts",
+      "Is harmless to aircraft",
+      "Freezes on contact with surfaces below 0 °C",
+      "Always falls as ice pellets"
+    ],
+    "answer": 2,
+    "explanation": "อันตรายของฝนเยือกแข็ง (Freezing Rain): ฝนเยือกแข็งคือหยดน้ำฝนที่ตกผ่านชั้นอากาศหนาวจัดจนกลายเป็นน้ำเย็นยิ่งยวด (Supercooled droplets) เมื่อหยดน้ำเหล่านี้ตกกระทบพื้นผิวรันเวย์หรือเครื่องบินที่มีอุณหภูมิต่ำกว่า 0°C จะ 'แข็งตัวเป็นน้ำแข็งใสทันทีที่สัมผัส' (Freezes on contact) ทำให้เกิดน้ำแข็งเกาะอย่างรวดเร็วและอันตรายยิ่ง",
+    "correct": "Freezes on contact with surfaces below 0 °C",
+    "topic": "050 05",
+    "topicName": "Freezing rain",
+    "LO": "050 05 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Freezing rain เป็นอันตรายร้ายแรงเพราะหยดน้ำฝนจะแข็งตัวทันทีที่กระทบพื้นผิวที่มีอุณหภูมิต่ำกว่า 0°C"
+  },
+  {
+    "id": 100,
+    "question": "Which of the following is a form of precipitation?",
+    "options": [
+      "Haze",
+      "Ice pellets",
+      "Smoke",
+      "Dust"
+    ],
+    "answer": 1,
+    "explanation": "เม็ดน้ำแข็ง (Ice Pellets): จัดเป็นรูปแบบหนึ่งของหยาดน้ำฟ้า (Precipitation) ในตระกูลของแข็ง เกิดจากเกล็ดหิมะละลายกลายเป็นเม็ดฝนขณะผ่านชั้นอากาศอุ่น แล้วตกลงมาผ่านชั้นอากาศหนาวจัดใต้เมฆจนแข็งตัวซ้ำกลายเป็นเม็ดน้ำแข็งใสขนาดเล็ก",
+    "correct": "Ice pellets",
+    "topic": "050 05",
+    "topicName": "Precipitation type",
+    "LO": "050 05 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Ice pellets (เม็ดน้ำแข็ง) จัดเป็นรูปแบบหนึ่งของหยาดน้ำฟ้า (Precipitation)"
+  },
+  {
+    "id": 101,
+    "question": "Which precipitation pattern is most typical of cumuliform convective clouds?",
+    "options": [
+      "Showery precipitation with rapid intensity changes",
+      "Continuous light drizzle only",
+      "No precipitation",
+      "Only freezing fog"
+    ],
+    "answer": 0,
+    "explanation": "ลักษณะฝนจากเมฆคิวมูลัส (Convective Precipitation): เมฆพาความร้อนแบบคิวมูลิฟอร์ม (Cumulus/CB) มักให้ฝนที่มีลักษณะเป็น 'ฝนซู่ตกๆ หยุดๆ และมีการเปลี่ยนแปลงความเข้มข้นอย่างรวดเร็ว' (Showery precipitation with rapid intensity changes)",
+    "correct": "Showery precipitation with rapid intensity changes",
+    "topic": "050 05",
+    "topicName": "Convective\n\nprecipitation",
+    "LO": "050 05 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เมฆพาความร้อน (Cumuliform) ก่อให้เกิดฝนแบบ Showery ที่ความเข้มของฝนเปลี่ยนแปลงอย่างรวดเร็ว"
+  },
+  {
+    "id": 102,
+    "question": "Stratiform cloud systems are more commonly associated with:",
+    "options": [
+      "Extremely localized hail only",
+      "No precipitation",
+      "Only dry snow crystals at FL 400",
+      "Widespread, steadier precipitation"
+    ],
+    "answer": 3,
+    "explanation": "หยาดน้ำฟ้าจากเมฆสเตรติฟอร์ม (Stratiform Precipitation): เมฆแผ่นชั้น เช่น Nimbostratus หรือ Altostratus มักให้หยาดน้ำฟ้าที่มีลักษณะ 'แผ่เป็นบริเวณกว้างและตกต่อเนื่องสม่ำเสมอ' (Widespread, steadier precipitation) ต่างจากฝนซู่ของเมฆคิวมูลัส",
+    "correct": "Widespread, steadier precipitation",
+    "topic": "050 05",
+    "topicName": "Stratiform\n\nprecipitation",
+    "LO": "050 05 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เมฆสเตรติฟอร์ม (Stratiform) มักให้ฝนตกต่อเนื่องสม่ำเสมอเป็นบริเวณกว้าง"
+  },
+  {
+    "id": 103,
+    "question": "Why can small snowflakes sometimes reduce visibility more than large wet flakes?",
+    "options": [
+      "Small flakes contain no water",
+      "Snow size has no relation to visibility",
+      "Small crystals can remain suspended and form a dense concentration in the air",
+      "Large flakes are always invisible"
+    ],
+    "answer": 2,
+    "explanation": "ขนาดเกล็ดหิมะกับทัศนวิสัย: เกล็ดหิมะขนาดเล็ก (Small snowflakes) มีอัตราการตกช้ากว่า สามารถลอยแขวนลอยในอากาศได้นานและมีความหนาแน่นของจำนวนอนุภาคต่อหนึ่งหน่วยปริมาตรอากาศสูง จึงบดบังและกระเจิงแสงได้มากกว่าเกล็ดหิมะเปียกขนาดใหญ่",
+    "correct": "Small crystals can remain suspended and form a dense concentration in the air",
+    "topic": "050 05",
+    "topicName": "Snow visibility",
+    "LO": "050 05 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เกล็ดหิมะขนาดเล็กสามารถแขวนลอยในอากาศหนาแน่นกว่า จึงลดทัศนวิสัยได้มากกว่าเกล็ดหิมะขนาดใหญ่"
+  },
+  {
+    "id": 104,
+    "question": "Why is hail considered a significant aircraft hazard?",
+    "options": [
+      "It is too small to be detected\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Its high density and impact energy can damage aircraft",
+      "It only reduces humidity",
+      "It always causes engine flameout"
+    ],
+    "answer": 1,
+    "explanation": "อันตรายจากลูกเห็บ (Hail Hazard): ลูกเห็บมีความหนาแน่นสูงและมีความเร็วในการตกกระทบสูงมาก พลังงานจลน์จากการชนสามารถสร้างความเสียหายเชิงโครงสร้างต่อกระจกหน้าต่างห้องนักบิน ชายหน้าปีก เรโดม และใบพัดเครื่องยนต์ได้อย่างรุนแรง",
+    "correct": "Its high density and impact energy can damage aircraft",
+    "topic": "050 05",
+    "topicName": "Hail hazard",
+    "LO": "050 05 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ลูกเห็บมีมวลและความหนาแน่นสูง พลังงานการชนกระแทกสามารถสร้างความเสียหายต่อโครงสร้างอากาศยานได้"
+  },
+  {
+    "id": 105,
+    "question": "A typical freezing-rain situation involves:",
+    "options": [
+      "Liquid precipitation becoming supercooled below 0 °C and freezing on contact",
+      "Snow melting and remaining liquid above a warm surface",
+      "Ice pellets evaporating before landing",
+      "Rain becoming hail in clear air"
+    ],
+    "answer": 0,
+    "explanation": "กลไกการเกิดฝนเยือกแข็ง (Freezing Rain Mechanism): เกิดขึ้นเมื่อหยาดน้ำฟ้าของเหลวตกลงมาผ่านชั้นอากาศที่เย็นจัดต่ำกว่า 0°C จนกลายเป็นน้ำเย็นยิ่งยวด (Supercooled droplets) และเมื่อกระทบกับวัตถุหรือพื้นผิวที่มีอุณหภูมิต่ำกว่าศูนย์จะแข็งตัวเป็นน้ำแข็งทันที",
+    "correct": "Liquid precipitation becoming supercooled below 0 °C and freezing on contact",
+    "topic": "050 05",
+    "topicName": "Freezing\n\nprecipitation mechanism",
+    "LO": "050 05 02 01",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "สภาวะ Freezing rain เกิดจากหยาดน้ำฟ้าของเหลวเย็นยิ่งยวดต่ำกว่า 0°C และแข็งตัวทันทีเมื่อกระทบพื้นผิว"
+  },
+  {
+    "id": 106,
+    "question": "An air mass is a large body of air with relatively uniform:",
+    "options": [
+      "Wind direction only",
+      "Pressure only",
+      "Cloud type only",
+      "Temperature and humidity characteristics"
+    ],
+    "answer": 3,
+    "explanation": "นิยามมวลอากาศ (Air Mass): คือมวลอากาศขนาดใหญ่มากที่แผ่คลุมพื้นที่หลายแสนตารางกิโลเมตร โดยมี 'คุณสมบัติของอุณหภูมิและความชื้นที่ค่อนข้างสม่ำเสมอในแนวราบ' (Uniform temperature and humidity characteristics)",
+    "correct": "Temperature and humidity characteristics",
+    "topic": "050 06",
+    "topicName": "Air mass",
+    "LO": "050 06 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "มวลอากาศ (Air mass) คือก้อนอากาศขนาดใหญ่ที่มีอุณหภูมิและความชื้นสม่ำเสมอตลอดแนวราบ"
+  },
+  {
+    "id": 107,
+    "question": "A good air-mass source region is generally:",
+    "options": [
+      "A rapidly moving front",
+      "A thunderstorm cell",
+      "Large, relatively uniform and able to allow air to remain over it long enough to acquire properties",
+      "A narrow mountain ridge"
+    ],
+    "answer": 2,
+    "explanation": "แหล่งกำเนิดมวลอากาศ (Source Region): บริเวณที่จะเป็นแหล่งกำเนิดมวลอากาศที่ดีต้องมีลักษณะ 'กว้างใหญ่ มีสภาพพื้นผิวที่สม่ำเสมอ (เช่น มหาสมุทรหรือทะเลทรายกว้างใหญ่) และลมสงบหรือมีการไหลเวียนช้า' เพื่อให้อากาศนิ่งอยู่นานพอที่จะรับคุณสมบัติของพื้นผิว",
+    "correct": "Large, relatively uniform and able to allow air to remain over it long enough to acquire properties",
+    "topic": "050 06",
+    "topicName": "Source region",
+    "LO": "050 06 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "แหล่งกำเนิดมวลอากาศที่ดีต้องกว้างใหญ่ พื้นผิวสม่ำเสมอ และอากาศเคลื่อนที่ช้าจนซึมซับคุณสมบัติได้เต็มที่"
+  },
+  {
+    "id": 108,
+    "question": "The letter “m” in an air-mass classification indicates:",
+    "options": [
+      "Medium altitude",
+      "Maritime",
+      "Mountain",
+      "Monsoon only"
+    ],
+    "answer": 1,
+    "explanation": "สัญลักษณ์มวลอากาศ 'm': อักษรย่อ 'm' ย่อมาจาก 'Maritime' หมายถึงมวลอากาศที่มีแหล่งกำเนิดหรือเคลื่อนที่ผ่านผิวน้ำทะเลและมหาสมุทร จึงมีความชื้นสูง",
+    "correct": "Maritime",
+    "topic": "050 06",
+    "topicName": "Maritime air",
+    "LO": "050 06 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "อักษร 'm' ในการจำแนกมวลอากาศย่อมาจาก Maritime (ทางทะเล มีความชื้นสูง)"
+  },
+  {
+    "id": 109,
+    "question": "The letter “c” in an air-mass classification indicates:",
+    "options": [
+      "Continental",
+      "Convective",
+      "Coastal only",
+      "Cold only"
+    ],
+    "answer": 0,
+    "explanation": "สัญลักษณ์มวลอากาศ 'c': อักษรย่อ 'c' ย่อมาจาก 'Continental' หมายถึงมวลอากาศที่มีแหล่งกำเนิดเหนือผืนแผ่นดินใหญ่หรือทวีป จึงมีคุณสมบัติแห้งแล้งและความชื้นต่ำ",
+    "correct": "Continental",
+    "topic": "050 06",
+    "topicName": "Continental air",
+    "LO": "050 06 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "อักษร 'c' ในการจำแนกมวลอากาศย่อมาจาก Continental (ทางทวีป มีความชื้นต่ำ)"
+  },
+  {
+    "id": 110,
+    "question": "A maritime air mass generally has more moisture than a continental air mass from a similar latitude because it:",
+    "options": [
+      "Always forms over deserts",
+      "Has no evaporation source\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Is always colder",
+      "Forms over or passes over a large water surface"
+    ],
+    "answer": 3,
+    "explanation": "ความชื้นในมวลอากาศทางทะเล: มวลอากาศ Maritime ที่ละติจูดเดียวกันจะมีปริมาณไอน้ำมากกว่ามวลอากาศ Continental เนื่องจากก่อตัวหรือเคลื่อนที่ผ่าน 'ผิวน้ำขนาดใหญ่' (Forms over or passes over a large water surface) ทำให้เกิดการระเหยของไอน้ำเข้าสู่มวลอากาศอย่างต่อเนื่อง",
+    "correct": "Forms over or passes over a large water surface",
+    "topic": "050 06",
+    "topicName": "Air mass weather",
+    "LO": "050 06 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "มวลอากาศทางทะเลมีความชื้นมากกว่ามวลอากาศทางทวีปเพราะก่อตัวเหนือผิวน้ำขนาดใหญ่"
+  },
+  {
+    "id": 111,
+    "question": "When an air mass moves over a different surface, its original properties can change due to:",
+    "options": [
+      "Magnetic variation",
+      "Aircraft traffic",
+      "Heating, cooling and moisture exchange with the underlying surface",
+      "Coriolis force only"
+    ],
+    "answer": 2,
+    "explanation": "การดัดแปรของมวลอากาศ (Air-mass Modification): เมื่อมวลอากาศเคลื่อนที่ออกจากแหล่งกำเนิดข้ามไปยังพื้นผิวใหม่ คุณสมบัติเดิมจะเปลี่ยนแปลงไปเนื่องจาก 'การแลกเปลี่ยนความร้อน ความเย็น และความชื้นกับพื้นผิวเบื้องล่าง' (Heating, cooling and moisture exchange)",
+    "correct": "Heating, cooling and moisture exchange with the underlying surface",
+    "topic": "050 06",
+    "topicName": "Air-mass\n\nmodification",
+    "LO": "050 06 01 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "มวลอากาศถูกดัดแปรคุณสมบัติผ่านการแลกเปลี่ยนความร้อนและความชื้นกับพื้นผิวเบื้องล่างที่เคลื่อนผ่าน"
+  },
+  {
+    "id": 112,
+    "question": "A front is a transition zone between:",
+    "options": [
+      "Two jet streams only",
+      "Two air masses with different properties",
+      "Two runways",
+      "Two pressure instruments"
+    ],
+    "answer": 1,
+    "explanation": "แนวปะทะอากาศ (Front): คือ 'เขตรอยต่อหรือเขตเปลี่ยนผ่านระหว่างมวลอากาศสองมวลที่มีคุณสมบัติต่างกัน' (Transition zone between two air masses) โดยเฉพาะความแตกต่างของอุณหภูมิและความหนาแน่น มักเกิดลมเฉือน เมฆ และหยาดน้ำฟ้า",
+    "correct": "Two air masses with different properties",
+    "topic": "050 06",
+    "topicName": "Front",
+    "LO": "050 06 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "แนวปะทะอากาศ (Front) คือเขตรอยต่อระหว่างมวลอากาศสองมวลที่มีคุณสมบัติแตกต่างกัน"
+  },
+  {
+    "id": 113,
+    "question": "At a warm front, warm air generally:",
+    "options": [
+      "Advances and rises over retreating colder air",
+      "Descends beneath colder air",
+      "Remains stationary in every case",
+      "Moves only vertically downward"
+    ],
+    "answer": 0,
+    "explanation": "การเคลื่อนตัวที่แนวปะทะอากาศอุ่น (Warm Front): มวลอากาศอุ่นที่มีความหนาแน่นน้อยกว่าจะ 'รุกคืบและยกตัวลอยขึ้นอย่างช้าๆ เหนือมวลอากาศเย็นที่กำลังถอยร่น' (Advances and rises over retreating colder air) เกิดเป็นแนวลาดเอียงที่ตื้นมาก (1:150 ถึง 1:250)",
+    "correct": "Advances and rises over retreating colder air",
+    "topic": "050 06",
+    "topicName": "Warm front",
+    "LO": "050 06 02 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ที่แนวปะทะอากาศอุ่น มวลอากาศอุ่นจะรุกคืบและยกตัวขึ้นเหนือมวลอากาศเย็นที่ถอยร่น"
+  },
+  {
+    "id": 114,
+    "question": "Which cloud sequence is most characteristic ahead of a well-developed warm front?",
+    "options": [
+      "Only cumulonimbus immediately at the surface",
+      "Only cirrus after the front has passed",
+      "No cloud",
+      "High cloud increasing and lowering through middle to low layers"
+    ],
+    "answer": 3,
+    "explanation": "ลำดับเมฆหน้าแนวปะทะอากาศอุ่น: เนื่องจากแนวลาดของแนวปะทะอากาศอุ่นมีความลาดชันน้อย อากาศอุ่นที่ค่อยๆ ลอยขึ้นจะสร้างเมฆแผ่นชั้นต่อเนื่อง โดยเมื่อแนวปะทะเคลื่อนเข้ามาใกล้ จะเริ่มจาก 'เมฆชั้นสูง (Cirrus, Cirrostratus) หนาตัวขึ้นและลดระดับลงสู่เมฆชั้นกลาง (Altostratus) และเมฆชั้นต่ำ (Nimbostratus)' ที่ให้ฝนตกต่อเนื่อง",
+    "correct": "High cloud increasing and lowering through middle to low layers",
+    "topic": "050 06",
+    "topicName": "Warm-front clouds",
+    "LO": "050 06 02 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลำดับเมฆด้านหน้าแนวปะทะอากาศอุ่นจะเริ่มจากเมฆชั้นสูงแล้วค่อยๆ ลดระดับลงมาเป็นเมฆชั้นกลางและชั้นต่ำ"
+  },
+  {
+    "id": 115,
+    "question": "At a cold front, colder air generally:",
+    "options": [
+      "Stops all vertical motion",
+      "Always remains behind the warm front",
+      "Advances and lifts warmer air",
+      "Rises over colder air"
+    ],
+    "answer": 2,
+    "explanation": "การเคลื่อนตัวที่แนวปะทะอากาศเย็น (Cold Front): มวลอากาศเย็นที่มีความหนาแน่นและน้ำหนักมากกว่าจะ 'รุกคืบเข้าดันและช้อนมวลอากาศอุ่นเบื้องหน้าให้ยกตัวสูงขึ้นอย่างรวดเร็ว' (Advances and lifts warmer air) มีแนวลาดชันชันกว่าแนวปะทะอุ่น (1:50 ถึง 1:100)",
+    "correct": "Advances and lifts warmer air",
+    "topic": "050 06",
+    "topicName": "Cold front",
+    "LO": "050 06 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ที่แนวปะทะอากาศเย็น มวลอากาศเย็นจะรุกคืบและช้อนยกมวลอากาศอุ่นให้ลอยสูงขึ้น"
+  },
+  {
+    "id": 116,
+    "question": "A fast-moving cold front is more likely than a warm front to produce:",
+    "options": [
+      "Only high cloud",
+      "Showery precipitation and convective cloud",
+      "Only widespread drizzle for 24 hours\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "No wind shift"
+    ],
+    "answer": 1,
+    "explanation": "สภาพอากาศของแนวปะทะอากาศเย็นที่เคลื่อนตัวเร็ว: ด้วยความลาดชันที่สูงและการยกตัวอย่างรวดเร็วของอากาศอุ่น แนวปะทะอากาศเย็นที่เคลื่อนตัวเร็วมีแนวโน้มสูงที่จะก่อให้เกิด 'เมฆพาความร้อน (Cumuliform/CB) และฝนฟ้าคะนองแบบฝนซู่' (Showery precipitation and convective cloud) รวมถึงแนว Squall line",
+    "correct": "Showery precipitation and convective cloud",
+    "topic": "050 06",
+    "topicName": "Cold-front weather",
+    "LO": "050 06 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "แนวปะทะอากาศเย็นที่เคลื่อนที่เร็วมีแนวโน้มก่อให้เกิดเมฆพาความร้อน ฝนซู่ และพายุฟ้าคะนอง"
+  },
+  {
+    "id": 117,
+    "question": "The warm sector is the region:",
+    "options": [
+      "Between the warm front and cold front of a frontal depression",
+      "Behind the cold front only",
+      "Ahead of the warm front only",
+      "Inside an anticyclone"
+    ],
+    "answer": 0,
+    "explanation": "ย่านอากาศอุ่น (Warm Sector): คือบริเวณพื้นที่มวลอากาศอุ่นที่อยู่ 'ระหว่างแนวปะทะอากาศอุ่นกับแนวปะทะอากาศเย็น' ของหย่อมความกดอากาศต่ำแบบแนวปะทะ (Frontal depression) สภาพอากาศมักมีอุณหภูมิคงที่ ทัศนวิสัยปานกลาง เมฆ Stratus/Stratocumulus หรือละอองฝนปรอยๆ",
+    "correct": "Between the warm front and cold front of a frontal depression",
+    "topic": "050 06",
+    "topicName": "Warm sector",
+    "LO": "050 06 02 04",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Warm sector คือบริเวณที่อยู่ระหว่างแนวปะทะอากาศอุ่นและแนวปะทะอากาศเย็นของหย่อมความกดอากาศต่ำ"
+  },
+  {
+    "id": 118,
+    "question": "After passage of a typical cold front, conditions often include:",
+    "options": [
+      "Persistent warm-front cloud only",
+      "No wind change",
+      "Guaranteed fog",
+      "Improving visibility with colder, drier air but possible showers"
+    ],
+    "answer": 3,
+    "explanation": "สภาพอากาศหลังแนวปะทะอากาศเย็นเคลื่อนผ่าน: เมื่อแนวปะทะเย็นผ่านไปแล้ว มวลอากาศเย็นและแห้งกว่าจะเข้ามาแทนที่ ส่งผลให้ 'ทัศนวิสัยดีขึ้นอย่างเห็นได้ชัด ความกดอากาศเริ่มสูงขึ้น อุณหภูมิลดลง แต่อาจมีเมฆคิวมูลัสและฝนซู่ประปราย' ในอากาศที่ปั่นป่วน",
+    "correct": "Improving visibility with colder, drier air but possible showers",
+    "topic": "050 06",
+    "topicName": "Post-cold-front\n\nweather",
+    "LO": "050 06 02 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "หลังแนวปะทะอากาศเย็นผ่าน อากาศจะเย็นและแห้งลง ทัศนวิสัยดีขึ้นมาก แต่อาจมีฝนซู่ประปราย"
+  },
+  {
+    "id": 119,
+    "question": "An occluded front forms when:",
+    "options": [
+      "A ridge moves over a trough",
+      "Two anticyclones merge",
+      "A faster cold front catches the warm front and lifts the warm-sector air",
+      "A sea breeze reaches land"
+    ],
+    "answer": 2,
+    "explanation": "การเกิดแนวปะทะอากาศบดบัง (Occluded Front): เกิดขึ้นเมื่อ 'แนวปะทะอากาศเย็นที่เคลื่อนที่เร็วกว่าวิ่งไล่กวดทันแนวปะทะอากาศอุ่น' และช้อนยกมวลอากาศในย่านอากาศอุ่น (Warm sector) ให้ลอยพ้นจากผิวพื้นดินขึ้นไปสู่บรรยากาศชั้นบนจนหมด",
+    "correct": "A faster cold front catches the warm front and lifts the warm-sector air",
+    "topic": "050 06",
+    "topicName": "Occlusion",
+    "LO": "050 06 02 06",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "แนวปะทะอากาศบดบัง (Occlusion) เกิดเมื่อแนวปะทะเย็นไล่ทันแนวปะทะอุ่นและช้อนมวลอากาศอุ่นขึ้นสู่เบื้องบน"
+  },
+  {
+    "id": 120,
+    "question": "A stationary front is one in which:",
+    "options": [
+      "Pressure is always 1013 hPa",
+      "Neither air mass is making significant progress relative to the other",
+      "The cold front always moves rapidly",
+      "The warm front disappears"
+    ],
+    "answer": 1,
+    "explanation": "แนวปะทะอากาศคงที่ (Stationary Front): คือแนวปะทะอากาศที่มวลอากาศทั้งสองฝั่ง 'ไม่มีมวลอากาศใดรุกคืบก้าวหน้าเข้ายึดครองพื้นที่ของอีกฝ่ายอย่างมีนัยสำคัญ' (Neither air mass makes significant progress) ลมมักพัดขนานกับแนวปะทะ",
+    "correct": "Neither air mass is making significant progress relative to the other",
+    "topic": "050 06",
+    "topicName": "Stationary front",
+    "LO": "050 06 02 07",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Stationary front คือแนวปะทะที่มวลอากาศทั้งสองไม่รุกคืบเข้าหากันและหยุดนิ่งอยู่กับที่"
+  },
+  {
+    "id": 121,
+    "question": "In the classic life cycle of a mid-latitude frontal depression, occlusion generally occurs:",
+    "options": [
+      "After the cold front catches the warm front",
+      "Before any frontal wave develops",
+      "Only during anticyclones",
+      "Only in the tropics"
+    ],
+    "answer": 0,
+    "explanation": "วงจรชีวิตของพายุดีเปรสชันกึ่งเขตร้อน (Frontal Depression Lifecycle): การเกิดแนวปะทะบดบัง (Occlusion) จัดเป็น 'ระยะเจริญเต็มที่และเริ่มสลายตัว' ซึ่งเกิดขึ้นหลังจากที่แนวปะทะเย็นเคลื่อนที่ไล่กวดทันแนวปะทะอุ่น (After cold front catches warm front)",
+    "correct": "After the cold front catches the warm front",
+    "topic": "050 06",
+    "topicName": "Frontal life cycle",
+    "LO": "050 06 02 08",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การบดบัง (Occlusion) ในวงจรชีวิตของร่องความกดอากาศต่ำเกิดขึ้นหลังจากแนวปะทะเย็นไล่ทันแนวปะทะอุ่น"
+  },
+  {
+    "id": 122,
+    "question": "During passage of a cold front, which change is commonly expected?",
+    "options": [
+      "No change in wind",
+      "Temperature always rises",
+      "Pressure becomes exactly 1013 hPa",
+      "A wind shift, pressure tendency change and temperature decrease\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+    ],
+    "answer": 3,
+    "explanation": "การเปลี่ยนแปลงขณะแนวปะทะอากาศเย็นเคลื่อนผ่าน: ขณะที่แนวปะทะเย็นเคลื่อนผ่านสถานีตรวจอากาศ จะสังเกตเห็น 'ลมเปลี่ยนทิศอย่างฉับพลัน (Wind shift เช่น จาก SW เป็น NW), แนวโน้มความกดอากาศเปลี่ยนจากลดลงเป็นพุ่งสูงขึ้น, และอุณหภูมิลดฮวบลง'",
+    "correct": "A wind shift, pressure tendency change and temperature decrease\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "topic": "050 06",
+    "topicName": "Frontal passage",
+    "LO": "050 06 02 09",
+    "difficulty": "Hard",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "เมื่อแนวปะทะเย็นผ่าน จะเกิดลมเปลี่ยนทิศ แนวโน้มความกดอากาศเปลี่ยนเป็นสูงขึ้น และอุณหภูมิลดลง"
+  },
+  {
+    "id": 123,
+    "question": "A developing frontal wave can be recognized by:",
+    "options": [
+      "A stationary high only",
+      "A tropical cyclone eye",
+      "A kink/disturbance along an existing front with associated pressure fall",
+      "A completely cloudless ridge"
+    ],
+    "answer": 2,
+    "explanation": "คลื่นแนวปะทะ (Frontal Wave): คลื่นบนแนวปะทะที่กำลังเริ่มพัฒนาตัวเป็นหย่อมความกดอากาศต่ำ สามารถสังเกตเห็นได้จาก 'รอยหยัก/การบิดโค้งบนแนวปะทะอากาศเดิม พร้อมกับการลดลงของความกดอากาศเฉพาะที่' (A kink/disturbance with pressure fall)",
+    "correct": "A kink/disturbance along an existing front with associated pressure fall",
+    "topic": "050 06",
+    "topicName": "Frontal wave",
+    "LO": "050 06 02 09",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การก่อตัวของคลื่นแนวปะทะสังเกตได้จากรอยหยักบนแนวปะทะและความกดอากาศที่เริ่มลดต่ำลง"
+  },
+  {
+    "id": 124,
+    "question": "Why is the temperature contrast across a front meteorologically important?",
+    "options": [
+      "It determines magnetic variation",
+      "It can create strong gradients and support frontal lifting and weather development",
+      "It eliminates pressure gradients",
+      "It guarantees clear skies"
+    ],
+    "answer": 1,
+    "explanation": "ความสำคัญของความแตกต่างอุณหภูมิข้ามแนวปะทะ: ความแตกต่างของอุณหภูมิและความหนาแน่นอย่างรุนแรงข้ามแนวปะทะ (Baroclinic instability) สร้างเกรเดียนต์ความกดอากาศที่รุนแรง ซึ่งเป็นแหล่งพลังงานหลักในการ 'ขับเคลื่อนการยกตัวของอากาศและการพัฒนาระบบสภาพอากาศรุนแรง'",
+    "correct": "It can create strong gradients and support frontal lifting and weather development",
+    "topic": "050 06",
+    "topicName": "Air-mass boundary",
+    "LO": "050 06 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ความแตกต่างของอุณหภูมิข้ามแนวปะทะสร้างเกรเดียนต์หนาแน่น ซึ่งช่วยสนับสนุนการยกตัวและก่อตัวของสภาพอากาศ"
+  },
+  {
+    "id": 125,
+    "question": "The distinction between warm and cold occlusion depends mainly on:",
+    "options": [
+      "Which of the two cold air masses is colder near the surface",
+      "The direction of Coriolis force",
+      "Cloud amount only",
+      "The runway heading"
+    ],
+    "answer": 0,
+    "explanation": "การจำแนกระหว่าง Warm Occlusion และ Cold Occlusion: ขึ้นอยู่กับ 'อุณหภูมิของมวลอากาศเย็นสองมวลที่ผิวพื้น' โดยหากมวลอากาศเย็นที่อยู่ด้านหลังแนวปะทะเย็นมีอุณหภูมิเย็นกว่ามวลอากาศเย็นข้างหน้า จะเป็น Cold Occlusion แต่ถ้ามวลอากาศเย็นด้านหน้าเย็นกว่า จะเป็น Warm Occlusion",
+    "correct": "Which of the two cold air masses is colder near the surface",
+    "topic": "050 06",
+    "topicName": "Warm/cold\n\nocclusion",
+    "LO": "050 06 02 06",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ความแตกต่างระหว่าง Warm และ Cold Occlusion ขึ้นอยู่กับว่ามวลอากาศเย็นฝั่งใดเย็นกว่ากันที่ผิวพื้น"
+  },
+  {
+    "id": 126,
+    "question": "The major global pressure belts include:",
+    "options": [
+      "Only polar lows",
+      "Only equatorial highs",
+      "Only one global pressure center",
+      "Equatorial low and subtropical high-pressure belts"
+    ],
+    "answer": 3,
+    "explanation": "แถบความกดอากาศหลักของโลก (Global Pressure Belts): รูปแบบการหมุนเวียนบรรยากาศโลกมีแถบความกดอากาศกึ่งถาวรที่สำคัญ ได้แก่ 'แถบความกดอากาศต่ำบริเวณศูนย์สูตร (Equatorial Low / ITCZ)' และ 'แถบความกดอากาศสูงกึ่งเขตร้อน (Subtropical Highs / Horse latitudes)'",
+    "correct": "Equatorial low and subtropical high-pressure belts",
+    "topic": "050 07",
+    "topicName": "Pressure areas",
+    "LO": "050 07 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "แถบความกดอากาศหลักของโลกได้แก่ แถบความกดอากาศต่ำศูนย์สูตร และแถบความกดอากาศสูงกึ่งเขตร้อน"
+  },
+  {
+    "id": 127,
+    "question": "An anticyclone is a system of:",
+    "options": [
+      "Zero pressure",
+      "Constant pressure only",
+      "High pressure",
+      "Low pressure"
+    ],
+    "answer": 2,
+    "explanation": "แอนติไซโคลน (Anticyclone): คือระบบบรรยากาศของ 'บริเวณความกดอากาศสูง' (High pressure system) ซึ่งมีความกดอากาศตรงจุดศูนย์กลางสูงกว่าบริเวณโดยรอบ เส้นไอโซบาร์มีลักษณะปิดล้อม และลมพัดเวียนออกจากศูนย์กลางตามเข็มนาฬิกาในซีกโลกเหนือ",
+    "correct": "High pressure",
+    "topic": "050 07",
+    "topicName": "Anticyclone",
+    "LO": "050 07 02 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "แอนติไซโคลน (Anticyclone) คือระบบความกดอากาศสูง (High pressure system)"
+  },
+  {
+    "id": 128,
+    "question": "Subsidence in a typical anticyclone tends to produce:",
+    "options": [
+      "Continuous thunderstorms",
+      "Stable conditions and suppression of cloud development",
+      "Deep convection everywhere",
+      "Persistent frontal lifting"
+    ],
+    "answer": 1,
+    "explanation": "การจมตัวในแอนติไซโคลน (Subsidence in Anticyclone): อากาศที่ศูนย์กลางของแอนติไซโคลนจะจมตัวลงอย่างช้าๆ (Subsidence) ทำให้อุณหภูมิสูงขึ้นจากการบีบอัด บรรยากาศจึงมีเสถียรภาพสูงและ 'กดทับการก่อตัวของเมฆและการพาความร้อน' ทำให้ท้องฟ้าแจ่มใส",
+    "correct": "Stable conditions and suppression of cloud development",
+    "topic": "050 07",
+    "topicName": "Anticyclone\n\nweather",
+    "LO": "050 07 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การจมตัวของอากาศในแอนติไซโคลนสร้างสภาวะเสถียรภาพและยับยั้งการก่อตัวของเมฆ"
+  },
+  {
+    "id": 129,
+    "question": "A warm anticyclone is generally associated with:",
+    "options": [
+      "A deep warm air column and relatively high heights aloft",
+      "A cold column with low heights aloft",
+      "Only a tropical cyclone",
+      "A frontal trough"
+    ],
+    "answer": 0,
+    "explanation": "แอนติไซโคลนแบบอุ่น (Warm Anticyclone): คือบริเวณความกดอากาศสูงที่เกิดจากลำอากาศที่อุ่นลึกตลอดทั้งชั้น (Deep warm column) ทำให้อัตราการลดลงของความกดอากาศตามความสูงช้า ความกดอากาศในระดับสูงจึงยังคงสูงมาก เกิดเป็นสันความกดอากาศสูงในระดับบน (High heights aloft)",
+    "correct": "A deep warm air column and relatively high heights aloft",
+    "topic": "050 07",
+    "topicName": "Warm anticyclone",
+    "LO": "050 07 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Warm anticyclone สัมพันธ์กับลำอากาศอุ่นตลอดชั้นและความสูงของระนาบความกดอากาศระดับบนที่สูงมาก"
+  },
+  {
+    "id": 130,
+    "question": "A thermal depression is primarily produced by:",
+    "options": [
+      "Strong radiational cooling only",
+      "Cold air subsidence",
+      "A jet stream crossing a mountain",
+      "Strong surface heating causing a shallow low-pressure area"
+    ],
+    "answer": 3,
+    "explanation": "หย่อมความกดอากาศต่ำจากความร้อน (Thermal Depression): เป็นหย่อมความกดอากาศต่ำระดับผิวพื้นที่มีความลึกไม่มาก เกิดจาก 'ความร้อนจากแสงแดดเผาพื้นผิวโลกอย่างรุนแรง' ทำให้อากาศร้อนขยายตัว ลอยตัวขึ้น และลดความกดอากาศที่ผิวพื้นลง (พบบ่อยในฤดูร้อนเหนือทะเลทรายหรือแผ่นดินใหญ่)",
+    "correct": "Strong surface heating causing a shallow low-pressure area",
+    "topic": "050 07",
+    "topicName": "Thermal depression",
+    "LO": "050 07 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Thermal depression เกิดจากความร้อนที่ผิวพื้นทำให้อากาศร้อนขยายตัวและเกิดความกดอากาศต่ำระดับตื้น"
+  },
+  {
+    "id": 131,
+    "question": "An orographic depression is associated with:",
+    "options": [
+      "Only radiation fog",
+      "A cloudless anticyclone",
+      "Terrain effects on airflow and pressure distribution",
+      "Only ocean evaporation"
+    ],
+    "answer": 2,
+    "explanation": "หย่อมความกดอากาศต่ำจากภูมิประเทศ (Orographic Depression / Lee Low): เกิดจาก 'อิทธิพลของแนวเทือกเขาขวางกั้นกระแสลม' เมื่อกระแสลมพัดข้ามภูเขา จะเกิดการบิดเบือนของกระแสลมในแนวดิ่งและแนวนอน ทำให้เกิดกระแสวนและความกดอากาศลดต่ำลงในฝั่งใต้ลม",
+    "correct": "Terrain effects on airflow and pressure distribution",
+    "topic": "050 07",
+    "topicName": "Orographic depression",
+    "LO": "050 07 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Orographic depression เกิดจากอิทธิพลของภูมิประเทศภูเขาที่ส่งผลต่อการไหลของอากาศและความกดอากาศ"
+  },
+  {
+    "id": 132,
+    "question": "A secondary depression is:",
+    "options": [
+      "A tropical cyclone eye",
+      "A smaller depression developing within or near the circulation of a larger depression",
+      "A second airport pressure setting",
+      "A high-pressure ridge"
+    ],
+    "answer": 1,
+    "explanation": "หย่อมความกดอากาศต่ำทุติยภูมิ (Secondary Depression): คือ 'หย่อมความกดอากาศต่ำขนาดเล็กที่ก่อตัวขึ้นภายในหรือบริเวณขอบนอกของการไหลเวียนของหย่อมความกดอากาศต่ำหลักขนาดใหญ่' มักเคลื่อนที่หมุนรอบศูนย์กลางหลักและทำให้ลมและสภาพอากาศทวีความรุนแรงขึ้น",
+    "correct": "A smaller depression developing within or near the circulation of a larger depression",
+    "topic": "050 07",
+    "topicName": "Secondary\n\ndepression",
+    "LO": "050 07 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Secondary depression คือหย่อมความกดอากาศต่ำขนาดเล็กที่พัฒนาขึ้นใกล้กับการไหลเวียนของหย่อมความกดอากาศต่ำหลัก"
+  },
+  {
+    "id": 133,
+    "question": "A tropical revolving storm is characterized by:",
+    "options": [
+      "A warm-core rotating system with strong convection and low central pressure",
+      "A cold-core anticyclone",
+      "A stationary high",
+      "A dry stratospheric ridge"
+    ],
+    "answer": 0,
+    "explanation": "พายุหมุนเขตร้อน (Tropical Revolving Storm - TRS): เป็นระบบพายุหมุนที่มี 'แกนใจกลางเป็นอากาศอุ่น (Warm-core rotating system)' เกิดขึ้นเหนือมหาสมุทรเขตร้อน มีการพาความร้อนของเมฆฝนฟ้าคะนองอย่างรุนแรง และมีความกดอากาศใจกลางต่ำมาก",
+    "correct": "A warm-core rotating system with strong convection and low central pressure",
+    "topic": "050 07",
+    "topicName": "Tropical revolving\n\nstorm",
+    "LO": "050 07 04 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Tropical Revolving Storm เป็นระบบพายุหมุนแกนอุ่น (Warm-core) ที่มีคอนเวกชันรุนแรงและความกดอากาศใจกลางต่ำมาก"
+  },
+  {
+    "id": 134,
+    "question": "The eye of a mature tropical revolving storm is generally characterized by:",
+    "options": [
+      "Maximum rainfall and strongest updrafts",
+      "No pressure gradient",
+      "The strongest winds are always at the eye center",
+      "Lowest pressure, relatively calm winds and subsiding air compared with the eyewall"
+    ],
+    "answer": 3,
+    "explanation": "ตาพายุหมุนเขตร้อน (Eye of Tropical Cyclone): เป็นบริเวณศูนย์กลางของพายุหมุนที่เจริญเต็มที่ มีลักษณะเด่นคือ 'มีความกดอากาศต่ำที่สุด ลมค่อนข้างสงบ ท้องฟ้าโปร่งหรือมีเมฆน้อย และมีอากาศจมตัวลงเบาๆ' ซึ่งตรงข้ามกับกำแพงตาพายุ (Eyewall) ด้านข้างที่ลมแรงและฝนตกหนักที่สุด",
+    "correct": "Lowest pressure, relatively calm winds and subsiding air compared with the eyewall",
+    "topic": "050 07",
+    "topicName": "Tropical cyclone\n\neye",
+    "LO": "050 07 04 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ตาพายุ (Eye) มีความกดอากาศต่ำสุด ลมสงบ และอากาศจมตัว เมื่อเทียบกับกำแพงตาพายุที่รุนแรง"
+  },
+  {
+    "id": 135,
+    "question": "A tropical depression is classified as a tropical storm when sustained wind speed exceeds approximately:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "63 kt",
+      "100 kt",
+      "33 kt",
+      "15 kt"
+    ],
+    "answer": 2,
+    "explanation": "เกณฑ์การเป็นพายุโซนร้อน (Tropical Storm): พายุดีเปรสชันเขตร้อนจะได้รับการยกระดับเป็นพายุโซนร้อน (Tropical Storm) เมื่อมีความเร็วลมคงที่สูงสุดใกล้ศูนย์กลางเกินกว่า '33 นอต' (Sustained wind > 33 kt หรือ 34-63 kt)",
+    "correct": "33 kt",
+    "topic": "050 07",
+    "topicName": "Tropical cyclone\n\ndevelopment",
+    "LO": "050 07 04 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Tropical depression จะพัฒนาเป็น Tropical storm เมื่อความเร็วลมคงที่เกิน 33 นอต (34 kt ขึ้นไป)"
+  },
+  {
+    "id": 136,
+    "question": "The source material describes a tropical cyclone/hurricane/typhoon stage when sustained winds exceed approximately:",
+    "options": [
+      "45 kt",
+      "63 kt",
+      "33 kt",
+      "20 kt"
+    ],
+    "answer": 1,
+    "explanation": "เกณฑ์การเป็นพายุหมุนเขตร้อนระดับไต้ฝุ่น/เฮอร์ริเคน: พายุโซนร้อนจะยกระดับเป็น Tropical Cyclone / Hurricane / Typhoon เมื่อความเร็วลมคงที่สูงสุดใกล้ศูนย์กลางเกินกว่า '63 นอต' (Sustained wind > 63 kt หรือ 64 kt ขึ้นไป)",
+    "correct": "63 kt",
+    "topic": "050 07",
+    "topicName": "Tropical cyclone",
+    "LO": "050 07 04 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ขั้นพายุไซโคลน/เฮอร์ริเคน/ไต้ฝุ่น คือความเร็วลมคงที่เกิน 63 นอต (64 kt ขึ้นไป)"
+  },
+  {
+    "id": 137,
+    "question": "Where are the most severe winds and turbulence in a mature tropical cyclone generally found?",
+    "options": [
+      "In the eyewall",
+      "In the eye center",
+      "Far outside the circulation only",
+      "At the surface pressure center only"
+    ],
+    "answer": 0,
+    "explanation": "บริเวณที่อันตรายและลมแรงที่สุดในพายุหมุนเขตร้อน: กระแสลมรุนแรงสูงสุด ความปั่นป่วนระดับวิกฤต และเมฆฝนฟ้าคะนองที่หนาทึบที่สุดจะรวมตัวกันอยู่ที่ 'กำแพงตาพายุ' (Eyewall) ซึ่งล้อมรอบตาพายุทรงกลมตรงใจกลาง",
+    "correct": "In the eyewall",
+    "topic": "050 07",
+    "topicName": "Eyewall hazard",
+    "LO": "050 07 04 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมที่รุนแรงที่สุดและความปั่นป่วนสูงสุดในพายุไซโคลนจะพบที่บริเวณ 'กำแพงตาพายุ' (Eyewall)"
+  },
+  {
+    "id": 138,
+    "question": "The central pressure of a mature tropical cyclone is generally:",
+    "options": [
+      "Higher than surrounding pressure",
+      "Exactly 1013 hPa",
+      "Unrelated to storm intensity",
+      "Much lower than surrounding pressure"
+    ],
+    "answer": 3,
+    "explanation": "ความกดอากาศใจกลางพายุไซโคลน: ศูนย์กลางของพายุหมุนเขตร้อนที่เจริญเต็มที่จัดเป็นบริเวณที่ 'มีความกดอากาศต่ำกว่าบรรยากาศโดยรอบอย่างมหาศาล' (Much lower than surrounding pressure) ซึ่งก่อให้เกิดแรงเกรเดียนต์ความกดอากาศที่มหาศาลดึงดูดลมหมุนวน",
+    "correct": "Much lower than surrounding pressure",
+    "topic": "050 07",
+    "topicName": "Tropical cyclone\n\npressure",
+    "LO": "050 07 04 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ความกดอากาศใจกลางพายุไซโคลนจะต่ำกว่าความกดอากาศบริเวณโดยรอบอย่างมาก"
+  },
+  {
+    "id": 139,
+    "question": "A pressure ridge is best described as:",
+    "options": [
+      "A closed tropical cyclone only",
+      "A front with no pressure change",
+      "An elongated area of relatively high pressure",
+      "An elongated low-pressure area"
+    ],
+    "answer": 2,
+    "explanation": "สันความกดอากาศสูง (Pressure Ridge): หมายถึง 'แนวพื้นที่ความกดอากาศสูงที่มีลักษณะทอดยาวเป็นแนวยื่นออกมา' (An elongated area of relatively high pressure) จากศูนย์กลางบริเวณความกดอากาศสูง สภาพอากาศตามแนวสันมักแจ่มใสและมีเสถียรภาพ",
+    "correct": "An elongated area of relatively high pressure",
+    "topic": "050 07",
+    "topicName": "Pressure\n\ndistribution",
+    "LO": "050 07 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Pressure Ridge คือบริเวณความกดอากาศสูงที่มีลักษณะทอดยาวออกมา"
+  },
+  {
+    "id": 140,
+    "question": "A col is an area:",
+    "options": [
+      "Inside the eye of a cyclone",
+      "Between nearby high- and low-pressure systems with weak pressure gradients",
+      "Of maximum pressure in a high",
+      "Of minimum pressure in a low"
+    ],
+    "answer": 1,
+    "explanation": "บริเวณคอความกดอากาศ (Col): คือพื้นที่รูปอานม้าที่อยู่ 'ระหว่างระบบความกดอากาศสูงสองระบบและระบบความกดอากาศต่ำสองระบบที่อยู่ตัดกัน' บริเวณนี้เกรเดียนต์ความกดอากาศจะอ่อนมาก ทำให้ลมสงบหรือมีทิศทางแปรปรวน และการพยากรณ์อากาศทำได้ยาก",
+    "correct": "Between nearby high- and low-pressure systems with weak pressure gradients",
+    "topic": "050 07",
+    "topicName": "Col",
+    "LO": "050 07 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Col คือพื้นที่ระหว่างระบบความกดอากาศสูงและต่ำที่อยู่ใกล้เคียงกัน โดยมีเกรเดียนต์ความกดอากาศอ่อนมาก"
+  },
+  {
+    "id": 141,
+    "question": "The general circulation of the atmosphere is driven fundamentally by:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "Unequal heating of the Earth and Earth’s rotation",
+      "Magnetic fields only",
+      "Ocean salinity only",
+      "Aircraft movement"
+    ],
+    "answer": 0,
+    "explanation": "กลไกขับเคลื่อนการหมุนเวียนทั่วไปของบรรยากาศ: การไหลเวียนของบรรยากาศโลก (General circulation) ถูกขับเคลื่อนโดยปัจจัยพื้นฐาน 2 ประการคือ 'การได้รับความร้อนจากดวงอาทิตย์ที่ไม่เท่ากันระหว่างศูนย์สูตรกับขั้วโลก' และ 'การหมุนรอบตัวเองของโลก' (แรงโคริออลิส)",
+    "correct": "Unequal heating of the Earth and Earth’s rotation",
+    "topic": "050 08",
+    "topicName": "Global circulation",
+    "LO": "050 08 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การหมุนเวียนทั่วไปของบรรยากาศขับเคลื่อนโดยความร้อนที่ไม่เท่ากันของผิวโลกและการหมุนรอบตัวเองของโลก"
+  },
+  {
+    "id": 142,
+    "question": "The Hadley circulation is most directly associated with the tropics between approximately:",
+    "options": [
+      "The poles only",
+      "60° and 90° only",
+      "30° and 60° only",
+      "The equator and subtropics"
+    ],
+    "answer": 3,
+    "explanation": "วงจรอากาศแฮดลีย์ (Hadley Cell): เป็นวงจรการพาความร้อนในแนวดิ่งขนาดใหญ่ในเขตร้อน โดยอากาศร้อนชื้นยกตัวขึ้นที่แถบศูนย์สูตร ไหลไปทางขั้วโลกในระดับบน แล้วจมตัวลงใน 'เขตกึ่งเขตร้อน' (Subtropics ละติจูดประมาณ 30°) ก่อนพัดกลับเข้าหาศูนย์สูตรเป็นลมค้า (Trade winds)",
+    "correct": "The equator and subtropics",
+    "topic": "050 08",
+    "topicName": "Hadley cell",
+    "LO": "050 08 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Hadley cell เป็นการหมุนเวียนบรรยากาศเขตร้อนระหว่าง 'เส้นศูนย์สูตรและเขตกึ่งเขตร้อน' (Equator and subtropics)"
+  },
+  {
+    "id": 143,
+    "question": "The ITCZ is primarily a zone of:",
+    "options": [
+      "Persistent polar easterlies",
+      "Subtropical high pressure",
+      "Low-level convergence and rising air near the thermal equator",
+      "Upper-level divergence with sinking air only"
+    ],
+    "answer": 2,
+    "explanation": "ร่องมรสุมหรือร่องความกดอากาศต่ำเขตร้อน (ITCZ): Intertropical Convergence Zone คือ 'แนวการลู่เข้าหากันของลมค้าในระดับล่างและการยกตัวของอากาศร้อนชื้นใกล้แนวเส้นศูนย์สูตรความร้อน' (Low-level convergence and rising air)",
+    "correct": "Low-level convergence and rising air near the thermal equator",
+    "topic": "050 08",
+    "topicName": "ITCZ",
+    "LO": "050 08 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ITCZ คือแนวการลู่เข้าของลมระดับต่ำและการยกตัวของอากาศใกล้เส้นศูนย์สูตรความร้อน"
+  },
+  {
+    "id": 144,
+    "question": "Tropical convective showers are favored by:",
+    "options": [
+      "A deep surface inversion",
+      "Strong surface heating, moisture and instability",
+      "Cold dry stable air",
+      "Strong subsidence"
+    ],
+    "answer": 1,
+    "explanation": "ปัจจัยเอื้อต่อฝนซู่เขตร้อน (Tropical Convective Showers): การเกิดฝนซู่และพายุฟ้าคะนองในเขตร้อนต้องการ 3 ปัจจัยหลักร่วมกันคือ 'ความร้อนจากแสงแดดที่แผดเผาผิวพื้น (Surface heating), ความชื้นในอากาศสูง (Moisture), และโครงสร้างบรรยากาศที่ไม่เสถียร (Instability)'",
+    "correct": "Strong surface heating, moisture and instability",
+    "topic": "050 08",
+    "topicName": "Tropical showers",
+    "LO": "050 08 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ฝนซู่พาความร้อนในเขตร้อนได้รับการส่งเสริมจากความร้อนที่ผิวพื้น ความชื้น และความไม่เสถียรของบรรยากาศ"
+  },
+  {
+    "id": 145,
+    "question": "Seasonal migration of the thermal equator contributes to:",
+    "options": [
+      "Seasonal movement of tropical rain belts and monsoon patterns",
+      "Permanent polar night",
+      "Removal of all jet streams",
+      "Elimination of the ITCZ"
+    ],
+    "answer": 0,
+    "explanation": "การเคลื่อนตัวตามฤดูกาลของศูนย์สูตรความร้อน: การเอียงของแกนโลกทำให้ตำแหน่งที่ดวงอาทิตย์ตั้งฉาก (Thermal equator) เคลื่อนตัวขึ้นเหนือและลงใต้ตามฤดูกาล ส่งผลให้ 'แนวฝนเขตร้อน ร่อง ITCZ และระบบลมมรสุมเคลื่อนตัวขึ้นลงตามฤดูกาล' ด้วย",
+    "correct": "Seasonal movement of tropical rain belts and monsoon patterns",
+    "topic": "050 08",
+    "topicName": "Tropical seasons",
+    "LO": "050 08 02 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การเคลื่อนตัวตามฤดูกาลของศูนย์สูตรความร้อนส่งผลต่อการขยับของแถบฝนเขตร้อนและระบบมรสุม"
+  },
+  {
+    "id": 146,
+    "question": "Typical ITCZ weather includes:",
+    "options": [
+      "Clear skies and strong subsidence",
+      "Freezing fog as the dominant feature",
+      "Persistent snow",
+      "Frequent showers, thunderstorms and extensive cloud"
+    ],
+    "answer": 3,
+    "explanation": "ลักษณะอากาศทั่วไปในแนว ITCZ: เนื่องจากเป็นบริเวณที่มีการลู่เข้าของลมชื้นและการยกตัวอย่างรุนแรง สภาพอากาศเด่นชัดของ ITCZ จึงประกอบด้วย 'ฝนซู่และพายุฟ้าคะนองเกิดขึ้นบ่อยครั้ง เมฆคิวมูโลนิมบัสหนาแน่น และมีกลุ่มเมฆปกคลุมเป็นบริเวณกว้าง'",
+    "correct": "Frequent showers, thunderstorms and extensive cloud",
+    "topic": "050 08",
+    "topicName": "ITCZ weather",
+    "LO": "050 08 02 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "สภาพอากาศทั่วไปของ ITCZ คือมีฝนซู่ พายุฟ้าคะนองบ่อยครั้ง และมีกลุ่มเมฆหนาแน่นเป็นบริเวณกว้าง"
+  },
+  {
+    "id": 147,
+    "question": "A monsoon is primarily characterized by:",
+    "options": [
+      "A permanent jet stream\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "A polar cyclone",
+      "Seasonal reversal of prevailing winds associated with land-sea thermal contrast",
+      "A daily reversal only"
+    ],
+    "answer": 2,
+    "explanation": "นิยามลมมรสุม (Monsoon): คำว่า Monsoon มาจากภาษาอาหรับแปลว่าฤดูกาล หมายถึง 'การเปลี่ยนทิศทางลมประจำถิ่นแบบกลับทิศตามฤดูกาล' (Seasonal reversal of prevailing winds) เกิดจากความแตกต่างของอุณหภูมิและความกดอากาศระหว่างผืนทวีปใหญ่กับมหาสมุทร",
+    "correct": "Seasonal reversal of prevailing winds associated with land-sea thermal contrast",
+    "topic": "050 08",
+    "topicName": "Monsoon",
+    "LO": "050 08 02 04",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "มรสุม (Monsoon) มีลักษณะเด่นคือการเปลี่ยนทิศทางลมประจำถิ่นแบบกลับทิศตามฤดูกาล"
+  },
+  {
+    "id": 148,
+    "question": "Sandstorms in arid tropical/subtropical regions can be enhanced by:",
+    "options": [
+      "Light winds under an inversion only",
+      "Strong winds over dry loose surfaces",
+      "High humidity and calm conditions",
+      "Deep snow cover"
+    ],
+    "answer": 1,
+    "explanation": "ปัจจัยกระตุ้นพายุทราย (Sandstorms): พายุทรายหรือพายุฝุ่นในเขตแห้งแล้งเขตร้อน/กึ่งเขตร้อน เกิดขึ้นเมื่อมี 'กระแสลมแรงพัดผ่านพื้นผิวที่แห้งแล้งและมีอนุภาคทรายร่วนซุย' (Strong winds over dry loose surfaces) หอบเอาฝุ่นทรายขึ้นสู่อากาศ ลดทัศนวิสัยลงอย่างรุนแรง",
+    "correct": "Strong winds over dry loose surfaces",
+    "topic": "050 08",
+    "topicName": "Sandstorms",
+    "LO": "050 08 02 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "พายุทรายเกิดจากลมแรงพัดผ่านพื้นผิวแห้งแล้งที่มีฝุ่นทรายร่วนซุย"
+  },
+  {
+    "id": 149,
+    "question": "Tropical easterly waves generally propagate:",
+    "options": [
+      "From east to west within the tropical easterly flow",
+      "From west to east only",
+      "From poles to equator only",
+      "Vertically downward"
+    ],
+    "answer": 0,
+    "explanation": "ทิศทางการเคลื่อนตัวของ Easterly Waves: คลื่นลมตะวันออกเขตร้อน (Tropical easterly waves) เป็นร่องความกดอากาศต่ำที่แทรกตัวอยู่ในกระแสลมสินค้าตะวันออก โดยทั่วไปจะ 'เคลื่อนตัวจากทิศตะวันออกไปยังทิศตะวันตก' (From east to west) และสามารถพัฒนาเป็นพายุหมุนเขตร้อนได้",
+    "correct": "From east to west within the tropical easterly flow",
+    "topic": "050 08",
+    "topicName": "Easterly waves",
+    "LO": "050 08 02 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Tropical easterly waves เคลื่อนตัวจากทิศตะวันออกไปทิศตะวันตกตามกระแสลมตะวันออกในเขตร้อน"
+  },
+  {
+    "id": 150,
+    "question": "The mid-latitude prevailing upper-level flow is generally:",
+    "options": [
+      "Easterly",
+      "Southerly everywhere",
+      "Calm",
+      "Westerly"
+    ],
+    "answer": 3,
+    "explanation": "กระแสลมระดับบนในละติจูดปานกลาง (Mid-latitude Westerlies): ในบรรยากาศชั้นโทรโพสเฟียร์ตอนบนของบริเวณละติจูดปานกลาง (ประมาณ 30° ถึง 60°) ทิศทางลมหลักที่มีอิทธิพลเหนือการบินตลอดทั้งปีคือ 'ลมฝ่ายตะวันตก' (Westerly winds)",
+    "correct": "Westerly",
+    "topic": "050 08",
+    "topicName": "Westerlies",
+    "LO": "050 08 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "กระแสลมระดับบนทั่วไปในเขตละติจูดปานกลางพัดในทิศตะวันตก (Westerly)"
+  },
+  {
+    "id": 151,
+    "question": "A typical high-pressure area in mid-latitudes is associated with:",
+    "options": [
+      "Persistent deep convection",
+      "A warm front at its center",
+      "Subsidence and generally stable weather",
+      "Continuous frontal lifting"
+    ],
+    "answer": 2,
+    "explanation": "บริเวณความกดอากาศสูงในละติจูดปานกลาง: แอนติไซโคลนในละติจูดปานกลางมีลักษณะเด่นคือ 'การจมตัวของมวลอากาศ (Subsidence) ซึ่งทำให้เกิดสภาวะอากาศที่มีเสถียรภาพสูง' ท้องฟ้าโปร่ง ลมอ่อน แต่อาจเกิดหมอกหรือ Inversion ดักจับมลพิษในระดับต่ำช่วงฤดูหนาว",
+    "correct": "Subsidence and generally stable weather",
+    "topic": "050 08",
+    "topicName": "Mid-latitude high",
+    "LO": "050 08 03 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "บริเวณความกดอากาศสูงในละติจูดปานกลางสัมพันธ์กับอากาศจมตัวและสภาพอากาศที่ค่อนข้างเสถียร (Subsidence and stable weather)"
+  },
+  {
+    "id": 152,
+    "question": "A cold-air outbreak/drop is commonly associated with:",
+    "options": [
+      "No temperature change",
+      "Advection of cold air into a region, often changing stability and weather",
+      "Warm advection only",
+      "A stationary anticyclone only"
+    ],
+    "answer": 1,
+    "explanation": "การระบายอากาศเย็น / หย่อมความเย็น (Cold-air outbreak/drop): หมายถึงปรากฏการณ์ที่ 'มวลอากาศเย็นจัดจากขั้วโลกพัดแผ่ลงมาปกคลุมพื้นที่ละติจูดต่ำกว่าอย่างรวดเร็ว' (Advection of cold air into a region) ส่งผลให้อุณหภูมิลดฮวบ อัตรา Lapse rate ชันขึ้นจนเกิดความไม่เสถียรและฝนฟ้าคะนองรุนแรง",
+    "correct": "Advection of cold air into a region, often changing stability and weather",
+    "topic": "050 08",
+    "topicName": "Cold-air drop",
+    "LO": "050 08 03 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Cold-air outbreak คือการพัดพามวลอากาศเย็นจัดเข้ามาในพื้นที่ ซึ่งส่งผลกระทบต่อเสถียรภาพและสภาพอากาศอย่างรุนแรง"
+  },
+  {
+    "id": 153,
+    "question": "Foehn winds are generally:",
+    "options": [
+      "Warm, dry downslope winds on the lee side of mountains",
+      "Cold moist upslope winds\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Sea breezes",
+      "Polar easterlies"
+    ],
+    "answer": 0,
+    "explanation": "ลมเฟิน (Foehn Wind): เป็นกระแสลมประจำถิ่นที่มีลักษณะ 'ร้อนและแห้งที่พัดลงตามลาดเขาในด้านใต้ลมของภูเขา' (Warm, dry downslope winds on the lee side) เกิดจากการสูญเสียความชื้นในฝั่งต้นลมและจมตัวอุ่นขึ้นด้วยอัตรา DALR ในฝั่งใต้ลม",
+    "correct": "Warm, dry downslope winds on the lee side of mountains",
+    "topic": "050 08",
+    "topicName": "Foehn",
+    "LO": "050 08 04 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมเฟิน (Foehn) คือลมร้อนและแห้งที่พัดลงตามลาดเขาในด้านใต้ลมของเทือกเขา"
+  },
+  {
+    "id": 154,
+    "question": "Mistral and Bora are examples of:",
+    "options": [
+      "Tropical cyclones",
+      "Sea-breeze fronts",
+      "Equatorial jet streams",
+      "Strong regional cold downslope/channeled winds"
+    ],
+    "answer": 3,
+    "explanation": "ลมมิสตราลและลมโบรา (Mistral & Bora): ทั้ง Mistral (หุบเขาโรนในฝรั่งเศส) และ Bora (ชายฝั่งทะเลเอเดรียติก) จัดเป็นตัวอย่างของ 'ลมประจำถิ่นที่พัดลงตามลาดเขาที่มีความเย็นจัดและมีความเร็วลมสูงมาก' (Strong regional cold downslope/channeled winds) ซึ่งถูกบีบเร่งความเร็วตามแนวร่องเขา",
+    "correct": "Strong regional cold downslope/channeled winds",
+    "topic": "050 08",
+    "topicName": "Mistral/Bora",
+    "LO": "050 08 04 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Mistral และ Bora เป็นตัวอย่างของลมประจำถิ่นที่เย็นจัดและพัดลงตามลาดเขาด้วยความเร็วสูง"
+  },
+  {
+    "id": 155,
+    "question": "The Harmattan is generally a:",
+    "options": [
+      "Polar jet stream",
+      "Sea breeze from the Atlantic",
+      "Dry, dusty northeasterly wind affecting West Africa",
+      "Warm moist monsoon wind from the southwest"
+    ],
+    "answer": 2,
+    "explanation": "ลมฮาร์มัตตัน (Harmattan): เป็นลมประจำถิ่นในแอฟริกาตะวันตก มีลักษณะเป็น 'ลมตะวันออกเฉียงเหนือที่แห้งแล้งและพัดพาฝุ่นทรายหนาทึบ' (Dry, dusty northeasterly wind) มาจากทะเลทรายสะฮาราในช่วงฤดูหนาว (พฤศจิกายนถึงมีนาคม) ส่งผลให้ทัศนวิสัยทางการบินลดลงอย่างมาก",
+    "correct": "Dry, dusty northeasterly wind affecting West Africa",
+    "topic": "050 08",
+    "topicName": "Harmattan",
+    "LO": "050 08 04 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Harmattan คือลมตะวันออกเฉียงเหนือที่แห้งและมีฝุ่นทรายหนาแน่น พัดปกคลุมแอฟริกาตะวันตก"
+  },
+  {
+    "id": 156,
+    "question": "Aircraft structural icing is most likely when supercooled liquid water is encountered at temperatures:",
+    "options": [
+      "Only above +40 °C",
+      "Below 0 °C in suitable cloud/precipitation",
+      "Only above +20 °C",
+      "Only exactly at 0 °C"
+    ],
+    "answer": 1,
+    "explanation": "เงื่อนไขการเกิดน้ำแข็งเกาะอากาศยาน (Aircraft Icing): น้ำแข็งเกาะโครงสร้างอากาศยานจะเกิดขึ้นเมื่อบินผ่านเมฆหรือหยาดน้ำฟ้าที่มี 'น้ำเย็นยิ่งยวด (Supercooled liquid water) ที่อุณหภูมิต่ำกว่า 0°C' (ช่วงเสี่ยงสูงสุดคือ 0°C ถึง -20°C)",
+    "correct": "Below 0 °C in suitable cloud/precipitation",
+    "topic": "050 09",
+    "topicName": "Icing conditions",
+    "LO": "050 09 01 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "น้ำแข็งเกาะโครงสร้างอากาศยานจะเกิดขึ้นเมื่อพบหยดน้ำเย็นยิ่งยวดที่อุณหภูมิต่ำกว่า 0°C"
+  },
+  {
+    "id": 157,
+    "question": "Rime ice is generally associated with:",
+    "options": [
+      "Small supercooled droplets freezing rapidly on impact",
+      "Large drops spreading before freezing",
+      "Dry snow only",
+      "Clear air turbulence"
+    ],
+    "answer": 0,
+    "explanation": "น้ำแข็งฝ้า (Rime Ice): เกิดจาก 'ละอองน้ำเย็นยิ่งยวดขนาดเล็ก (Small supercooled droplets) แข็งตัวอย่างรวดเร็วทันทีที่ชนปะทะ' ขังฟองอากาศไว้ภายใน ทำให้เนื้อน้ำแข็งมีสีขาวขุ่น เปราะ และมีผิวขรุขระ พบมากในเมฆสเตรติฟอร์ม",
+    "correct": "Small supercooled droplets freezing rapidly on impact",
+    "topic": "050 09",
+    "topicName": "Rime ice",
+    "LO": "050 09 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Rime ice เกิดจากหยดน้ำเย็นยิ่งยวดขนาดเล็กแข็งตัวทันทีที่ชนปะทะ ทำให้มีฟองอากาศแทรกและมีสีขาวขุ่น"
+  },
+  {
+    "id": 158,
+    "question": "Clear/glaze ice is more likely to form from:",
+    "options": [
+      "Dry snow crystals",
+      "Very small droplets only",
+      "Ice crystals in clear air",
+      "Large supercooled droplets that spread before freezing"
+    ],
+    "answer": 3,
+    "explanation": "น้ำแข็งใส (Clear / Glaze Ice): เกิดจาก 'หยดน้ำเย็นยิ่งยวดขนาดใหญ่ (Large supercooled droplets) ที่ชนปะทะแล้วยังไม่แข็งตัวทันที แต่ไหลแผ่กระจายออกไปก่อนจะแข็งตัวช้าๆ' ก่อตัวเป็นชั้นน้ำแข็งใส แน่น แข็ง และเกาะติดแน่นมาก มักพบในเมฆคิวมูลิฟอร์มหรือ Freezing rain ถือเป็นน้ำแข็งที่อันตรายที่สุด",
+    "correct": "Large supercooled droplets that spread before freezing",
+    "topic": "050 09",
+    "topicName": "Clear ice",
+    "LO": "050 09 01 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Clear ice เกิดจากหยดน้ำเย็นยิ่งยวดขนาดใหญ่ที่แผ่ตัวออกก่อนแข็งตัว เกิดเป็นแผ่นน้ำแข็งใสและเกาะแน่นหนา"
+  },
+  {
+    "id": 159,
+    "question": "Mixed icing contains characteristics of:",
+    "options": [
+      "Haze and smoke",
+      "Fog and rain only",
+      "Rime and clear ice\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Snow and dust only"
+    ],
+    "answer": 2,
+    "explanation": "น้ำแข็งผสม (Mixed Ice): มีคุณสมบัติผสมผสานกันระหว่าง 'น้ำแข็งฝ้าและน้ำแข็งใส' (Rime and clear ice) เกิดขึ้นเมื่อเครื่องบินบินผ่านก้อนเมฆที่มีทั้งหยดน้ำขนาดเล็กและขนาดใหญ่ปะปนกัน หรือมีผลึกน้ำแข็งผสมอยู่",
+    "correct": "Rime and clear ice\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "topic": "050 09",
+    "topicName": "Mixed ice",
+    "LO": "050 09 01 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Mixed icing เป็นการเกาะตัวของน้ำแข็งที่มีทั้งลักษณะของน้ำแข็งฝ้า (Rime) และน้ำแข็งใส (Clear ice) ปะปนกัน"
+  },
+  {
+    "id": 160,
+    "question": "One aerodynamic consequence of significant wing icing is:",
+    "options": [
+      "Increased propulsive efficiency",
+      "Reduced lift and increased drag",
+      "Increased maximum lift",
+      "Reduced stall speed with no penalty"
+    ],
+    "answer": 1,
+    "explanation": "ผลกระทบทางอากาศพลศาสตร์ของน้ำแข็งเกาะปีก: น้ำแข็งที่เกาะชายหน้าปีกจะทำลายรูปทรงแอร์ฟอยล์ รบกวนการไหลของอากาศราบเรียบ ทำให้ 'แรงยก (Lift) ลดลงอย่างมาก และแรงต้าน (Drag) เพิ่มขึ้นมหาศาล' รวมถึงทำให้ความเร็วร่วงหล่น (Stall speed) เพิ่มสูงขึ้น",
+    "correct": "Reduced lift and increased drag",
+    "topic": "050 09",
+    "topicName": "Icing hazard",
+    "LO": "050 09 01 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "น้ำแข็งเกาะปีกทำให้อากาศพลศาสตร์เสียหาย ส่งผลให้แรงยกลดลงและแรงต้านเพิ่มขึ้น (Reduced lift and increased drag)"
+  },
+  {
+    "id": 161,
+    "question": "The most effective way to reduce prolonged exposure to icing is generally to:",
+    "options": [
+      "Leave the icing conditions by changing altitude or route when operationally appropriate",
+      "Remain in the same cloud as long as possible",
+      "Reduce all communication",
+      "Fly directly toward the strongest precipitation"
+    ],
+    "answer": 0,
+    "explanation": "กลยุทธ์ที่ดีที่สุดในการรับมือน้ำแข็ง: ระบบกำจัดและป้องกันน้ำแข็ง (De-ice / Anti-ice) มีขีดจำกัดในการทำงาน กลยุทธ์หลักเพื่อความปลอดภัยสูงสุดคือ 'การบินออกจากบริเวณที่มีสภาวะน้ำแข็งเกาะโดยการเปลี่ยนระดับความสูงหรือเปลี่ยนเส้นทางบินโดยเร็วที่สุด' (Leave the icing conditions)",
+    "correct": "Leave the icing conditions by changing altitude or route when operationally appropriate",
+    "topic": "050 09",
+    "topicName": "Icing avoidance",
+    "LO": "050 09 01 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "วิธีลดอันตรายจากน้ำแข็งเกาะที่ดีที่สุดคือการบินออกจากสภาวะน้ำแข็งโดยการเปลี่ยนความสูงหรือเลี่ยงเส้นทาง"
+  },
+  {
+    "id": 162,
+    "question": "Ice crystal icing is especially associated with:",
+    "options": [
+      "Clear-sky radiation fog",
+      "Dry surface winds",
+      "Low-level stratus only",
+      "High-altitude deep convective clouds containing ice crystals"
+    ],
+    "answer": 3,
+    "explanation": "Ice Crystal Icing (ICI): สัมพันธ์เป็นพิเศษกับ 'ระดับบินสูงในบริเวณเมฆพาความร้อนลึก (Deep convective clouds/CB) ที่มีผลึกน้ำแข็งหนาแน่น' ผลึกน้ำแข็งจะไม่เกาะบนโครงสร้างภายนอกที่เย็นจัด แต่จะถูกดูดเข้าสู่แกนกลางเครื่องยนต์ไอพ่น ละลายบนพื้นผิวที่ร้อน แล้วแข็งตัวซ้ำจนทำให้เครื่องยนต์สูญเสียกำลังหรือดับกลางอากาศ",
+    "correct": "High-altitude deep convective clouds containing ice crystals",
+    "topic": "050 09",
+    "topicName": "Ice crystal icing",
+    "LO": "050 09 01 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Ice crystal icing มักพบในระดับบินสูงใกล้เมฆคอนเวกชันที่มีผลึกน้ำแข็งเข้มข้น และเป็นอันตรายต่อเครื่องยนต์ไอพ่น"
+  },
+  {
+    "id": 163,
+    "question": "Severe turbulence can cause:",
+    "options": [
+      "Improved fuel economy",
+      "No change in aircraft loads",
+      "Large attitude/altitude deviations and high structural loads",
+      "Only a small change in outside temperature"
+    ],
+    "answer": 2,
+    "explanation": "อันตรายจากความปั่นป่วนระดับรุนแรง (Severe Turbulence): ความปั่นป่วนระดับรุนแรงจะทำให้เครื่องบินเกิด 'การเบี่ยงเบนของท่าทางการบินและความสูงอย่างมาก (Large attitude/altitude deviations) และสร้างภาระความเค้นเชิงโครงสร้างสูงมาก' จนอาจเกินขีดจำกัดความแข็งแรงของเครื่องบินและทำให้ผู้โดยสารบาดเจ็บ",
+    "correct": "Large attitude/altitude deviations and high structural loads",
+    "topic": "050 09",
+    "topicName": "Turbulence effect",
+    "LO": "050 09 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Severe turbulence ก่อให้เกิดการเปลี่ยนแปลงท่าทางและความสูงอย่างรวดเร็วและสร้างแรงเค้นเชิงโครงสร้างมหาศาล"
+  },
+  {
+    "id": 164,
+    "question": "When severe turbulence is anticipated, an appropriate strategy is generally to:",
+    "options": [
+      "Turn off all weather equipment",
+      "Avoid the affected area when practicable and follow aircraft/operator procedures",
+      "Fly through the strongest returns deliberately",
+      "Descend without clearance in controlled airspace"
+    ],
+    "answer": 1,
+    "explanation": "การปฏิบัติเมื่อคาดการณ์ว่าจะเจอ Severe Turbulence: กลยุทธ์ที่ถูกต้องคือ 'หลีกเลี่ยงพื้นที่ที่มีความปั่นป่วนรุนแรงเมื่อสามารถทำได้ และปฏิบัติตามคู่มือการบิน/ขั้นตอนของสายการบินอย่างเคร่งครัด' (เช่น ปรับลดความเร็วลงสู่ Turbulence Penetration Speed - Vb)",
+    "correct": "Avoid the affected area when practicable and follow aircraft/operator procedures",
+    "topic": "050 09",
+    "topicName": "Turbulence\n\navoidance",
+    "LO": "050 09 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เมื่อคาดว่าจะเจอความปั่นป่วนรุนแรง ควรบินหลีกเลี่ยงพื้นที่นั้นและปฏิบัติตามขั้นตอนความเร็วผจญความปั่นป่วนของเครื่องบิน"
+  },
+  {
+    "id": 165,
+    "question": "CAT is especially associated with:",
+    "options": [
+      "Strong upper-level wind shear near jet streams and troughs",
+      "Low-level sea breeze only",
+      "Radiation fog only",
+      "Surface drizzle\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+    ],
+    "answer": 0,
+    "explanation": "บริเวณที่มักเกิด Clear Air Turbulence (CAT): CAT มักเกิดขึ้นสัมพันธ์กับ 'ลมเฉือนในแนวดิ่งและแนวนอนที่รุนแรงในระดับสูง ใกล้กับแกนของกระแสลมกรด (Jet streams) และร่องคลื่นความกดอากาศระดับบน (Upper troughs)'",
+    "correct": "Strong upper-level wind shear near jet streams and troughs",
+    "topic": "050 09",
+    "topicName": "CAT",
+    "LO": "050 09 02 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "CAT สัมพันธ์กับลมเฉือนระดับสูงที่รุนแรงบริเวณกระแสลมกรดและร่องคลื่นความกดอากาศระดับบน"
+  },
+  {
+    "id": 166,
+    "question": "Wind shear is a change in:",
+    "options": [
+      "Temperature only",
+      "Pressure only",
+      "Humidity only",
+      "Wind speed and/or direction over a relatively short distance"
+    ],
+    "answer": 3,
+    "explanation": "นิยามของลมเฉือน (Wind Shear): คือ 'การเปลี่ยนแปลงของความเร็วลม และ/หรือ ทิศทางลม ในระยะทางที่สั้น' (Change in wind speed and/or direction over a short distance) สามารถเกิดขึ้นได้ทั้งในแนวดิ่ง (Vertical shear) หรือแนวราบ (Horizontal shear)",
+    "correct": "Wind speed and/or direction over a relatively short distance",
+    "topic": "050 09",
+    "topicName": "Wind shear",
+    "LO": "050 09 03 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Wind shear คือการเปลี่ยนแปลงของความเร็วและ/หรือทิศทางลมในช่วงระยะทางสั้นๆ"
+  },
+  {
+    "id": 167,
+    "question": "Which condition can produce significant low-level wind shear?",
+    "options": [
+      "Weak anticyclones with calm air",
+      "Distant stratiform cloud only",
+      "Thunderstorms and microbursts",
+      "High cirrus only"
+    ],
+    "answer": 2,
+    "explanation": "ปรากฏการณ์ที่ทำให้เกิด Low-Level Wind Shear: ปรากฏการณ์ที่ก่อให้เกิดลมเฉือนระดับต่ำที่รุนแรงและอันตรายที่สุดคือ 'พายุฟ้าคะนอง (Thunderstorms) และกระแสลมพัดลงรุนแรง (Microbursts)' รวมถึงแนวปะทะอากาศระดับต่ำและลมเฉือนตามภูมิประเทศ",
+    "correct": "Thunderstorms and microbursts",
+    "topic": "050 09",
+    "topicName": "Wind shear weather",
+    "LO": "050 09 03 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "พายุฟ้าคะนองและไมโครบรัสต์ (Thunderstorms & microbursts) เป็นสาเหตุสำคัญที่ทำให้เกิดลมเฉือนระดับต่ำรุนแรง"
+  },
+  {
+    "id": 168,
+    "question": "Why is low-level wind shear particularly hazardous during takeoff and landing?",
+    "options": [
+      "It increases runway lighting",
+      "The aircraft has limited altitude and energy margins",
+      "The aircraft is always above the shear",
+      "It affects only navigation radios"
+    ],
+    "answer": 1,
+    "explanation": "ทำไม Low-level Wind Shear จึงอันตรายที่สุดขณะ Takeoff และ Landing: เพราะอากาศยานกำลังทำการบินอยู่ใกล้พื้นดินมาก ทำให้มี 'ระยะความสูงและพลังงานสำรองที่จำกัดมาก' (Limited altitude and energy margins) หากสูญเสียแรงยกหรือความเร็วอากาศกะทันหัน นักบินจะไม่มีระยะความสูงเพียงพอสำหรับการแก้ไขท่าทางการบิน",
+    "correct": "The aircraft has limited altitude and energy margins",
+    "topic": "050 09",
+    "topicName": "Takeoff risk",
+    "LO": "050 09 03 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ลมเฉือนระดับต่ำอันตรายที่สุดขณะขึ้นและลงเพราะเครื่องบินมีความสูงและพลังงานสำรองจำกัดในการแก้ไขสถานการณ์"
+  },
+  {
+    "id": 169,
+    "question": "Which combination most favors thunderstorm development?",
+    "options": [
+      "Moisture, instability and lifting",
+      "Dry stable air and subsidence",
+      "Cold dry air only",
+      "Strong inversion with no lifting"
+    ],
+    "answer": 0,
+    "explanation": "3 ปัจจัยหลักในการก่อตัวของพายุฟ้าคะนอง: การเกิดพายุฟ้าคะนองต้องอาศัย 3 องค์ประกอบพร้อมกันคือ 'ความชื้นในอากาศเพียงพอ (Moisture), โครงสร้างบรรยากาศไม่เสถียร (Instability), และกลไกการยกตัวของอากาศ (Lifting mechanism)'",
+    "correct": "Moisture, instability and lifting",
+    "topic": "050 09",
+    "topicName": "Thunderstorm\n\ningredients",
+    "LO": "050 09 04 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "3 ปัจจัยหลักของพายุฟ้าคะนองคือ ความชื้น ความไม่เสถียรของอากาศ และแรงยกตัว (Moisture, instability, lifting)"
+  },
+  {
+    "id": 170,
+    "question": "The mature stage of a thunderstorm is characterized by:",
+    "options": [
+      "Only weak updrafts",
+      "Only downdrafts with no precipitation",
+      "No vertical motion",
+      "Both strong updrafts and downdrafts"
+    ],
+    "answer": 3,
+    "explanation": "ระยะเจริญเต็มที่ของพายุฟ้าคะนอง (Mature Stage): มีลักษณะเด่นคือ 'มีทั้งกระแสลมพัดขึ้นรุนแรง (Updrafts) และกระแสลมพัดลงรุนแรง (Downdrafts) เกิดขึ้นควบคู่กัน' จุดเริ่มต้นของระยะนี้ระบุได้จากการที่ 'หยาดน้ำฟ้าเริ่มตกถึงพื้นผิวโลก' เป็นระยะที่มีอันตรายสูงสุด",
+    "correct": "Both strong updrafts and downdrafts",
+    "topic": "050 09",
+    "topicName": "Thunderstorm\n\nstages",
+    "LO": "050 09 04 02",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ระยะ Mature ของพายุฟ้าคะนองมีทั้งกระแสลมพัดขึ้นและพัดลงรุนแรงพร้อมกัน และฝนเริ่มตกถึงพื้น"
+  },
+  {
+    "id": 171,
+    "question": "The dissipating stage of a thunderstorm is dominated by:",
+    "options": [
+      "No precipitation",
+      "A clear-sky inversion only",
+      "Downdrafts",
+      "Strong updrafts only"
+    ],
+    "answer": 2,
+    "explanation": "ระยะสลายตัวของพายุฟ้าคะนอง (Dissipating Stage): ในระยะนี้ 'กระแสลมพัดลง (Downdrafts) จะเข้าครอบงำพื้นที่เกือบทั้งหมดของก้อนเมฆ' และตัดขาดกระแสอากาศลอยตัวขึ้น ทำให้เมฆขาดแหล่งพลังงานความชื้นและค่อยๆ ละลายสลายตัวไป",
+    "correct": "Downdrafts",
+    "topic": "050 09",
+    "topicName": "Dissipating stage",
+    "LO": "050 09 04 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ระยะ Dissipating ของพายุฟ้าคะนองถูกครอบงำด้วยกระแสลมพัดลง (Downdrafts) ส่งผลให้พายุเริ่มสลายตัว"
+  },
+  {
+    "id": 172,
+    "question": "St. Elmo’s fire is best described as:",
+    "options": [
+      "A pressure-system name",
+      "A luminous electrical discharge around pointed objects in a strong electric field",
+      "A type of hail",
+      "A cloud species"
+    ],
+    "answer": 1,
+    "explanation": "เซนต์เอลโมไฟร์ (St. Elmo's Fire): เป็นปรากฏการณ์ 'การคายประจุไฟฟ้าเรืองแสงสว่างวาบ (Corona discharge) รอบวัตถุปลายแหลมของเครื่องบิน' (เช่น ปลายปีก ชายกระจกหน้านักบิน) ในสนามไฟฟ้าบรรยากาศที่มีความต่างศักย์สูงใกล้พายุฟ้าคะนอง ไม่ใช่ไฟไหม้จริง",
+    "correct": "A luminous electrical discharge around pointed objects in a strong electric field",
+    "topic": "050 09",
+    "topicName": "Lightning",
+    "LO": "050 09 04 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "St. Elmo's fire คือการคายประจุไฟฟ้าเรืองแสงรอบวัตถุปลายแหลมของเครื่องบินเมื่อบินผ่านสนามไฟฟ้าแรงสูง"
+  },
+  {
+    "id": 173,
+    "question": "A lightning strike can:",
+    "options": [
+      "Damage aircraft systems/structure and temporarily distract or blind crew",
+      "Only increase fuel flow",
+      "Only change QNH",
+      "Never affect aircraft"
+    ],
+    "answer": 0,
+    "explanation": "ผลกระทบของฟ้าผ่าต่ออากาศยาน: ฟ้าผ่าสามารถ 'สร้างความเสียหายต่อโครงสร้างผิวเครื่องบินและระบบอิเล็กทรอนิกส์การบิน (Avionics) รวมถึงแสงวาบและเสียงดังอาจทำให้นักบินตาพร่ามัวชั่วคราว (Flash blindness) หรือตกใจเสียสมาธิ'",
+    "correct": "Damage aircraft systems/structure and temporarily distract or blind crew",
+    "topic": "050 09",
+    "topicName": "Lightning hazard",
+    "LO": "050 09 04 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ฟ้าผ่าสามารถสร้างความเสียหายต่อระบบและโครงสร้างเครื่องบิน และแสงวาบอาจทำให้นักบินตาพร่ามัวชั่วคราว"
+  },
+  {
+    "id": 174,
+    "question": "A downburst is:",
+    "options": [
+      "A strong updraft only",
+      "A horizontal jet stream",
+      "A type of fog",
+      "A strong downdraft spreading outward when it reaches the surface"
+    ],
+    "answer": 3,
+    "explanation": "ดาวน์บรัสต์ (Downburst): คือ 'กระแสลมพัดลงอย่างรุนแรงจากเมฆพายุฟ้าคะนองที่พุ่งลงมากระแทกพื้นผิวโลกแล้วแผ่กระจายตัวออกไปทุกทิศทางในแนวระนาบ' (Strong downdraft spreading outward at surface) ก่อให้เกิดลมเฉือนและกระแสลมกรรโชกอันตราย",
+    "correct": "A strong downdraft spreading outward when it reaches the surface",
+    "topic": "050 09",
+    "topicName": "Downburst",
+    "LO": "050 09 04 04",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Downburst คือกระแสลมพัดลงรุนแรงที่แผ่กระจายออกตามแนวราบเมื่อพุ่งปะทะพื้นผิวโลก"
+  },
+  {
+    "id": 175,
+    "question": "A microburst is a:",
+    "options": [
+      "High-altitude jet stream",
+      "Radiation inversion",
+      "Localized, intense downburst with particularly hazardous wind changes",
+      "Large-scale frontal low"
+    ],
+    "answer": 2,
+    "explanation": "ไมโครบรัสต์ (Microburst): คือดาวน์บรัสต์ขนาดเล็กที่มีขอบเขตความเสียหายในแนวราบไม่เกิน 4 กิโลเมตร แต่มี 'ความรุนแรงสูงมากและทำให้เกิดการเปลี่ยนแปลงของกระแสลมอย่างฉับพลันและอันตรายยิ่ง' ภายในช่วงเวลาสั้นๆ",
+    "correct": "Localized, intense downburst with particularly hazardous wind changes",
+    "topic": "050 09",
+    "topicName": "Microburst",
+    "LO": "050 09 04 04",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Microburst คือดาวน์บรัสต์ขนาดเล็ก (<4 km) ที่มีความรุนแรงสูงมากและทำให้ความเร็วลมเปลี่ยนฉับพลัน"
+  },
+  {
+    "id": 176,
+    "question": "A typical downburst is hazardous because its strongest phase can develop and change over:",
+    "options": [
+      "Only after sunrise",
+      "A short period of minutes",
+      "Several days",
+      "Several months"
+    ],
+    "answer": 1,
+    "explanation": "ระยะเวลาการพัฒนาของดาวน์บรัสต์: ความอันตรายของดาวน์บรัสต์และไมโครบรัสต์คือช่วงที่รุนแรงที่สุดจะ 'พัฒนา พุ่งแตะระดับสูงสุด และเปลี่ยนแปลงไปภายในเวลาสั้นๆ เพียงไม่กี่นาที' (A short period of minutes โดยทั่วไปคงอยู่ 5-15 นาที)",
+    "correct": "A short period of minutes",
+    "topic": "050 09",
+    "topicName": "Downburst duration",
+    "LO": "050 09 04 04",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ช่วงรุนแรงที่สุดของ Downburst สามารถก่อตัวและเปลี่ยนแปลงได้รวดเร็วมากภายในเวลาเพียงไม่กี่นาที"
+  },
+  {
+    "id": 177,
+    "question": "Which is the most appropriate general strategy when a severe thunderstorm lies on the planned route?",
+    "options": [
+      "Avoid it using available weather information and adequate lateral/vertical separation",
+      "Penetrate the cell at maximum speed",
+      "Fly underneath the strongest core at low altitude",
+      "Ignore radar returns"
+    ],
+    "answer": 0,
+    "explanation": "กลยุทธ์เมื่อมีพายุฟ้าคะนองขวางเส้นทางบิน: กลยุทธ์หลักที่ปลอดภัยที่สุดคือ 'การบินหลีกเลี่ยง (Avoidance) โดยใช้เรดาร์ตรวจอากาศและรักษาระยะห่างที่ปลอดภัยทั้งในแนวราบและแนวดิ่ง' ห้ามบินตัดเข้าสู่ใจกลางเซลล์หรือบินรอดใต้ฐานเมฆพายุเด็ดขาด",
+    "correct": "Avoid it using available weather information and adequate lateral/vertical separation",
+    "topic": "050 09",
+    "topicName": "Thunderstorm\n\navoidance",
+    "LO": "050 09 04 05",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "การรับมือพายุฟ้าคะนองที่ถูกต้องคือการบินหลีกเลี่ยงโดยรักษาระยะห่างที่ปลอดภัยทั้งแนวราบและแนวดิ่ง"
+  },
+  {
+    "id": 178,
+    "question": "A tornado is:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "options": [
+      "A small anticyclone",
+      "A type of frontal fog",
+      "A jet stream core",
+      "A violently rotating column of air associated with a convective storm and extending toward the surface"
+    ],
+    "answer": 3,
+    "explanation": "ทอร์นาโด (Tornado): คือ 'ลำอากาศหมุนวนอย่างรุนแรงและบ้าคลั่งที่ยื่นลงมาจากฐานเมฆพายุฟ้าคะนองพาความร้อนลงมาจนจรดพื้นผิวโลก' มีความเร็วลมหมุนวนสูงมากจนทำลายทุกสิ่งบนพื้นดิน",
+    "correct": "A violently rotating column of air associated with a convective storm and extending toward the surface",
+    "topic": "050 09",
+    "topicName": "Tornado",
+    "LO": "050 09 05 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ทอร์นาโดคือลำอากาศหมุนวนรุนแรงที่ยื่นลงมาจากเมฆพายุพาความร้อนลงสู่ผิวพื้นโลก"
+  },
+  {
+    "id": 179,
+    "question": "A strong inversion combined with marked wind shear is especially hazardous during:",
+    "options": [
+      "Engine shutdown on the ground",
+      "Parking",
+      "Takeoff and approach",
+      "Cruise at FL 400 only"
+    ],
+    "answer": 2,
+    "explanation": "อันตรายของ Inversion ร่วมกับ Wind Shear: ชั้นอุณหภูมิผกผันระดับต่ำที่มีลมเฉือนรุนแรงแฝงอยู่ มีความเสี่ยงต่ออุบัติเหตุการบินสูงสุดในช่วง 'การวิ่งขึ้นและการร่อนลงเข้าใกล้สนามบิน' (Takeoff and approach) เนื่องจากเครื่องบินกำลังปรับเปลี่ยนความเร็วและอยู่ใกล้พื้นดิน",
+    "correct": "Takeoff and approach",
+    "topic": "050 09",
+    "topicName": "Inversion hazard",
+    "LO": "050 09 06 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Inversion ร่วมกับ Wind shear เป็นอันตรายสูงสุดในระยะ Takeoff และ Approach เนื่องจากมีระยะความสูงแก้ไขจำกัด"
+  },
+  {
+    "id": 180,
+    "question": "One advantage of stratospheric flight is generally:",
+    "options": [
+      "More surface friction",
+      "More stable air and potentially less convective weather",
+      "More thunderstorms",
+      "More low-level fog"
+    ],
+    "answer": 1,
+    "explanation": "ข้อดีของการบินในชั้นสตราโตสเฟียร์: บรรยากาศในชั้นสตราโตสเฟียร์ตอนล่างมี 'ความเสถียรของอากาศสูงมาก (More stable air) และแทบไม่มีเมฆพายุพาความร้อนรบกวน' ทำให้นักบินสามารถบินได้ราบเรียบและประหยัดเชื้อเพลิงกว่าในโทรโพสเฟียร์",
+    "correct": "More stable air and potentially less convective weather",
+    "topic": "050 09",
+    "topicName": "Stratospheric flight",
+    "LO": "050 09 07 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ข้อดีของการบินในชั้น Stratosphere คืออากาศมีความเสถียรภาพสูงและปลอดจากเมฆพายุพาความร้อนเกือบทั้งหมด"
+  },
+  {
+    "id": 181,
+    "question": "Which location is most likely to contain strong rotor turbulence downstream of a mountain ridge?",
+    "options": [
+      "Below/near the lee side in suitable mountain-wave conditions",
+      "Far upstream in calm air",
+      "Only above the tropopause",
+      "Inside a sea-breeze front"
+    ],
+    "answer": 0,
+    "explanation": "ตำแหน่งที่เกิด Rotor Turbulence: กระแสวนอากาศปั่นป่วนรุนแรงแบบโรเตอร์ (Rotor turbulence) จะก่อตัวขึ้นที่ 'ระดับต่ำบริเวณใต้คลื่นภูเขาในด้านใต้ลมของเทือกเขา' (Below/near the lee side) มักมีเมฆโรเตอร์ (Roll cloud) หมุนวนอยู่",
+    "correct": "Below/near the lee side in suitable mountain-wave conditions",
+    "topic": "050 09",
+    "topicName": "Mountain hazards",
+    "LO": "050 09 08 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Rotor turbulence ที่รุนแรงมักพบในระดับต่ำด้านใต้ลมของสันเขาใต้แนวคลื่นภูเขา (Mountain wave)"
+  },
+  {
+    "id": 182,
+    "question": "A valley inversion caused by nocturnal cooling tends to:",
+    "options": [
+      "Promote vigorous convection throughout the valley",
+      "Eliminate fog",
+      "Increase lapse rate to DALR",
+      "Trap cold dense air and reduce vertical mixing near the valley floor"
+    ],
+    "answer": 3,
+    "explanation": "Valley Inversion จากการเย็นตัวในเวลากลางคืน: ความเย็นจากการแผ่รังสีทำให้เกิดอากาศเย็นหนาแน่นไหลลงไปขังตัวอยู่ก้นหุบเขา เกิด Inversion ที่ 'กักขังมวลอากาศเย็นหนาแน่นและสกัดกั้นการคลุกเคล้าในแนวดิ่ง' ทำให้เกิดหมอกควันและมลพิษสะสมที่พื้นหุบเขา",
+    "correct": "Trap cold dense air and reduce vertical mixing near the valley floor",
+    "topic": "050 09",
+    "topicName": "Valley inversion",
+    "LO": "050 09 08 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Valley inversion ดักจับมวลอากาศเย็นและกดการผสมผสานในแนวดิ่ง ทำให้เกิดหมอกหรือมลพิษสะสมที่พื้นหุบเขา"
+  },
+  {
+    "id": 183,
+    "question": "Which phenomenon can reduce visibility directly by scattering/absorbing light?",
+    "options": [
+      "Coriolis force",
+      "Magnetic variation",
+      "Fog, precipitation, dust or smoke",
+      "Pressure gradient alone"
+    ],
+    "answer": 2,
+    "explanation": "ปรากฏการณ์ที่บดบังทัศนวิสัยโดยตรง: อนุภาคที่ลดทัศนวิสัยโดยการดูดซับและกระเจิงแสงสว่าง ได้แก่ 'หมอก (Fog), หยาดน้ำฟ้า (Precipitation), ฝุ่น (Dust) หรือควัน (Smoke)'",
+    "correct": "Fog, precipitation, dust or smoke",
+    "topic": "050 09",
+    "topicName": "Visibility",
+    "LO": "050 09 09 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "หมอก หยาดน้ำฟ้า ฝุ่น และควัน เป็นปรากฏการณ์ที่บดบังทัศนวิสัยโดยตรงผ่านการกระเจิงและดูดซับแสง"
+  },
+  {
+    "id": 184,
+    "question": "An aircraft above a fog layer may experience poor:",
+    "options": [
+      "Runway length\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Slant/vertical visibility toward the surface despite better horizontal visibility aloft",
+      "Horizontal visibility at all levels",
+      "Visibility only in clear air"
+    ],
+    "answer": 1,
+    "explanation": "ทัศนวิสัยเมื่อบินอยู่เหนือชั้นหมอก (Slant Visibility): นักบินที่บินอยู่เหนือชั้นหมอกอาจมองเห็นขอบฟ้าในแนวราบได้ดี (Good horizontal visibility aloft) แต่จะมี 'ทัศนวิสัยเฉียงลงสู่พื้นดิน (Slant/vertical visibility) ที่แย่มาก' ทำให้มองไม่เห็นรันเวย์ขณะร่อนลง",
+    "correct": "Slant/vertical visibility toward the surface despite better horizontal visibility aloft",
+    "topic": "050 09",
+    "topicName": "Slant visibility",
+    "LO": "050 09 09 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เครื่องบินที่อยู่เหนือชั้นหมอกจะสูญเสียทัศนวิสัยเฉียงลงสู่พื้น (Slant visibility) แม้ว่าทัศนวิสัยในแนวราบระดับบินจะดี"
+  },
+  {
+    "id": 185,
+    "question": "Low sun angle can reduce flight visibility because:",
+    "options": [
+      "Direct glare and reflection from haze/cloud layers can obscure detail",
+      "It increases atmospheric pressure",
+      "It eliminates scattering",
+      "It creates geostrophic wind"
+    ],
+    "answer": 0,
+    "explanation": "มุมแสงอาทิตย์ต่ำกับทัศนวิสัย: เมื่อดวงอาทิตย์อยู่ต่ำใกล้ขอบฟ้า (ช่วงเช้าตรู่หรือเย็น) 'แสงจ้าสะท้อนโดยตรง (Glare) และการสะท้อนจากชั้นหมอกแดดหรือยอดเมฆจะบดบังรายละเอียดบนพื้นดิน' และทำให้มองเห็นรันเวย์ได้ยาก",
+    "correct": "Direct glare and reflection from haze/cloud layers can obscure detail",
+    "topic": "050 09",
+    "topicName": "Sun glare",
+    "LO": "050 09 09 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "มุมดวงอาทิตย์ที่ต่ำทำให้เกิดแสงสะท้อนจ้า (Glare) จากชั้นฝุ่นหมอกและเมฆ บดบังรายละเอียดในการมองเห็น"
+  },
+  {
+    "id": 186,
+    "question": "In a METAR, a gust group such as G25KT indicates:",
+    "options": [
+      "A constant wind of 25 kt",
+      "A 25 kt crosswind only",
+      "A 25 kt headwind only",
+      "A peak gust of 25 kt associated with the reported wind"
+    ],
+    "answer": 3,
+    "explanation": "กลุ่มข้อมูลลมกระโชกใน METAR (Gust): รหัสเช่น G25KT ในรายงาน METAR หมายถึง 'มีลมกระโชกสูงสุดที่ 25 นอต' (Peak gust of 25 kt) ที่เกิดขึ้นสัมพันธ์กับลมหลักที่รายงานไว้",
+    "correct": "A peak gust of 25 kt associated with the reported wind",
+    "topic": "050 10",
+    "topicName": "METAR gust",
+    "LO": "050 10 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "รหัส G25KT ใน METAR หมายถึงค่าลมกระโชกสูงสุด (Peak gust) 25 นอต"
+  },
+  {
+    "id": 187,
+    "question": "Which unit may be used for visibility in aviation meteorology?",
+    "options": [
+      "Degrees Celsius",
+      "Hectopascals only",
+      "Metres",
+      "Newtons"
+    ],
+    "answer": 2,
+    "explanation": "หน่วยวัดทัศนวิสัยในการบิน: หน่วยสากลที่ใช้รายงานทัศนวิสัยการบินในรายงาน METAR/TAF (ICAO standard) คือ 'เมตร' (Metres) เช่น 5000 หรือ 9999 (หรือใช้ Statute miles ในสหรัฐอเมริกา)",
+    "correct": "Metres",
+    "topic": "050 10",
+    "topicName": "METAR visibility",
+    "LO": "050 10 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "หน่วยวัดทัศนวิสัยในอุตุนิยมวิทยาการบินสากลคือ 'เมตร' (Metres)"
+  },
+  {
+    "id": 188,
+    "question": "Prevailing visibility is generally the visibility value that is:",
+    "options": [
+      "Equal to RVR",
+      "Representative of at least half the horizon/area under specified reporting criteria",
+      "Always the minimum visibility",
+      "Always the maximum visibility"
+    ],
+    "answer": 1,
+    "explanation": "ทัศนวิสัยทั่วไป (Prevailing Visibility): คือค่าทัศนวิสัยที่ 'ครอบคลุมพื้นที่อย่างน้อยครึ่งหนึ่งของขอบฟ้าหรือพื้นที่รอบสนามบิน' (Representative of at least half the horizon) ตามเกณฑ์การรายงานของ ICAO",
+    "correct": "Representative of at least half the horizon/area under specified reporting criteria",
+    "topic": "050 10",
+    "topicName": "Prevailing visibility",
+    "LO": "050 10 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Prevailing visibility คือค่าทัศนวิสัยที่ครอบคลุมพื้นที่อย่างน้อยกึ่งหนึ่งของขอบฟ้าสนามบิน"
+  },
+  {
+    "id": 189,
+    "question": "Runway visual range (RVR) refers to:",
+    "options": [
+      "The distance a pilot can see along the runway centreline under specified conditions",
+      "Visibility from the control tower only",
+      "Horizontal visibility at 10,000 ft",
+      "Cloud-base height"
+    ],
+    "answer": 0,
+    "explanation": "ระยะการมองเห็นบนทางวิ่ง (RVR): Runway Visual Range หมายถึง 'ระยะทางในแนวแกนกลางรันเวย์ที่นักบินบนเครื่องบินสามารถมองเห็นเครื่องหมายรันเวย์หรือโคมไฟส่องสว่างรันเวย์' วัดด้วยเครื่องมือ transmissometer อัตโนมัติ",
+    "correct": "The distance a pilot can see along the runway centreline under specified conditions",
+    "topic": "050 10",
+    "topicName": "RVR",
+    "LO": "050 10 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "RVR คือระยะทางที่นักบินสามารถมองเห็นบนแนวแกนกลางของรันเวย์ภายใต้เงื่อนไขที่กำหนด"
+  },
+  {
+    "id": 190,
+    "question": "Cloud base information in aviation reports is normally expressed in:",
+    "options": [
+      "Metres above the tropopause",
+      "Hectopascals\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Knots",
+      "Feet above the specified reference level"
+    ],
+    "answer": 3,
+    "explanation": "หน่วยวัดฐานเมฆในการบิน: ข้อมูลความสูงของฐานเมฆ (Cloud base) ในรายงานสภาพอากาศการบิน เช่น METAR/TAF ปกติจะรายงานเป็นหน่วย 'ฟุตเหนือระดับอ้างอิงของสนามบิน' (Feet above aerodrome level / AAL)",
+    "correct": "Feet above the specified reference level",
+    "topic": "050 10",
+    "topicName": "Cloud base",
+    "LO": "050 10 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ฐานเมฆในรายงานการบินปกติจะรายงานเป็นหน่วย 'ฟุต' เหนือระดับอ้างอิงสนามบิน (Feet above reference level)"
+  },
+  {
+    "id": 191,
+    "question": "One okta represents:",
+    "options": [
+      "One quarter of the sky",
+      "One hundredth of the sky",
+      "One eighth of the sky covered by cloud",
+      "One tenth of the sky"
+    ],
+    "answer": 2,
+    "explanation": "หน่วยวัดปริมาณเมฆออกตา (Okta): หนึ่งออกตา (1 Okta) หมายถึง 'ปริมาณเมฆที่ปกคลุมพื้นที่ 1 ใน 8 ส่วนของท้องฟ้าทั้งหมด' (One eighth of the sky)",
+    "correct": "One eighth of the sky covered by cloud",
+    "topic": "050 10",
+    "topicName": "Oktas",
+    "LO": "050 10 01 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "1 Okta แทนปริมาณเมฆที่ปกคลุมท้องฟ้า 1 ใน 8 ส่วน (8 Oktas คือเมฆเต็มท้องฟ้า)"
+  },
+  {
+    "id": 192,
+    "question": "A radiosonde is primarily used to obtain:",
+    "options": [
+      "Satellite images",
+      "Vertical profiles of atmospheric variables such as temperature and humidity",
+      "Runway friction only",
+      "Aircraft engine parameters"
+    ],
+    "answer": 1,
+    "explanation": "ประโยชน์ของเรดิโอซอนเด (Radiosonde): เป็นอุปกรณ์ตรวจวัดอากาศที่ติดไปกับบอลลูนลอยฟ้า เพื่อตรวจวัด 'ข้อมูลสภาพอากาศในแนวดิ่ง เช่น อุณหภูมิ ความกดอากาศ และความชื้น' (Vertical profile) และส่งข้อมูลกลับมายังสถานีภาคพื้น",
+    "correct": "Vertical profiles of atmospheric variables such as temperature and humidity",
+    "topic": "050 10",
+    "topicName": "Radiosonde",
+    "LO": "050 10 01 02",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "Radiosonde ใช้ตรวจวัดข้อมูลในแนวดิ่งของชั้นบรรยากาศ เช่น อุณหภูมิ ความชื้น และความกดอากาศ"
+  },
+  {
+    "id": 193,
+    "question": "One important aviation use of satellite imagery is to:",
+    "options": [
+      "Locate cloud systems and distinguish broad cloud structures",
+      "Measure runway friction directly",
+      "Replace all METARs",
+      "Determine aircraft weight"
+    ],
+    "answer": 0,
+    "explanation": "ประโยชน์ของภาพถ่ายดาวเทียม: ภาพถ่ายดาวเทียมอุตุนิยมวิทยาช่วยให้นักบินและผู้พยากรณ์อากาศสามารถ 'ระบุตำแหน่งของระบบเมฆ แยกแยะโครงสร้างของระบบสภาพอากาศขนาดใหญ่ และติดตามการเคลื่อนตัวของพายุ' ได้อย่างครอบคลุม",
+    "correct": "Locate cloud systems and distinguish broad cloud structures",
+    "topic": "050 10",
+    "topicName": "Satellite imagery",
+    "LO": "050 10 01 03",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "ภาพถ่ายดาวเทียมช่วยระบุตำแหน่ง ติดตาม และวิเคราะห์โครงสร้างระบบเมฆเป็นบริเวณกว้าง"
+  },
+  {
+    "id": 194,
+    "question": "Airborne weather radar primarily detects:",
+    "options": [
+      "Clear-air temperature directly",
+      "Aircraft altitude",
+      "Magnetic variation",
+      "Hydrometeors/precipitation returns and their intensity distribution"
+    ],
+    "answer": 3,
+    "explanation": "การตรวจจับของเรดาร์ตรวจอากาศประจำอากาศยาน (Weather Radar): เรดาร์ตรวจอากาศทำงานโดยส่งคลื่นไมโครเวฟไปสะท้อนกับ 'หยาดน้ำฟ้าและอนุภาคน้ำ/น้ำแข็ง (Hydrometeors)' เพื่อแสดงตำแหน่งและความเข้มข้นของฝน ไม่ได้ตรวจจับก้อนเมฆที่แห้งหรือความกดอากาศ",
+    "correct": "Hydrometeors/precipitation returns and their intensity distribution",
+    "topic": "050 10",
+    "topicName": "Weather radar",
+    "LO": "050 10 01 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "เรดาร์ตรวจอากาศตรวจจับการสะท้อนของหยาดน้ำฟ้า (Hydrometeors/precipitation) และแสดงระดับความเข้มข้น"
+  },
+  {
+    "id": 195,
+    "question": "An ARS is:",
+    "options": [
+      "A satellite image",
+      "A runway state only",
+      "A special air-report",
+      "An aerodrome routine forecast"
+    ],
+    "answer": 2,
+    "explanation": "ความหมายของ ARS: ย่อมาจาก 'Special Air-report' เป็นรายงานสภาพอากาศพิเศษที่นักบินตรวจพบบนเส้นทางบินและรายงานทางวิทยุเมื่อพบปรากฏการณ์อันตราย เช่น Severe turbulence, Severe icing, หรือภูเขาไฟระเบิด",
+    "correct": "A special air-report",
+    "topic": "050 10",
+    "topicName": "Air reports",
+    "LO": "050 10 01 05",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "ARS คือรายงานสภาพอากาศพิเศษจากนักบินในขณะบิน (Special Air-report)"
+  },
+  {
+    "id": 196,
+    "question": "A significant weather (SIGWX) chart is used primarily to:",
+    "options": [
+      "Replace all forecasts",
+      "Show significant weather features relevant to flight at a specified level/range",
+      "Show only runway lighting\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Show only airport frequencies"
+    ],
+    "answer": 1,
+    "explanation": "แผนที่อากาศนัยสำคัญ (SIGWX Chart): ใช้เพื่อ 'แสดงลักษณะปรากฏการณ์ทางอากาศที่สำคัญและมีผลกระทบต่อการบิน' (Significant weather features) ณ ระดับบินและช่วงเวลาที่กำหนด เช่น เมฆ CB แนวปะทะ ลมกรด น้ำแข็งเกาะ และความปั่นป่วน",
+    "correct": "Show significant weather features relevant to flight at a specified level/range",
+    "topic": "050 10",
+    "topicName": "SIGWX chart",
+    "LO": "050 10 02 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "แผนที่ SIGWX แสดงข้อมูลสภาพอากาศสำคัญที่เป็นอันตรายต่อการบิน ณ ระดับความสูงและช่วงเวลาที่กำหนด"
+  },
+  {
+    "id": 197,
+    "question": "An isohypse on a constant-pressure chart is a line of equal:",
+    "options": [
+      "Geopotential height",
+      "Temperature",
+      "Wind speed",
+      "Humidity"
+    ],
+    "answer": 0,
+    "explanation": "เส้นไอโซไฮป์ (Isohypse): บนแผนที่ความกดอากาศคงที่ในระดับบน (Constant-pressure chart) เส้นไอโซไฮป์หรือ Contour line คือเส้นที่ลากเชื่อมจุดที่มี 'ค่าความสูงยีโอโพเทนเชียลเท่ากัน' (Line of equal geopotential height)",
+    "correct": "Geopotential height",
+    "topic": "050 10",
+    "topicName": "Upper-air chart",
+    "LO": "050 10 02 03",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "Isohypse บนแผนที่ความกดอากาศระดับบนคือเส้นเชื่อมจุดที่มีค่า Geopotential height เท่ากัน"
+  },
+  {
+    "id": 198,
+    "question": "Numerical weather prediction products are based on:",
+    "options": [
+      "Only one surface station",
+      "Only radar echoes",
+      "Only satellite pictures",
+      "A three-dimensional grid of atmospheric data"
+    ],
+    "answer": 3,
+    "explanation": "แบบจำลองพยากรณ์เชิงตัวเลข (NWP): Numerical Weather Prediction อาศัยการคำนวณของคอมพิวเตอร์สมรรถนะสูงที่ประมวลผลข้อมูลบรรยากาศแบบ 'ตารางกริดสามมิติ' (Three-dimensional grid of atmospheric data) ตามกฎฟิสิกส์ของการไหลของของไหลและอุณหพลศาสตร์",
+    "correct": "A three-dimensional grid of atmospheric data",
+    "topic": "050 10",
+    "topicName": "Gridded forecasts",
+    "LO": "050 10 02 04",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "NWP คำนวณพยากรณ์อากาศโดยใช้แบบจำลองข้อมูลบรรยากาศแบบกริดสามมิติ (3D atmospheric grid)"
+  },
+  {
+    "id": 199,
+    "question": "Which message is a forecast for an aerodrome?",
+    "options": [
+      "SIGMET",
+      "ARS",
+      "TAF",
+      "METAR"
+    ],
+    "answer": 2,
+    "explanation": "ข่าวพยากรณ์อากาศสนามบิน (TAF): Terminal Aerodrome Forecast (TAF) เป็นรหัสข้อความ 'พยากรณ์อากาศสำหรับสนามบิน' (Forecast for an aerodrome) ในช่วงเวลาที่ระบุ (เช่น 9 ชั่วโมง หรือ 24-30 ชั่วโมง) ต่างจาก METAR ซึ่งเป็นรายงานผลการตรวจอากาศจริง",
+    "correct": "TAF",
+    "topic": "050 10",
+    "topicName": "METAR/TAF/SIGMET",
+    "LO": "050 10 03 01",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Explain",
+    "explanation_quick": "TAF คือข่าวพยากรณ์อากาศสำหรับสนามบิน (Aerodrome forecast)"
+  },
+  {
+    "id": 200,
+    "question": "World Area Forecast Centres (WAFCs) provide:",
+    "options": [
+      "Only volcanic eruption reports",
+      "Global upper-air gridded forecasts including wind, temperature and significant hazards",
+      "Only local runway reports",
+      "Only airport ATIS"
+    ],
+    "answer": 1,
+    "explanation": "ศูนย์พยากรณ์พื้นที่โลก (WAFC): World Area Forecast Centres (WAFC ลอนดอน และวอชิงตัน) มีหน้าที่จัดทำและให้บริการ 'ข้อมูลพยากรณ์อากาศระดับสูงแบบกริดทั่วโลก' (Global upper-air gridded forecasts) รวมถึงทิศทางลม อุณหภูมิ และสภาพอากาศอันตราย สำหรับการวางแผนการบินระหว่างประเทศ",
+    "correct": "Global upper-air gridded forecasts including wind, temperature and significant hazards",
+    "topic": "050 10",
+    "topicName": "WAFC",
+    "LO": "050 10 04 01",
+    "difficulty": "Easy",
+    "cognitive": "RECALL",
+    "verb": "Recall",
+    "explanation_quick": "WAFC ให้บริการข้อมูลพยากรณ์อากาศระดับบนทั่วโลก (Global upper-air gridded forecasts) แก่การบินสากล"
+  }
+]

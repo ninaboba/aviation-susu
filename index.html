@@ -166,6 +166,15 @@
               </span>
               <span id="headerBookmarkCount" class="text-amber-400 font-bold font-mono">0</span>
             </button>
+            <div class="border-t border-cockpit-border/60 my-1"></div>
+            <!-- Q-Search Item -->
+            <button onclick="app.closeHeaderMenu(); app.openQSearch()" role="menuitem" aria-label="Q-Search Quick Answer Lookup" class="w-full px-3 py-2 rounded-lg hover:bg-cockpit-800 text-slate-300 hover:text-violet-400 transition text-xs flex items-center justify-between" title="Q-Search: ค้นหาคำตอบด่วน">
+              <span class="flex items-center space-x-2">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-violet-400" aria-hidden="true"></i>
+                <span class="font-bold text-violet-300">Q-Search</span>
+              </span>
+              <span class="text-[10px] text-violet-400 font-mono bg-violet-950/60 px-1.5 py-0.5 rounded border border-violet-800/50">Quick</span>
+            </button>
           </div>
         </div>
       </div>
@@ -934,6 +943,81 @@
   </main>
 
   <!-- ============================================================ -->
+  <!-- ============================================================ -->
+  <!-- Q-SEARCH: MOBILE QUICK ANSWER LOOKUP (BOTTOM SHEET)         -->
+  <!-- ============================================================ -->
+  <div id="modalQSearch" onclick="if(event.target===this) app.closeQSearch()" class="fixed inset-0 z-[60] hidden" aria-modal="true" role="dialog" aria-label="Q-Search Quick Lookup">
+    <!-- Dark backdrop -->
+    <div class="absolute inset-0 bg-cockpit-950/70 backdrop-blur-sm"></div>
+
+    <!-- Bottom Sheet Panel -->
+    <div id="qsearchPanel" class="absolute bottom-0 left-0 right-0 flex flex-col rounded-t-2xl border-t border-x border-violet-500/30 shadow-2xl"
+      style="background: var(--bg-cockpit-900, #0f1629); max-height: 85dvh; transform: translateY(100%); transition: transform 0.28s cubic-bezier(0.32,0.72,0,1);">
+
+      <!-- Drag Handle -->
+      <div class="flex justify-center pt-3 pb-1 shrink-0 cursor-grab">
+        <div class="w-10 h-1 rounded-full bg-slate-600"></div>
+      </div>
+
+      <!-- Header Row -->
+      <div class="flex items-center justify-between px-4 pb-2 shrink-0">
+        <div class="flex items-center space-x-2">
+          <div class="w-7 h-7 rounded-lg bg-violet-500/20 flex items-center justify-center">
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-violet-400"></i>
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white">Q-Search</span>
+            <span class="text-[10px] text-slate-400 ml-1.5">ค้นหาคำตอบด่วน</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span id="qsearchCount" class="text-[11px] font-mono text-violet-300 hidden"></span>
+          <button onclick="app.closeQSearch()" class="p-1.5 rounded-lg hover:bg-cockpit-800 text-slate-400 hover:text-white transition" aria-label="Close Q-Search">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Area (scrolls UP, above the keyboard) -->
+      <div id="qsearchResults" class="flex-1 overflow-y-auto px-3 pb-2 space-y-2 min-h-0"
+        style="overscroll-behavior: contain; -webkit-overflow-scrolling: touch;">
+        <!-- Initial state -->
+        <div id="qsearchEmptyState" class="flex flex-col items-center justify-center py-8 text-center space-y-2">
+          <div class="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center">
+            <i data-lucide="search" class="w-6 h-6 text-violet-400"></i>
+          </div>
+          <p class="text-sm font-semibold text-white">พิมพ์คำ เห็นคำตอบทันที</p>
+          <p class="text-xs text-slate-400">ค้นหาจากคำถาม, คำตอบ, explanation<br>เห็นเฉลยถูกต้องโดยไม่ต้องเปิด modal ใหม่</p>
+        </div>
+      </div>
+
+      <!-- Input Bar — pinned to bottom, sits ABOVE the keyboard -->
+      <div class="shrink-0 px-3 pb-3 pt-2 border-t border-cockpit-border/60"
+        style="padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));">
+        <div class="relative flex items-center">
+          <i data-lucide="zap" class="w-4 h-4 text-violet-400 absolute left-3 pointer-events-none"></i>
+          <input
+            type="search"
+            id="qsearchInput"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            inputmode="search"
+            placeholder="พิมพ์ keyword เช่น density, Mach, stall..."
+            oninput="app.handleQSearchInput(this.value)"
+            class="w-full rounded-xl pl-9 pr-10 py-3 text-sm text-white placeholder-slate-500 focus:outline-none border-2 border-cockpit-border focus:border-violet-500 transition"
+            style="background: var(--bg-cockpit-850, #161d35);"
+          >
+          <button id="qsearchClearBtn" onclick="app.clearQSearch()" class="hidden absolute right-2.5 p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-cockpit-800 transition" aria-label="Clear">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+        <p class="text-[10px] text-center text-slate-500 mt-1.5">พิมพ์อย่างน้อย 2 ตัวอักษร · แสดงสูงสุด 30 ผลลัพธ์</p>
+      </div>
+    </div>
+  </div>
+
   <!-- SEARCH MODAL / QUESTION BANK EXPLORER -->
   <!-- ============================================================ -->
   <div id="modalSearch" onclick="if (event.target === this) app.closeSearchModal()" class="fixed inset-0 z-50 bg-cockpit-950/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4">
