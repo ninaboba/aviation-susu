@@ -715,22 +715,38 @@
           </div>
 
           <!-- Mini Legend -->
-          <div class="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300 bg-cockpit-900/60 p-2.5 rounded-xl border border-cockpit-border">
+          <div class="grid grid-cols-2 gap-y-1.5 gap-x-2 text-[11px] font-mono text-slate-300 bg-cockpit-900/60 p-2.5 rounded-xl border border-cockpit-border">
             <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded bg-emerald-500 shrink-0"></span>
-              <span>Answered</span>
+              <span>Correct</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded bg-rose-500 shrink-0"></span>
+              <span>Incorrect</span>
             </div>
             <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded bg-cockpit-800 border border-cockpit-border shrink-0"></span>
               <span>Unanswered</span>
             </div>
             <div class="flex items-center space-x-1.5">
-              <span class="w-2.5 h-2.5 rounded bg-amber-500 shrink-0"></span>
-              <span>Flagged</span>
-            </div>
-            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded border-2 border-cyan-400 shrink-0"></span>
               <span>Current</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <span class="relative w-2.5 h-2.5 rounded bg-emerald-500 shrink-0">
+                <span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              </span>
+              <span class="text-amber-300">Flag ✓</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <span class="relative w-2.5 h-2.5 rounded bg-rose-500 shrink-0">
+                <span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              </span>
+              <span class="text-amber-300">Flag ✗</span>
+            </div>
+            <div class="col-span-2 flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded bg-amber-500 shrink-0"></span>
+              <span class="text-amber-300">Flagged (Unanswered)</span>
             </div>
           </div>
 
@@ -1134,22 +1150,38 @@
       </div>
 
       <!-- Legend -->
-      <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-300 bg-cockpit-900/60 p-2.5 rounded-xl border border-cockpit-border">
+      <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-mono text-slate-300 bg-cockpit-900/60 p-2.5 rounded-xl border border-cockpit-border">
         <div class="flex items-center space-x-1.5">
           <span class="w-3.5 h-3.5 rounded bg-emerald-500"></span>
-          <span>Answered</span>
+          <span>Correct</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="w-3.5 h-3.5 rounded bg-rose-500"></span>
+          <span>Incorrect</span>
         </div>
         <div class="flex items-center space-x-1.5">
           <span class="w-3.5 h-3.5 rounded bg-cockpit-800 border border-cockpit-border"></span>
           <span>Unanswered</span>
         </div>
         <div class="flex items-center space-x-1.5">
-          <span class="w-3.5 h-3.5 rounded bg-amber-500"></span>
-          <span>Flagged</span>
-        </div>
-        <div class="flex items-center space-x-1.5">
           <span class="w-3.5 h-3.5 rounded border-2 border-cyan-400"></span>
           <span>Current</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="relative w-3.5 h-3.5 rounded bg-emerald-500 shrink-0 inline-flex items-center justify-center">
+            <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-amber-400"></span>
+          </span>
+          <span class="text-amber-300">Flag ✓</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="relative w-3.5 h-3.5 rounded bg-rose-500 shrink-0 inline-flex items-center justify-center">
+            <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-amber-400"></span>
+          </span>
+          <span class="text-amber-300">Flag ✗</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="w-3.5 h-3.5 rounded bg-amber-500 shrink-0"></span>
+          <span class="text-amber-300">Flagged (Unanswered)</span>
         </div>
       </div>
 

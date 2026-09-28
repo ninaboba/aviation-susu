@@ -90,6 +90,7 @@ const app = {
   currentIndex: 0,
   userAnswers: {},
   revealedInStudy: {},
+  examSubmitted: false,
   timerInterval: null,
   timeElapsedSeconds: 0,
 
@@ -932,6 +933,7 @@ const app = {
     this.currentIndex = 0;
     this.userAnswers = {};
     this.revealedInStudy = {};
+    this.examSubmitted = false;
     this.timeElapsedSeconds = 0;
 
     document.getElementById('viewSetup').classList.add('hidden');
@@ -1295,25 +1297,87 @@ const app = {
     if (!modalContainer && !sidebarContainer) return;
 
     const html = this.sessionQuestions.map((q, idx) => {
-      const isAnswered = !!this.userAnswers[idx];
+      const userAns = this.userAnswers[idx];
+      const isAnswered = !!userAns;
       const isFlagged = this.bookmarks.has(q.id);
       const isCurrent = idx === this.currentIndex;
 
+      // Determine if we can reveal correctness:
+      // Study mode: only after the answer has been revealed (checked)
+      // Exam mode: only after the exam has been submitted (we're in summary)
+      const isRevealed = this.mode === 'study'
+        ? !!this.revealedInStudy[idx]
+        : this.examSubmitted;
+
+      const isCorrect = isAnswered && isRevealed && userAns === q.correct;
+      const isIncorrect = isAnswered && isRevealed && userAns !== q.correct;
+      const isAnsweredUnrevealed = isAnswered && !isRevealed;
+
+      // Build button classes
       let btnClass = 'h-10 rounded-xl font-mono text-xs font-bold transition flex items-center justify-center relative ';
+
+      // Current question ring (takes visual priority for border/ring)
       if (isCurrent) {
-        btnClass += 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-cockpit-950 scale-105 shadow-glow-cyan ';
+        btnClass += 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-cockpit-950 scale-105 shadow-glow-cyan z-10 ';
+      } else if (isFlagged && isAnswered) {
+        // Flagged overlay ring only if not currently active
+        btnClass += 'ring-1 ring-amber-400 ring-offset-1 ring-offset-cockpit-950 ';
       }
-      if (isFlagged) {
-        btnClass += 'bg-amber-500 text-slate-950 ';
-      } else if (isAnswered) {
+
+      // Background color based on state
+      if (isCorrect) {
         btnClass += 'bg-emerald-600 text-white ';
+      } else if (isIncorrect) {
+        btnClass += 'bg-rose-600 text-white ';
+      } else if (isFlagged && !isAnswered) {
+        // Flagged but not yet answered
+        btnClass += 'bg-amber-500 text-slate-950 font-bold ';
+      } else if (isAnsweredUnrevealed) {
+        // Answered but not yet revealed (exam mode before submit)
+        btnClass += 'bg-sky-600 text-white ';
       } else {
+        // Unanswered
         btnClass += 'bg-cockpit-850 hover:bg-cockpit-800 text-slate-300 border border-cockpit-border ';
       }
 
-      return '<button onclick="app.jumpToQuestion(' + idx + ')" class="' + btnClass + '" title="ข้อที่ ' + (idx + 1) + '">' +
+      // Small indicator icon for flagged
+      let flagIcon = '';
+      if (isFlagged) {
+        if (!isAnswered) {
+          flagIcon = '<span class="absolute top-0.5 right-1 text-slate-950 text-[10px] font-bold leading-none">⚑</span>';
+        } else {
+          flagIcon = '<span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-400 text-slate-950 text-[8px] font-black flex items-center justify-center shadow-md border border-cockpit-950">⚑</span>';
+        }
+      }
+
+      // Small indicator for correct/incorrect (checkmark/cross)
+      let statusIcon = '';
+      if (isCorrect) {
+        statusIcon = '<span class="absolute bottom-0.5 right-1 text-emerald-200 text-[9px] font-bold leading-none">✓</span>';
+      } else if (isIncorrect) {
+        statusIcon = '<span class="absolute bottom-0.5 right-1 text-rose-200 text-[9px] font-bold leading-none">✗</span>';
+      }
+
+      // Detailed tooltip description
+      let stateTitle = 'ยังไม่ได้ตอบ';
+      if (isFlagged && !isAnswered) {
+        stateTitle = 'Flagged (ยังไม่ได้ตอบ)';
+      } else if (isFlagged && isCorrect) {
+        stateTitle = 'Flagged (ตอบถูก ✓)';
+      } else if (isFlagged && isIncorrect) {
+        stateTitle = 'Flagged (ตอบผิด ✗)';
+      } else if (isCorrect) {
+        stateTitle = 'ตอบถูก ✓';
+      } else if (isIncorrect) {
+        stateTitle = 'ตอบผิด ✗';
+      } else if (isAnsweredUnrevealed) {
+        stateTitle = isFlagged ? 'Flagged (ตอบแล้ว รอส่งข้อสอบ)' : 'ตอบแล้ว (รอตรวจเมื่อส่งข้อสอบ)';
+      }
+
+      return '<button onclick="app.jumpToQuestion(' + idx + ')" class="' + btnClass + '" title="ข้อที่ ' + (idx + 1) + ': ' + stateTitle + '">' +
         (idx + 1) +
-        (isFlagged ? '<span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-white"></span>' : '') +
+        flagIcon +
+        statusIcon +
       '</button>';
     }).join('');
 
@@ -1363,6 +1427,7 @@ const app = {
   /* ============================================================ */
   calculateAndShowSummary() {
     this.stopTimer();
+    this.examSubmitted = true;
     sound.complete();
 
     // Clear active in-progress session upon final submission
