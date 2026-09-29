@@ -2039,7 +2039,7 @@ const app = {
           <i data-lucide="search" class="w-6 h-6 text-violet-400"></i>
         </div>
         <p class="text-sm font-semibold text-white">พิมพ์คำ เห็นคำตอบทันที</p>
-        <p class="text-xs text-slate-400">ค้นหาจากคำถาม, คำตอบ, explanation<br>เห็นเฉลยถูกต้องโดยไม่ต้องเปิด modal ใหม่</p>
+        <p class="text-xs text-slate-400">ค้นหาจากโจทย์ และตัวเลือกคำตอบ<br>เห็นเฉลยถูกต้องโดยไม่ต้องเปิด modal ใหม่</p>
       </div>`;
     lucide.createIcons();
   },
@@ -2073,16 +2073,12 @@ const app = {
       return;
     }
 
-    // Search across question, options, correct answer, explanation, LO
+    // Search strictly across question, options, and correct answer (excluding explanation/description)
     const results = this.questions.filter(item => {
       const qText = (item.question || '').toLowerCase();
       const correct = (item.correct || '').toLowerCase();
-      const exp = ((item.explanation_quick || '') + ' ' + (item.explanation || '')).toLowerCase();
-      const lo = (item.LO || '').toLowerCase();
       const opts = (item.options || []).join(' ').toLowerCase();
-      const topic = (item.topicName || '').toLowerCase();
-      return qText.includes(q) || correct.includes(q) || exp.includes(q)
-          || lo.includes(q) || opts.includes(q) || topic.includes(q);
+      return qText.includes(q) || correct.includes(q) || opts.includes(q);
     }).slice(0, 30);
 
     // Update count badge
