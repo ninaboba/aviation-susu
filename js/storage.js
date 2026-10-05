@@ -195,7 +195,7 @@ const QuizStorage = {
   },
 
   /**
-   * Get exam history records for a subject
+   * Get exam history records for a subject (capped at 20 records)
    * @param {string} subjectId
    * @returns {Array}
    */
@@ -208,7 +208,7 @@ const QuizStorage = {
       }
       if (raw) {
         const arr = JSON.parse(raw);
-        if (Array.isArray(arr)) return arr;
+        if (Array.isArray(arr)) return arr.slice(0, 20);
       }
     } catch (e) {
       console.warn('QuizStorage.getHistory failed:', e);
@@ -217,19 +217,34 @@ const QuizStorage = {
   },
 
   /**
-   * Save exam history records for a subject
+   * Save exam history records for a subject (capped at 20 records)
    * @param {string} subjectId
    * @param {Array} history
    */
   saveHistory(subjectId, history) {
     try {
-      const arr = Array.isArray(history) ? history : [];
+      const arr = Array.isArray(history) ? history.slice(0, 20) : [];
       localStorage.setItem(this.HISTORY_PREFIX + subjectId, JSON.stringify(arr));
       if (subjectId === 'pof') {
         localStorage.setItem('pof_history', JSON.stringify(arr));
       }
     } catch (e) {
       console.warn('QuizStorage.saveHistory failed:', e);
+    }
+  },
+
+  /**
+   * Clear exam history records for a subject
+   * @param {string} subjectId
+   */
+  clearHistory(subjectId) {
+    try {
+      localStorage.removeItem(this.HISTORY_PREFIX + subjectId);
+      if (subjectId === 'pof') {
+        localStorage.removeItem('pof_history');
+      }
+    } catch (e) {
+      console.warn('QuizStorage.clearHistory failed:', e);
     }
   },
 

@@ -101,6 +101,11 @@ const app = {
   examHistory: [],
   sessionMistakesList: [],
 
+  // History Detail State
+  currentHistoryView: 'list',
+  selectedHistoryIndex: null,
+  activeHistoryDetailFilter: 'all',
+
   // Review & Summary State
   activeReviewFilter: 'all',
   reviewCurrentPage: 1,
@@ -582,6 +587,8 @@ const app = {
     if (elHistCount) elHistCount.textContent = histCount;
     const elHeroExamCount = document.getElementById('heroExamCount');
     if (elHeroExamCount) elHeroExamCount.textContent = histCount + (histCount === 1 ? ' Test' : ' Tests');
+    const elHeaderHistory = document.getElementById('headerHistoryCount');
+    if (elHeaderHistory) elHeaderHistory.textContent = histCount;
 
     const elHeroAvg = document.getElementById('heroAvgScore');
     if (elHeroAvg) {
@@ -1487,6 +1494,15 @@ const app = {
     const percentage = Math.round((correctCount / total) * 100);
     const isPass = percentage >= 75;
 
+    const questionDetails = this.sessionQuestions.map((q, idx) => {
+      const userAns = this.userAnswers[idx] || null;
+      return {
+        id: q.id,
+        userAns: userAns,
+        isCorrect: userAns === q.correct
+      };
+    });
+
     const sessionLog = {
       date: new Date().toISOString(),
       mode: this.mode,
@@ -1494,10 +1510,11 @@ const app = {
       correctCount: correctCount,
       percentage: percentage,
       timeSpent: this.timeElapsedSeconds,
-      isPass: isPass
+      isPass: isPass,
+      questions: questionDetails
     };
     this.examHistory.unshift(sessionLog);
-    if (this.examHistory.length > 50) this.examHistory.pop();
+    if (this.examHistory.length > 20) this.examHistory = this.examHistory.slice(0, 20);
     this.saveUserData();
 
     if (isPass && typeof confetti === 'function') {
@@ -1909,6 +1926,781 @@ const app = {
           this.updateFilterCounts();
           this.checkResumeSession();
           alert('ล้างข้อมูลความคืบหน้าทั้งหมดเรียบร้อยแล้ว');
+        }
+      }
+    });
+  },
+
+  /* ============================================================ */
+  /* EXAM HISTORY MODAL (LAST 20 ATTEMPTS)                        */
+  /* ============================================================ */
+  openHistoryModal() {
+    sound.click();
+    this.currentHistoryView = 'list';
+    this.selectedHistoryIndex = null;
+    const mainView = document.getElementById('historyMainView');
+    const detailView = document.getElementById('historyDetailView');
+    if (mainView) mainView.classList.remove('hidden');
+    if (detailView) detailView.classList.add('hidden');
+    this.renderHistoryModal();
+    const modal = document.getElementById('modalExamHistory');
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+    lucide.createIcons();
+  },
+
+  closeHistoryModal() {
+    const modal = document.getElementById('modalExamHistory');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+    this.currentHistoryView = 'list';
+    this.selectedHistoryIndex = null;
+  },
+
+  renderHistoryModal() {
+    const badgeEl = document.getElementById('historySubjectBadge');
+    if (badgeEl && this.currentSubject) {
+      badgeEl.textContent = this.currentSubject.code || this.currentSubject.title || 'Subject';
+    }
+
+    const history = (this.examHistory || []).slice(0, 20);
+    const count = history.length;
+    const passCount = history.filter(h => h.isPass).length;
+    const passRate = count > 0 ? Math.round((passCount / count) * 100) : 0;
+    const avgScore = count > 0 ? Math.round(history.reduce((acc, c) => acc + (c.percentage || 0), 0) / count) : 0;
+    const bestScore = count > 0 ? Math.max(...history.map(c => c.percentage || 0)) : 0;
+
+    // 1. Stats Bar
+    const statsBar = document.getElementById('historyStatsBar');
+    if (statsBar) {
+      statsBar.innerHTML = `
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Total Tests</span>
+          <span class="text-xl font-bold font-mono text-cyan-400">${count} <span class="text-xs text-slate-500 font-normal">/ 20</span></span>
+          <span class="text-[10px] text-slate-500 block">เก็บบันทึกย้อนหลัง</span>
+        </div>
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Pass Rate</span>
+          <span class="text-xl font-bold font-mono ${passRate >= 75 ? 'text-emerald-400' : 'text-amber-400'}">${count > 0 ? passRate + '%' : '-%'}</span>
+          <span class="text-[10px] text-slate-500 block">${passCount}/${count} ครั้งผ่านเกณฑ์</span>
+        </div>
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Avg Score</span>
+          <span class="text-xl font-bold font-mono ${avgScore >= 75 ? 'text-emerald-400' : 'text-amber-400'}">${count > 0 ? avgScore + '%' : '-%'}</span>
+          <span class="text-[10px] text-slate-500 block">คะแนนเฉลี่ยรวม</span>
+        </div>
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Best Score</span>
+          <span class="text-xl font-bold font-mono text-emerald-400">${count > 0 ? bestScore + '%' : '-%'}</span>
+          <span class="text-[10px] text-slate-500 block">สถิติสูงสุดที่ทำได้</span>
+        </div>
+      `;
+    }
+
+    // 2. Trend Container
+    const trendContainer = document.getElementById('historyTrendContainer');
+    if (trendContainer) {
+      if (count === 0) {
+        trendContainer.classList.add('hidden');
+      } else {
+        trendContainer.classList.remove('hidden');
+        const chronological = [...history].reverse();
+        
+        const barsHtml = chronological.map((item, idx) => {
+          const isLatest = idx === chronological.length - 1;
+          const heightPercent = Math.max(12, Math.min(100, item.percentage || 0));
+          const bgGrad = item.isPass 
+            ? 'bg-gradient-to-t from-emerald-600 to-teal-400 shadow-[0_0_8px_rgba(16,185,129,0.35)]'
+            : 'bg-gradient-to-t from-rose-600 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.35)]';
+          const textColor = item.isPass ? 'text-emerald-400' : 'text-rose-400';
+          const origIdx = history.length - 1 - idx;
+
+          return `
+            <div onclick="app.openHistoryDetail(${origIdx})" class="flex-1 flex flex-col items-center justify-end h-full group relative min-w-[14px] cursor-pointer" title="คลิกเพื่อดูข้อสอบรอบนี้">
+              <div class="absolute bottom-full mb-1.5 hidden group-hover:flex flex-col items-center z-30 pointer-events-none whitespace-nowrap bg-cockpit-950/95 border border-cockpit-border p-2 rounded-lg shadow-2xl text-[10px] font-mono animate-fadeIn">
+                <span class="font-bold ${textColor}">Attempt #${idx + 1}: ${item.percentage}% (${item.isPass ? 'PASS' : 'FAIL'})</span>
+                <span class="text-slate-300">${item.correctCount || 0}/${item.total || 0} ข้อ • ${item.timeSpent ? Math.floor(item.timeSpent / 60) + 'm' : ''}</span>
+                <span class="text-slate-500 text-[9px]">${item.date ? new Date(item.date).toLocaleString('th-TH') : ''}</span>
+                <span class="text-[9px] text-cyan-300 mt-0.5 font-sans">คลิกเพื่อดูเฉลยรายข้อ ➔</span>
+              </div>
+              
+              <div class="w-full max-w-[24px] ${bgGrad} rounded-t transition-all duration-300 group-hover:brightness-125 group-hover:scale-y-105 origin-bottom" style="height: ${heightPercent}%;"></div>
+
+              <span class="text-[9px] font-mono font-bold mt-1 ${textColor} leading-tight">${item.percentage}%</span>
+              ${isLatest ? '<span class="text-[8px] font-mono text-cyan-400 font-bold tracking-tighter">NEW</span>' : `<span class="text-[8px] font-mono text-slate-500">${idx + 1}</span>`}
+            </div>
+          `;
+        }).join('');
+
+        trendContainer.innerHTML = `
+          <div class="flex items-center justify-between text-xs pb-1.5 mb-1.5 border-b border-cockpit-border/40 font-mono">
+            <span class="text-slate-300 flex items-center gap-1.5 font-bold">
+              <i data-lucide="trending-up" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Score Progression Trend (${count} ครั้งล่าสุด)</span>
+            </span>
+            <div class="flex items-center gap-2 text-[10px] text-slate-400">
+              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span><span class="text-slate-300">ผ่าน (≥75%)</span></span>
+              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-400 inline-block"></span><span class="text-slate-300">ไม่ผ่าน</span></span>
+            </div>
+          </div>
+          <div class="relative h-24 pt-4 pb-1">
+            <div class="absolute left-0 right-0 top-[25%] border-b border-dashed border-emerald-500/40 z-0 pointer-events-none flex items-center justify-end pr-1">
+              <span class="text-[9px] font-mono text-emerald-400/90 bg-cockpit-900/90 px-1 py-0.5 rounded -translate-y-1/2 border border-emerald-500/20">CAAT 75%</span>
+            </div>
+            <div class="flex items-end justify-between gap-1 sm:gap-2 h-full relative z-10">
+              ${barsHtml}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // 3. History List
+    const listContainer = document.getElementById('historyListContainer');
+    if (listContainer) {
+      if (count === 0) {
+        listContainer.innerHTML = `
+          <div class="py-10 flex flex-col items-center justify-center text-center space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-cockpit-850 border border-cockpit-border flex items-center justify-center text-slate-500">
+              <i data-lucide="inbox" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-1">
+              <p class="text-sm font-semibold text-slate-200">ยังไม่มีประวัติการสอบสำหรับวิชานี้</p>
+              <p class="text-xs text-slate-400 max-w-sm leading-relaxed">เมื่อทำแบบทดสอบเสร็จสิ้นและกด Finish ระบบจะบันทึกผลคะแนน 20 ครั้งล่าสุดไว้ที่นี่โดยอัตโนมัติ</p>
+            </div>
+          </div>
+        `;
+      } else {
+        const modeMap = {
+          exam: { label: 'Exam Mode', cls: 'bg-blue-500/20 text-blue-300 border-blue-500/40' },
+          study: { label: 'Study Mode', cls: 'bg-amber-500/20 text-amber-300 border-amber-500/40' },
+          practice: { label: 'Practice', cls: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40' }
+        };
+
+        const formatDate = (iso) => {
+          if (!iso) return '-';
+          try {
+            const d = new Date(iso);
+            return d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }) + ' • ' + d.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.';
+          } catch (e) {
+            return iso;
+          }
+        };
+
+        const formatDuration = (sec) => {
+          if (!sec || isNaN(sec)) return '-';
+          const m = Math.floor(sec / 60);
+          const s = sec % 60;
+          if (m === 0) return `${s} วิ`;
+          return `${m} นาที ${s} วิ`;
+        };
+
+        listContainer.innerHTML = history.map((record, idx) => {
+          const modeObj = modeMap[record.mode] || { label: (record.mode || 'Practice').toUpperCase(), cls: 'bg-slate-700/40 text-slate-300 border-slate-600' };
+          const avgPerQ = record.total > 0 && record.timeSpent ? Math.round(record.timeSpent / record.total) : null;
+
+          return `
+            <div onclick="app.openHistoryDetail(${idx})" class="p-3 sm:p-3.5 rounded-xl bg-cockpit-850/90 hover:bg-cockpit-800 border border-cockpit-border hover:border-cyan-500/50 transition cursor-pointer flex items-center justify-between gap-3 group shadow-sm" role="button" tabindex="0" title="คลิกเพื่อดูรายละเอียดข้อที่ตอบถูก/ผิด">
+              <div class="flex items-start sm:items-center space-x-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg ${record.isPass ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'} flex items-center justify-center font-mono font-bold text-xs shrink-0">
+                  #${count - idx}
+                </div>
+                <div class="min-w-0 space-y-1">
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-xs font-semibold text-white group-hover:text-cyan-300 transition-colors">${formatDate(record.date)}</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded border ${modeObj.cls}">${modeObj.label}</span>
+                    ${idx === 0 ? '<span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-bold">ล่าสุด</span>' : ''}
+                  </div>
+                  <div class="text-[11px] text-slate-400 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span>ตอบถูก <strong class="text-slate-200 font-mono">${record.correctCount}/${record.total}</strong> ข้อ</span>
+                    <span>•</span>
+                    <span>ใช้เวลา <strong class="text-slate-200 font-mono">${formatDuration(record.timeSpent)}</strong></span>
+                    ${avgPerQ ? `<span>•</span><span class="text-slate-500">เฉลี่ย ${avgPerQ} วิ/ข้อ</span>` : ''}
+                  </div>
+                </div>
+              </div>
+
+              <div class="shrink-0 text-right space-y-1">
+                <div class="text-lg sm:text-xl font-black font-mono ${record.isPass ? 'text-emerald-400' : 'text-rose-400'}">
+                  ${record.percentage}%
+                </div>
+                <div class="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${record.isPass ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/40' : 'bg-rose-500/15 text-rose-400 border border-rose-500/40'}">
+                  <i data-lucide="${record.isPass ? 'check-circle-2' : 'alert-triangle'}" class="w-3 h-3"></i>
+                  <span>${record.isPass ? 'PASS' : 'FAIL'}</span>
+                </div>
+                <div class="text-[10px] font-mono text-cyan-400 group-hover:text-cyan-300 flex items-center justify-end gap-0.5 opacity-80 group-hover:opacity-100 transition">
+                  <span>ดูเฉลยรายข้อ</span>
+                  <i data-lucide="chevron-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    // 4. Clear button state
+    const clearBtn = document.getElementById('btnClearHistoryBtn');
+    if (clearBtn) {
+      if (count === 0) {
+        clearBtn.disabled = true;
+        clearBtn.classList.add('opacity-40', 'pointer-events-none');
+      } else {
+        clearBtn.disabled = false;
+        clearBtn.classList.remove('opacity-40', 'pointer-events-none');
+      }
+    }
+
+    lucide.createIcons();
+  },
+
+  /* ============================================================ */
+  /* EXAM HISTORY DETAIL (QUESTION BY QUESTION REVIEW)            */
+  /* ============================================================ */
+  openHistoryDetail(attemptIdx) {
+    sound.click();
+    const record = this.examHistory ? this.examHistory[attemptIdx] : null;
+    if (!record) return;
+
+    this.currentHistoryView = 'detail';
+    this.selectedHistoryIndex = attemptIdx;
+    this.activeHistoryDetailFilter = 'all';
+
+    const mainView = document.getElementById('historyMainView');
+    const detailView = document.getElementById('historyDetailView');
+    if (mainView) mainView.classList.add('hidden');
+    if (detailView) detailView.classList.remove('hidden');
+
+    this.renderHistoryDetail();
+    const qList = document.getElementById('historyDetailQuestionsList');
+    if (qList) qList.scrollTop = 0;
+    lucide.createIcons();
+  },
+
+  backToHistoryList() {
+    sound.click();
+    this.currentHistoryView = 'list';
+    this.selectedHistoryIndex = null;
+
+    const mainView = document.getElementById('historyMainView');
+    const detailView = document.getElementById('historyDetailView');
+    if (mainView) mainView.classList.remove('hidden');
+    if (detailView) detailView.classList.add('hidden');
+
+    this.renderHistoryModal();
+    lucide.createIcons();
+  },
+
+  filterHistoryDetail(filterType) {
+    sound.click();
+    this.activeHistoryDetailFilter = filterType;
+
+    const tabs = {
+      all: document.getElementById('historyTabAll'),
+      incorrect: document.getElementById('historyTabIncorrect'),
+      correct: document.getElementById('historyTabCorrect')
+    };
+
+    Object.entries(tabs).forEach(([type, el]) => {
+      if (el) {
+        if (type === filterType) {
+          el.className = 'px-3 py-1 rounded-lg bg-cyan-600 text-slate-950 font-bold transition';
+        } else {
+          el.className = 'px-3 py-1 rounded-lg text-slate-300 hover:text-white transition';
+        }
+      }
+    });
+
+    this.renderHistoryDetailQuestions();
+    lucide.createIcons();
+  },
+
+  renderHistoryDetail() {
+    if (this.selectedHistoryIndex === null || !this.examHistory) return;
+    const record = this.examHistory[this.selectedHistoryIndex];
+    if (!record) return;
+
+    const modeMap = {
+      exam: { label: 'Exam Mode', cls: 'bg-blue-500/20 text-blue-300 border-blue-500/40' },
+      study: { label: 'Study Mode', cls: 'bg-amber-500/20 text-amber-300 border-amber-500/40' },
+      practice: { label: 'Practice', cls: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40' }
+    };
+    const modeObj = modeMap[record.mode] || { label: (record.mode || 'Practice').toUpperCase(), cls: 'bg-slate-700/40 text-slate-300 border-slate-600' };
+
+    const formatDate = (iso) => {
+      if (!iso) return '-';
+      try {
+        const d = new Date(iso);
+        return d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }) + ' ' + d.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.';
+      } catch (e) {
+        return iso;
+      }
+    };
+
+    const formatDuration = (sec) => {
+      if (!sec || isNaN(sec)) return '-';
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      if (m === 0) return `${s} วิ`;
+      return `${m} นาที ${s} วิ`;
+    };
+
+    // Header badge
+    const badgeEl = document.getElementById('historyDetailAttemptBadge');
+    if (badgeEl) {
+      badgeEl.innerHTML = `<span class="text-cyan-400">Attempt #${this.examHistory.length - this.selectedHistoryIndex}</span> • ${formatDate(record.date)}`;
+    }
+
+    // Banner summary
+    const bannerEl = document.getElementById('historyDetailBanner');
+    if (bannerEl) {
+      bannerEl.innerHTML = `
+        <div class="flex items-center space-x-3.5">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center font-black font-mono text-xl ${record.isPass ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-glow-emerald' : 'bg-rose-500/20 text-rose-400 border border-rose-500/40 shadow-glow-rose'} shrink-0">
+            ${record.percentage}%
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="text-sm font-bold text-white">${record.isPass ? 'RESULT: PASS (สอบผ่านเกณฑ์)' : 'RESULT: FAIL (ไม่ผ่านเกณฑ์ 75%)'}</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded border ${modeObj.cls}">${modeObj.label}</span>
+            </div>
+            <div class="text-xs text-slate-400 flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5">
+              <span>ถูกต้อง <strong class="text-emerald-400 font-mono">${record.correctCount}</strong> / <strong class="text-slate-200 font-mono">${record.total}</strong> ข้อ</span>
+              <span>•</span>
+              <span>ใช้เวลา <strong class="text-slate-200 font-mono">${formatDuration(record.timeSpent)}</strong></span>
+              ${record.total > 0 && record.timeSpent ? `<span>•</span><span class="text-slate-500">เฉลี่ย ${Math.round(record.timeSpent / record.total)} วิ/ข้อ</span>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Filter counts & action buttons
+    const questions = record.questions || [];
+    const totalQ = questions.length > 0 ? questions.length : record.total;
+    const incorrectQ = questions.length > 0 ? questions.filter(q => !q.isCorrect).length : (record.total - record.correctCount);
+    const correctQ = questions.length > 0 ? questions.filter(q => q.isCorrect).length : record.correctCount;
+
+    const countAll = document.getElementById('historyDetailCountAll');
+    if (countAll) countAll.textContent = totalQ;
+    const countInc = document.getElementById('historyDetailCountIncorrect');
+    if (countInc) countInc.textContent = incorrectQ;
+    const countCor = document.getElementById('historyDetailCountCorrect');
+    if (countCor) countCor.textContent = correctQ;
+
+    const actionWrap = document.getElementById('historyDetailActionWrapper');
+    if (actionWrap) {
+      if (incorrectQ > 0 && questions.length > 0) {
+        actionWrap.innerHTML = `
+          <button onclick="app.practiceAttemptMistakes(${this.selectedHistoryIndex})" class="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-glow-rose transition flex items-center space-x-1.5" title="ฝึกทำซ้ำเฉพาะ ${incorrectQ} ข้อที่ตอบผิดในรอบนี้">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+            <span>ฝึกซ่อมข้อที่ผิด (${incorrectQ})</span>
+          </button>
+        `;
+      } else {
+        actionWrap.innerHTML = '';
+      }
+    }
+
+    this.renderHistoryDetailQuestions();
+  },
+
+  renderHistoryDetailQuestions() {
+    if (this.selectedHistoryIndex === null || !this.examHistory) return;
+    const record = this.examHistory[this.selectedHistoryIndex];
+    if (!record) return;
+
+    const container = document.getElementById('historyDetailQuestionsList');
+    if (!container) return;
+
+    const questions = record.questions || [];
+    if (questions.length === 0) {
+      container.innerHTML = `
+        <div class="py-12 px-4 text-center space-y-3 glass-card rounded-xl">
+          <div class="w-12 h-12 rounded-xl bg-cockpit-850 border border-cockpit-border flex items-center justify-center text-slate-500 mx-auto">
+            <i data-lucide="file-question" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-semibold text-slate-200">ไม่มีข้อมูลคำตอบรายข้อสำหรับรอบนี้</p>
+            <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">รอบนี้เป็นข้อมูลเก่าก่อนเปิดใช้งานระบบบันทึกรายข้อ ระบบจะเริ่มบันทึกข้อที่ถูก-ผิดในทุกครั้งที่คุณสอบตั้งแต่รอบนี้เป็นต้นไปครับ</p>
+          </div>
+        </div>
+      `;
+      lucide.createIcons();
+      return;
+    }
+
+    const filterType = this.activeHistoryDetailFilter || 'all';
+    const filtered = questions.map((item, sessionIdx) => ({ ...item, sessionIdx })).filter(item => {
+      if (filterType === 'incorrect') return !item.isCorrect;
+      if (filterType === 'correct') return item.isCorrect;
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="p-8 text-center text-slate-500 glass-card rounded-xl">
+          <i data-lucide="info" class="w-6 h-6 mx-auto mb-2 opacity-50"></i>
+          <p class="text-xs font-mono">ไม่มีข้อสอบในหมวดหมู่นี้</p>
+        </div>
+      `;
+      lucide.createIcons();
+      return;
+    }
+
+    container.innerHTML = filtered.map(item => {
+      const q = (this.questions ? this.questions.find(qItem => qItem.id === item.id) : null) || {
+        id: item.id,
+        question: 'Question #' + item.id,
+        correct: item.isCorrect ? item.userAns : '-',
+        topic: 'General',
+        LO: '-'
+      };
+      const isBookmarked = this.bookmarks ? this.bookmarks.has(q.id) : false;
+      const isCorrect = item.isCorrect;
+
+      return `
+        <div class="glass-card p-4 sm:p-5 rounded-xl border space-y-3 ${isCorrect ? 'review-card-correct' : 'review-card-incorrect'}">
+          <!-- Card Header -->
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+              <span class="font-mono font-bold text-xs ${isCorrect ? 'text-emerald-400' : 'text-rose-400'}">
+                #${item.sessionIdx + 1} (Bank ID ${q.id})
+              </span>
+              ${q.topic ? `<span class="search-badge-topic text-[10px] font-mono px-2 py-0.5 rounded">${q.topic}</span>` : ''}
+              ${q.LO ? `<span class="search-badge-lo text-[10px] font-mono px-2 py-0.5 rounded">LO: ${q.LO}</span>` : ''}
+            </div>
+            <div class="flex items-center space-x-2">
+              <button onclick="app.toggleBookmarkFromHistory(${q.id}, event)" class="p-1 rounded hover:bg-cockpit-800 text-slate-400 hover:text-amber-400 transition" title="ติดดาวข้อนี้">
+                <i data-lucide="bookmark" class="w-3.5 h-3.5 ${isBookmarked ? 'text-amber-400 fill-amber-400' : ''}"></i>
+              </button>
+              <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded ${isCorrect ? 'review-status-correct' : 'review-status-incorrect'}">
+                ${isCorrect ? 'CORRECT' : (item.userAns ? 'INCORRECT' : 'SKIPPED')}
+              </span>
+            </div>
+          </div>
+
+          <!-- Question Text -->
+          <h4 class="text-sm font-semibold text-white leading-relaxed font-sans">${q.question}</h4>
+
+          <!-- Answers -->
+          <div class="space-y-1.5 text-xs font-sans">
+            <div class="p-2.5 rounded-lg border ${isCorrect ? 'review-correct-box' : 'review-incorrect-box'} flex items-start gap-2">
+              <i data-lucide="${isCorrect ? 'check-circle' : 'x-circle'}" class="w-4 h-4 shrink-0 mt-0.5 ${isCorrect ? 'text-emerald-400' : 'text-rose-400'}"></i>
+              <div>
+                <span class="font-bold">คำตอบที่คุณเลือก:</span>
+                <span class="ml-1">${item.userAns || '<em class="opacity-70">ไม่ได้เลือกคำตอบ (Unanswered)</em>'}</span>
+              </div>
+            </div>
+            ${!isCorrect ? `
+              <div class="p-2.5 rounded-lg border review-correct-box flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 mt-0.5 text-emerald-400"></i>
+                <div>
+                  <span class="font-bold">เฉลยที่ถูกต้อง:</span>
+                  <span class="ml-1 font-semibold text-emerald-300">${q.correct}</span>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Explanations -->
+          <div class="p-3 rounded-lg review-exp-box text-xs space-y-2">
+            ${q.explanation_quick ? `
+              <div class="p-2 rounded bg-cyan-950/40 border border-cyan-500/30 text-cyan-100 flex items-start space-x-2">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5 fill-current"></i>
+                <div>
+                  <strong class="text-cyan-300 font-mono text-[10px]">QUICK TAKE:</strong>
+                  <span class="text-slate-200 ml-1">${q.explanation_quick}</span>
+                </div>
+              </div>
+            ` : ''}
+            ${q.explanation ? `
+              <div class="space-y-1">
+                <div class="text-[11px] font-mono font-semibold exp-header flex items-center space-x-1">
+                  <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>คำอธิบาย / Explanation:</span>
+                </div>
+                <p class="text-slate-300 leading-relaxed font-sans text-xs">${q.explanation}</p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    lucide.createIcons();
+  },
+
+  practiceAttemptMistakes(attemptIdx) {
+    sound.click();
+    const record = this.examHistory ? this.examHistory[attemptIdx] : null;
+    if (!record || !record.questions) return;
+
+    const incorrectIds = record.questions.filter(q => !q.isCorrect).map(q => q.id);
+    if (incorrectIds.length === 0) {
+      alert('รอบนี้ทำคะแนนเต็ม ไม่มีข้อที่ตอบผิดครับ ยอดเยี่ยมมาก!');
+      return;
+    }
+
+    const mistakeQuestions = (this.questions || []).filter(q => incorrectIds.includes(q.id));
+    if (mistakeQuestions.length === 0) return;
+
+    this.closeHistoryModal();
+
+    this.sessionQuestions = mistakeQuestions.map(q => ({
+      ...q,
+      shuffledOptions: this.shuffleArray([...q.options])
+    }));
+    this.userAnswers = new Array(this.sessionQuestions.length).fill(null);
+    this.userFlagged = new Set();
+    this.currentIndex = 0;
+    this.timeElapsedSeconds = 0;
+    this.isRetrySession = true;
+    this.setMode('study');
+
+    document.getElementById('viewSetup').classList.add('hidden');
+    document.getElementById('viewSummary').classList.add('hidden');
+    document.getElementById('viewExam').classList.remove('hidden');
+
+    this.renderActiveQuestion();
+    this.startTimer();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  toggleBookmarkFromHistory(questionId, event) {
+    if (event) event.stopPropagation();
+    sound.click();
+    if (!this.bookmarks) this.bookmarks = new Set();
+
+    if (this.bookmarks.has(questionId)) {
+      this.bookmarks.delete(questionId);
+    } else {
+      this.bookmarks.add(questionId);
+    }
+
+    if (this.currentSubject) {
+      QuizStorage.saveBookmarks(this.currentSubject.id, this.bookmarks);
+    }
+    this.updateHeaderStats();
+    this.renderHistoryDetailQuestions();
+  },
+
+  closeHistoryModal() {
+    const modal = document.getElementById('modalExamHistory');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  },
+
+  renderHistoryModal() {
+    const badgeEl = document.getElementById('historySubjectBadge');
+    if (badgeEl && this.currentSubject) {
+      badgeEl.textContent = this.currentSubject.code || this.currentSubject.title || 'Subject';
+    }
+
+    const history = (this.examHistory || []).slice(0, 20);
+    const count = history.length;
+    const passCount = history.filter(h => h.isPass).length;
+    const passRate = count > 0 ? Math.round((passCount / count) * 100) : 0;
+    const avgScore = count > 0 ? Math.round(history.reduce((acc, c) => acc + (c.percentage || 0), 0) / count) : 0;
+    const bestScore = count > 0 ? Math.max(...history.map(c => c.percentage || 0)) : 0;
+
+    // 1. Stats Bar
+    const statsBar = document.getElementById('historyStatsBar');
+    if (statsBar) {
+      statsBar.innerHTML = `
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Total Tests</span>
+          <span class="text-xl font-bold font-mono text-cyan-400">${count} <span class="text-xs text-slate-500 font-normal">/ 20</span></span>
+          <span class="text-[10px] text-slate-500 block">เก็บบันทึกย้อนหลัง</span>
+        </div>
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Pass Rate</span>
+          <span class="text-xl font-bold font-mono ${passRate >= 75 ? 'text-emerald-400' : 'text-amber-400'}">${count > 0 ? passRate + '%' : '-%'}</span>
+          <span class="text-[10px] text-slate-500 block">${passCount}/${count} ครั้งผ่านเกณฑ์</span>
+        </div>
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Avg Score</span>
+          <span class="text-xl font-bold font-mono ${avgScore >= 75 ? 'text-emerald-400' : 'text-amber-400'}">${count > 0 ? avgScore + '%' : '-%'}</span>
+          <span class="text-[10px] text-slate-500 block">คะแนนเฉลี่ยรวม</span>
+        </div>
+        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
+          <span class="text-[11px] text-slate-400 block font-medium">Best Score</span>
+          <span class="text-xl font-bold font-mono text-emerald-400">${count > 0 ? bestScore + '%' : '-%'}</span>
+          <span class="text-[10px] text-slate-500 block">สถิติสูงสุดที่ทำได้</span>
+        </div>
+      `;
+    }
+
+    // 2. Trend Container
+    const trendContainer = document.getElementById('historyTrendContainer');
+    if (trendContainer) {
+      if (count === 0) {
+        trendContainer.classList.add('hidden');
+      } else {
+        trendContainer.classList.remove('hidden');
+        const chronological = [...history].reverse();
+        
+        const barsHtml = chronological.map((item, idx) => {
+          const isLatest = idx === chronological.length - 1;
+          const heightPercent = Math.max(12, Math.min(100, item.percentage || 0));
+          const bgGrad = item.isPass 
+            ? 'bg-gradient-to-t from-emerald-600 to-teal-400 shadow-[0_0_8px_rgba(16,185,129,0.35)]'
+            : 'bg-gradient-to-t from-rose-600 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.35)]';
+          const textColor = item.isPass ? 'text-emerald-400' : 'text-rose-400';
+
+          return `
+            <div class="flex-1 flex flex-col items-center justify-end h-full group relative min-w-[14px]">
+              <div class="absolute bottom-full mb-1.5 hidden group-hover:flex flex-col items-center z-30 pointer-events-none whitespace-nowrap bg-cockpit-950/95 border border-cockpit-border p-2 rounded-lg shadow-2xl text-[10px] font-mono animate-fadeIn">
+                <span class="font-bold ${textColor}">Attempt #${idx + 1}: ${item.percentage}% (${item.isPass ? 'PASS' : 'FAIL'})</span>
+                <span class="text-slate-300">${item.correctCount || 0}/${item.total || 0} ข้อ • ${item.timeSpent ? Math.floor(item.timeSpent / 60) + 'm' : ''}</span>
+                <span class="text-slate-500 text-[9px]">${item.date ? new Date(item.date).toLocaleString('th-TH') : ''}</span>
+              </div>
+              
+              <div class="w-full max-w-[24px] ${bgGrad} rounded-t transition-all duration-300 group-hover:brightness-125 group-hover:scale-y-105 origin-bottom" style="height: ${heightPercent}%;"></div>
+
+              <span class="text-[9px] font-mono font-bold mt-1 ${textColor} leading-tight">${item.percentage}%</span>
+              ${isLatest ? '<span class="text-[8px] font-mono text-cyan-400 font-bold tracking-tighter">NEW</span>' : `<span class="text-[8px] font-mono text-slate-500">${idx + 1}</span>`}
+            </div>
+          `;
+        }).join('');
+
+        trendContainer.innerHTML = `
+          <div class="flex items-center justify-between text-xs pb-1.5 mb-1.5 border-b border-cockpit-border/40 font-mono">
+            <span class="text-slate-300 flex items-center gap-1.5 font-bold">
+              <i data-lucide="trending-up" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Score Progression Trend (${count} ครั้งล่าสุด)</span>
+            </span>
+            <div class="flex items-center gap-2 text-[10px] text-slate-400">
+              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span><span class="text-slate-300">ผ่าน (≥75%)</span></span>
+              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-400 inline-block"></span><span class="text-slate-300">ไม่ผ่าน</span></span>
+            </div>
+          </div>
+          <div class="relative h-24 pt-4 pb-1">
+            <div class="absolute left-0 right-0 top-[25%] border-b border-dashed border-emerald-500/40 z-0 pointer-events-none flex items-center justify-end pr-1">
+              <span class="text-[9px] font-mono text-emerald-400/90 bg-cockpit-900/90 px-1 py-0.5 rounded -translate-y-1/2 border border-emerald-500/20">CAAT 75%</span>
+            </div>
+            <div class="flex items-end justify-between gap-1 sm:gap-2 h-full relative z-10">
+              ${barsHtml}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // 3. History List
+    const listContainer = document.getElementById('historyListContainer');
+    if (listContainer) {
+      if (count === 0) {
+        listContainer.innerHTML = `
+          <div class="py-10 flex flex-col items-center justify-center text-center space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-cockpit-850 border border-cockpit-border flex items-center justify-center text-slate-500">
+              <i data-lucide="inbox" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-1">
+              <p class="text-sm font-semibold text-slate-200">ยังไม่มีประวัติการสอบสำหรับวิชานี้</p>
+              <p class="text-xs text-slate-400 max-w-sm leading-relaxed">เมื่อทำแบบทดสอบเสร็จสิ้นและกด Finish ระบบจะบันทึกผลคะแนน 20 ครั้งล่าสุดไว้ที่นี่โดยอัตโนมัติ</p>
+            </div>
+          </div>
+        `;
+      } else {
+        const modeMap = {
+          exam: { label: 'Exam Mode', cls: 'bg-blue-500/20 text-blue-300 border-blue-500/40' },
+          study: { label: 'Study Mode', cls: 'bg-amber-500/20 text-amber-300 border-amber-500/40' },
+          practice: { label: 'Practice', cls: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40' }
+        };
+
+        const formatDate = (iso) => {
+          if (!iso) return '-';
+          try {
+            const d = new Date(iso);
+            return d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }) + ' • ' + d.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.';
+          } catch (e) {
+            return iso;
+          }
+        };
+
+        const formatDuration = (sec) => {
+          if (!sec || isNaN(sec)) return '-';
+          const m = Math.floor(sec / 60);
+          const s = sec % 60;
+          if (m === 0) return `${s} วิ`;
+          return `${m} นาที ${s} วิ`;
+        };
+
+        listContainer.innerHTML = history.map((record, idx) => {
+          const modeObj = modeMap[record.mode] || { label: (record.mode || 'Practice').toUpperCase(), cls: 'bg-slate-700/40 text-slate-300 border-slate-600' };
+          const avgPerQ = record.total > 0 && record.timeSpent ? Math.round(record.timeSpent / record.total) : null;
+
+          return `
+            <div class="p-3 sm:p-3.5 rounded-xl bg-cockpit-850/90 border border-cockpit-border hover:border-cockpit-700 transition flex items-center justify-between gap-3 group">
+              <div class="flex items-start sm:items-center space-x-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg ${record.isPass ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'} flex items-center justify-center font-mono font-bold text-xs shrink-0">
+                  #${count - idx}
+                </div>
+                <div class="min-w-0 space-y-1">
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-xs font-semibold text-white">${formatDate(record.date)}</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded border ${modeObj.cls}">${modeObj.label}</span>
+                    ${idx === 0 ? '<span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-bold">ล่าสุด</span>' : ''}
+                  </div>
+                  <div class="text-[11px] text-slate-400 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span>ตอบถูก <strong class="text-slate-200 font-mono">${record.correctCount}/${record.total}</strong> ข้อ</span>
+                    <span>•</span>
+                    <span>ใช้เวลา <strong class="text-slate-200 font-mono">${formatDuration(record.timeSpent)}</strong></span>
+                    ${avgPerQ ? `<span>•</span><span class="text-slate-500">เฉลี่ย ${avgPerQ} วิ/ข้อ</span>` : ''}
+                  </div>
+                </div>
+              </div>
+
+              <div class="shrink-0 text-right space-y-0.5">
+                <div class="text-lg sm:text-xl font-black font-mono ${record.isPass ? 'text-emerald-400' : 'text-rose-400'}">
+                  ${record.percentage}%
+                </div>
+                <div class="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${record.isPass ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/40' : 'bg-rose-500/15 text-rose-400 border border-rose-500/40'}">
+                  <i data-lucide="${record.isPass ? 'check-circle-2' : 'alert-triangle'}" class="w-3 h-3"></i>
+                  <span>${record.isPass ? 'PASS' : 'FAIL'}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    // 4. Clear button state
+    const clearBtn = document.getElementById('btnClearHistoryBtn');
+    if (clearBtn) {
+      if (count === 0) {
+        clearBtn.disabled = true;
+        clearBtn.classList.add('opacity-40', 'pointer-events-none');
+      } else {
+        clearBtn.disabled = false;
+        clearBtn.classList.remove('opacity-40', 'pointer-events-none');
+      }
+    }
+
+    lucide.createIcons();
+  },
+
+  clearHistory() {
+    sound.click();
+    if (!this.examHistory || this.examHistory.length === 0) return;
+    const subTitle = this.currentSubject ? this.currentSubject.title : 'วิชานี้';
+    this.showConfirmModal({
+      title: 'ล้างประวัติการสอบ?',
+      message: `คุณต้องการลบประวัติการสอบ 20 ครั้งล่าสุดของ ${subTitle} หรือไม่? (ข้อมูลคลังข้อผิดและบุ๊กมาร์กจะยังคงอยู่)`,
+      okText: 'ล้างประวัติ',
+      cancelText: 'ยกเลิก',
+      onOk: () => {
+        if (this.currentSubject) {
+          QuizStorage.clearHistory(this.currentSubject.id);
+          this.examHistory = [];
+          this.saveUserData();
+          this.renderHistoryModal();
+          this.updateHeaderStats();
         }
       }
     });
@@ -2596,6 +3388,8 @@ const app = {
       const isConfirmOpen = confirmModal && !confirmModal.classList.contains('hidden');
       const donateModal = document.getElementById('modalDonate');
       const isDonateOpen = donateModal && !donateModal.classList.contains('hidden');
+      const historyModal = document.getElementById('modalExamHistory');
+      const isHistoryOpen = historyModal && !historyModal.classList.contains('hidden');
 
       if (e.key === 'Escape') {
         const qsModal = document.getElementById('modalQSearch');
@@ -2605,9 +3399,17 @@ const app = {
         if (isGridOpen) { gridModal.classList.add('hidden'); return; }
         if (isConfirmOpen) { confirmModal.classList.add('hidden'); return; }
         if (isDonateOpen) { this.closeDonationModal(); return; }
+        if (isHistoryOpen) {
+          if (this.currentHistoryView === 'detail') {
+            this.backToHistoryList();
+          } else {
+            this.closeHistoryModal();
+          }
+          return;
+        }
       }
 
-      if (isSearchOpen || isGridOpen || isConfirmOpen || isDonateOpen) return;
+      if (isSearchOpen || isGridOpen || isConfirmOpen || isDonateOpen || isHistoryOpen) return;
 
       const examScreen = document.getElementById('viewExam');
       const isExamScreen = examScreen && !examScreen.classList.contains('hidden');
