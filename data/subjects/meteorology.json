@@ -106,11 +106,11 @@
       "It extends only to FL 180",
       "It extends only to FL 250",
       "It extends only to FL 450",
-      "It extends to about FL 650\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+      "It extends to about FL 650"
     ],
     "answer": 3,
     "explanation": "ขอบเขตของชั้นสตราโตสเฟียร์: ชั้นสตราโตสเฟียร์ (Stratosphere) เริ่มต้นจาก Tropopause ขึ้นไปจนถึง Stratopause ที่ระดับความสูงประมาณ 50 กิโลเมตร หรือประมาณ FL 650 (Flight Level 650 หรือราว 65,000-66,000 ฟุต) เป็นชั้นที่มีโอโซนหนาแน่นและอุณหภูมิจะเริ่มอุ่นขึ้นตามความสูง",
-    "correct": "It extends to about FL 650\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "correct": "It extends to about FL 650",
     "topic": "050 01",
     "topicName": "Stratosphere",
     "LO": "050 01 01 03",
@@ -392,7 +392,7 @@
     "explanation": "Subsidence Inversion: เกิดจากมวลอากาศในบริเวณความกดอากาศสูง (Anticyclone) ที่ 'จมตัวลง' (Subsiding air) เมื่ออากาศจมตัวลงจะถูกบีบอัดด้วยความกดอากาศที่สูงขึ้น ทำให้อากาศอุ่นขึ้นแบบอะเดียแบติก (Adiabatic compression heating) เกิดเป็นชั้นอากาศอุ่นกว่าอยู่เหนือชั้นอากาศเย็นด้านล่าง",
     "correct": "Sinking air that warms by compression aloft",
     "topic": "050 01",
-    "topicName": "Subsidence\n\ninversion",
+    "topicName": "Subsidence inversion",
     "LO": "050 01 02 05",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -481,7 +481,7 @@
   },
   {
     "id": 25,
-    "question": "Why does atmospheric pressure normally decrease with increasing altitude?\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "Why does atmospheric pressure normally decrease with increasing altitude?",
     "options": [
       "The weight of the air column above becomes smaller",
       "Air becomes heavier with height",
@@ -492,7 +492,7 @@
     "explanation": "การลดลงของความกดอากาศตามความสูง: ความกดอากาศที่ระดับใดๆ เกิดจากน้ำหนักของมวลอากาศที่อยู่เหนือระดับนั้น เมื่อความสูงเพิ่มขึ้น ปริมาณและน้ำหนักของมวลอากาศที่อยู่ด้านบนจะเหลือน้อยลงเรื่อยๆ ความกดอากาศจึงลดลงตามความสูงเสมอ",
     "correct": "The weight of the air column above becomes smaller",
     "topic": "050 01",
-    "topicName": "Pressure with\n\nheight",
+    "topicName": "Pressure with height",
     "LO": "050 01 03 02",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -512,7 +512,7 @@
     "explanation": "การคำนวณ Barometric Lapse Rate: กฎเกณฑ์สำหรับการสอบกำหนดให้ใช้ค่าประมาณ 30 ฟุต ต่อ 1 hPa ในชั้นบรรยากาศระดับต่ำ ดังนั้น ความแตกต่างของความกดอากาศ 10 hPa จะเทียบเท่ากับความสูงประมาณ 10 × 30 = 300 ฟุต (หมายเหตุ: ในข้อสอบต้นฉบับเฉลยตัวเลือก B: 3,000 ft ซึ่งเกิดจากการคำนวณผิดพลาดหรือพิมพ์ตกเลข 0 ของตัวโจทย์ แต่หลักการทางฟิสิกส์จริง 10 hPa คือ 300 ft)",
     "correct": "3,000 ft",
     "topic": "050 01",
-    "topicName": "Barometric lapse\n\nrate",
+    "topicName": "Barometric lapse rate",
     "LO": "050 01 03 02",
     "difficulty": "Hard",
     "cognitive": "APPLY",
@@ -532,7 +532,7 @@
     "explanation": "ระดับความสูงที่ความกดอากาศเหลือ 50%: ในบรรยากาศมาตรฐาน ISA ความกดอากาศที่ระดับน้ำทะเลคือ 1013.25 hPa ความกดอากาศจะลดลงเหลือครึ่งหนึ่ง (~500 hPa) ที่ระดับความสูงประมาณ 18,000 ฟุต (FL 180 หรือ ~5.5 กิโลเมตร)",
     "correct": "18,000 ft",
     "topic": "050 01",
-    "topicName": "Pressure and\n\ndensity",
+    "topicName": "Pressure and density",
     "LO": "050 01 03 02",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -601,7 +601,7 @@
   },
   {
     "id": 31,
-    "question": "Which altimeter setting makes the altimeter indicate aerodrome elevation on the ground, when correctly set?\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "Which altimeter setting makes the altimeter indicate aerodrome elevation on the ground, when correctly set?",
     "options": [
       "1013.25 hPa",
       "QFF",
@@ -612,7 +612,7 @@
     "explanation": "การตั้งค่า Altimeter Setting (QNH): เมื่อปรับตั้งค่าความกดอากาศที่หน้าต่าง Kollsman ของ Altimeter เป็นค่า QNH เครื่องวัดความสูงจะอ่านค่าความสูงเหนือระดับน้ำทะเลปานกลาง (Altitude above MSL) ดังนั้นเมื่อเครื่องบินจอดอยู่บนพื้นสนามบิน เข็มจะชี้บอก 'ความสูงของสนามบิน' (Aerodrome Elevation)",
     "correct": "QNH",
     "topic": "050 01",
-    "topicName": "Altimetry\n\nterminology",
+    "topicName": "Altimetry terminology",
     "LO": "050 01 06 01",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -692,7 +692,7 @@
     "explanation": "ผลของภูมิประเทศต่อเครื่องวัดความสูง (Bernoulli Effect over Ridge): เมื่อกระแสลมพัดข้ามสันเขาหรือยอดเขา กระแสลมจะถูกบีบให้ไหลเร็วขึ้นตามหลักการของเบอร์นูลลี ความเร็วลมที่เพิ่มขึ้นทำให้ความกดอากาศเฉพาะที่บริเวณสันเขาลดต่ำลง ส่งผลให้ Altimeter อ่านค่าความสูง 'สูงกว่าความเป็นจริง' นักบินอาจคิดว่าตนเองบินพ้นยอดเขา ทั้งที่จริงอยู่ใกล้สันเขามากกว่าที่คิด",
     "correct": "Local pressure changes associated with accelerated flow can cause an indicated altitude error",
     "topic": "050 01",
-    "topicName": "Topography and\n\naltimetry",
+    "topicName": "Topography and altimetry",
     "LO": "050 01 06 04",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -721,7 +721,7 @@
   },
   {
     "id": 37,
-    "question": "Wind direction in meteorological reports is normally expressed as:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "Wind direction in meteorological reports is normally expressed as:",
     "options": [
       "Degrees true",
       "Degrees magnetic",
@@ -843,7 +843,7 @@
     "id": 43,
     "question": "A geostrophic wind flows approximately:",
     "options": [
-      "Directly toward low pressure\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Directly toward low pressure",
       "Directly away from high pressure",
       "Parallel to straight isobars",
       "Directly across isobars"
@@ -932,7 +932,7 @@
     "explanation": "ความเร็วลมเหนือผิวน้ำในชั้นแรงเสียดทาน: ผิวน้ำทะเลมีความราบเรียบและมีแรงเสียดทานน้อยกว่าแผ่นดินมาก ตามเกณฑ์การคำนวณข้อสอบ ความเร็วลมผิวพื้นเหนือผิวน้ำจะมีค่าประมาณ '70% ของความเร็วลมจีโอสโทรฟิก' (และทำมุมเบี่ยงเบนตัดเส้นไอโซบาร์ประมาณ 10°)",
     "correct": "70%",
     "topic": "050 02",
-    "topicName": "Friction layer over\n\nwater",
+    "topicName": "Friction layer over water",
     "LO": "050 02 02 02",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -952,7 +952,7 @@
     "explanation": "ความเร็วลมเหนือพื้นดินในชั้นแรงเสียดทาน: แผ่นดินมีความขรุขระ ต้นไม้ และสิ่งก่อสร้างมาก ทำให้เกิดแรงต้านทานสูง ตามเกณฑ์การคำนวณข้อสอบ ความเร็วลมผิวพื้นเหนือพื้นดินจะมีค่าประมาณ '50% ของความเร็วลมจีโอสโทรฟิก' (และทำมุมเบี่ยงเบนตัดเส้นไอโซบาร์ประมาณ 30°)",
     "correct": "50% of geostrophic wind",
     "topic": "050 02",
-    "topicName": "Friction layer over\n\nland",
+    "topicName": "Friction layer over land",
     "LO": "050 02 02 02",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -961,7 +961,7 @@
   },
   {
     "id": 49,
-    "question": "Over land, the friction-layer wind is approximately how many degrees across the isobars toward low pressure?\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "Over land, the friction-layer wind is approximately how many degrees across the isobars toward low pressure?",
     "options": [
       "30°",
       "10°",
@@ -1083,7 +1083,7 @@
     "id": 55,
     "question": "Mountain waves are most likely to form when airflow crosses mountains with:",
     "options": [
-      "No wind\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "No wind",
       "Uniform turbulence at all levels",
       "Stable stratification and suitable wind profile",
       "Strong surface convection only"
@@ -1132,7 +1132,7 @@
     "explanation": "ปัจจัยความปั่นป่วนเชิงกล: ความรุนแรงของความปั่นป่วนเชิงกลแปรผันตรงกับความขรุขระของภูมิประเทศ (Rough terrain) ความเร็วลมผิวพื้น และแรงเสียดทาน ยิ่งพื้นผิวมีความขรุขระและลมพัดแรง กระแสวนความปั่นป่วนจะยิ่งแผ่ตัวสูงขึ้นและรุนแรงขึ้น",
     "correct": "Rough terrain and surface friction",
     "topic": "050 02",
-    "topicName": "Mechanical\n\nturbulence",
+    "topicName": "Mechanical turbulence",
     "LO": "050 02 06 02",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -1172,7 +1172,7 @@
     "explanation": "เกณฑ์ความเร็วลมของกระแสลมกรด (Jet Stream): ตามนิยามมาตรฐานทางอุตุนิยมวิทยาของ WMO และ EASA กระแสลมกรดคือแถบกระแสลมแรงแคบๆ ในบรรยากาศชั้นบนที่มีความเร็วลมขั้นต่ำตั้งแต่ '60 นอต' (60 kt) ขึ้นไป",
     "correct": "60 kt",
     "topic": "050 02",
-    "topicName": "Jet stream\n\nthreshold",
+    "topicName": "Jet stream threshold",
     "LO": "050 02 07 01",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -1204,7 +1204,7 @@
     "question": "Compared with dry air at the same temperature and pressure, moist air is generally:",
     "options": [
       "Less dense",
-      "More dense\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "More dense",
       "Exactly the same density",
       "Twice as dense"
     ],
@@ -1312,7 +1312,7 @@
     "explanation": "Temperature-Dew Point Spread: คือผลต่างระหว่างอุณหภูมิของอากาศกับอุณหภูมิจุดน้ำค้าง Spread = Temperature - Dew Point = 20°C - 18°C = 2°C ยิ่งค่า Spread แคบ แสดงว่าอากาศใกล้ความอิ่มตัวและมีโอกาสเกิดหมอกหรือฐานเมฆต่ำสูง",
     "correct": "2 °C",
     "topic": "050 03",
-    "topicName": "Temperature-dew\n\npoint spread",
+    "topicName": "Temperature-dew point spread",
     "LO": "050 03 01 03",
     "difficulty": "Hard",
     "cognitive": "APPLY",
@@ -1324,7 +1324,7 @@
     "question": "At constant pressure, if temperature rises while moisture content remains unchanged, relative humidity generally:",
     "options": [
       "Remains exactly constant",
-      "Becomes negative\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Becomes negative",
       "Decreases",
       "Increases to 100%"
     ],
@@ -1392,7 +1392,7 @@
     "explanation": "อนุภาคการควบแน่น (Condensation Nuclei): ในบรรยากาศจริง ไอน้ำไม่สามารถรวมตัวกันเป็นหยดน้ำในอากาศที่สะอาดบริสุทธิ์ได้ง่ายๆ หากไม่มีอนุภาคขนาดเล็กมาก เช่น ละอองเกลือ ควัน อนุภาคฝุ่น (Hygroscopic nuclei) ทำหน้าที่เป็นแกนยึดเกาะให้โมเลกุลไอน้ำมาเกาะตัวควบแน่น",
     "correct": "They provide surfaces on which water vapour can condense",
     "topic": "050 03",
-    "topicName": "Condensation\n\nnuclei",
+    "topicName": "Condensation nuclei",
     "LO": "050 03 02 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -1445,7 +1445,7 @@
     "options": [
       "Expansion or compression without heat exchange with the environment",
       "Radiation from the Sun only",
-      "Contact with the runway only\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Contact with the runway only",
       "Changes in magnetic field"
     ],
     "answer": 0,
@@ -1552,7 +1552,7 @@
     "explanation": "ความไม่เสถียรแบบมีเงื่อนไข (Conditional Instability): หมายถึงสภาวะที่บรรยากาศ 'เสถียรสำหรับอากาศไม่อิ่มตัว แต่ไม่เสถียรสำหรับอากาศอิ่มตัว' (Stable for unsaturated air but unstable for saturated air) เกิดขึ้นเมื่อค่า ELR อยู่ระหว่าง SALR และ DALR (SALR < ELR < DALR)",
     "correct": "Stable for unsaturated air but unstable for saturated air",
     "topic": "050 03",
-    "topicName": "Conditional\n\ninstability",
+    "topicName": "Conditional instability",
     "LO": "050 03 03 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -1566,7 +1566,7 @@
       "Sea-breeze circulation",
       "Radiation fog",
       "Descending air warming after losing moisture on the windward side",
-      "Cold air descending without prior ascent\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+      "Cold air descending without prior ascent"
     ],
     "answer": 2,
     "explanation": "ลมเฟิน (Foehn Warming): เกิดขึ้นเมื่อกระแสลมพัดปะทะภูเขาฝั่งต้นลม ยกตัวขึ้นและควบแน่นคายความร้อนแฝงทำให้ฝนตก เมื่อข้ามยอดเขามายังฝั่งใต้ลม (Lee side) อากาศที่สูญเสียความชื้นไปแล้วจะจมตัวลงและอุ่นขึ้นด้วยอัตรา DALR (ซึ่งเร็วกว่าตอนขึ้น) ทำให้ลมที่พัดลงมาเป็น 'ลมอุ่นและแห้ง'",
@@ -1592,7 +1592,7 @@
     "explanation": "การพาความร้อนของมวลอากาศอุ่นใกล้ผิวพื้น (Warm Advection): เมื่อมีลมพัดนำพามวลอากาศอุ่นเข้ามาในระดับผิวพื้น (Warm advection near surface) จะทำให้อากาศชั้นล่างร้อนขึ้นในขณะที่ชั้นบนยังเย็นอยู่ ส่งผลให้อัตรา Lapse rate ชันขึ้นและทำให้เสถียรภาพของบรรยากาศ 'ลดลง' (Decrease stability)",
     "correct": "Decrease stability",
     "topic": "050 03",
-    "topicName": "Advection and\n\nstability",
+    "topicName": "Advection and stability",
     "LO": "050 03 03 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -1732,7 +1732,7 @@
     "explanation": "อิทธิพลของ Inversion ต่อเมฆ: ชั้นอุณหภูมิผกผัน (Inversion) มีเสถียรภาพสูงมาก จะทำหน้าที่เสมือนฝาครอบปิดกั้นการยกตัวของอากาศในแนวดิ่ง บังคับให้ความชื้นและเมฆแผ่ออกในแนวราบ ก่อให้เกิดเมฆชั้นแผ่นบาง (Stratiform) หรือหมอกติดดิน",
     "correct": "Suppress vertical motion and favor stratiform cloud or fog",
     "topic": "050 04",
-    "topicName": "Inversion and\n\nclouds",
+    "topicName": "Inversion and clouds",
     "LO": "050 04 01 03",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -1912,7 +1912,7 @@
     "explanation": "กระบวนการ Bergeron-Findeisen: เป็นทฤษฎีการเกิดหยาดน้ำฟ้าในเมฆผสม (Mixed-phase clouds) ที่อุณหภูมิต่ำกว่า 0°C โดยความดันไอน้ำอิ่มตัวเหนือผิวน้ำแข็งจะต่ำกว่าเหนือน้ำเย็นยิ่งยวด ทำให้ไอน้ำระเหยจากหยดน้ำ supercooled ไปเกาะสะสมตัวเติบโตเป็นผลึกน้ำแข็งขนาดใหญ่ขึ้นอย่างรวดเร็ว",
     "correct": "Ice crystals growing at the expense of supercooled water droplets",
     "topic": "050 05",
-    "topicName": "Precipitation\n\nprocess",
+    "topicName": "Precipitation process",
     "LO": "050 05 01 01",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -1941,7 +1941,7 @@
   },
   {
     "id": 98,
-    "question": "Hail is most strongly associated with:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "Hail is most strongly associated with:",
     "options": [
       "Thin cirrus",
       "Radiation fog",
@@ -2012,7 +2012,7 @@
     "explanation": "ลักษณะฝนจากเมฆคิวมูลัส (Convective Precipitation): เมฆพาความร้อนแบบคิวมูลิฟอร์ม (Cumulus/CB) มักให้ฝนที่มีลักษณะเป็น 'ฝนซู่ตกๆ หยุดๆ และมีการเปลี่ยนแปลงความเข้มข้นอย่างรวดเร็ว' (Showery precipitation with rapid intensity changes)",
     "correct": "Showery precipitation with rapid intensity changes",
     "topic": "050 05",
-    "topicName": "Convective\n\nprecipitation",
+    "topicName": "Convective precipitation",
     "LO": "050 05 02 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2032,7 +2032,7 @@
     "explanation": "หยาดน้ำฟ้าจากเมฆสเตรติฟอร์ม (Stratiform Precipitation): เมฆแผ่นชั้น เช่น Nimbostratus หรือ Altostratus มักให้หยาดน้ำฟ้าที่มีลักษณะ 'แผ่เป็นบริเวณกว้างและตกต่อเนื่องสม่ำเสมอ' (Widespread, steadier precipitation) ต่างจากฝนซู่ของเมฆคิวมูลัส",
     "correct": "Widespread, steadier precipitation",
     "topic": "050 05",
-    "topicName": "Stratiform\n\nprecipitation",
+    "topicName": "Stratiform precipitation",
     "LO": "050 05 02 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2063,7 +2063,7 @@
     "id": 104,
     "question": "Why is hail considered a significant aircraft hazard?",
     "options": [
-      "It is too small to be detected\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "It is too small to be detected",
       "Its high density and impact energy can damage aircraft",
       "It only reduces humidity",
       "It always causes engine flameout"
@@ -2092,7 +2092,7 @@
     "explanation": "กลไกการเกิดฝนเยือกแข็ง (Freezing Rain Mechanism): เกิดขึ้นเมื่อหยาดน้ำฟ้าของเหลวตกลงมาผ่านชั้นอากาศที่เย็นจัดต่ำกว่า 0°C จนกลายเป็นน้ำเย็นยิ่งยวด (Supercooled droplets) และเมื่อกระทบกับวัตถุหรือพื้นผิวที่มีอุณหภูมิต่ำกว่าศูนย์จะแข็งตัวเป็นน้ำแข็งทันที",
     "correct": "Liquid precipitation becoming supercooled below 0 °C and freezing on contact",
     "topic": "050 05",
-    "topicName": "Freezing\n\nprecipitation mechanism",
+    "topicName": "Freezing precipitation mechanism",
     "LO": "050 05 02 01",
     "difficulty": "Hard",
     "cognitive": "APPLY",
@@ -2184,7 +2184,7 @@
     "question": "A maritime air mass generally has more moisture than a continental air mass from a similar latitude because it:",
     "options": [
       "Always forms over deserts",
-      "Has no evaporation source\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Has no evaporation source",
       "Is always colder",
       "Forms over or passes over a large water surface"
     ],
@@ -2212,7 +2212,7 @@
     "explanation": "การดัดแปรของมวลอากาศ (Air-mass Modification): เมื่อมวลอากาศเคลื่อนที่ออกจากแหล่งกำเนิดข้ามไปยังพื้นผิวใหม่ คุณสมบัติเดิมจะเปลี่ยนแปลงไปเนื่องจาก 'การแลกเปลี่ยนความร้อน ความเย็น และความชื้นกับพื้นผิวเบื้องล่าง' (Heating, cooling and moisture exchange)",
     "correct": "Heating, cooling and moisture exchange with the underlying surface",
     "topic": "050 06",
-    "topicName": "Air-mass\n\nmodification",
+    "topicName": "Air-mass modification",
     "LO": "050 06 01 02",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2305,7 +2305,7 @@
     "options": [
       "Only high cloud",
       "Showery precipitation and convective cloud",
-      "Only widespread drizzle for 24 hours\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Only widespread drizzle for 24 hours",
       "No wind shift"
     ],
     "answer": 1,
@@ -2352,7 +2352,7 @@
     "explanation": "สภาพอากาศหลังแนวปะทะอากาศเย็นเคลื่อนผ่าน: เมื่อแนวปะทะเย็นผ่านไปแล้ว มวลอากาศเย็นและแห้งกว่าจะเข้ามาแทนที่ ส่งผลให้ 'ทัศนวิสัยดีขึ้นอย่างเห็นได้ชัด ความกดอากาศเริ่มสูงขึ้น อุณหภูมิลดลง แต่อาจมีเมฆคิวมูลัสและฝนซู่ประปราย' ในอากาศที่ปั่นป่วน",
     "correct": "Improving visibility with colder, drier air but possible showers",
     "topic": "050 06",
-    "topicName": "Post-cold-front\n\nweather",
+    "topicName": "Post-cold-front weather",
     "LO": "050 06 02 05",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2426,11 +2426,11 @@
       "No change in wind",
       "Temperature always rises",
       "Pressure becomes exactly 1013 hPa",
-      "A wind shift, pressure tendency change and temperature decrease\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+      "A wind shift, pressure tendency change and temperature decrease"
     ],
     "answer": 3,
     "explanation": "การเปลี่ยนแปลงขณะแนวปะทะอากาศเย็นเคลื่อนผ่าน: ขณะที่แนวปะทะเย็นเคลื่อนผ่านสถานีตรวจอากาศ จะสังเกตเห็น 'ลมเปลี่ยนทิศอย่างฉับพลัน (Wind shift เช่น จาก SW เป็น NW), แนวโน้มความกดอากาศเปลี่ยนจากลดลงเป็นพุ่งสูงขึ้น, และอุณหภูมิลดฮวบลง'",
-    "correct": "A wind shift, pressure tendency change and temperature decrease\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "correct": "A wind shift, pressure tendency change and temperature decrease",
     "topic": "050 06",
     "topicName": "Frontal passage",
     "LO": "050 06 02 09",
@@ -2492,7 +2492,7 @@
     "explanation": "การจำแนกระหว่าง Warm Occlusion และ Cold Occlusion: ขึ้นอยู่กับ 'อุณหภูมิของมวลอากาศเย็นสองมวลที่ผิวพื้น' โดยหากมวลอากาศเย็นที่อยู่ด้านหลังแนวปะทะเย็นมีอุณหภูมิเย็นกว่ามวลอากาศเย็นข้างหน้า จะเป็น Cold Occlusion แต่ถ้ามวลอากาศเย็นด้านหน้าเย็นกว่า จะเป็น Warm Occlusion",
     "correct": "Which of the two cold air masses is colder near the surface",
     "topic": "050 06",
-    "topicName": "Warm/cold\n\nocclusion",
+    "topicName": "Warm/cold occlusion",
     "LO": "050 06 02 06",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2552,7 +2552,7 @@
     "explanation": "การจมตัวในแอนติไซโคลน (Subsidence in Anticyclone): อากาศที่ศูนย์กลางของแอนติไซโคลนจะจมตัวลงอย่างช้าๆ (Subsidence) ทำให้อุณหภูมิสูงขึ้นจากการบีบอัด บรรยากาศจึงมีเสถียรภาพสูงและ 'กดทับการก่อตัวของเมฆและการพาความร้อน' ทำให้ท้องฟ้าแจ่มใส",
     "correct": "Stable conditions and suppression of cloud development",
     "topic": "050 07",
-    "topicName": "Anticyclone\n\nweather",
+    "topicName": "Anticyclone weather",
     "LO": "050 07 02 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2632,7 +2632,7 @@
     "explanation": "หย่อมความกดอากาศต่ำทุติยภูมิ (Secondary Depression): คือ 'หย่อมความกดอากาศต่ำขนาดเล็กที่ก่อตัวขึ้นภายในหรือบริเวณขอบนอกของการไหลเวียนของหย่อมความกดอากาศต่ำหลักขนาดใหญ่' มักเคลื่อนที่หมุนรอบศูนย์กลางหลักและทำให้ลมและสภาพอากาศทวีความรุนแรงขึ้น",
     "correct": "A smaller depression developing within or near the circulation of a larger depression",
     "topic": "050 07",
-    "topicName": "Secondary\n\ndepression",
+    "topicName": "Secondary depression",
     "LO": "050 07 03 01",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -2652,7 +2652,7 @@
     "explanation": "พายุหมุนเขตร้อน (Tropical Revolving Storm - TRS): เป็นระบบพายุหมุนที่มี 'แกนใจกลางเป็นอากาศอุ่น (Warm-core rotating system)' เกิดขึ้นเหนือมหาสมุทรเขตร้อน มีการพาความร้อนของเมฆฝนฟ้าคะนองอย่างรุนแรง และมีความกดอากาศใจกลางต่ำมาก",
     "correct": "A warm-core rotating system with strong convection and low central pressure",
     "topic": "050 07",
-    "topicName": "Tropical revolving\n\nstorm",
+    "topicName": "Tropical revolving storm",
     "LO": "050 07 04 01",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -2672,7 +2672,7 @@
     "explanation": "ตาพายุหมุนเขตร้อน (Eye of Tropical Cyclone): เป็นบริเวณศูนย์กลางของพายุหมุนที่เจริญเต็มที่ มีลักษณะเด่นคือ 'มีความกดอากาศต่ำที่สุด ลมค่อนข้างสงบ ท้องฟ้าโปร่งหรือมีเมฆน้อย และมีอากาศจมตัวลงเบาๆ' ซึ่งตรงข้ามกับกำแพงตาพายุ (Eyewall) ด้านข้างที่ลมแรงและฝนตกหนักที่สุด",
     "correct": "Lowest pressure, relatively calm winds and subsiding air compared with the eyewall",
     "topic": "050 07",
-    "topicName": "Tropical cyclone\n\neye",
+    "topicName": "Tropical cyclone eye",
     "LO": "050 07 04 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2681,7 +2681,7 @@
   },
   {
     "id": 135,
-    "question": "A tropical depression is classified as a tropical storm when sustained wind speed exceeds approximately:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "A tropical depression is classified as a tropical storm when sustained wind speed exceeds approximately:",
     "options": [
       "63 kt",
       "100 kt",
@@ -2692,7 +2692,7 @@
     "explanation": "เกณฑ์การเป็นพายุโซนร้อน (Tropical Storm): พายุดีเปรสชันเขตร้อนจะได้รับการยกระดับเป็นพายุโซนร้อน (Tropical Storm) เมื่อมีความเร็วลมคงที่สูงสุดใกล้ศูนย์กลางเกินกว่า '33 นอต' (Sustained wind > 33 kt หรือ 34-63 kt)",
     "correct": "33 kt",
     "topic": "050 07",
-    "topicName": "Tropical cyclone\n\ndevelopment",
+    "topicName": "Tropical cyclone development",
     "LO": "050 07 04 02",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -2752,7 +2752,7 @@
     "explanation": "ความกดอากาศใจกลางพายุไซโคลน: ศูนย์กลางของพายุหมุนเขตร้อนที่เจริญเต็มที่จัดเป็นบริเวณที่ 'มีความกดอากาศต่ำกว่าบรรยากาศโดยรอบอย่างมหาศาล' (Much lower than surrounding pressure) ซึ่งก่อให้เกิดแรงเกรเดียนต์ความกดอากาศที่มหาศาลดึงดูดลมหมุนวน",
     "correct": "Much lower than surrounding pressure",
     "topic": "050 07",
-    "topicName": "Tropical cyclone\n\npressure",
+    "topicName": "Tropical cyclone pressure",
     "LO": "050 07 04 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2772,7 +2772,7 @@
     "explanation": "สันความกดอากาศสูง (Pressure Ridge): หมายถึง 'แนวพื้นที่ความกดอากาศสูงที่มีลักษณะทอดยาวเป็นแนวยื่นออกมา' (An elongated area of relatively high pressure) จากศูนย์กลางบริเวณความกดอากาศสูง สภาพอากาศตามแนวสันมักแจ่มใสและมีเสถียรภาพ",
     "correct": "An elongated area of relatively high pressure",
     "topic": "050 07",
-    "topicName": "Pressure\n\ndistribution",
+    "topicName": "Pressure distribution",
     "LO": "050 07 01 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -2801,7 +2801,7 @@
   },
   {
     "id": 141,
-    "question": "The general circulation of the atmosphere is driven fundamentally by:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "The general circulation of the atmosphere is driven fundamentally by:",
     "options": [
       "Unequal heating of the Earth and Earth’s rotation",
       "Magnetic fields only",
@@ -2923,7 +2923,7 @@
     "id": 147,
     "question": "A monsoon is primarily characterized by:",
     "options": [
-      "A permanent jet stream\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "A permanent jet stream",
       "A polar cyclone",
       "Seasonal reversal of prevailing winds associated with land-sea thermal contrast",
       "A daily reversal only"
@@ -3044,7 +3044,7 @@
     "question": "Foehn winds are generally:",
     "options": [
       "Warm, dry downslope winds on the lee side of mountains",
-      "Cold moist upslope winds\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Cold moist upslope winds",
       "Sea breezes",
       "Polar easterlies"
     ],
@@ -3165,12 +3165,12 @@
     "options": [
       "Haze and smoke",
       "Fog and rain only",
-      "Rime and clear ice\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Rime and clear ice",
       "Snow and dust only"
     ],
     "answer": 2,
     "explanation": "น้ำแข็งผสม (Mixed Ice): มีคุณสมบัติผสมผสานกันระหว่าง 'น้ำแข็งฝ้าและน้ำแข็งใส' (Rime and clear ice) เกิดขึ้นเมื่อเครื่องบินบินผ่านก้อนเมฆที่มีทั้งหยดน้ำขนาดเล็กและขนาดใหญ่ปะปนกัน หรือมีผลึกน้ำแข็งผสมอยู่",
-    "correct": "Rime and clear ice\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "correct": "Rime and clear ice",
     "topic": "050 09",
     "topicName": "Mixed ice",
     "LO": "050 09 01 02",
@@ -3272,7 +3272,7 @@
     "explanation": "การปฏิบัติเมื่อคาดการณ์ว่าจะเจอ Severe Turbulence: กลยุทธ์ที่ถูกต้องคือ 'หลีกเลี่ยงพื้นที่ที่มีความปั่นป่วนรุนแรงเมื่อสามารถทำได้ และปฏิบัติตามคู่มือการบิน/ขั้นตอนของสายการบินอย่างเคร่งครัด' (เช่น ปรับลดความเร็วลงสู่ Turbulence Penetration Speed - Vb)",
     "correct": "Avoid the affected area when practicable and follow aircraft/operator procedures",
     "topic": "050 09",
-    "topicName": "Turbulence\n\navoidance",
+    "topicName": "Turbulence avoidance",
     "LO": "050 09 02 01",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -3286,7 +3286,7 @@
       "Strong upper-level wind shear near jet streams and troughs",
       "Low-level sea breeze only",
       "Radiation fog only",
-      "Surface drizzle\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key"
+      "Surface drizzle"
     ],
     "answer": 0,
     "explanation": "บริเวณที่มักเกิด Clear Air Turbulence (CAT): CAT มักเกิดขึ้นสัมพันธ์กับ 'ลมเฉือนในแนวดิ่งและแนวนอนที่รุนแรงในระดับสูง ใกล้กับแกนของกระแสลมกรด (Jet streams) และร่องคลื่นความกดอากาศระดับบน (Upper troughs)'",
@@ -3372,7 +3372,7 @@
     "explanation": "3 ปัจจัยหลักในการก่อตัวของพายุฟ้าคะนอง: การเกิดพายุฟ้าคะนองต้องอาศัย 3 องค์ประกอบพร้อมกันคือ 'ความชื้นในอากาศเพียงพอ (Moisture), โครงสร้างบรรยากาศไม่เสถียร (Instability), และกลไกการยกตัวของอากาศ (Lifting mechanism)'",
     "correct": "Moisture, instability and lifting",
     "topic": "050 09",
-    "topicName": "Thunderstorm\n\ningredients",
+    "topicName": "Thunderstorm ingredients",
     "LO": "050 09 04 01",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -3392,7 +3392,7 @@
     "explanation": "ระยะเจริญเต็มที่ของพายุฟ้าคะนอง (Mature Stage): มีลักษณะเด่นคือ 'มีทั้งกระแสลมพัดขึ้นรุนแรง (Updrafts) และกระแสลมพัดลงรุนแรง (Downdrafts) เกิดขึ้นควบคู่กัน' จุดเริ่มต้นของระยะนี้ระบุได้จากการที่ 'หยาดน้ำฟ้าเริ่มตกถึงพื้นผิวโลก' เป็นระยะที่มีอันตรายสูงสุด",
     "correct": "Both strong updrafts and downdrafts",
     "topic": "050 09",
-    "topicName": "Thunderstorm\n\nstages",
+    "topicName": "Thunderstorm stages",
     "LO": "050 09 04 02",
     "difficulty": "Easy",
     "cognitive": "RECALL",
@@ -3532,7 +3532,7 @@
     "explanation": "กลยุทธ์เมื่อมีพายุฟ้าคะนองขวางเส้นทางบิน: กลยุทธ์หลักที่ปลอดภัยที่สุดคือ 'การบินหลีกเลี่ยง (Avoidance) โดยใช้เรดาร์ตรวจอากาศและรักษาระยะห่างที่ปลอดภัยทั้งในแนวราบและแนวดิ่ง' ห้ามบินตัดเข้าสู่ใจกลางเซลล์หรือบินรอดใต้ฐานเมฆพายุเด็ดขาด",
     "correct": "Avoid it using available weather information and adequate lateral/vertical separation",
     "topic": "050 09",
-    "topicName": "Thunderstorm\n\navoidance",
+    "topicName": "Thunderstorm avoidance",
     "LO": "050 09 04 05",
     "difficulty": "Medium",
     "cognitive": "UNDERSTAND",
@@ -3541,7 +3541,7 @@
   },
   {
     "id": 178,
-    "question": "A tornado is:\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+    "question": "A tornado is:",
     "options": [
       "A small anticyclone",
       "A type of frontal fog",
@@ -3663,7 +3663,7 @@
     "id": 184,
     "question": "An aircraft above a fog layer may experience poor:",
     "options": [
-      "Runway length\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Runway length",
       "Slant/vertical visibility toward the surface despite better horizontal visibility aloft",
       "Horizontal visibility at all levels",
       "Visibility only in clear air"
@@ -3784,7 +3784,7 @@
     "question": "Cloud base information in aviation reports is normally expressed in:",
     "options": [
       "Metres above the tropopause",
-      "Hectopascals\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Hectopascals",
       "Knots",
       "Feet above the specified reference level"
     ],
@@ -3905,7 +3905,7 @@
     "options": [
       "Replace all forecasts",
       "Show significant weather features relevant to flight at a specified level/range",
-      "Show only runway lighting\n\nSubject 050 Meteorology – CPL/IR Integrated with ATPL | REV03 – Detailed Instructor Answer Key",
+      "Show only runway lighting",
       "Show only airport frequencies"
     ],
     "answer": 1,
