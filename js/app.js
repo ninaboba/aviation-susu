@@ -133,8 +133,12 @@ const app = {
   searchPageSize: 10,
 
   // Application Version & Release Metadata
-  version: 'v2.4.0',
-  releaseDate: '28 Sep 2026, 16:45',
+  version: 'v2.5.0',
+  releaseDate: '09 Oct 2026, 20:50',
+
+  get cacheBuster() {
+    return '?v=' + encodeURIComponent(this.version);
+  },
 
   get currentSubjectId() {
     return this.currentSubject ? this.currentSubject.id : (this.subjects[0] ? this.subjects[0].id : 'pof');
@@ -175,7 +179,7 @@ const app = {
       if (window.EMBEDDED_SUBJECTS && Array.isArray(window.EMBEDDED_SUBJECTS)) {
         this.subjects = window.EMBEDDED_SUBJECTS;
       } else {
-        const res = await fetch('./data/subjects.json?v=20260916_0025');
+        const res = await fetch('./data/subjects.json' + this.cacheBuster);
         if (!res.ok) throw new Error(`HTTP ${res.status} loading subjects.json`);
         this.subjects = await res.json();
       }
@@ -212,6 +216,54 @@ const app = {
         `<option value="${s.id}">${s.title}</option>`
       ).join('');
     }
+
+    // Render Subject Cards Grid Deck on Dashboard
+    const deck = document.getElementById('subjectCardsDeck');
+    if (deck) {
+      const iconMap = {
+        pof: 'plane',
+        human_factors: 'activity',
+        air_law: 'scale',
+        meteorology: 'cloud-sun'
+      };
+
+      deck.innerHTML = this.subjects.map(s => {
+        const isActive = this.currentSubjectId === s.id;
+        const iconName = iconMap[s.id] || 'book';
+        const shortTitle = s.title.replace(/^Subject\s+\d+\s*-\s*/i, '');
+        const mistakesSet = QuizStorage.getMistakes(s.id);
+        const mistakeCount = mistakesSet ? mistakesSet.size : 0;
+
+        return `
+          <div role="button" tabindex="0" onclick="app.handleSubjectChange('${s.id}')"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();app.handleSubjectChange('${s.id}');}"
+            class="subject-card p-3.5 sm:p-4 rounded-xl border transition-all cursor-pointer flex items-start gap-3 glass-card shadow-sm ${
+              isActive 
+                ? 'is-active border-cyan-400 bg-cyan-950/30' 
+                : 'border-cockpit-border hover:border-slate-500 bg-cockpit-850/60'
+            }">
+            <div class="w-10 h-10 rounded-xl ${
+              isActive ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-glow-cyan' : 'bg-cockpit-800 text-slate-400'
+            } flex items-center justify-center shrink-0 transition-colors">
+              <i data-lucide="${iconName}" class="w-5 h-5"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center justify-between gap-1.5 mb-0.5">
+                <span class="font-mono font-bold text-xs ${isActive ? 'text-cyan-300' : 'text-slate-400'}">
+                  SUBJECT ${s.code || s.id.toUpperCase()}
+                </span>
+                ${isActive ? '<span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-bold uppercase">ACTIVE</span>' : ''}
+              </div>
+              <h4 class="text-sm font-bold text-white truncate leading-snug">${shortTitle}</h4>
+              <div class="flex items-center gap-2 mt-1.5 text-[11px] font-mono text-slate-400">
+                <span><strong class="text-slate-200">${s.questionCount || 200}</strong> ข้อ</span>
+                ${mistakeCount > 0 ? `<span>•</span><span class="text-rose-400">ผิด ${mistakeCount}</span>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
   },
 
   async switchSubject(subjectId) {
@@ -233,7 +285,7 @@ const app = {
       if (window.EMBEDDED_DATA && window.EMBEDDED_DATA[subject.id]) {
         rawQuestions = window.EMBEDDED_DATA[subject.id];
       } else {
-        const res = await fetch(subject.file + '?v=20260916_0025');
+        const res = await fetch(subject.file + this.cacheBuster);
         if (!res.ok) throw new Error(`HTTP ${res.status} loading ${subject.file}`);
         rawQuestions = await res.json();
       }
@@ -271,6 +323,7 @@ const app = {
       this.examHistory = QuizStorage.getHistory(subject.id);
 
       // Update UI displays
+      this.renderSubjectSelectors();
       this.updateSubjectHeaderInfo();
       this.renderTopicGrid();
       this.populateSearchTopicFilter();
@@ -582,6 +635,9 @@ const app = {
     const elPanelBookmarks = document.getElementById('panelBookmarkCount');
     if (elPanelBookmarks) elPanelBookmarks.textContent = bookmarkCount;
 
+    const quickMis = document.getElementById('quickMistakesCount');
+    if (quickMis) quickMis.textContent = mistakeCount;
+
     const histCount = this.examHistory ? this.examHistory.length : 0;
     const elHistCount = document.getElementById('historyCountText');
     if (elHistCount) elHistCount.textContent = histCount;
@@ -593,7 +649,10 @@ const app = {
     const elHeroAvg = document.getElementById('heroAvgScore');
     if (elHeroAvg) {
       if (histCount > 0) {
-        const avg = Math.round(this.examHistory.reduce((acc, c) => acc + c.percentage, 0) / histCount);
+        // Prefer exam-mode attempts: study sessions reveal answers and would inflate the average
+        const examRecords = this.examHistory.filter(h => h.mode === 'exam');
+        const pool = examRecords.length > 0 ? examRecords : this.examHistory;
+        const avg = Math.round(pool.reduce((acc, c) => acc + (c.percentage || 0), 0) / pool.length);
         elHeroAvg.textContent = avg + '%';
       } else {
         elHeroAvg.textContent = '-%';
@@ -966,18 +1025,24 @@ const app = {
 
   startTimer() {
     if (this.timerInterval) clearInterval(this.timerInterval);
-    this.timerInterval = setInterval(() => {
-      this.timeElapsedSeconds++;
+    // Wall-clock based: derive elapsed time from timestamps instead of counting ticks
+    this._timerStartedAt = Date.now() - (this.timeElapsedSeconds * 1000);
+    this._lastAutoSaveSecond = this.timeElapsedSeconds;
+    const tick = () => {
+      this.timeElapsedSeconds = Math.floor((Date.now() - this._timerStartedAt) / 1000);
       const mins = Math.floor(this.timeElapsedSeconds / 60).toString().padStart(2, '0');
       const secs = (this.timeElapsedSeconds % 60).toString().padStart(2, '0');
       const timerEl = document.getElementById('liveTimerText');
       if (timerEl) timerEl.textContent = mins + ':' + secs;
 
       // Periodically auto-save every 10 seconds
-      if (this.timeElapsedSeconds % 10 === 0) {
+      if (this.timeElapsedSeconds - this._lastAutoSaveSecond >= 10) {
+        this._lastAutoSaveSecond = this.timeElapsedSeconds;
         this.autoSaveSession();
       }
-    }, 1000);
+    };
+    tick();
+    this.timerInterval = setInterval(tick, 1000);
   },
 
   stopTimer() {
@@ -1045,7 +1110,7 @@ const app = {
       const isSelected = selected === opt;
       const isCorrect = opt === q.correct;
 
-      let cardClass = 'p-4 rounded-xl border transition-all cursor-pointer flex items-start space-x-3 text-sm ';
+      let cardClass = 'p-4 rounded-xl border transition-all flex items-start space-x-3 text-sm ' + (isRevealed ? 'cursor-default ' : 'cursor-pointer ');
       let badgeClass = 'w-7 h-7 rounded-lg flex items-center justify-center font-mono font-bold text-xs shrink-0 ';
 
       if (isRevealed) {
@@ -1071,13 +1136,13 @@ const app = {
 
       return '<div role="radio" ' +
         'aria-checked="' + (isSelected ? 'true' : 'false') + '" ' +
-        'aria-label="ตัวเลือก ' + letter + ': ' + opt.replace(/"/g, '&quot;') + (isRevealed ? (isCorrect ? ' — ถูกต้อง' : (isSelected ? ' — ผิด' : '')) : '') + '" ' +
+        'aria-label="ตัวเลือก ' + letter + ': ' + this.escapeHtml(opt) + (isRevealed ? (isCorrect ? ' — ถูกต้อง' : (isSelected ? ' — ผิด' : '')) : '') + '" ' +
         'tabindex="' + (isSelected || idx === 0 ? '0' : '-1') + '" ' +
         'onclick="app.selectOptionByIndex(' + idx + ')" ' +
         'onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();app.selectOptionByIndex(' + idx + ');}" ' +
         'class="' + cardClass + '">' +
         '<div class="' + badgeClass + '">' + letter + '</div>' +
-        '<div class="flex-grow pt-0.5 leading-relaxed">' + opt + '</div>' +
+        '<div class="flex-grow pt-0.5 leading-relaxed">' + this.escapeHtml(opt) + '</div>' +
         (isRevealed ? (
           isCorrect ? '<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0" aria-hidden="true"></i>' :
           (isSelected ? '<i data-lucide="x-circle" class="w-5 h-5 text-rose-400 shrink-0" aria-hidden="true"></i>' : '')
@@ -1144,6 +1209,20 @@ const app = {
       }
     }
 
+    // Sync mobile floating bottom bar controls
+    const mobileNextLabel = document.getElementById('btnMobileNextLabel');
+    if (mobileNextLabel) {
+      mobileNextLabel.textContent = isLast ? 'Submit' : 'Next';
+    }
+    const btnMobileCheck = document.getElementById('btnMobileCheckStudy');
+    if (btnMobileCheck) {
+      if (this.mode === 'study' && !isRevealed) {
+        btnMobileCheck.classList.remove('hidden');
+      } else {
+        btnMobileCheck.classList.add('hidden');
+      }
+    }
+
     this.renderPaletteGrid();
     lucide.createIcons();
   },
@@ -1155,6 +1234,9 @@ const app = {
   },
 
   selectOption(optionText) {
+    // Study mode: lock the answer once revealed. Otherwise a user could pick the correct option
+    // after seeing the explanation and silently erase the question from the Mistake Bank.
+    if (this.mode === 'study' && this.revealedInStudy[this.currentIndex]) return;
     sound.click();
     this.userAnswers[this.currentIndex] = optionText;
 
@@ -1461,10 +1543,13 @@ const app = {
       if (!userAns) {
         unansweredCount++;
         t.unanswered++;
-        this.mistakes.add(q.id);
-        sessionMistakesList.push(q);
-        if (this.mode === 'exam' && !this.isRetrySession) {
-          QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+        // In study mode, unanswered skips are not penalised as recorded mistakes
+        if (this.mode === 'exam') {
+          this.mistakes.add(q.id);
+          sessionMistakesList.push(q);
+          if (!this.isRetrySession) {
+            QuizStorage.recordQuestionAttempt(this.currentSubjectId, q.id, false);
+          }
         }
       } else {
         this.attempted.add(q.id);
@@ -2487,204 +2572,6 @@ const app = {
     this.renderHistoryDetailQuestions();
   },
 
-  closeHistoryModal() {
-    const modal = document.getElementById('modalExamHistory');
-    if (modal) {
-      modal.classList.add('hidden');
-    }
-  },
-
-  renderHistoryModal() {
-    const badgeEl = document.getElementById('historySubjectBadge');
-    if (badgeEl && this.currentSubject) {
-      badgeEl.textContent = this.currentSubject.code || this.currentSubject.title || 'Subject';
-    }
-
-    const history = (this.examHistory || []).slice(0, 20);
-    const count = history.length;
-    const passCount = history.filter(h => h.isPass).length;
-    const passRate = count > 0 ? Math.round((passCount / count) * 100) : 0;
-    const avgScore = count > 0 ? Math.round(history.reduce((acc, c) => acc + (c.percentage || 0), 0) / count) : 0;
-    const bestScore = count > 0 ? Math.max(...history.map(c => c.percentage || 0)) : 0;
-
-    // 1. Stats Bar
-    const statsBar = document.getElementById('historyStatsBar');
-    if (statsBar) {
-      statsBar.innerHTML = `
-        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
-          <span class="text-[11px] text-slate-400 block font-medium">Total Tests</span>
-          <span class="text-xl font-bold font-mono text-cyan-400">${count} <span class="text-xs text-slate-500 font-normal">/ 20</span></span>
-          <span class="text-[10px] text-slate-500 block">เก็บบันทึกย้อนหลัง</span>
-        </div>
-        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
-          <span class="text-[11px] text-slate-400 block font-medium">Pass Rate</span>
-          <span class="text-xl font-bold font-mono ${passRate >= 75 ? 'text-emerald-400' : 'text-amber-400'}">${count > 0 ? passRate + '%' : '-%'}</span>
-          <span class="text-[10px] text-slate-500 block">${passCount}/${count} ครั้งผ่านเกณฑ์</span>
-        </div>
-        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
-          <span class="text-[11px] text-slate-400 block font-medium">Avg Score</span>
-          <span class="text-xl font-bold font-mono ${avgScore >= 75 ? 'text-emerald-400' : 'text-amber-400'}">${count > 0 ? avgScore + '%' : '-%'}</span>
-          <span class="text-[10px] text-slate-500 block">คะแนนเฉลี่ยรวม</span>
-        </div>
-        <div class="bg-cockpit-850/80 p-3 rounded-xl border border-cockpit-border text-center">
-          <span class="text-[11px] text-slate-400 block font-medium">Best Score</span>
-          <span class="text-xl font-bold font-mono text-emerald-400">${count > 0 ? bestScore + '%' : '-%'}</span>
-          <span class="text-[10px] text-slate-500 block">สถิติสูงสุดที่ทำได้</span>
-        </div>
-      `;
-    }
-
-    // 2. Trend Container
-    const trendContainer = document.getElementById('historyTrendContainer');
-    if (trendContainer) {
-      if (count === 0) {
-        trendContainer.classList.add('hidden');
-      } else {
-        trendContainer.classList.remove('hidden');
-        const chronological = [...history].reverse();
-        
-        const barsHtml = chronological.map((item, idx) => {
-          const isLatest = idx === chronological.length - 1;
-          const heightPercent = Math.max(12, Math.min(100, item.percentage || 0));
-          const bgGrad = item.isPass 
-            ? 'bg-gradient-to-t from-emerald-600 to-teal-400 shadow-[0_0_8px_rgba(16,185,129,0.35)]'
-            : 'bg-gradient-to-t from-rose-600 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.35)]';
-          const textColor = item.isPass ? 'text-emerald-400' : 'text-rose-400';
-
-          return `
-            <div class="flex-1 flex flex-col items-center justify-end h-full group relative min-w-[14px]">
-              <div class="absolute bottom-full mb-1.5 hidden group-hover:flex flex-col items-center z-30 pointer-events-none whitespace-nowrap bg-cockpit-950/95 border border-cockpit-border p-2 rounded-lg shadow-2xl text-[10px] font-mono animate-fadeIn">
-                <span class="font-bold ${textColor}">Attempt #${idx + 1}: ${item.percentage}% (${item.isPass ? 'PASS' : 'FAIL'})</span>
-                <span class="text-slate-300">${item.correctCount || 0}/${item.total || 0} ข้อ • ${item.timeSpent ? Math.floor(item.timeSpent / 60) + 'm' : ''}</span>
-                <span class="text-slate-500 text-[9px]">${item.date ? new Date(item.date).toLocaleString('th-TH') : ''}</span>
-              </div>
-              
-              <div class="w-full max-w-[24px] ${bgGrad} rounded-t transition-all duration-300 group-hover:brightness-125 group-hover:scale-y-105 origin-bottom" style="height: ${heightPercent}%;"></div>
-
-              <span class="text-[9px] font-mono font-bold mt-1 ${textColor} leading-tight">${item.percentage}%</span>
-              ${isLatest ? '<span class="text-[8px] font-mono text-cyan-400 font-bold tracking-tighter">NEW</span>' : `<span class="text-[8px] font-mono text-slate-500">${idx + 1}</span>`}
-            </div>
-          `;
-        }).join('');
-
-        trendContainer.innerHTML = `
-          <div class="flex items-center justify-between text-xs pb-1.5 mb-1.5 border-b border-cockpit-border/40 font-mono">
-            <span class="text-slate-300 flex items-center gap-1.5 font-bold">
-              <i data-lucide="trending-up" class="w-3.5 h-3.5 text-cyan-400"></i>
-              <span>Score Progression Trend (${count} ครั้งล่าสุด)</span>
-            </span>
-            <div class="flex items-center gap-2 text-[10px] text-slate-400">
-              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span><span class="text-slate-300">ผ่าน (≥75%)</span></span>
-              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-400 inline-block"></span><span class="text-slate-300">ไม่ผ่าน</span></span>
-            </div>
-          </div>
-          <div class="relative h-24 pt-4 pb-1">
-            <div class="absolute left-0 right-0 top-[25%] border-b border-dashed border-emerald-500/40 z-0 pointer-events-none flex items-center justify-end pr-1">
-              <span class="text-[9px] font-mono text-emerald-400/90 bg-cockpit-900/90 px-1 py-0.5 rounded -translate-y-1/2 border border-emerald-500/20">CAAT 75%</span>
-            </div>
-            <div class="flex items-end justify-between gap-1 sm:gap-2 h-full relative z-10">
-              ${barsHtml}
-            </div>
-          </div>
-        `;
-      }
-    }
-
-    // 3. History List
-    const listContainer = document.getElementById('historyListContainer');
-    if (listContainer) {
-      if (count === 0) {
-        listContainer.innerHTML = `
-          <div class="py-10 flex flex-col items-center justify-center text-center space-y-3">
-            <div class="w-12 h-12 rounded-xl bg-cockpit-850 border border-cockpit-border flex items-center justify-center text-slate-500">
-              <i data-lucide="inbox" class="w-6 h-6"></i>
-            </div>
-            <div class="space-y-1">
-              <p class="text-sm font-semibold text-slate-200">ยังไม่มีประวัติการสอบสำหรับวิชานี้</p>
-              <p class="text-xs text-slate-400 max-w-sm leading-relaxed">เมื่อทำแบบทดสอบเสร็จสิ้นและกด Finish ระบบจะบันทึกผลคะแนน 20 ครั้งล่าสุดไว้ที่นี่โดยอัตโนมัติ</p>
-            </div>
-          </div>
-        `;
-      } else {
-        const modeMap = {
-          exam: { label: 'Exam Mode', cls: 'bg-blue-500/20 text-blue-300 border-blue-500/40' },
-          study: { label: 'Study Mode', cls: 'bg-amber-500/20 text-amber-300 border-amber-500/40' },
-          practice: { label: 'Practice', cls: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40' }
-        };
-
-        const formatDate = (iso) => {
-          if (!iso) return '-';
-          try {
-            const d = new Date(iso);
-            return d.toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }) + ' • ' + d.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) + ' น.';
-          } catch (e) {
-            return iso;
-          }
-        };
-
-        const formatDuration = (sec) => {
-          if (!sec || isNaN(sec)) return '-';
-          const m = Math.floor(sec / 60);
-          const s = sec % 60;
-          if (m === 0) return `${s} วิ`;
-          return `${m} นาที ${s} วิ`;
-        };
-
-        listContainer.innerHTML = history.map((record, idx) => {
-          const modeObj = modeMap[record.mode] || { label: (record.mode || 'Practice').toUpperCase(), cls: 'bg-slate-700/40 text-slate-300 border-slate-600' };
-          const avgPerQ = record.total > 0 && record.timeSpent ? Math.round(record.timeSpent / record.total) : null;
-
-          return `
-            <div class="p-3 sm:p-3.5 rounded-xl bg-cockpit-850/90 border border-cockpit-border hover:border-cockpit-700 transition flex items-center justify-between gap-3 group">
-              <div class="flex items-start sm:items-center space-x-3 min-w-0">
-                <div class="w-8 h-8 rounded-lg ${record.isPass ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'} flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                  #${count - idx}
-                </div>
-                <div class="min-w-0 space-y-1">
-                  <div class="flex flex-wrap items-center gap-1.5">
-                    <span class="text-xs font-semibold text-white">${formatDate(record.date)}</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded border ${modeObj.cls}">${modeObj.label}</span>
-                    ${idx === 0 ? '<span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-bold">ล่าสุด</span>' : ''}
-                  </div>
-                  <div class="text-[11px] text-slate-400 flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span>ตอบถูก <strong class="text-slate-200 font-mono">${record.correctCount}/${record.total}</strong> ข้อ</span>
-                    <span>•</span>
-                    <span>ใช้เวลา <strong class="text-slate-200 font-mono">${formatDuration(record.timeSpent)}</strong></span>
-                    ${avgPerQ ? `<span>•</span><span class="text-slate-500">เฉลี่ย ${avgPerQ} วิ/ข้อ</span>` : ''}
-                  </div>
-                </div>
-              </div>
-
-              <div class="shrink-0 text-right space-y-0.5">
-                <div class="text-lg sm:text-xl font-black font-mono ${record.isPass ? 'text-emerald-400' : 'text-rose-400'}">
-                  ${record.percentage}%
-                </div>
-                <div class="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${record.isPass ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/40' : 'bg-rose-500/15 text-rose-400 border border-rose-500/40'}">
-                  <i data-lucide="${record.isPass ? 'check-circle-2' : 'alert-triangle'}" class="w-3 h-3"></i>
-                  <span>${record.isPass ? 'PASS' : 'FAIL'}</span>
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('');
-      }
-    }
-
-    // 4. Clear button state
-    const clearBtn = document.getElementById('btnClearHistoryBtn');
-    if (clearBtn) {
-      if (count === 0) {
-        clearBtn.disabled = true;
-        clearBtn.classList.add('opacity-40', 'pointer-events-none');
-      } else {
-        clearBtn.disabled = false;
-        clearBtn.classList.remove('opacity-40', 'pointer-events-none');
-      }
-    }
-
-    lucide.createIcons();
-  },
-
   clearHistory() {
     sound.click();
     if (!this.examHistory || this.examHistory.length === 0) return;
@@ -2733,6 +2620,47 @@ const app = {
     };
 
     modal.classList.remove('hidden');
+  },
+
+  /**
+   * Non-blocking toast notification (replaces window.alert)
+   * @param {string} message
+   * @param {'info'|'success'|'warning'|'error'} type
+   * @param {number} duration - milliseconds before auto-dismiss
+   */
+  showToast(message, type = 'info', duration = 3200) {
+    let container = document.getElementById('toastContainer');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toastContainer';
+      container.className = 'toast-container';
+      container.setAttribute('role', 'status');
+      container.setAttribute('aria-live', 'polite');
+      document.body.appendChild(container);
+    }
+    const variants = {
+      info: 'info',
+      success: 'check-circle-2',
+      warning: 'alert-triangle',
+      error: 'x-circle'
+    };
+    const toast = document.createElement('div');
+    toast.className = 'toast-item toast-' + (variants[type] ? type : 'info');
+    toast.innerHTML = '<i data-lucide="' + (variants[type] || variants.info) + '" class="toast-icon" aria-hidden="true"></i><span class="toast-text"></span>';
+    toast.querySelector('.toast-text').textContent = message;
+    toast.addEventListener('click', () => dismiss());
+    container.appendChild(toast);
+    if (window.lucide) lucide.createIcons();
+    requestAnimationFrame(() => toast.classList.add('toast-show'));
+
+    let removed = false;
+    const dismiss = () => {
+      if (removed) return;
+      removed = true;
+      toast.classList.remove('toast-show');
+      setTimeout(() => toast.remove(), 300);
+    };
+    setTimeout(dismiss, duration);
   },
 
   /* ============================================================ */

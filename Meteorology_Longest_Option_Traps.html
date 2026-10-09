@@ -1,0 +1,3101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>CATC Exam - Meteorology Longest Option Traps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 12mm 14mm 12mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      font-family: 'Prompt', 'Sarabun', 'Leelawadee UI', 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .cover-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0369a1 100%);
+      color: #ffffff;
+      padding: 24px 28px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    .badge-sub {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .cover-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      line-height: 1.2;
+    }
+    .cover-subtitle {
+      font-size: 14px;
+      color: #bae6fd;
+      margin: 0 0 16px 0;
+      font-weight: 400;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 6px;
+    }
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: #e2e8f0;
+    }
+    .stat-green { color: #4ade80; }
+    .stat-red { color: #f87171; }
+    .stat-blue { color: #38bdf8; }
+
+    .alert-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 12.5px;
+      color: #92400e;
+    }
+    .alert-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin: 24px 0 14px 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .section-title {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-desc {
+      font-size: 11.5px;
+      color: #64748b;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .q-id-badge {
+      background: #0f172a;
+      color: white;
+      font-weight: 700;
+      font-size: 11.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .topic-tag {
+      font-size: 11px;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .diff-badge {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+    .question-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 9px;
+      line-height: 1.4;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 5px;
+      margin-bottom: 9px;
+    }
+    .option-item {
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .option-left {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .opt-letter {
+      font-weight: 700;
+      color: #64748b;
+      min-width: 18px;
+    }
+    .opt-text {
+      color: #334155;
+    }
+    .opt-meta {
+      font-size: 10.5px;
+      color: #94a3b8;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+
+    /* Longest Wrong */
+    .option-wrong-longest {
+      background: #fff1f2;
+      border: 1.5px solid #f87171;
+    }
+    .option-wrong-longest .opt-letter {
+      color: #dc2626;
+    }
+    .option-wrong-longest .opt-text {
+      color: #991b1b;
+      font-weight: 600;
+    }
+    .trap-tag {
+      background: #dc2626;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    /* Correct Answer */
+    .option-correct {
+      background: #f0fdf4;
+      border: 1.5px solid #4ade80;
+    }
+    .option-correct .opt-letter {
+      color: #16a34a;
+    }
+    .option-correct .opt-text {
+      color: #166534;
+      font-weight: 600;
+    }
+    .correct-tag {
+      background: #16a34a;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .trap-observation-box {
+      background: #fef2f2;
+      border-left: 3px solid #ef4444;
+      padding: 7px 11px;
+      border-radius: 0 6px 6px 0;
+      font-size: 11.5px;
+      color: #991b1b;
+      margin-bottom: 6px;
+      line-height: 1.45;
+    }
+    .trap-observation-box strong {
+      color: #b91c1c;
+    }
+
+    .explanation-box {
+      background: #f8fafc;
+      border-left: 3px solid #0284c7;
+      padding: 7px 11px;
+      border-radius: 0 6px 6px 0;
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .explanation-box strong {
+      color: #0369a1;
+    }
+
+    /* Table styling */
+    .table-container {
+      margin-top: 10px;
+      page-break-inside: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    th {
+      background: #0f172a;
+      color: white;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 600;
+    }
+    td {
+      padding: 7px 9px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    tr {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .tbl-trap {
+      color: #b91c1c;
+      font-weight: 600;
+    }
+    .tbl-correct {
+      color: #15803d;
+      font-weight: 600;
+    }
+    .tbl-observation {
+      color: #334155;
+      line-height: 1.45;
+    }
+    .obs-tag {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 10px;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+    .avoid-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .footer {
+      margin-top: 25px;
+      padding-top: 10px;
+      border-top: 1px solid #cbd5e1;
+      text-align: center;
+      font-size: 10.5px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER BANNER -->
+  <div class="cover-banner">
+    <div class="badge-sub">CAAT / EASA Aviation Exam Study Guide</div>
+    <div class="cover-title">Subject 050: Meteorology (อุตุนิยมวิทยาการบิน)</div>
+    <div class="cover-subtitle">เจาะลึกข้อสอบข้อที่ "ช้อยส์ยาวที่สุดเป็นข้อหลอก / ข้อผิด" (Longest Option Traps & Distractors)</div>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value stat-blue">200 ข้อ</div>
+        <div class="stat-label">จำนวนข้อสอบทั้งหมด</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value stat-green">134 ข้อ (67%)</div>
+        <div class="stat-label">ช้อยส์ยาวสุด = คำตอบถูก</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value stat-red">46 ข้อ (23%)</div>
+        <div class="stat-label">ช้อยส์ยาวสุด = ข้อผิด (Trap!)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT INSIGHT -->
+  <div class="alert-box">
+    <div class="alert-title">⚠️ สรุปข้อคิดสำคัญก่อนเข้าห้องสอบ (Exam Trap Alert):</div>
+    เนื่องจากในคลังข้อสอบวิชานี้ ตัวเลือกที่ยาวที่สุดมีอัตราการเป็นคำตอบถูกต้องสูงถึง <strong>67%</strong> ทำให้ผู้สอบหลายคนติดนิสัย <em>"ถ้าไม่แน่ใจ ให้กาข้อยาวสุด"</em> แต่ผู้ออกข้อสอบได้สร้าง <strong>"ข้อลวงที่มีความยาวเป็นพิเศษ" (Distractor Traps)</strong> ไว้ถึง <strong>46 ข้อ</strong> เพื่อดักทาง!
+    <br><br>
+    <strong>กลลวงที่พบบ่อยในช้อยส์ยาวที่ผิด:</strong>
+    <ul style="margin: 4px 0 0 0; padding-left: 20px;">
+      <li><strong>คำขยายจำกัดความสุดโต่ง:</strong> เช่น <em>"...always becomes dry"</em>, <em>"...only in the stratosphere"</em>, <em>"...southerly everywhere"</em>, <em>"...in all cases"</em></li>
+      <li><strong>คำตอบดูวิชาการแต่ผิดหลักการ:</strong> เช่น ใส่สูตร <em>"...at the ISA rate"</em> ในข้อ Inversion หรือใส่ตัวเลขหน่วยเต็ม <em>"1013.25 hPa"</em> หลอกในข้อ Q-Code</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-header">
+    <div class="section-title">🔥 หมวดที่ 1: ข้อลวงยอดฮิตที่ยาวกว่าข้ออื่นอย่างเห็นได้ชัดที่สุด (Top 16 Extreme Traps)</div>
+    <div class="section-desc">ยาวกว่าข้ออื่น 1.4x – 3.7x เท่า (+7 ถึง +20 ตัวอักษร)</div>
+  </div>
+
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 1 (ID: 91)</span>
+          <span class="topic-tag">050 04 • Advection fog</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +20 ตัวอักษร (1.5x)</div>
+      </div>
+      <div class="question-text">Advection fog forms when:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Air descends in the stratosphere</span>
+                
+              </div>
+              <div class="opt-meta">32 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">A thunderstorm collapses</span>
+                
+              </div>
+              <div class="opt-meta">24 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Moist air moves over a colder surface</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">37 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Cold air moves over a warm surface and always becomes dry</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">57 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เติมประโยคพ่วงท้ายยาวเหยียด &#039;...and always becomes dry&#039; ให้ดูเหมือนอธิบายละเอียด แต่หมอกแอดเวกชันเกิดจากลมพัดอากาศชื้นไปเจอด้านที่เย็นกว่า
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> หมอกจากการพาความร้อนในแนวราบ (Advection Fog): ก่อตัวขึ้นเมื่อมวลอากาศอุ่นและชื้น &#039;เคลื่อนที่พัดผ่านพื้นผิวที่เย็นกว่า&#039; (Moist air moves over a colder surface) ทำให้อากาศชั้นล่างเย็นตัวลงจนถึงจุดน้ำค้าง สามารถเกิดได้ทั้งกลางวันและกลางคืน และมักเกิดร่วมกับลมแรงปานกลาง
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 2 (ID: 37)</span>
+          <span class="topic-tag">050 02 • Wind reporting</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +15 ตัวอักษร (1.9x)</div>
+      </div>
+      <div class="question-text">Wind direction in meteorological reports is normally expressed as:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Degrees true</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">12 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Degrees magnetic</span>
+                
+              </div>
+              <div class="opt-meta">16 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Degrees grid</span>
+                
+              </div>
+              <div class="opt-meta">12 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Degrees relative to runway only</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">31 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เติมคำขยาย &#039;relative to runway only&#039; ให้ยาวกว่าข้ออื่นเกือบ 2 เท่า ทั้งที่ข้ออื่นเป็นระบบมุมสั้นๆ (Degrees true/magnetic/grid)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ทิศทางลมในรายงานอากาศ: ในรายงานอุตุนิยมวิทยาการบิน เช่น METAR, SPECI, และ TAF ทิศทางลมจะรายงานเป็น &#039;ทิศเหนือจริง&#039; (Degrees True) เสมอ (ข้อแตกต่าง: ลมที่หอควบคุมการบิน ATC แจ้งทางวิทยุหรือ ATIS สำหรับขึ้น-ลงจะรายงานเป็น Degrees Magnetic ตามแนวรันเวย์)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 3 (ID: 18)</span>
+          <span class="topic-tag">050 01 • Inversion</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +14 ตัวอักษร (1.4x)</div>
+      </div>
+      <div class="question-text">What is the defining temperature characteristic of an inversion layer?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Temperature decreases with height at the ISA rate</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">49 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Temperature is constant with height</span>
+                
+              </div>
+              <div class="opt-meta">35 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Pressure increases with height</span>
+                
+              </div>
+              <div class="opt-meta">30 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Temperature increases with height</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">33 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ใส่ศัพท์วิชาการหลอก &#039;...at the ISA rate&#039; (8 คำ 49 ตัว) ให้ดูเป็นหลักการทางการ แต่นิยาม Inversion คืออุณหภูมิ &#039;สูงขึ้น&#039; ตามความสูง
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ชั้นอุณหภูมิผกผัน (Inversion Layer): สภาวะปกติในชั้นโทรโพสเฟียร์อุณหภูมิจะลดลงตามความสูง แต่ในชั้น Inversion จะมีลักษณะเฉพาะคือ &#039;อุณหภูมิเพิ่มขึ้นตามความสูง&#039; (Temperature increases with height) ชั้นนี้จะมีเสถียรภาพสูงมาก (Very stable) ขัดขวางการเคลื่อนที่ของอากาศในแนวดิ่งและดักจับฝุ่นควันไว้ด้านล่าง
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 4 (ID: 29)</span>
+          <span class="topic-tag">050 01 • Density relationship</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +13 ตัวอักษร (2.2x)</div>
+      </div>
+      <div class="question-text">For a given pressure, increasing temperature generally causes air density to:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Decrease</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">8 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Increase</span>
+                
+              </div>
+              <div class="opt-meta">8 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Remain exactly unchanged</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">24 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Become zero</span>
+                
+              </div>
+              <div class="opt-meta">11 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นคำเดี่ยวสั้นๆ (Decrease/Increase แค่ 8 ตัว) แต่ข้อลวงพิมพ์ยาวถึง 3 คำ &#039;Remain exactly unchanged&#039; (24 ตัว) ยาวกว่า 3 เท่า
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ความสัมพันธ์ระหว่างอุณหภูมิและความหนาแน่น: ตามสมการสภาวะของก๊าซอุดมคติ (Ideal Gas Law: P = ρRT) ที่ระดับความกดอากาศคงที่ เมื่ออุณหภูมิ (T) สูงขึ้น โมเลกุลของอากาศจะเคลื่อนที่เร็วขึ้นและขยายตัว ทำให้ความหนาแน่นของอากาศ (ρ) &#039;ลดลง&#039; (Warmer air is less dense)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 5 (ID: 150)</span>
+          <span class="topic-tag">050 08 • Westerlies</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +12 ตัวอักษร (2.5x)</div>
+      </div>
+      <div class="question-text">The mid-latitude prevailing upper-level flow is generally:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Easterly</span>
+                
+              </div>
+              <div class="opt-meta">8 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Southerly everywhere</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Calm</span>
+                
+              </div>
+              <div class="opt-meta">4 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Westerly</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">8 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นทิศทางสั้นๆ 4–8 ตัวอักษร (Easterly, Calm, Westerly) แต่ข้อลวงเติมคำว่า &#039;everywhere&#039; พ่วงท้ายให้ดูครอบคลุม
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> กระแสลมระดับบนในละติจูดปานกลาง (Mid-latitude Westerlies): ในบรรยากาศชั้นโทรโพสเฟียร์ตอนบนของบริเวณละติจูดปานกลาง (ประมาณ 30° ถึง 60°) ทิศทางลมหลักที่มีอิทธิพลเหนือการบินตลอดทั้งปีคือ &#039;ลมฝ่ายตะวันตก&#039; (Westerly winds)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 6 (ID: 71)</span>
+          <span class="topic-tag">050 03 • Supercooled water</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +11 ตัวอักษร (1.8x)</div>
+      </div>
+      <div class="question-text">Supercooled water is liquid water that exists:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Only at 20 °C</span>
+                
+              </div>
+              <div class="opt-meta">13 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Only in the stratosphere</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">24 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Below 0 °C</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Above 100 °C</span>
+                
+              </div>
+              <div class="opt-meta">12 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นระบุช่วงอุณหภูมิสั้นๆ (Below 0 °C) แต่ข้อลวงแอบเปลี่ยนประเด็นไปเป็นชั้นบรรยากาศ &#039;Only in the stratosphere&#039; ยาวกว่า 2 เท่า
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> น้ำเย็นยิ่งยวด (Supercooled Water): คือน้ำที่ยังคงรักษาสถานะเป็นของเหลวอยู่ได้แม้ว่าอุณหภูมิจะ &#039;ต่ำกว่า 0°C&#039; (Below 0°C) พบได้ในก้อนเมฆ เป็นสาเหตุหลักของการเกิดน้ำแข็งเกาะอากาศยาน (Aircraft Icing) เมื่อกระทบโครงสร้างเครื่องบินจะแข็งตัวทันที
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 7 (ID: 81)</span>
+          <span class="topic-tag">050 04 • Cloud formation</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +11 ตัวอักษร (1.5x)</div>
+      </div>
+      <div class="question-text">Which process can cause cloud formation by cooling a rising air parcel?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Adiabatic cooling</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">17 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Adiabatic heating only</span>
+                
+              </div>
+              <div class="opt-meta">22 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Coriolis acceleration</span>
+                
+              </div>
+              <div class="opt-meta">21 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Pressure reduction in a barometer</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">33 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เติมอุปกรณ์ &#039;...in a barometer&#039; ขยายความยาว 33 ตัวอักษร ช้อยส์ถูกคือกระบวนการยกตัวเย็นลงตามธรรมชาติ &#039;Adiabatic cooling&#039; (17 ตัว)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> การก่อตัวของเมฆจากการยกตัว: เมฆส่วนใหญ่ก่อตัวขึ้นเมื่อมวลอากาศยกตัวลอยสูงขึ้น ความกดอากาศลดลงทำให้อากาศขยายตัวและเย็นตัวลงแบบ &#039;Adiabatic cooling&#039; จนอุณหภูมิลดลงแตะจุดน้ำค้างและเกิดการควบแน่นเป็นละอองเมฆ
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 8 (ID: 61)</span>
+          <span class="topic-tag">050 03 • Moist air</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +10 ตัวอักษร (1.7x)</div>
+      </div>
+      <div class="question-text">Compared with dry air at the same temperature and pressure, moist air is generally:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Less dense</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">More dense</span>
+                
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Exactly the same density</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">24 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Twice as dense</span>
+                
+              </div>
+              <div class="opt-meta">14 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์คำเปรียบเทียบสั้นๆ (Less/More dense 10 ตัว) แต่ข้อลวงใส่ &#039;Exactly the same density&#039; (24 ตัว) ดึงดูดสายตาให้คิดว่าเป็นข้อยกเว้น
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ความหนาแน่นของอากาศชื้น: อากาศชื้นมี &#039;ความหนาแน่นน้อยกว่า&#039; (Less dense) อากาศแห้งที่อุณหภูมิและความกดอากาศเดียวกัน เนื่องจากน้ำหนักโมเลกุลของไอน้ำ (H2O ≈ 18 g/mol) เบากว่าโมเลกุลเฉลี่ยของอากาศแห้ง (N2 และ O2 ≈ 29 g/mol) เมื่อไอน้ำเข้าไปแทนที่โมเลกุลอากาศแห้ง จึงทำให้อากาศโดยรวมเบาลง
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 9 (ID: 36)</span>
+          <span class="topic-tag">050 02 • Wind definition</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +9 ตัวอักษร (1.3x)</div>
+      </div>
+      <div class="question-text">Wind is best defined as:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">The temperature difference between two places</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">45 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">The horizontal movement of air</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">30 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">The vertical movement of air only</span>
+                
+              </div>
+              <div class="opt-meta">33 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">The pressure measured at the surface</span>
+                
+              </div>
+              <div class="opt-meta">36 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เขียนยาว 45 ตัวอักษรคล้ายนิยามวิทยาศาสตร์ แต่ไปอธิบาย &#039;ผลต่างอุณหภูมิ&#039; แทนที่จะเป็นนิยามของลม (การเคลื่อนที่ของอากาศในแนวราบ)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> นิยามของลม (Wind): ในทางอุตุนิยมวิทยา ลมถูกนิยามว่าเป็นการเคลื่อนที่ของอากาศใน &#039;แนวราบ&#039; (Horizontal movement of air) ซึ่งเกิดขึ้นจากความแตกต่างของแรงเกรเดียนต์ความกดอากาศระหว่างสองพื้นที่
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 10 (ID: 127)</span>
+          <span class="topic-tag">050 07 • Anticyclone</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +9 ตัวอักษร (1.7x)</div>
+      </div>
+      <div class="question-text">An anticyclone is a system of:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Zero pressure</span>
+                
+              </div>
+              <div class="opt-meta">13 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Constant pressure only</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">22 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">High pressure</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">13 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Low pressure</span>
+                
+              </div>
+              <div class="opt-meta">12 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์ทั่วไปสั้นกระชับ 12–13 ตัวอักษร (High/Low pressure) แต่ข้อลวงเติม &#039;Constant pressure only&#039; ยาว 22 ตัวอักษร
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> แอนติไซโคลน (Anticyclone): คือระบบบรรยากาศของ &#039;บริเวณความกดอากาศสูง&#039; (High pressure system) ซึ่งมีความกดอากาศตรงจุดศูนย์กลางสูงกว่าบริเวณโดยรอบ เส้นไอโซบาร์มีลักษณะปิดล้อม และลมพัดเวียนออกจากศูนย์กลางตามเข็มนาฬิกาในซีกโลกเหนือ
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 11 (ID: 195)</span>
+          <span class="topic-tag">050 10 • Air reports</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +9 ตัวอักษร (1.4x)</div>
+      </div>
+      <div class="question-text">An ARS is:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">A satellite image</span>
+                
+              </div>
+              <div class="opt-meta">17 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">A runway state only</span>
+                
+              </div>
+              <div class="opt-meta">19 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">A special air-report</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">An aerodrome routine forecast</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">29 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> นำนิยามเต็มของ TAF (An aerodrome routine forecast - 29 ตัว) มาใส่หลอกคนที่ไม่แม่นอักษรย่อ ทั้งที่ ARS ย่อมาจาก Special air-report
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ความหมายของ ARS: ย่อมาจาก &#039;Special Air-report&#039; เป็นรายงานสภาพอากาศพิเศษที่นักบินตรวจพบบนเส้นทางบินและรายงานทางวิทยุเมื่อพบปรากฏการณ์อันตราย เช่น Severe turbulence, Severe icing, หรือภูเขาไฟระเบิด
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 12 (ID: 31)</span>
+          <span class="topic-tag">050 01 • Altimetry terminology</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +8 ตัวอักษร (3.7x)</div>
+      </div>
+      <div class="question-text">Which altimeter setting makes the altimeter indicate aerodrome elevation on the ground, when correctly set?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">1013.25 hPa</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">11 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">QFF</span>
+                
+              </div>
+              <div class="opt-meta">3 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">QNH</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">3 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">QFE</span>
+                
+              </div>
+              <div class="opt-meta">3 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นรหัสย่อ 3 ตัวสั้นๆ (QNH, QFE, QFF) มีข้อลวงข้อเดียวที่ใส่ตัวเลขจุดทศนิยมและหน่วยเต็ม &#039;1013.25 hPa&#039; (11 ตัว)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> การตั้งค่า Altimeter Setting (QNH): เมื่อปรับตั้งค่าความกดอากาศที่หน้าต่าง Kollsman ของ Altimeter เป็นค่า QNH เครื่องวัดความสูงจะอ่านค่าความสูงเหนือระดับน้ำทะเลปานกลาง (Altitude above MSL) ดังนั้นเมื่อเครื่องบินจอดอยู่บนพื้นสนามบิน เข็มจะชี้บอก &#039;ความสูงของสนามบิน&#039; (Aerodrome Elevation)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 13 (ID: 179)</span>
+          <span class="topic-tag">050 09 • Inversion hazard</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +8 ตัวอักษร (1.4x)</div>
+      </div>
+      <div class="question-text">A strong inversion combined with marked wind shear is especially hazardous during:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Engine shutdown on the ground</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">29 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Parking</span>
+                
+              </div>
+              <div class="opt-meta">7 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Takeoff and approach</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Cruise at FL 400 only</span>
+                
+              </div>
+              <div class="opt-meta">21 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นช่วงบินสั้นๆ (Takeoff and approach) แต่ข้อลวงพิมพ์ยาวเป็นประโยคตอนอยู่บนพื้น &#039;Engine shutdown on the ground&#039;
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> อันตรายของ Inversion ร่วมกับ Wind Shear: ชั้นอุณหภูมิผกผันระดับต่ำที่มีลมเฉือนรุนแรงแฝงอยู่ มีความเสี่ยงต่ออุบัติเหตุการบินสูงสุดในช่วง &#039;การวิ่งขึ้นและการร่อนลงเข้าใกล้สนามบิน&#039; (Takeoff and approach) เนื่องจากเครื่องบินกำลังปรับเปลี่ยนความเร็วและอยู่ใกล้พื้นดิน
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 14 (ID: 10)</span>
+          <span class="topic-tag">050 01 • Radiation</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +7 ตัวอักษร (1.7x)</div>
+      </div>
+      <div class="question-text">Which process transfers energy through electromagnetic waves without requiring direct contact?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Conduction</span>
+                
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Advection</span>
+                
+              </div>
+              <div class="opt-meta">9 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Mechanical mixing</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">17 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Radiation</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">9 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นคำเดี่ยว 9–10 ตัวอักษร (Radiation, Conduction) แต่ข้อลวงใส่ 2 คำ &#039;Mechanical mixing&#039; (17 ตัว) หลอกเรื่องคลื่นแม่เหล็กไฟฟ้า
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> การแผ่รังสี (Radiation): เป็นกระบวนการถ่ายโอนพลังงานความร้อนในรูปของคลื่นแม่เหล็กไฟฟ้า (Electromagnetic waves) เช่น คลื่นแสงและรังสีอินฟราเรด โดยไม่จำเป็นต้องอาศัยตัวกลางหรือการสัมผัสกันของโมเลกุล ต่างจากการนำความร้อน (Conduction) และการพาความร้อน (Convection)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 15 (ID: 67)</span>
+          <span class="topic-tag">050 03 • Humidity</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +7 ตัวอักษร (1.4x)</div>
+      </div>
+      <div class="question-text">At constant pressure, if temperature rises while moisture content remains unchanged, relative humidity generally:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Remains exactly constant</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">24 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Becomes negative</span>
+                
+              </div>
+              <div class="opt-meta">16 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Decreases</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">9 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Increases to 100%</span>
+                
+              </div>
+              <div class="opt-meta">17 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์ถูกคือคำเดี่ยวสั้นๆ &#039;Decreases&#039; (9 ตัว) แต่ข้อลวงพิมพ์ยาว 3 คำ &#039;Remains exactly constant&#039; (24 ตัว) ยาวกว่าเกือบ 3 เท่า
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> การเปลี่ยนแปลง RH เมื่ออุณหภูมิสูงขึ้น: ความสามารถในการอุ้มไอน้ำของอากาศจะเพิ่มขึ้นแบบทวีคูณเมื่ออุณหภูมิสูงขึ้น ดังนั้นที่ความกดอากาศคงที่ หากอุณหภูมิสูงขึ้นโดยที่ปริมาณไอน้ำเท่าเดิม สัดส่วนความชื้นสัมพัทธ์ (RH) จะ &#039;ลดลง&#039; (Decreases)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 16 (ID: 115)</span>
+          <span class="topic-tag">050 06 • Cold front</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +7 ตัวอักษร (1.2x)</div>
+      </div>
+      <div class="question-text">At a cold front, colder air generally:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Stops all vertical motion</span>
+                
+              </div>
+              <div class="opt-meta">25 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Always remains behind the warm front</span>
+                <span class="trap-tag">❌ ข้อยาวที่สุด (ข้อลวง!)</span>
+              </div>
+              <div class="opt-meta">36 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Advances and lifts warmer air</span>
+                <span class="correct-tag">✅ คำตอบที่ถูกต้อง</span>
+              </div>
+              <div class="opt-meta">29 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Rises over colder air</span>
+                
+              </div>
+              <div class="opt-meta">21 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ใช้คำขยายสุดโต่ง &#039;Always remains behind...&#039; (36 ตัว) ให้ดูเหมือนกฎตายตัว แต่แนวปะทะอากาศเย็นจะรุกคืบช้อนยกอากาศอุ่นให้ลอยขึ้น
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> การเคลื่อนตัวที่แนวปะทะอากาศเย็น (Cold Front): มวลอากาศเย็นที่มีความหนาแน่นและน้ำหนักมากกว่าจะ &#039;รุกคืบเข้าดันและช้อนมวลอากาศอุ่นเบื้องหน้าให้ยกตัวสูงขึ้นอย่างรวดเร็ว&#039; (Advances and lifts warmer air) มีแนวลาดชันชันกว่าแนวปะทะอุ่น (1:50 ถึง 1:100)
+      </div>
+    </div>
+  
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 2 -->
+  <div class="section-header">
+    <div class="section-title">⚡ หมวดที่ 2: ข้อลวงที่ยาวกว่าและใช้คำขยายหลอก (Moderate Traps — ข้อ 17 ถึง 28)</div>
+    <div class="section-desc">ยาวกว่าข้ออื่น 1.2x – 1.8x เท่า (+4 ถึง +6 ตัวอักษร)</div>
+  </div>
+
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 17 (ID: 1)</span>
+          <span class="topic-tag">050 01 • Structure of atmosphere</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +6 ตัวอักษร (1.3x)</div>
+      </div>
+      <div class="question-text">Which atmospheric division is primarily based on the way temperature changes with height?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Temperature profile</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">19 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Atmospheric pressure only</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">25 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Humidity only</span>
+                
+              </div>
+              <div class="opt-meta">13 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Wind direction only</span>
+                
+              </div>
+              <div class="opt-meta">19 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นคำสั้นๆ แต่ข้อลวงเติม &#039;Atmospheric pressure only&#039; ยาว 25 ตัว ทั้งที่การแบ่งชั้นบรรยากาศหลักดูจาก Temperature profile
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ชั้นบรรยากาศแบ่งออกเป็นชั้นต่างๆ ตามการเปลี่ยนแปลงของอุณหภูมิตามความสูง (Vertical temperature profile)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 18 (ID: 60)</span>
+          <span class="topic-tag">050 02 • Jet streams</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +6 ตัวอักษร (1.4x)</div>
+      </div>
+      <div class="question-text">Which jet stream is generally associated with the polar front?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Valley jet</span>
+                
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Polar front jet</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">15 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Tropical easterly jet</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">21 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Sea-breeze jet</span>
+                
+              </div>
+              <div class="opt-meta">14 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ใช้ชื่อกระแสลมกรดยาว 3 คำ &#039;Tropical easterly jet&#039; (21 ตัว) ยาวกว่า Polar front jet ที่สอดคล้องกับแนวปะทะขั้วโลก
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> กระแสลมกรดที่พัดสัมพันธ์กับแนวปะทะอากาศขั้วโลกคือ Polar Front Jet (PFJ)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 19 (ID: 171)</span>
+          <span class="topic-tag">050 09 • Dissipating stage</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +6 ตัวอักษร (1.3x)</div>
+      </div>
+      <div class="question-text">The dissipating stage of a thunderstorm is dominated by:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">No precipitation</span>
+                
+              </div>
+              <div class="opt-meta">16 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">A clear-sky inversion only</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">26 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Downdrafts</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Strong updrafts only</span>
+                
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์ถูกเป็นคำเดี่ยวสั้นๆ &#039;Downdrafts&#039; (10 ตัว) แต่ข้อลวงแต่งยาว &#039;A clear-sky inversion only&#039; (26 ตัว) ยาวกว่า 2.6 เท่า
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ระยะ Dissipating ของพายุฟ้าคะนองถูกครอบงำด้วยกระแสลมพัดลง (Downdrafts) ส่งผลให้พายุเริ่มสลายตัว
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 20 (ID: 24)</span>
+          <span class="topic-tag">050 01 • Pressure systems</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +5 ตัวอักษร (1.8x)</div>
+      </div>
+      <div class="question-text">Which term describes an elongated area of relatively low pressure extending from a depression?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Anticyclone</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">11 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Trough</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">6 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Ridge</span>
+                
+              </div>
+              <div class="opt-meta">5 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Col</span>
+                
+              </div>
+              <div class="opt-meta">3 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นสั้นมากเพียง 3–6 ตัวอักษร (Trough, Ridge, Col) มี &#039;Anticyclone&#039; ยาว 11 ตัวอักษร โดดเด่นแต่เป็นระบบความกดอากาศสูง
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> Trough คือแนวพื้นที่ความกดอากาศต่ำที่ยื่นยาวออกมาจากศูนย์กลางหย่อมความกดอากาศต่ำ
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 21 (ID: 34)</span>
+          <span class="topic-tag">050 01 • Cold temperature</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +5 ตัวอักษร (1.2x)</div>
+      </div>
+      <div class="question-text">In colder-than-ISA air, with the same indicated altitude, true altitude is generally:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Higher than indicated</span>
+                
+              </div>
+              <div class="opt-meta">21 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Exactly equal</span>
+                
+              </div>
+              <div class="opt-meta">13 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Independent of temperature</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">26 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Lower than indicated</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นสั้นและเปรียบเทียบชัดเจน แต่ข้อลวงใช้คำยาว &#039;Independent of temperature&#039; (26 ตัว) ปฏิเสธอิทธิพลอุณหภูมิ
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ในอากาศที่เย็นกว่า ISA ความสูงจริง (True altitude) จะ &#039;ต่ำกว่า&#039; ความสูงที่อ่านได้จากเครื่องวัด (Lower than indicated)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 22 (ID: 44)</span>
+          <span class="topic-tag">050 02 • Latitude</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +5 ตัวอักษร (1.2x)</div>
+      </div>
+      <div class="question-text">For the same pressure gradient, geostrophic wind speed generally becomes larger when moving toward the equator because the Coriolis parameter:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Is unaffected by latitude</span>
+                
+              </div>
+              <div class="opt-meta">25 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Becomes smaller</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">15 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Becomes larger</span>
+                
+              </div>
+              <div class="opt-meta">14 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Becomes zero only at the poles</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">30 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เติมเงื่อนไข &#039;...only at the poles&#039; ยาว 30 ตัวอักษร ช้อยส์ถูกตอบสั้นกระชับตรงประเด็นว่า &#039;Becomes smaller&#039; (15 ตัว)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> เมื่อเข้าใกล้เส้นศูนย์สูตร ค่าพารามิเตอร์โคริออลิสจะลดลง (Becomes smaller) ทำให้ความเร็วลมจีโอสโทรฟิกสูงขึ้น
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 23 (ID: 80)</span>
+          <span class="topic-tag">050 03 • Advection and stability</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +5 ตัวอักษร (1.2x)</div>
+      </div>
+      <div class="question-text">Warm advection near the surface generally tends to:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Create geostrophic balance</span>
+                
+              </div>
+              <div class="opt-meta">26 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Decrease stability</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">18 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Increase stability in all cases</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">31 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Eliminate humidity</span>
+                
+              </div>
+              <div class="opt-meta">18 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เติมสร้อย &#039;...in all cases&#039; (31 ตัว) ให้ดูครอบคลุมทุกกรณี ทั้งที่ Warm advection ผิวพื้นจะทำให้ข้างล่างร้อนขึ้นและลดเสถียรภาพ (Decrease stability)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> Warm advection ใกล้ผิวพื้นจะทำให้อากาศชั้นล่างร้อนขึ้นและลดเสถียรภาพของบรรยากาศลง (Decrease stability)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 24 (ID: 43)</span>
+          <span class="topic-tag">050 02 • Geostrophic flow</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +4 ตัวอักษร (1.1x)</div>
+      </div>
+      <div class="question-text">A geostrophic wind flows approximately:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Directly toward low pressure</span>
+                
+              </div>
+              <div class="opt-meta">28 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Directly away from high pressure</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">32 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Parallel to straight isobars</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">28 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Directly across isobars</span>
+                
+              </div>
+              <div class="opt-meta">23 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> บรรยายทิศทางยาวเหยียด &#039;Directly away from high pressure&#039; (32 ตัว) แต่ลมจีโอสโทรฟิกจะพัด &#039;ขนานกับเส้นไอโซบาร์&#039; (Parallel to straight isobars)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> ลมจีโอสโทรฟิกจะพัดขนานไปตามแนวเส้นไอโซบาร์ที่เป็นเส้นตรง (Parallel to straight isobars)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 25 (ID: 64)</span>
+          <span class="topic-tag">050 03 • Dew point</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +4 ตัวอักษร (1.4x)</div>
+      </div>
+      <div class="question-text">Dew-point temperature is the temperature to which air must be cooled, at constant pressure and water-vapour content, to become:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Isothermal</span>
+                
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Saturated</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">9 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Completely dry</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">14 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Unstable</span>
+                
+              </div>
+              <div class="opt-meta">8 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ช้อยส์อื่นเป็นคำสภาวะทางฟิสิกส์ (Saturated, Isothermal) แต่ข้อลวงใส่ &#039;Completely dry&#039; (14 ตัว) ยาวกว่าข้อถูก
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> Dew point คืออุณหภูมิที่ต้องทำให้อากาศเย็นลงจนกระทั่งอิ่มตัวด้วยไอน้ำ (Saturated)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 26 (ID: 69)</span>
+          <span class="topic-tag">050 03 • Latent heat</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +4 ตัวอักษร (1.2x)</div>
+      </div>
+      <div class="question-text">Condensation of water vapour generally:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Releases latent heat</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Absorbs all available heat</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">26 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Has no energy effect</span>
+                
+              </div>
+              <div class="opt-meta">20 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Freezes the atmosphere</span>
+                
+              </div>
+              <div class="opt-meta">22 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> เติมคำว่า &#039;...all available heat&#039; (26 ตัว) ให้ดูทรงพลัง แต่การควบแน่นคือกระบวนการคายความร้อนแฝง (Releases latent heat)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> การควบแน่นของไอน้ำจะคายความร้อนแฝง (Releases latent heat) ออกมาสู่อากาศรอบตัว
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 27 (ID: 83)</span>
+          <span class="topic-tag">050 04 • Cloud family</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +4 ตัวอักษร (1.3x)</div>
+      </div>
+      <div class="question-text">Which cloud form is typically associated with stable, layered conditions?</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Towering convective</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">19 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Capillatus only</span>
+                
+              </div>
+              <div class="opt-meta">15 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Stratiform</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Cumuliform</span>
+                
+              </div>
+              <div class="opt-meta">10 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> ใช้คำศัพท์ 2 คำ &#039;Towering convective&#039; (19 ตัว) ดูน่ากลัวและยาวกว่า แต่เมฆที่มีเสถียรภาพและเป็นแผ่นชั้นคือ &#039;Stratiform&#039; (10 ตัว)
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> เมฆรูปทรงแผ่นชั้น (Stratiform) สัมพันธ์กับสภาวะบรรยากาศที่มีเสถียรภาพ (Stable conditions)
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="q-id-badge">ข้อที่ 28 (ID: 160)</span>
+          <span class="topic-tag">050 09 • Icing hazard</span>
+        </div>
+        <div class="diff-badge">ยาวกว่าช้อยส์อื่น +4 ตัวอักษร (1.1x)</div>
+      </div>
+      <div class="question-text">One aerodynamic consequence of significant wing icing is:</div>
+      
+      <div class="options-grid">
+        
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">A.</span>
+                <span class="opt-text">Increased propulsive efficiency</span>
+                
+              </div>
+              <div class="opt-meta">31 chars</div>
+            </div>
+          
+            <div class="option-item option-correct">
+              <div class="option-left">
+                <span class="opt-letter">B.</span>
+                <span class="opt-text">Reduced lift and increased drag</span>
+                <span class="correct-tag">✅ ข้อถูก</span>
+              </div>
+              <div class="opt-meta">31 chars</div>
+            </div>
+          
+            <div class="option-item">
+              <div class="option-left">
+                <span class="opt-letter">C.</span>
+                <span class="opt-text">Increased maximum lift</span>
+                
+              </div>
+              <div class="opt-meta">22 chars</div>
+            </div>
+          
+            <div class="option-item option-wrong-longest">
+              <div class="option-left">
+                <span class="opt-letter">D.</span>
+                <span class="opt-text">Reduced stall speed with no penalty</span>
+                <span class="trap-tag">❌ ข้อยาวสุด (ผิด)</span>
+              </div>
+              <div class="opt-meta">35 chars</div>
+            </div>
+          
+      </div>
+
+      <div class="trap-observation-box">
+        <strong>🔍 จุดสังเกตความยาวที่หลอกตา:</strong> มีสร้อยต่อท้าย &#039;...with no penalty&#039; (35 ตัว) หลอกว่าไม่มีผลเสีย แต่น้ำแข็งเกาะเครื่องบินทำให้แรงยกตกและแรงต้านเพิ่มขึ้นเสมอ
+      </div>
+
+      <div class="explanation-box">
+        <strong>💡 คำอธิบายเฉลย:</strong> น้ำแข็งเกาะปีกทำให้อากาศพลศาสตร์เสียหาย ส่งผลให้แรงยกลดลงและแรงต้านเพิ่มขึ้น (Reduced lift and increased drag)
+      </div>
+    </div>
+  
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 3: CHEAT SHEET TABLE WITH TRAP OBSERVATIONS -->
+  <div class="section-header">
+    <div class="section-title">📋 ตารางสรุป Cheat Sheet: ข้อสอบทั้ง 46 ข้อพร้อมจุดสังเกตความยาวที่หลอกตา</div>
+    <div class="section-desc">รวบรวมครบทุกข้อ พร้อมคำอธิบายจุดสังเกตและกลลวงในตัวเลือก เรียงตามความต่างของความยาว</div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 40px; text-align: center;">ID</th>
+          <th style="width: 175px;">คำถาม (Question)</th>
+          <th style="width: 155px;">ช้อยส์ยาวที่สุด ❌ (ข้อลวง)</th>
+          <th style="width: 130px;">คำตอบที่ถูกต้อง ✅</th>
+          <th>🔍 จุดสังเกตความยาวที่หลอกตา (Trap Observation)</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#91</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Advection fog forms when:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Advection fog]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Cold air moves over a warm surface and always becomes dry
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(57 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Moist air moves over a colder surface
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(37 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมประโยคพ่วงท้ายยาวเหยียด &#039;...and always becomes dry&#039; ให้ดูเหมือนอธิบายละเอียด แต่หมอกแอดเวกชันเกิดจากลมพัดอากาศชื้นไปเจอด้านที่เย็นกว่า
+              <div>
+                <span class="obs-tag">+20 chars (1.5x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#37</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Wind direction in meteorological reports is normally expressed as:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Wind reporting]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Degrees relative to runway only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(31 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Degrees true
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(12 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมคำขยาย &#039;relative to runway only&#039; ให้ยาวกว่าข้ออื่นเกือบ 2 เท่า ทั้งที่ข้ออื่นเป็นระบบมุมสั้นๆ (Degrees true/magnetic/grid)
+              <div>
+                <span class="obs-tag">+15 chars (1.9x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#18</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              What is the defining temperature characteristic of an inversion layer?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Inversion]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Temperature decreases with height at the ISA rate
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(49 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Temperature increases with height
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(33 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใส่ศัพท์วิชาการหลอก &#039;...at the ISA rate&#039; (8 คำ 49 ตัว) ให้ดูเป็นหลักการทางการ แต่นิยาม Inversion คืออุณหภูมิ &#039;สูงขึ้น&#039; ตามความสูง
+              <div>
+                <span class="obs-tag">+14 chars (1.4x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#29</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              For a given pressure, increasing temperature generally causes air density to:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Density relationship]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Remain exactly unchanged
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(24 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Decrease
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(8 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นคำเดี่ยวสั้นๆ (Decrease/Increase แค่ 8 ตัว) แต่ข้อลวงพิมพ์ยาวถึง 3 คำ &#039;Remain exactly unchanged&#039; (24 ตัว) ยาวกว่า 3 เท่า
+              <div>
+                <span class="obs-tag">+13 chars (2.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#150</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              The mid-latitude prevailing upper-level flow is generally:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Westerlies]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Southerly everywhere
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(20 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Westerly
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(8 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นทิศทางสั้นๆ 4–8 ตัวอักษร (Easterly, Calm, Westerly) แต่ข้อลวงเติมคำว่า &#039;everywhere&#039; พ่วงท้ายให้ดูครอบคลุม
+              <div>
+                <span class="obs-tag">+12 chars (2.5x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#71</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Supercooled water is liquid water that exists:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Supercooled water]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Only in the stratosphere
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(24 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Below 0 °C
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(10 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นระบุช่วงอุณหภูมิสั้นๆ (Below 0 °C) แต่ข้อลวงแอบเปลี่ยนประเด็นไปเป็นชั้นบรรยากาศ &#039;Only in the stratosphere&#039; ยาวกว่า 2 เท่า
+              <div>
+                <span class="obs-tag">+11 chars (1.8x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#81</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which process can cause cloud formation by cooling a rising air parcel?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Cloud formation]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Pressure reduction in a barometer
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(33 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Adiabatic cooling
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(17 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมอุปกรณ์ &#039;...in a barometer&#039; ขยายความยาว 33 ตัวอักษร ช้อยส์ถูกคือกระบวนการยกตัวเย็นลงตามธรรมชาติ &#039;Adiabatic cooling&#039; (17 ตัว)
+              <div>
+                <span class="obs-tag">+11 chars (1.5x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#61</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Compared with dry air at the same temperature and pressure, moist air is generally:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Moist air]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Exactly the same density
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(24 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Less dense
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(10 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์คำเปรียบเทียบสั้นๆ (Less/More dense 10 ตัว) แต่ข้อลวงใส่ &#039;Exactly the same density&#039; (24 ตัว) ดึงดูดสายตาให้คิดว่าเป็นข้อยกเว้น
+              <div>
+                <span class="obs-tag">+10 chars (1.7x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#36</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Wind is best defined as:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Wind definition]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> The temperature difference between two places
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(45 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> The horizontal movement of air
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(30 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เขียนยาว 45 ตัวอักษรคล้ายนิยามวิทยาศาสตร์ แต่ไปอธิบาย &#039;ผลต่างอุณหภูมิ&#039; แทนที่จะเป็นนิยามของลม (การเคลื่อนที่ของอากาศในแนวราบ)
+              <div>
+                <span class="obs-tag">+9 chars (1.3x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#127</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              An anticyclone is a system of:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Anticyclone]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Constant pressure only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(22 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> High pressure
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(13 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์ทั่วไปสั้นกระชับ 12–13 ตัวอักษร (High/Low pressure) แต่ข้อลวงเติม &#039;Constant pressure only&#039; ยาว 22 ตัวอักษร
+              <div>
+                <span class="obs-tag">+9 chars (1.7x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#195</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              An ARS is:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Air reports]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> An aerodrome routine forecast
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(29 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> A special air-report
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(20 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              นำนิยามเต็มของ TAF (An aerodrome routine forecast - 29 ตัว) มาใส่หลอกคนที่ไม่แม่นอักษรย่อ ทั้งที่ ARS ย่อมาจาก Special air-report
+              <div>
+                <span class="obs-tag">+9 chars (1.4x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#31</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which altimeter setting makes the altimeter indicate aerodrome elevation on the ground, when correctly set?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Altimetry terminology]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> 1013.25 hPa
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(11 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> QNH
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(3 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นรหัสย่อ 3 ตัวสั้นๆ (QNH, QFE, QFF) มีข้อลวงข้อเดียวที่ใส่ตัวเลขจุดทศนิยมและหน่วยเต็ม &#039;1013.25 hPa&#039; (11 ตัว)
+              <div>
+                <span class="obs-tag">+8 chars (3.7x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#179</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              A strong inversion combined with marked wind shear is especially hazardous during:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Inversion hazard]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Engine shutdown on the ground
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(29 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Takeoff and approach
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(20 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นช่วงบินสั้นๆ (Takeoff and approach) แต่ข้อลวงพิมพ์ยาวเป็นประโยคตอนอยู่บนพื้น &#039;Engine shutdown on the ground&#039;
+              <div>
+                <span class="obs-tag">+8 chars (1.4x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#10</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which process transfers energy through electromagnetic waves without requiring direct contact?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Radiation]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Mechanical mixing
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(17 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Radiation
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(9 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นคำเดี่ยว 9–10 ตัวอักษร (Radiation, Conduction) แต่ข้อลวงใส่ 2 คำ &#039;Mechanical mixing&#039; (17 ตัว) หลอกเรื่องคลื่นแม่เหล็กไฟฟ้า
+              <div>
+                <span class="obs-tag">+7 chars (1.7x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#67</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              At constant pressure, if temperature rises while moisture content remains unchanged, relative humidity generally:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Humidity]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Remains exactly constant
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(24 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Decreases
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(9 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์ถูกคือคำเดี่ยวสั้นๆ &#039;Decreases&#039; (9 ตัว) แต่ข้อลวงพิมพ์ยาว 3 คำ &#039;Remains exactly constant&#039; (24 ตัว) ยาวกว่าเกือบ 3 เท่า
+              <div>
+                <span class="obs-tag">+7 chars (1.4x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#115</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              At a cold front, colder air generally:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Cold front]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Always remains behind the warm front
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(36 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Advances and lifts warmer air
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(29 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใช้คำขยายสุดโต่ง &#039;Always remains behind...&#039; (36 ตัว) ให้ดูเหมือนกฎตายตัว แต่แนวปะทะอากาศเย็นจะรุกคืบช้อนยกอากาศอุ่นให้ลอยขึ้น
+              <div>
+                <span class="obs-tag">+7 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#1</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which atmospheric division is primarily based on the way temperature changes with height?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Structure of atmosphere]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Atmospheric pressure only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(25 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Temperature profile
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(19 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นคำสั้นๆ แต่ข้อลวงเติม &#039;Atmospheric pressure only&#039; ยาว 25 ตัว ทั้งที่การแบ่งชั้นบรรยากาศหลักดูจาก Temperature profile
+              <div>
+                <span class="obs-tag">+6 chars (1.3x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#60</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which jet stream is generally associated with the polar front?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Jet streams]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Tropical easterly jet
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(21 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Polar front jet
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(15 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใช้ชื่อกระแสลมกรดยาว 3 คำ &#039;Tropical easterly jet&#039; (21 ตัว) ยาวกว่า Polar front jet ที่สอดคล้องกับแนวปะทะขั้วโลก
+              <div>
+                <span class="obs-tag">+6 chars (1.4x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#171</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              The dissipating stage of a thunderstorm is dominated by:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Dissipating stage]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> A clear-sky inversion only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(26 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Downdrafts
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(10 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์ถูกเป็นคำเดี่ยวสั้นๆ &#039;Downdrafts&#039; (10 ตัว) แต่ข้อลวงแต่งยาว &#039;A clear-sky inversion only&#039; (26 ตัว) ยาวกว่า 2.6 เท่า
+              <div>
+                <span class="obs-tag">+6 chars (1.3x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#24</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which term describes an elongated area of relatively low pressure extending from a depression?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Pressure systems]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Anticyclone
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(11 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Trough
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(6 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นสั้นมากเพียง 3–6 ตัวอักษร (Trough, Ridge, Col) มี &#039;Anticyclone&#039; ยาว 11 ตัวอักษร โดดเด่นแต่เป็นระบบความกดอากาศสูง
+              <div>
+                <span class="obs-tag">+5 chars (1.8x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#34</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              In colder-than-ISA air, with the same indicated altitude, true altitude is generally:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Cold temperature]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Independent of temperature
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(26 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Lower than indicated
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(20 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นสั้นและเปรียบเทียบชัดเจน แต่ข้อลวงใช้คำยาว &#039;Independent of temperature&#039; (26 ตัว) ปฏิเสธอิทธิพลอุณหภูมิ
+              <div>
+                <span class="obs-tag">+5 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#44</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              For the same pressure gradient, geostrophic wind speed generally becomes larger when moving toward the equator because the Coriolis parameter:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Latitude]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Becomes zero only at the poles
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(30 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Becomes smaller
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(15 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมเงื่อนไข &#039;...only at the poles&#039; ยาว 30 ตัวอักษร ช้อยส์ถูกตอบสั้นกระชับตรงประเด็นว่า &#039;Becomes smaller&#039; (15 ตัว)
+              <div>
+                <span class="obs-tag">+5 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#80</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Warm advection near the surface generally tends to:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Advection and stability]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Increase stability in all cases
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(31 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Decrease stability
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(18 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมสร้อย &#039;...in all cases&#039; (31 ตัว) ให้ดูครอบคลุมทุกกรณี ทั้งที่ Warm advection ผิวพื้นจะทำให้ข้างล่างร้อนขึ้นและลดเสถียรภาพ (Decrease stability)
+              <div>
+                <span class="obs-tag">+5 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#43</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              A geostrophic wind flows approximately:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Geostrophic flow]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Directly away from high pressure
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(32 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Parallel to straight isobars
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(28 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              บรรยายทิศทางยาวเหยียด &#039;Directly away from high pressure&#039; (32 ตัว) แต่ลมจีโอสโทรฟิกจะพัด &#039;ขนานกับเส้นไอโซบาร์&#039; (Parallel to straight isobars)
+              <div>
+                <span class="obs-tag">+4 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#64</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Dew-point temperature is the temperature to which air must be cooled, at constant pressure and water-vapour content, to become:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Dew point]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Completely dry
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(14 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Saturated
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(9 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ช้อยส์อื่นเป็นคำสภาวะทางฟิสิกส์ (Saturated, Isothermal) แต่ข้อลวงใส่ &#039;Completely dry&#039; (14 ตัว) ยาวกว่าข้อถูก
+              <div>
+                <span class="obs-tag">+4 chars (1.4x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#69</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Condensation of water vapour generally:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Latent heat]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Absorbs all available heat
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(26 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Releases latent heat
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(20 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมคำว่า &#039;...all available heat&#039; (26 ตัว) ให้ดูทรงพลัง แต่การควบแน่นคือกระบวนการคายความร้อนแฝง (Releases latent heat)
+              <div>
+                <span class="obs-tag">+4 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#83</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which cloud form is typically associated with stable, layered conditions?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Cloud family]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Towering convective
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(19 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Stratiform
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(10 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใช้คำศัพท์ 2 คำ &#039;Towering convective&#039; (19 ตัว) ดูน่ากลัวและยาวกว่า แต่เมฆที่มีเสถียรภาพและเป็นแผ่นชั้นคือ &#039;Stratiform&#039; (10 ตัว)
+              <div>
+                <span class="obs-tag">+4 chars (1.3x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#160</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              One aerodynamic consequence of significant wing icing is:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Icing hazard]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Reduced stall speed with no penalty
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(35 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Reduced lift and increased drag
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(31 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              มีสร้อยต่อท้าย &#039;...with no penalty&#039; (35 ตัว) หลอกว่าไม่มีผลเสีย แต่น้ำแข็งเกาะเครื่องบินทำให้แรงยกตกและแรงต้านเพิ่มขึ้นเสมอ
+              <div>
+                <span class="obs-tag">+4 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#65</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Relative humidity is a measure of:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Relative humidity]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> The wind speed relative to the runway
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(37 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> How close the air is to saturation
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(34 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เขียนยาว 37 ตัวอักษรดึงเรื่องรันเวย์มาหลอก &#039;...relative to the runway&#039; ทั้งที่โจทย์ถามความชื้นสัมพัทธ์ (Relative humidity)
+              <div>
+                <span class="obs-tag">+3 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#82</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which is a forced lifting mechanism for cloud formation?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Lifting mechanisms]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Magnetic variation
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(18 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Frontal lifting
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(15 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใช้คำ 2 พยางค์ &#039;Magnetic variation&#039; (18 ตัว) ไม่เกี่ยวกับกระบวนการยกตัวของอากาศเพื่อสร้างเมฆ (Frontal lifting)
+              <div>
+                <span class="obs-tag">+3 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#108</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              The letter “m” in an air-mass classification indicates:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Maritime air]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Medium altitude
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(15 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Maritime
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(8 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ข้อลวงเขียน &#039;Medium altitude&#039; (15 ตัว) ยาวกว่าช้อยส์ถูก &#039;Maritime&#039; (8 ตัว) เกือบเท่าตัว
+              <div>
+                <span class="obs-tag">+3 chars (1.3x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#137</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Where are the most severe winds and turbulence in a mature tropical cyclone generally found?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Eyewall hazard]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> At the surface pressure center only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(35 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> In the eyewall
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(14 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมคำจำกัดความ &#039;At the surface pressure center only&#039; (35 ตัว) หลอกให้คิดว่าเป็นใจกลางพายุ ทั้งที่บริเวณลมรุนแรงสุดคือกำแพงตาพายุ (Eyewall)
+              <div>
+                <span class="obs-tag">+3 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#76</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              If the environmental lapse rate is less than the saturated adiabatic lapse rate, a saturated parcel tends to be:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Stability]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Conditionally unstable only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(27 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Stable
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(6 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใช้ศัพท์เทคนิคยาว &#039;Conditionally unstable only&#039; (27 ตัว) แต่เงื่อนไข ELR &lt; SALR เป็นสภาวะเสถียรสัมบูรณ์ (Stable แค่ 6 ตัว)
+              <div>
+                <span class="obs-tag">+2 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#167</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which condition can produce significant low-level wind shear?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Wind shear weather]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> Weak anticyclones with calm air
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(31 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Thunderstorms and microbursts
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(29 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              บรรยายยาว &#039;Weak anticyclones with calm air&#039; (31 ตัว) ขัดแย้งกับลมเฉือนรุนแรงที่เกิดจาก Microbursts / Thunderstorms
+              <div>
+                <span class="obs-tag">+2 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#170</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              The mature stage of a thunderstorm is characterized by:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Thunderstorm stages]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Only downdrafts with no precipitation
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(37 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Both strong updrafts and downdrafts
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(35 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              บรรยายยาว &#039;Only downdrafts with no precipitation&#039; (37 ตัว) แต่ระยะ Mature ฝนต้องเริ่มตกและมีทั้ง Updrafts &amp; Downdrafts ร่วมกัน
+              <div>
+                <span class="obs-tag">+2 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#187</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which unit may be used for visibility in aviation meteorology?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[METAR visibility]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Hectopascals only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(17 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> Metres
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(6 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมคำว่า &#039;only&#039; ต่อท้ายหน่วยความกดอากาศ (Hectopascals only - 17 ตัว) หลอกสายตา ทั้งที่หน่วยวัดทัศนวิสัยคือ Metres (6 ตัว)
+              <div>
+                <span class="obs-tag">+2 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#8</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which three temperature scales are listed for aviation meteorology?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Temperature units]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> Fahrenheit, Rankine and Celsius
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(31 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>B.</strong> Celsius, Fahrenheit and Kelvin
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(30 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              มี 3 หน่วยอุณหภูมิคล้ายกันแต่ใส่ Rankine แทน Kelvin ขยายความยาว 31 ตัวอักษร
+              <div>
+                <span class="obs-tag">+1 chars (1.0x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#17</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              An aircraft climbs 2,000 ft through an atmosphere with the mean lapse rate of 2 °C/1,000 ft. What temperature change is expected?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Lapse rate]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> An increase of about 4 °C
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(25 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> A decrease of about 4 °C
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(24 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ข้อความแทบจะเหมือนกันทุกคำ ต่างกันแค่ &#039;An increase...&#039; (25 ตัว) กับ &#039;A decrease...&#039; (24 ตัว) หลอกทิศทางอุณหภูมิตามความสูงในโทรโพสเฟียร์
+              <div>
+                <span class="obs-tag">+1 chars (1.0x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#23</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              What is an isobar on a surface weather chart?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Isobars]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>D.</strong> A line joining points of equal temperature
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(42 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> A line joining points of equal pressure
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(39 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              โครงสร้างประโยคเหมือนกัน แต่ข้อลวงเปลี่ยนเป็น &#039;...equal temperature&#039; (Isootherm) แทน &#039;...equal pressure&#039; (Isobar)
+              <div>
+                <span class="obs-tag">+1 chars (1.0x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#42</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              A geostrophic wind results when the pressure-gradient force is balanced by:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Geostrophic wind]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Convection only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(15 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Coriolis force
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(14 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมคำว่า &#039;only&#039; (Convection only - 15 ตัว) ให้ยาวกว่า Coriolis force (14 ตัว)
+              <div>
+                <span class="obs-tag">+1 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#46</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Within the friction layer, surface friction generally causes wind speed to be:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Friction layer]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Exactly equal to geostrophic wind
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(33 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Lower than the geostrophic wind
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(31 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติมคำว่า &#039;Exactly equal to...&#039; (33 ตัว) ยาวกว่าข้อถูกที่ระบุว่าลมจริงจะพัดช้ากว่าลมจีโอสโทรฟิก (Lower than...)
+              <div>
+                <span class="obs-tag">+1 chars (1.0x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#56</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which type of turbulence is generated mainly by airflow over rough terrain and surface obstacles?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Turbulence types]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> Radiational turbulence
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(22 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> Mechanical turbulence
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(21 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใส่คำวิชาการดูแปลกใหม่ &#039;Radiational turbulence&#039; (22 ตัว) แทนที่จะเป็น Mechanical turbulence จากแรงเสียดทานผิวพื้น
+              <div>
+                <span class="obs-tag">+1 chars (1.0x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#74</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              What dry adiabatic lapse rate is specified for examination use?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[DALR]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> 0.65 °C/100 m
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(13 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>D.</strong> 1 °C/100 m
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(10 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เป็นตัวเลขทศนิยม &#039;0.65 °C/100 m&#039; (13 ตัว) ยาวกว่าข้อถูก DALR &#039;1 °C/100 m&#039; (12 ตัว)
+              <div>
+                <span class="obs-tag">+1 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#109</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              The letter “c” in an air-mass classification indicates:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Continental air]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>C.</strong> Coastal only
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(12 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>A.</strong> Continental
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(11 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              เติม &#039;only&#039; ให้เป็น &#039;Coastal only&#039; (12 ตัว) หลอกเทียบกับมวลอากาศ &#039;c&#039; Continental (11 ตัว)
+              <div>
+                <span class="obs-tag">+1 chars (1.1x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#135</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              A tropical depression is classified as a tropical storm when sustained wind speed exceeds approximately:
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[Tropical cyclone development]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>B.</strong> 100 kt
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(6 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> 33 kt
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(5 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              ใส่ตัวเลขกลมๆ 3 หลัก &#039;100 kt&#039; (6 ตัว) หลอกความเร็วลมเกณฑ์ขั้นต่ำของพายุ Gale (ข้อถูก 33-34 kt)
+              <div>
+                <span class="obs-tag">+1 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #0f172a; text-align: center;">#199</td>
+            <td style="color: #1e293b; font-weight: 500;">
+              Which message is a forecast for an aerodrome?
+              <div style="color: #64748b; font-size: 10px; margin-top: 3px;">[METAR/TAF/SIGMET]</div>
+            </td>
+            <td class="tbl-trap">
+              <strong>A.</strong> SIGMET
+              <div style="font-size: 9.5px; color: #991b1b; font-weight: normal; margin-top: 2px;">(6 chars)</div>
+            </td>
+            <td class="tbl-correct">
+              <strong>C.</strong> TAF
+              <div style="font-size: 9.5px; color: #166534; font-weight: normal; margin-top: 2px;">(3 chars)</div>
+            </td>
+            <td class="tbl-observation">
+              รหัสคำย่อ 6 ตัว &#039;SIGMET&#039; ยาวกว่าช้อยส์ถูก &#039;TAF&#039; (3 ตัว) ซึ่งเป็นการพยากรณ์อากาศบริเวณสนามบิน (Terminal Aerodrome Forecast)
+              <div>
+                <span class="obs-tag">+1 chars (1.2x)</span>
+              </div>
+            </td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    CATC Aviation Exam Practice • Subject 050 Meteorology Question Bank Analysis • Generated for Offline Study
+  </div>
+
+</body>
+</html>

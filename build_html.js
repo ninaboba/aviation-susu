@@ -37,7 +37,8 @@ if (fs.existsSync(cssPath)) {
   const cssContent = fs.readFileSync(cssPath, 'utf8');
   const cssLinkRegex = /<link\s+rel=["']stylesheet["']\s+href=["']\.\/css\/style\.css["'][^>]*>/i;
   if (cssLinkRegex.test(html)) {
-    html = html.replace(cssLinkRegex, `<!-- Inlined Style for Offline Standalone Bundle -->\n  <style>\n${cssContent}\n  </style>`);
+    // NOTE: use a function replacer so `$` sequences in the content are inserted literally
+    html = html.replace(cssLinkRegex, () => `<!-- Inlined Style for Offline Standalone Bundle -->\n  <style>\n${cssContent}\n  </style>`);
   }
 }
 
@@ -62,16 +63,19 @@ for (const s of subjects) {
 }
 
 // 4. Load storage.js and app.js
-const storageJs = fs.readFileSync(path.join(ROOT, 'js', 'storage.js'), 'utf8');
-const appJs     = fs.readFileSync(path.join(ROOT, 'js', 'app.js'), 'utf8');
+// Escape any closing script tag so inlined content can never terminate the <script> block early
+const escapeScriptClose = (str) => str.replace(/<\/script/gi, '<\\/script');
+
+const storageJs = escapeScriptClose(fs.readFileSync(path.join(ROOT, 'js', 'storage.js'), 'utf8'));
+const appJs     = escapeScriptClose(fs.readFileSync(path.join(ROOT, 'js', 'app.js'), 'utf8'));
 
 // 5. Replace external script tags with inlined embedded data and scripts
 const scriptTagsRegex = /<script\s+src=["']\.\/js\/storage\.js[^"']*["']><\/script>\s*<script\s+src=["']\.\/js\/app\.js[^"']*["']><\/script>/i;
 
 const inlinedBundle = `<!-- Embedded Multi-Subject Offline Bundle Data -->
   <script>
-    window.EMBEDDED_SUBJECTS = ${JSON.stringify(subjects)};
-    window.EMBEDDED_DATA = ${JSON.stringify(embeddedData)};
+    window.EMBEDDED_SUBJECTS = ${escapeScriptClose(JSON.stringify(subjects))};
+    window.EMBEDDED_DATA = ${escapeScriptClose(JSON.stringify(embeddedData))};
   </script>
   <!-- Storage Layer -->
   <script>
@@ -83,7 +87,8 @@ ${appJs}
   </script>`;
 
 if (scriptTagsRegex.test(html)) {
-  html = html.replace(scriptTagsRegex, inlinedBundle);
+  // IMPORTANT: function replacer — a string replacement would expand `$&` / `$$` found in app.js and data
+  html = html.replace(scriptTagsRegex, () => inlinedBundle);
 } else {
   console.warn('Warning: External script tags for js/storage.js & js/app.js not found in index.html, skipping inlining.');
 }

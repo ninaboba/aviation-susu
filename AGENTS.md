@@ -8,10 +8,11 @@
 ## Project Overview
 
 A multi-subject CAAT/EASA aviation exam practice web app hosted on GitHub Pages.
-Currently supports three subjects:
+Currently supports four subjects:
 - **Subject 081** – Principles of Flight (Aeroplanes), 200 questions
 - **Subject 040** – Human Performance & Limitations, 271 questions
 - **Subject 010** – Air Law, 200 questions
+- **Subject 050** – Meteorology, 200 questions
 
 ---
 
@@ -22,6 +23,8 @@ The project is structured as a clean, modular static web application:
 ```
 pof/
 ├── index.html                    ← Primary HTML entrypoint (loaded by GitHub Pages & dev server)
+├── css/
+│   └── style.css                 ← Modular styles, animations, and theme overrides
 ├── js/
 │   ├── app.js                    ← Core application logic & UI handlers
 │   └── storage.js                ← Scoped localStorage layer (mistakes, bookmarks, history)
@@ -30,7 +33,8 @@ pof/
 │   └── subjects/
 │       ├── pof.json              ← Subject 081 questions (200 MCQs)
 │       ├── human_factors.json   ← Subject 040 questions (271 MCQs)
-│       └── air_law.json         ← Subject 010 questions (200 MCQs)
+│       ├── air_law.json         ← Subject 010 questions (200 MCQs)
+│       └── meteorology.json     ← Subject 050 questions (200 MCQs)
 │
 ├── build_html.js                 ← Bundles index.html + data + JS into offline single-file website
 ├── PoF-QuestionBank-website.html ← Auto-generated offline bundle (do NOT edit directly)
@@ -43,19 +47,20 @@ pof/
 
 | Task | File to Edit |
 |------|--------------|
-| **HTML / CSS / Layout changes** | `index.html` |
+| **HTML / Layout changes** | `index.html` |
+| **CSS / Theme styling** | `css/style.css` |
 | **Quiz logic / features / interactions** | `js/app.js` |
 | **Storage / persistence logic** | `js/storage.js` |
 | **Subject metadata** | `data/subjects.json` |
-| **Questions / explanations** | `data/subjects/pof.json` or `data/subjects/human_factors.json` |
 | **Offline single-file build** | Run `node build_html.js` (generates `PoF-QuestionBank-website.html`) |
 
 ### Critical Rules
 
-1. **`index.html` is the primary web entrypoint** — it loads `js/storage.js` and `js/app.js`.
+1. **`index.html` is the primary web entrypoint** — it loads `css/style.css`, `js/storage.js` and `js/app.js`.
 2. **`PoF-QuestionBank-website.html` is AUTO-GENERATED** — never edit it directly.
 3. **`build_html.js` only produces `PoF-QuestionBank-website.html`** — it reads `index.html`, inlines the question datasets and JS scripts, and never overwrites or alters `index.html`.
-4. **After any changes to `index.html`, `js/`, or `data/`, run `node build_html.js`** to keep the offline bundle synced.
+4. **INTERNAL EXAM BANK IMMUTABILITY RULE**: The questions and choice options in `data/subjects/*.json` are internal exam data. Never alter, rewrite, or normalize choice texts or answers in these files.
+5. **After any changes to `index.html`, `css/`, `js/`, or `data/`, run `node build_html.js`** to keep the offline bundle synced.
 
 ---
 
