@@ -955,6 +955,35 @@ const app = {
     sound.click();
   },
 
+  /**
+   * One-click Quick Session starter from the Dashboard
+   * @param {number} count - Question count (e.g. 10 or 20)
+   * @param {'study'|'exam'} mode - Practice mode ('study' or 'exam')
+   */
+  startQuickSession(count = 10, mode = 'study') {
+    sound.click();
+    this.setMode(mode);
+    this.unattemptedOnly = false;
+    this.mistakesOnly = false;
+    this.bookmarksOnly = false;
+    const unEl = document.getElementById('toggleUnattemptedOnly');
+    const misEl = document.getElementById('toggleMistakesOnly');
+    const bkEl = document.getElementById('toggleBookmarksOnly');
+    if (unEl) unEl.checked = false;
+    if (misEl) misEl.checked = false;
+    if (bkEl) bkEl.checked = false;
+
+    // Ensure all topics for the active subject are included so full bank is available
+    if (this.topicMetadata && this.topicMetadata.length > 0) {
+      this.selectedTopics = new Set(this.topicMetadata.map(t => t.code));
+      this.renderTopicGrid();
+    }
+
+    this.updateFilterCounts();
+    this.setCountPreset(count);
+    this.startPracticeSession();
+  },
+
   /* ============================================================ */
   /* QUIZ EXECUTION ENGINE                                        */
   /* ============================================================ */
