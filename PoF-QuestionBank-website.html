@@ -3676,20 +3676,33 @@ const app = {
   },
 
   renderSubjectSelectors() {
+    const currentId = this.currentSubjectId;
+
     // Header subject dropdown
     const headerSelect = document.getElementById('headerSubjectSelect');
     if (headerSelect) {
       headerSelect.innerHTML = this.subjects.map(s => 
-        `<option value="${s.id}">${s.title}</option>`
+        `<option value="${s.id}" ${s.id === currentId ? 'selected' : ''}>${s.title}</option>`
       ).join('');
+      headerSelect.value = currentId;
     }
 
     // Setup dashboard subject selector (if present)
     const setupSelect = document.getElementById('dashboardSubjectSelect');
     if (setupSelect) {
       setupSelect.innerHTML = this.subjects.map(s => 
-        `<option value="${s.id}">${s.title}</option>`
+        `<option value="${s.id}" ${s.id === currentId ? 'selected' : ''}>${s.title}</option>`
       ).join('');
+      setupSelect.value = currentId;
+    }
+
+    // Setup dashboard desktop hidden selector (if present)
+    const desktopSelect = document.getElementById('dashboardSubjectSelectDesktop');
+    if (desktopSelect) {
+      desktopSelect.innerHTML = this.subjects.map(s => 
+        `<option value="${s.id}" ${s.id === currentId ? 'selected' : ''}>${s.title}</option>`
+      ).join('');
+      desktopSelect.value = currentId;
     }
 
     // Render Subject Cards Grid Deck on Dashboard
@@ -3699,7 +3712,8 @@ const app = {
         pof: 'plane',
         human_factors: 'activity',
         air_law: 'scale',
-        meteorology: 'cloud-sun'
+        meteorology: 'cloud-sun',
+        mass_and_balance: 'weight'
       };
 
       deck.innerHTML = this.subjects.map(s => {
@@ -3817,6 +3831,11 @@ const app = {
 
   handleSubjectChange(newSubjectId) {
     sound.click();
+    const isExamActive = document.getElementById('viewExam') && !document.getElementById('viewExam').classList.contains('hidden');
+    const isSummaryActive = document.getElementById('viewSummary') && !document.getElementById('viewSummary').classList.contains('hidden');
+    if (isExamActive || isSummaryActive) {
+      this.goHome();
+    }
     this.switchSubject(newSubjectId);
   },
 
@@ -3826,6 +3845,21 @@ const app = {
     // Header badge
     const headerBadge = document.getElementById('headerSubjectCode');
     if (headerBadge) headerBadge.textContent = this.currentSubject.code || this.currentSubject.id.toUpperCase();
+
+    // Sync select dropdowns
+    const currentId = this.currentSubject.id;
+    const headerSelect = document.getElementById('headerSubjectSelect');
+    if (headerSelect && headerSelect.value !== currentId) {
+      headerSelect.value = currentId;
+    }
+    const setupSelect = document.getElementById('dashboardSubjectSelect');
+    if (setupSelect && setupSelect.value !== currentId) {
+      setupSelect.value = currentId;
+    }
+    const desktopSelect = document.getElementById('dashboardSubjectSelectDesktop');
+    if (desktopSelect && desktopSelect.value !== currentId) {
+      desktopSelect.value = currentId;
+    }
 
     // Hero title & description
     const heroTitle = document.getElementById('heroSubjectTitle');
