@@ -30,5 +30,13 @@
     "description": "200 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Meteorology)",
     "file": "./data/subjects/meteorology.json",
     "questionCount": 200
+  },
+  {
+    "id": "mass_and_balance",
+    "code": "031",
+    "title": "Subject 031 - Mass & Balance",
+    "description": "106 CAAT TCAR PEL Part-FCL Revision 2025 MCQ Practice Bank (Aviation Mass & Balance)",
+    "file": "./data/subjects/mass_and_balance.json",
+    "questionCount": 106
   }
 ]

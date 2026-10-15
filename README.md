@@ -22,6 +22,7 @@
 | **040** | Human Performance & Limitations | 271 ข้อ |
 | **010** | Air Law | 200 ข้อ |
 | **050** | Meteorology | 200 ข้อ |
+| **031** | Mass & Balance | 106 ข้อ |
 
 ---
 

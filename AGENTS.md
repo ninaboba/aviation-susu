@@ -8,11 +8,12 @@
 ## Project Overview
 
 A multi-subject CAAT/EASA aviation exam practice web app hosted on GitHub Pages.
-Currently supports four subjects:
+Currently supports five subjects:
 - **Subject 081** – Principles of Flight (Aeroplanes), 200 questions
 - **Subject 040** – Human Performance & Limitations, 271 questions
 - **Subject 010** – Air Law, 200 questions
 - **Subject 050** – Meteorology, 200 questions
+- **Subject 031** – Mass & Balance, 106 questions
 
 ---
 
@@ -34,7 +35,8 @@ pof/
 │       ├── pof.json              ← Subject 081 questions (200 MCQs)
 │       ├── human_factors.json   ← Subject 040 questions (271 MCQs)
 │       ├── air_law.json         ← Subject 010 questions (200 MCQs)
-│       └── meteorology.json     ← Subject 050 questions (200 MCQs)
+│       ├── meteorology.json     ← Subject 050 questions (200 MCQs)
+│       └── mass_and_balance.json← Subject 031 questions (106 MCQs)
 │
 ├── build_html.js                 ← Bundles index.html + data + JS into offline single-file website
 ├── PoF-QuestionBank-website.html ← Auto-generated offline bundle (do NOT edit directly)

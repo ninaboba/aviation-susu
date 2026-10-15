@@ -1,0 +1,2122 @@
+[
+  {
+    "id": 1,
+    "question": "Why does increasing aircraft mass generally increase structural loading?",
+    "options": [
+      "It is an administrative matter with no operational consequence.",
+      "It applies only to navigation equipment and not to loading.",
+      "The structure must carry greater loads associated with the increased aircraft mass.",
+      "It is unrelated to aircraft mass and balance."
+    ],
+    "answer": 2,
+    "explanation": "ความสัมพันธ์ระหว่างมวลอากาศยานกับความเค้นของโครงสร้าง (Aircraft Mass & Structural Stress):\n1. หลักการพื้นฐาน: ในการบินรักษาระดับ แรงยก (Lift) ต้องมีค่าเท่ากับน้ำหนัก ($L = W = m \\times g$) และเมื่อเครื่องบินทำท่าทางการบิน (Manoeuvre) หรือเผชิญกระแสอากาศแปรปรวน (Gust) โครงสร้างปีกและลำตัวต้องรับภาระตามสมการ:\n$$\\text{Structural Load} = n \\times W = n \\times m \\times g$$\nเมื่อ $n$ คือ Load Factor (G-load) ดังนั้น หากมวล ($m$) เพิ่มขึ้น แรงดัดที่โคนปีก (Wing Root Bending Moment) และแรงกระแทกที่ฐานล้อ (Landing Gear Stress) จะเพิ่มขึ้นเป็นสัดส่วนโดยตรง\n2. แนวทางทำข้อสอบข้อที่คล้ายกัน:\n- หากโจทย์ถามผลของ Overweight / Mass เพิ่มต่อโครงสร้าง: ให้มองหาคีย์เวิร์ดเรื่อง Structural stress เพิ่มขึ้น, Margin of safety ลดลง, หรือเกิดความล้าของโลหะ (Structural fatigue) เร็วขึ้น\n- หากโจทย์ถามว่าทำไมต้องกำหนดขีดจำกัดมวลสูงสุด (Structural Mass Limits เช่น MTOM, MLM, MZFM): คำตอบคือเพื่อรักษาระยะปลอดภัยของความแข็งแรงโครงสร้าง (Ensure adequate margins of strength) ไม่ให้เกิดการเสียรูปถาวร (Permanent deformation) หรือโครงสร้างวิบัติ (Structural failure)",
+    "correct": "The structure must carry greater loads associated with the increased aircraft mass.",
+    "topic": "031 01",
+    "topicName": "Purpose of Mass and Balance Considerations",
+    "LO": "031 01 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "การที่มวลของอากาศยาน (Aircraft Mass) เพิ่มขึ้น จะทำให้โครงสร้างอากาศยานต้องรับภาระแรงทางกล (Structural Loading / Stress) ที่มากขึ้นตามไปด้วย โดยเฉพาะขณะสร้างแรงยกและแตะพื้น"
+  },
+  {
+    "id": 2,
+    "question": "Which statement is consistent with the CAAT relationship between mass and aircraft performance?",
+    "options": [
+      "Aircraft performance is affected by aircraft mass.",
+      "It applies only to navigation equipment and not to loading.",
+      "It is unrelated to aircraft mass and balance.",
+      "It is an administrative matter with no operational consequence."
+    ],
+    "answer": 0,
+    "explanation": "ความสัมพันธ์ระหว่างมวลอากาศยานกับสมรรถนะการบิน (Aircraft Mass & Performance):\n1. หลักการพื้นฐาน: มวลที่เพิ่มขึ้นทำให้ต้องใช้แรงยก (Lift) มากขึ้น ส่งผลให้ต้องเพิ่มมุมปะทะ (Angle of Attack) หรือความเร็ว ซึ่งทำให้แรงต้านเหนี่ยวนำ (Induced Drag) เพิ่มขึ้นอย่างมาก\n2. ผลกระทบเมื่อมวลอากาศยานเพิ่มขึ้น (ข้อสอบออกบ่อยมาก — จำไปใช้ได้ทุกข้อ):\n- ความเร็วร่วงหล่น (Stall Speed, $V_S$) และความเร็วอ้างอิง ($V_R, V_2, V_{REF}$) เพิ่มขึ้นตามสูตร $V_{S,\\text{new}} = V_{S,\\text{old}} \\times \\sqrt{\\frac{m_{\\text{new}}}{m_{\\text{old}}}}$\n- ระยะทางวิ่งขึ้นและร่อนลง (Take-off & Landing Distance) ยาวขึ้น\n- อัตราการไต่ (Rate of Climb - ROC) และมุมไต่ (Angle of Climb - AOC) ลดลง\n- เพดานบินสูงสุด (Absolute & Service Ceiling) ลดลง\n- อัตราการสิ้นเปลืองเชื้อเพลิงเพิ่มขึ้น ทำให้พิสัยบิน (Range) และระยะเวลาบิน (Endurance) ลดลง",
+    "correct": "Aircraft performance is affected by aircraft mass.",
+    "topic": "031 01",
+    "topicName": "Purpose of Mass and Balance Considerations",
+    "LO": "031 01 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "สมรรถนะของอากาศยาน (Aircraft Performance) ได้รับผลกระทบโดยตรงจากมวลของอากาศยาน โดยมวลที่เพิ่มขึ้นจะทำให้สมรรถนะการวิ่งขึ้น การไต่ระดับ และเพดานบินลดลง"
+  },
+  {
+    "id": 3,
+    "question": "An aeroplane is loaded forward of the published forward CG limit. What syllabus-level concern applies?",
+    "options": [
+      "Stability and controllability may be adversely affected.",
+      "It is an administrative matter with no operational consequence.",
+      "It is unrelated to aircraft mass and balance.",
+      "It applies only to navigation equipment and not to loading."
+    ],
+    "answer": 0,
+    "explanation": "ผลกระทบเมื่อจุดศูนย์ถ่วงอยู่หน้าขีดจำกัดหน้า (CG Forward of Forward Limit):\n1. หลักการทางอากาศพลศาสตร์: เมื่อ CG อยู่ค่อนไปข้างหน้ามากเกินไป แขนโมเมนต์ระหว่าง CG กับจุดศูนย์กลางแรงยก (CP/AC) จะยาวขึ้น เกิดโมเมนต์หัวทิ่ม (Nose-down pitching moment) รุนแรง แพนหางระดับ (Tailplane) จึงต้องสร้างแรงกดลง (Tail downforce) มหาศาลเพื่อพยุงหัวเครื่องบินไว้\n2. ผลเสียสำคัญที่ใช้ตอบข้อสอบแนวนี้ในอนาคต:\n- เสถียรภาพตามยาวมากเกินไป (Excessive Longitudinal Static Stability): เครื่องบินดื้อโคลง ต้องออกแรงดึงคันบังคับ (Stick force) หนักมาก\n- ความสามารถในการบังคับลดลง (Reduced Controllability / Elevator Authority): แพนหางดิ่ง/ระดับอาจมีระยะกระดกไม่พอในการดึงหัวเครื่องบินขึ้น (Rotation) ตอนวิ่งขึ้น หรือดึงหัวเงย (Flare) ตอนลงจอด เสี่ยงต่อการที่ล้อหน้ากระแทกพื้น (Nose-wheel landing)\n- สมรรถนะลดลง: แรงกดที่หาง (Tail downforce) เสมือนเป็นการเพิ่มน้ำหนักเทียมให้ปีกต้องสร้างแรงยกเพิ่มขึ้น ส่งผลให้ Induced Drag เพิ่มขึ้น, ความเร็ว Stall ($V_S$) สูงขึ้น, และสิ้นเปลืองน้ำมันมากขึ้น",
+    "correct": "Stability and controllability may be adversely affected.",
+    "topic": "031 01",
+    "topicName": "Purpose of Mass and Balance Considerations",
+    "LO": "031 01 02 01 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "การบรรทุกให้จุดศูนย์ถ่วง (CG) ล้ำไปข้างหน้าเกินขีดจำกัดหน้า (Forward CG Limit) ส่งผลเสียต่อเสถียรภาพและการบังคับควบคุมเครื่องบิน (Stability and controllability) โดยเฉพาะการดึงหัวขึ้นตอนวิ่งขึ้นและร่อนลง"
+  },
+  {
+    "id": 4,
+    "question": "An aeroplane is loaded aft of the published aft CG limit. What is the primary syllabus concern?",
+    "options": [
+      "It is an administrative matter with no operational consequence.",
+      "It is unrelated to aircraft mass and balance.",
+      "It applies only to navigation equipment and not to loading.",
+      "Stability and controllability may be adversely affected."
+    ],
+    "answer": 3,
+    "explanation": "ผลกระทบเมื่อจุดศูนย์ถ่วงอยู่หลังขีดจำกัดหลัง (CG Behind Aft Limit):\n1. หลักการทางอากาศพลศาสตร์: เมื่อ CG ถอยไปด้านหลังเข้าใกล้หรือเลยจุด Neutral Point แขนโมเมนต์คืนกลับตามธรรมชาติจะสั้นลงหรือติดลบ ทำให้เครื่องบินสูญเสียเสถียรภาพทางдоנג (Reduced / Negative Longitudinal Static Stability)\n2. ผลเสียสำคัญที่ใช้ตอบข้อสอบแนวนี้ในอนาคต:\n- เสถียรภาพลดลงจนถึงขั้นไม่เสถียร (Unstable in Pitch): เมื่อหัวเครื่องบินเชิดขึ้นจากลมกระโชก เครื่องบินจะมีแนวโน้มเชิดหัวต่อไปเองแทนที่จะกลับสู่ท่าบินระดับ\n- แรงบังคับเบาเกินไป (Very Light Stick Forces): นักบินอาจเผลอดึงคันบังคับแรงเกินไป (Over-control) จนโครงสร้างรับแรง G เกินขีดจำกัด\n- อันตรายร้ายแรงต่อการแก้ Stall และ Spin: แขนโมเมนต์ของแพนหางระดับสั้นลงและเกิดโมเมนต์หัวเงย ทำให้การดันหัวเครื่องบินลงเพื่อออกจากอาการร่วงหล่น (Stall recovery) หรือควงสว่าน (Spin recovery) ทำได้ยากหรือทำไม่ได้เลย",
+    "correct": "Stability and controllability may be adversely affected.",
+    "topic": "031 01",
+    "topicName": "Purpose of Mass and Balance Considerations",
+    "LO": "031 01 02 01 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "การบรรทุกให้จุดศูนย์ถ่วง (CG) ถอยไปด้านหลังเกินขีดจำกัดหลัง (Aft CG Limit) ส่งผลเสียอย่างรุนแรงต่อเสถียรภาพและการควบคุม (Stability and controllability) ทำให้เครื่องบินไร้เสถียรภาพและแก้ไขอาการ Stall/Spin ได้ยาก"
+  },
+  {
+    "id": 5,
+    "question": "Which statement best describes “zero fuel mass”?",
+    "options": [
+      "It is an administrative matter with no operational consequence.",
+      "It applies only to navigation equipment and not to loading.",
+      "Zero fuel mass is dry operating mass plus traffic load, excluding usable fuel.",
+      "It is unrelated to aircraft mass and balance."
+    ],
+    "answer": 2,
+    "explanation": "นิยามและโครงสร้างมวลอากาศยาน (Mass Definitions & Hierarchy) — สูตรหลักที่ใช้ทำโจทย์ทุกข้อ:\n1. โครงสร้างการบวกสะสมมวลตามลำดับขั้น (จำแผนภาพนี้ทำข้อสอบได้ทุกข้อ):\n- $\\text{BEM (Basic Empty Mass)}$ = ตัวเครื่องบินเปล่า + อุปกรณ์ติดตั้งถาวร + น้ำมันหล่อลื่น + เชื้อเพลิงที่สูบออกไม่ได้ (Unusable fuel)\n- $\\text{DOM (Dry Operating Mass)} = \\text{BEM} + \\text{Crew (ลูกเรือพร้อมกระเป๋า)} + \\text{Catering & Operational Items (น้ำดื่ม/อาหาร)}$\n- $\\text{ZFM (Zero Fuel Mass)} = \\text{DOM} + \\text{Traffic Load (ผู้โดยสาร + สัมภาระ + สินค้า)}$ *(ยังไม่รวม Usable Fuel)*\n- $\\text{TOM (Take-Off Mass)} = \\text{ZFM} + \\text{Take-Off Fuel} = \\text{DOM} + \\text{Take-Off Fuel (คือ Operating Mass: OM)} + \\text{Traffic Load}$\n- $\\text{Ramp/Taxi Mass} = \\text{TOM} + \\text{Taxi Fuel} = \\text{ZFM} + \\text{Block Fuel}$\n- $\\text{LM (Landing Mass)} = \\text{TOM} - \\text{Trip Fuel} = \\text{ZFM} + \\text{Reserve/Remaining Fuel}$\n2. ในข้อนี้ถามนิยามของ Zero Fuel Mass (ZFM) จึงตรงกับ $\\text{DOM} + \\text{Traffic Load}$ โดยไม่รวมเชื้อเพลิงที่ใช้การได้",
+    "correct": "Zero fuel mass is dry operating mass plus traffic load, excluding usable fuel.",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Define",
+    "explanation_quick": "Zero Fuel Mass (ZFM) คือ มวลปฏิบัติการแห้ง (Dry Operating Mass: DOM) บวกกับน้ำหนักบรรทุก (Traffic Load) โดยไม่รวมเชื้อเพลิงที่ใช้การได้ (Usable Fuel)"
+  },
+  {
+    "id": 6,
+    "question": "Which statement best describes “take-off mass”?",
+    "options": [
+      "It applies only to navigation equipment and not to loading.",
+      "Take-off mass is the aircraft mass at the commencement of take-off for the applicable aircraft condition.",
+      "It is unrelated to aircraft mass and balance.",
+      "It is an administrative matter with no operational consequence."
+    ],
+    "answer": 1,
+    "explanation": "นิยามและการคำนวณ Take-Off Mass (TOM):\n1. ความหมายตามมาตรฐาน CAAT/EASA: Take-off mass คือมวลรวมของเครื่องบินในสภาวะเริ่มต้นวิ่งขึ้นบนทางวิ่ง (At the commencement of take-off) หลังจากหักเชื้อเพลิงที่ใช้ในการติดเครื่องและขับเคลื่อนบนพื้น (Taxi fuel) ออกไปแล้ว\n2. สูตรคำนวณที่ใช้ในข้อสอบ:\n$$\\text{TOM} = \\text{Ramp/Taxi Mass} - \\text{Taxi Fuel}$$\n$$\\text{TOM} = \\text{ZFM} + \\text{Take-Off Fuel (TOF)}$$\n$$\\text{TOM} = \\text{Operating Mass (OM)} + \\text{Traffic Load}$$\n$$\\text{TOM} = \\text{Landing Mass (LM)} + \\text{Trip Fuel}$$\n3. เทคนิคทำโจทย์: สังเกตคำว่า 'at the commencement of take-off' คือจุดตั้งต้นปล่อยเบรกวิ่งขึ้นเสมอ",
+    "correct": "Take-off mass is the aircraft mass at the commencement of take-off for the applicable aircraft condition.",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Define",
+    "explanation_quick": "Take-off Mass (TOM) คือ มวลรวมของอากาศยาน ณ จุดเริ่มต้นการวิ่งขึ้น (Commencement of take-off) ซึ่งเท่ากับ Zero Fuel Mass บวกกับเชื้อเพลิง ณ เวลาวิ่งขึ้น (Take-off Fuel)"
+  },
+  {
+    "id": 7,
+    "question": "Which statement best describes “ramp/taxi mass”?",
+    "options": [
+      "Ramp/taxi mass is the aircraft mass at the commencement of taxiing.",
+      "It applies only to navigation equipment and not to loading.",
+      "It is unrelated to aircraft mass and balance.",
+      "It is an administrative matter with no operational consequence."
+    ],
+    "answer": 0,
+    "explanation": "นิยามและการคำนวณ Ramp / Taxi Mass:\n1. ความหมายตามมาตรฐาน CAAT/EASA: Ramp mass (หรือ Taxi mass) คือมวลรวมทั้งหมดของเครื่องบินที่หลุมจอด ณ เวลาเริ่มต้นเคลื่อนตัวออกเดินทาง (At the commencement of taxiing)\n2. สูตรความสัมพันธ์สำหรับทำโจทย์คำนวณ:\n$$\\text{Ramp/Taxi Mass} = \\text{Take-Off Mass (TOM)} + \\text{Taxi Fuel}$$\n$$\\text{Ramp/Taxi Mass} = \\text{Zero Fuel Mass (ZFM)} + \\text{Block Fuel}$$\n(โดยที่ $\\text{Block Fuel} = \\text{Take-Off Fuel} + \\text{Taxi Fuel}$)\n3. ข้อควรระวังในห้องสอบ: Ramp Mass จะมีค่าสูงกว่า Take-off Mass อยู่เท่ากับปริมาณ Taxi Fuel (รวมเชื้อเพลิงที่ใช้โดย APU บนพื้นก่อนวิ่งขึ้น)",
+    "correct": "Ramp/taxi mass is the aircraft mass at the commencement of taxiing.",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Define",
+    "explanation_quick": "Ramp/Taxi Mass คือ มวลรวมของอากาศยาน ณ จุดเริ่มต้นการขับเคลื่อนทางพื้น (At the commencement of taxiing) ก่อนที่จะเผาผลาญเชื้อเพลิง Taxi fuel"
+  },
+  {
+    "id": 8,
+    "question": "Which statement best describes “landing mass”?",
+    "options": [
+      "It applies only to navigation equipment and not to loading.",
+      "Landing mass is the aircraft mass in the applicable landing condition.",
+      "It is an administrative matter with no operational consequence.",
+      "It is unrelated to aircraft mass and balance."
+    ],
+    "answer": 1,
+    "explanation": "นิยามและการคำนวณ Landing Mass (LM):\n1. ความหมายตามมาตรฐาน CAAT/EASA: Landing mass คือมวลรวมของอากาศยานในสภาวะร่อนลงจอด ณ สนามบินปลายทางหรือสนามบินสำรอง\n2. สูตรคำนวณที่ใช้ในข้อสอบ:\n$$\\text{Landing Mass (LM)} = \\text{Take-Off Mass (TOM)} - \\text{Trip Fuel}$$\n$$\\text{Landing Mass (LM)} = \\text{Zero Fuel Mass (ZFM)} + (\\text{Take-Off Fuel} - \\text{Trip Fuel})$$\n$$\\text{Landing Mass (LM)} = \\text{ZFM} + \\text{Reserve Fuel} + \\text{Extra Fuel}$$\n3. เทคนิคทำโจทย์: หากโจทย์ให้ขีดจำกัด Maximum Landing Mass (MLM) มา เราสามารถหาน้ำหนักวิ่งขึ้นสูงสุดที่ยอมได้จากขีดจำกัดการลงจอดด้วยสูตร $\\text{Max TOM (from MLM)} = \\text{MLM} + \\text{Trip Fuel}$",
+    "correct": "Landing mass is the aircraft mass in the applicable landing condition.",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Define",
+    "explanation_quick": "Landing Mass (LM) คือ มวลรวมของอากาศยานในสภาวะร่อนลงจอด (At landing) หลังจากหักเชื้อเพลิงที่ใช้ในการเดินทาง (Trip Fuel) ออกจากมวลวิ่งขึ้นแล้ว"
+  },
+  {
+    "id": 9,
+    "question": "Which statement best describes “in-flight mass (gross mass)”?",
+    "options": [
+      "It is an administrative matter with no operational consequence.",
+      "It is unrelated to aircraft mass and balance.",
+      "It applies only to navigation equipment and not to loading.",
+      "In-flight mass (gross mass) is the aircraft mass at a particular point during flight."
+    ],
+    "answer": 3,
+    "explanation": "นิยามและการคำนวณ In-flight Mass (Gross Mass):\n1. ความหมายตามมาตรฐาน CAAT/EASA: In-flight mass (หรือ Gross mass) หมายถึงมวลรวมจริงของอากาศยาน ณ จุดเวลาใดเวลาหนึ่งระหว่างการบิน (At a particular point during flight)\n2. สูตรการคำนวณระหว่างบิน:\n$$\\text{In-flight Mass} = \\text{Take-Off Mass (TOM)} - \\text{Fuel Consumed up to that point}$$\n3. การประยุกต์ใช้ในข้อสอบ: เนื่องจากเชื้อเพลิงถูกเผาผลาญไปตลอดเวลา In-flight mass จึงลดลงเรื่อยๆ ตามเวลาที่บินผ่านไป ส่งผลให้ความเร็วที่เหมาะสมที่สุดในการบินเดินทางและความสูงเพดานบินเปลี่ยนแปลงไปตลอดเที่ยวบิน",
+    "correct": "In-flight mass (gross mass) is the aircraft mass at a particular point during flight.",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "UNDERSTAND",
+    "verb": "Define",
+    "explanation_quick": "In-flight Mass (หรือ Gross Mass) คือ มวลรวมของอากาศยาน ณ จุดเวลาใดเวลาหนึ่งขณะกำลังทำการบินอยู่ในอากาศ"
+  },
+  {
+    "id": 10,
+    "question": "Fuel density is 0.80 kg/L. What mass corresponds to 500 L?",
+    "options": [
+      "625 kg",
+      "320 kg",
+      "500 kg",
+      "400 kg"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณแปลงหน่วยมวล ปริมาตร และความหนาแน่นของเชื้อเพลิง (Fuel Mass, Volume & Density Conversion):\n1. สูตรความสัมพันธ์หลัก (จำสามเหลี่ยมสูตร $M = V \\times D$):\n$$\\text{Mass} = \\text{Volume} \\times \\text{Density}$$\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}}, \\quad \\text{Density} = \\frac{\\text{Mass}}{\\text{Volume}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- ปริมาตรเชื้อเพลิง ($\\text{Volume}$) = $500\\text{ L}$\n- ความหนาแน่น ($\\text{Density}$) = $0.80\\text{ kg/L}$\n$$\\text{Mass} = 500 \\times 0.80 = 400\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ตรวจสอบหน่วยให้ตรงกันเสมอก่อนคูณหรือหาร หากโจทย์ให้ค่าความถ่วงจำเพาะ (Specific Gravity: SG) เช่น $\\text{SG} = 0.80$ จะมีค่าตัวเลขเท่ากับความหนาแน่นในหน่วย $\\text{kg/L}$ ทันที ($0.80\\text{ kg/L}$)\n- หากโจทย์ให้ปริมาตรเป็นแกลลอน: $1\\text{ US Gallon} = 3.785\\text{ L}$ และ $1\\text{ Imperial Gallon} = 4.546\\text{ L}$ และ $1\\text{ kg} = 2.205\\text{ lb}$",
+    "correct": "400 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (04)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Convert",
+    "explanation_quick": "มวลเชื้อเพลิง (Mass) = ปริมาตร × ความหนาแน่น = 500 L × 0.80 kg/L = 400 kg"
+  },
+  {
+    "id": 11,
+    "question": "A fuel load has a mass of 600 kg and density 0.75 kg/L. What volume is required?",
+    "options": [
+      "600 L",
+      "800 L",
+      "450 L",
+      "1,250 L"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $600\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.75\\text{ kg/L}$\n$$\\text{Volume} = \\frac{600}{0.75} = 800 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "800 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (04)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Convert",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 600 kg ÷ 0.75 kg/L = 800 L"
+  },
+  {
+    "id": 12,
+    "question": "Which limit defines the maximum zero fuel mass?",
+    "options": [
+      "Maximum landing mass",
+      "Maximum zero fuel mass",
+      "Maximum taxi mass",
+      "Maximum take-off mass"
+    ],
+    "answer": 1,
+    "explanation": "หลักการและเหตุผลทางวิศวกรรมของ Maximum Zero Fuel Mass (MZFM):\n1. นิยาม: MZFM คือมวลสูงสุดที่อนุญาตของอากาศยานเมื่อไม่นับรวมเชื้อเพลิงที่ใช้การได้ (Usable fuel)\n2. ทำไมต้องมีขีดจำกัด MZFM (ออกสอบบ่อย): ในขณะบิน ปีกจะสร้างแรงยก (Lift) ดันขึ้นตลอดความยาวปีก ขณะที่น้ำหนักผู้โดยสารและสินค้า (Traffic load) กดลงอยู่ที่ลำตัวเครื่องบิน (Fuselage) ทำให้เกิดโมเมนต์ดัดสูงสุดที่โคนปีก (Wing root bending moment) การเติมน้ำมันเชื้อเพลิงไว้ในถังที่ปีกจะช่วยสร้างน้ำหนักกดลงที่ปีกเพื่อหักล้างแรงยก (Bending relief) ดังนั้น น้ำหนักที่บรรทุกในลำตัวโดยไม่มีน้ำมันช่วยถ่วงจึงต้องถูกจำกัดด้วยค่า MZFM\n3. สูตรตรวจสอบขีดจำกัด: $\\text{Actual ZFM} = \\text{DOM} + \\text{Traffic Load} \\le \\text{MZFM}$",
+    "correct": "Maximum zero fuel mass",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ขีดจำกัดที่เป็นตัวกำหนดมวลสูงสุดเมื่อไม่มีเชื้อเพลิงในถัง คือ Maximum Zero Fuel Mass (MZFM) เพื่อป้องกันโคนปีกหักจากโมเมนต์ดัด (Wing root bending moment)"
+  },
+  {
+    "id": 13,
+    "question": "Which is the maximum structural mass at take-off?",
+    "options": [
+      "Maximum running load",
+      "Maximum zero fuel mass",
+      "Maximum take-off mass",
+      "Maximum landing mass"
+    ],
+    "answer": 2,
+    "explanation": "ขีดจำกัดมวลโครงสร้างสูงสุดในการวิ่งขึ้น (Maximum Structural Take-Off Mass - MTOM):\n1. นิยาม: MTOM คือมวลสูงสุดตามการรับรองโครงสร้าง (Certified structural limit) ที่อนุญาตให้เครื่องบินเริ่มต้นทำการวิ่งขึ้นได้ กำหนดโดยผู้ผลิตในคู่มือการบิน (AFM)\n2. ความแตกต่างระหว่างขีดจำกัดโครงสร้างในข้อสอบ:\n- **MTOM (Maximum Take-Off Mass)**: ขีดจำกัดโครงสร้างสูงสุดตอนเริ่มวิ่งขึ้น\n- **MLM (Maximum Landing Mass)**: ขีดจำกัดโครงสร้างสูงสุดตอนแตะพื้นลงจอด (รับแรงกระแทกที่ Landing gear)\n- **MZFM (Maximum Zero Fuel Mass)**: ขีดจำกัดโครงสร้างสูงสุดของลำตัวและโคนปีกเมื่อไม่คิดน้ำมัน\n- **MRM / MTaxM (Maximum Ramp/Taxi Mass)**: ขีดจำกัดโครงสร้างสูงสุดขณะขับเคลื่อนบนพื้น",
+    "correct": "Maximum take-off mass",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 01 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ขีดจำกัดมวลโครงสร้างสูงสุด ณ เวลาวิ่งขึ้น คือ Maximum Take-Off Mass (MTOM)"
+  },
+  {
+    "id": 14,
+    "question": "Which is the maximum structural mass at landing?",
+    "options": [
+      "Maximum zero fuel mass",
+      "Maximum take-off mass",
+      "Maximum taxi mass",
+      "Maximum landing mass"
+    ],
+    "answer": 3,
+    "explanation": "ขีดจำกัดมวลโครงสร้างสูงสุดในการลงจอด (Maximum Structural Landing Mass - MLM):\n1. นิยาม: MLM คือมวลสูงสุดตามโครงสร้างที่อนุญาตให้เครื่องบินทำการร่อนลงจอดแตะพื้นทางวิ่งได้ โดยออกแบบตามความแข็งแรงของฐานล้อ (Landing gear structure) และโครงสร้างลำตัวในการรับแรงกระแทก (Vertical descent rate / impact load) ตอน Touchdown\n2. ข้อสังเกตสำหรับทำข้อสอบ: โดยปกติในเครื่องบินพาณิชย์ขนาดใหญ่ $\\text{MLM} < \\text{MTOM}$ เสมอ หากเกิดเหตุฉุกเฉินต้องบินกลับมาลงจอดทันทีหลังวิ่งขึ้นด้วยน้ำหนักเกิน MLM นักบินจะต้องทำการทิ้งน้ำมันกลางอากาศ (Fuel Jettison / Dumping) เพื่อลดน้ำหนักให้ลงมาไม่เกิน MLM หรือทำการ Overweight Landing ตามขั้นตอนพิเศษและต้องตรวจสอบโครงสร้างหลังลงจอด",
+    "correct": "Maximum landing mass",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 01 (05)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ขีดจำกัดมวลโครงสร้างสูงสุด ณ เวลาร่อนลงจอด คือ Maximum Landing Mass (MLM)"
+  },
+  {
+    "id": 15,
+    "question": "Performance-limited take-off mass is 68,000 kg and maximum structural take-off mass is 70,000 kg. Which value is lower?",
+    "options": [
+      "138,000 kg",
+      "2,000 kg",
+      "68,000 kg",
+      "70,000 kg"
+    ],
+    "answer": 2,
+    "explanation": "หลักการหา Regulated Take-Off Mass (RTOM) จากการเปรียบเทียบขีดจำกัด:\n1. หลักการสำคัญ: มวลวิ่งขึ้นสูงสุดที่อนุญาตให้ใช้ปฏิบัติการจริง (Regulated Take-Off Mass: RTOM) จะต้องใช้ **ค่าที่น้อยที่สุด (Most restrictive / Lowest value)** จากขีดจำกัดต่อไปนี้:\n- **Maximum Structural Take-Off Mass (MTOM)**: ขีดจำกัดความแข็งแรงโครงสร้าง\n- **Performance-Limited Take-Off Mass (PLTOM)**: ขีดจำกัดตามสภาพทางวิ่ง ความชัน ลม อุณหภูมิ และความกดอากาศ (WAT limit)\n- **MZFM + Take-Off Fuel**\n- **Regulated Landing Mass (RLM) + Trip Fuel**\n2. การคำนวณในข้อนี้:\n$$\\text{RTOM} = \\min(\\text{PLTOM}, \\text{MTOM}) = \\min(68,000\\text{ kg},\\ 70,000\\text{ kg}) = 68,000\\text{ kg}$$\n3. เทคนิคทำโจทย์ในอนาคต: ไม่ว่าโจทย์จะให้ขีดจำกัดมากี่ตัว ให้คำนวณแปลงทุกตัวให้อยู่ในรูป Take-off Mass แล้วเลือก **ตัวเลขที่น้อยที่สุด** เสมอ",
+    "correct": "68,000 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "เมื่อ Performance-limited take-off mass (68,000 kg) ต่ำกว่า Maximum structural take-off mass (70,000 kg) ค่าที่น้อยกว่าคือ 68,000 kg ซึ่งจะเป็นตัวจำกัดมวลวิ่งขึ้นสูงสุด (Regulated Take-Off Mass)"
+  },
+  {
+    "id": 16,
+    "question": "Performance-limited landing mass is 58,000 kg and maximum structural landing mass is 60,000 kg. Which value is lower?",
+    "options": [
+      "118,000 kg",
+      "60,000 kg",
+      "58,000 kg",
+      "2,000 kg"
+    ],
+    "answer": 2,
+    "explanation": "หลักการหา Regulated Landing Mass (RLM):\n1. หลักการสำคัญ: มวลร่อนลงสูงสุดตามกฎระเบียบ (Regulated Landing Mass: RLM) คือ **ค่าที่น้อยกว่า (Lower value)** ระหว่าง:\n- **Maximum Structural Landing Mass (MLM)**: ขีดจำกัดโครงสร้างของเครื่องบิน\n- **Performance-Limited Landing Mass (PLLM)**: ขีดจำกัดตามความยาวทางวิ่ง สภาพพื้นผิวรันเวย์ (แห้ง/เปียก) และอัตราการไต่เมื่อ Go-around (Landing climb limit)\n2. การคำนวณในข้อนี้:\n$$\\text{RLM} = \\min(\\text{PLLM}, \\text{MLM}) = \\min(58,000\\text{ kg},\\ 60,000\\text{ kg}) = 58,000\\text{ kg}$$\n3. เทคนิคทำโจทย์ต่อเนื่อง: หากโจทย์ถามต่อว่าจาก RLM นี้ จะอนุญาตให้มี Take-off Mass ได้สูงสุดเท่าใด ให้นำ $\\text{RLM} + \\text{Trip Fuel}$ ไปเทียบกับ MTOM และ PLTOM อีกครั้ง",
+    "correct": "58,000 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "เมื่อ Performance-limited landing mass (58,000 kg) ต่ำกว่า Maximum structural landing mass (60,000 kg) ค่าที่น้อยกว่าคือ 58,000 kg ซึ่งใช้เป็น Regulated Landing Mass (RLM)"
+  },
+  {
+    "id": 17,
+    "question": "A 1,000 kg load must be placed where the maximum floor load is 500 kg/m². What minimum contact area is required?",
+    "options": [
+      "2.0 m²",
+      "1.5 m²",
+      "0.5 m²",
+      "500 m²"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาพื้นที่หน้าสัมผัสขั้นต่ำเพื่อไม่ให้เกินขีดจำกัดพื้นห้องสัมภาระ (Minimum Floor-Contact Area):\n1. สูตรความสัมพันธ์ของภาระน้ำหนักกดทับพื้น (Floor Load Intensity):\n$$\\text{Floor Load} = \\frac{\\text{Mass}}{\\text{Contact Area}} \\implies \\text{Minimum Contact Area} = \\frac{\\text{Mass}}{\\text{Maximum Permissible Floor Load}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของสินค้า ($\\text{Mass}$) = $1000\\text{ kg}$\n- ขีดจำกัดการรับน้ำหนักของพื้นสูงสุด ($\\text{Max Floor Load}$) = $500\\text{ kg/m}^2$\n$$\\text{Minimum Area} = \\frac{1000}{500} = 2\\text{ m}^2$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากฐานของกล่องสินค้ามีพื้นที่เล็กกว่าค่าที่คำนวณได้ จะต้องใช้แผ่นไม้รองกระจายน้ำหนัก (Spreader board / Dunnage) ที่มีความกว้าง × ความยาว ให้ได้พื้นที่ไม่น้อยกว่า $2\\text{ m}^2$\n- หากโจทย์ระบุน้ำหนักของแผ่นไม้รองมาด้วย ต้องนำ **มวลสินค้า + มวลแผ่นไม้รอง** มาเป็นตัวตั้งก่อนหารด้วยขีดจำกัดพื้นเสมอ",
+    "correct": "2.0 m²",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "พื้นที่หน้าสัมผัสขั้นต่ำ (Minimum Contact Area) = มวลสิ่งของ ÷ ขีดจำกัดการรับน้ำหนักพื้น = 1000 kg ÷ 500 kg/m² = 2.0 m²"
+  },
+  {
+    "id": 18,
+    "question": "A 1,000 kg container is distributed over a maximum running load of 250 kg/m. What minimum length is required?",
+    "options": [
+      "4 m",
+      "1,250 m",
+      "0.25 m",
+      "250 m"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาความยาวขั้นต่ำตามขีดจำกัดการรับน้ำหนักตามแนวยาวลำตัว (Minimum Length for Running Load Limit):\n1. หลักการและสูตรคำนวณ:\nRunning Load คือภาระน้ำหนักที่กดลงต่อหนึ่งหน่วยความยาวของลำตัวเครื่องบิน (Fuselage length) เพื่อป้องกันคานขวางและโครงสร้างลำตัวบิดงอ:\n$$\\text{Running Load} = \\frac{\\text{Mass}}{\\text{Length}} \\implies \\text{Minimum Length} = \\frac{\\text{Mass}}{\\text{Maximum Permissible Running Load}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1000\\text{ kg}$\n- ขีดจำกัด Running Load สูงสุด = $250\\text{ kg/m}$\n$$\\text{Minimum Length} = \\frac{1000}{250} = 4\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ถามกลับกันว่ามีพื้นที่ยาว $L\\text{ m}$ และกำหนดขีดจำกัด Running Load มา จะบรรทุกน้ำหนักได้สูงสุดเท่าใด ให้ใช้สูตร $\\text{Max Mass} = \\text{Length} \\times \\text{Max Running Load}$",
+    "correct": "4 m",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 02 03 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "ความยาวขั้นต่ำที่ต้องใช้กระจายน้ำหนัก (Minimum Length) = มวล ÷ ขีดจำกัด Running Load = 1000 kg ÷ 250 kg/m = 4 m"
+  },
+  {
+    "id": 19,
+    "question": "Operating mass is 42,000 kg and regulated take-off mass is 65,000 kg. What traffic load remains if no other load is added?",
+    "options": [
+      "65,000 kg",
+      "23,000 kg",
+      "107,000 kg",
+      "42,000 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกสูงสุดที่อนุญาต (Maximum Allowed Traffic Load):\n1. สูตรความสัมพันธ์ของมวลวิ่งขึ้น:\n$$\\text{Take-Off Mass (TOM)} = \\text{Operating Mass (OM)} + \\text{Traffic Load}$$\n$$\\text{Allowed Traffic Load} = \\text{Allowed / Regulated TOM} - \\text{Operating Mass}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นสูงสุดที่อนุญาต = $65,000\\text{ kg}$\n- มวลปฏิบัติการ (Operating Mass) = $42,000\\text{ kg}$\n$$\\text{Allowed Load} = 65,000 - 42,000 = 23,000\\text{ kg}$$\n3. เทคนิคทำโจทย์ในอนาคต:\n- หากโจทย์กำหนดให้ทั้ง Operating Mass (ซึ่งรวมน้ำมันแล้ว) และต้องการหา Traffic Load ให้นำ $\\text{Allowed TOM} - \\text{OM}$\n- หากโจทย์ให้ Dry Operating Mass (DOM) และแยกค่าน้ำมัน Take-off Fuel ออกมาต่างหาก ให้นำทั้งสองค่าไปลบออกจาก Allowed TOM",
+    "correct": "23,000 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่สามารถนำขึ้นเครื่องได้ = มวลวิ่งขึ้นที่อนุญาต (65,000 kg) − มวลปฏิบัติการ (42,000 kg) = 23,000 kg"
+  },
+  {
+    "id": 20,
+    "question": "Allowed take-off mass is 18,500 kg and operating mass is 11,000 kg. What combined traffic and fuel load can be carried?",
+    "options": [
+      "7,000 kg",
+      "7,500 kg",
+      "18,500 kg",
+      "29,500 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกสูงสุดที่อนุญาต (Maximum Allowed Traffic Load):\n1. สูตรความสัมพันธ์ของมวลวิ่งขึ้น:\n$$\\text{Take-Off Mass (TOM)} = \\text{Operating Mass (OM)} + \\text{Traffic Load}$$\n$$\\text{Allowed Traffic Load} = \\text{Allowed / Regulated TOM} - \\text{Operating Mass}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นสูงสุดที่อนุญาต = $18,500\\text{ kg}$\n- มวลปฏิบัติการ (Operating Mass) = $11,000\\text{ kg}$\n$$\\text{Allowed Load} = 18,500 - 11,000 = 7,500\\text{ kg}$$\n3. เทคนิคทำโจทย์ในอนาคต:\n- หากโจทย์กำหนดให้ทั้ง Operating Mass (ซึ่งรวมน้ำมันแล้ว) และต้องการหา Traffic Load ให้นำ $\\text{Allowed TOM} - \\text{OM}$\n- หากโจทย์ให้ Dry Operating Mass (DOM) และแยกค่าน้ำมัน Take-off Fuel ออกมาต่างหาก ให้นำทั้งสองค่าไปลบออกจาก Allowed TOM",
+    "correct": "7,500 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่สามารถนำขึ้นเครื่องได้ = มวลวิ่งขึ้นที่อนุญาต (18,500 kg) − มวลปฏิบัติการ (11,000 kg) = 7,500 kg"
+  },
+  {
+    "id": 21,
+    "question": "Allowed mass is 12,000 kg, operating mass 8,000 kg and actual traffic load 3,000 kg. What margin remains before fuel?",
+    "options": [
+      "1,000 kg overload",
+      "500 kg overload",
+      "1,000 kg underload",
+      "3,000 kg underload"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณค่าน้ำหนักบรรทุกคงเหลือ (Underload) หรือน้ำหนักเกิน (Overload):\n1. นิยามและสูตรหลัก:\n- **Underload**: น้ำหนักที่ยังสามารถบรรทุกเพิ่มได้อีกโดยไม่เกินขีดจำกัดมวลวิ่งขึ้นที่อนุญาต (เมื่อ $\\text{Actual TOM} < \\text{Allowed TOM}$)\n- **Overload**: น้ำหนักส่วนที่เกินขีดจำกัด ต้องนำออกก่อนทำการบิน (เมื่อ $\\text{Actual TOM} > \\text{Allowed TOM}$)\n$$\\text{Max Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass (OM)}$$\n$$\\text{Margin (Underload / Overload)} = \\text{Max Allowed Traffic Load} - \\text{Actual Traffic Load}$$\n2. แทนค่าคำนวณในข้อนี้:\n- $\\text{Max Allowed Traffic Load} = 12,000 - 8,000 = 4,000\\text{ kg}$\n- หักด้วยน้ำหนักบรรทุกจริง ($\\text{Actual Traffic Load} = 3,000\\text{ kg}$):\n$$\\text{Margin} = 4,000 - 3,000 = +1,000\\text{ kg (ยังมีที่ว่างเหลือ จึงเป็น 1,000 kg underload)}$$\n3. เทคนิคทำโจทย์ในอนาคต: หากคำนวณแล้ว $\\text{Actual TOM} < \\text{Allowed TOM}$ ตอบ **Underload** เสมอ แต่หาก $\\text{Actual TOM} > \\text{Allowed TOM}$ จึงจะตอบ **Overload**",
+    "correct": "1,000 kg underload",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักที่ยังบรรทุกเพิ่มได้ (Underload) = Allowed Mass (12,000 kg) − Operating Mass (8,000 kg) − Actual Traffic Load (3,000 kg) = 1,000 kg underload"
+  },
+  {
+    "id": 22,
+    "question": "Twenty passengers are assigned a standard mass of 84 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "2,000 kg",
+      "1,260 kg",
+      "1,764 kg",
+      "1,680 kg"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $20\\text{ คน}$\n- มวลมาตรฐานต่อคน = $84\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 20 \\times 84 = 1,680\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,680 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 20 คน × 84 kg = 1,680 kg"
+  },
+  {
+    "id": 23,
+    "question": "Which three terms are explicitly required in the CAAT LO for definition?",
+    "options": [
+      "Datum, moment arm and moment",
+      "CG, MAC and fuel density",
+      "IAS, TAS and Mach",
+      "Lift, drag and thrust"
+    ],
+    "answer": 0,
+    "explanation": "นิยาม 3 องค์ประกอบหลักของการคำนวณสมดุล (Datum, Moment Arm, and Moment):\n1. **Datum (Reference Point - จุดอ้างอิง)**: จุดหรือระนาบสมมติในแนวดิ่งที่ผู้ผลิตอากาศยานกำหนดขึ้น (อาจอยู่ที่ปลายจมูกเครื่องบิน หน้าจมูก หรือผนังกั้นห้องนักบิน) ใช้เป็นจุดเริ่มต้น ($0$) ในการวัดระยะทางแนวนอนทั้งหมด\n2. **Moment Arm (แขนโมเมนต์ / Balance Arm)**: ระยะทางในแนวราบที่วัดจากจุดอ้างอิง (Datum) ไปยังจุดศูนย์ถ่วง (CG) ของมวลชิ้นนั้นๆ (หน่วยเป็น m หรือ inch) โดยทั่วไปด้านหลัง Datum มีค่าเป็นบวก ($+$) และด้านหน้า Datum มีค่าเป็นลบ ($-$)\n3. **Moment (โมเมนต์)**: ผลคูณของมวล (หรือน้ำหนัก) กับแขนโมเมนต์ ซึ่งแสดงแนวโน้มในการทำให้เครื่องบินหมุนรอบจุดอ้างอิง:\n$$\\text{Moment} = \\text{Mass} \\times \\text{Moment Arm}$$\n(หน่วยเป็น $\\text{kg}\\cdot\\text{m}$ หรือ $\\text{lb}\\cdot\\text{in}$)",
+    "correct": "Datum, moment arm and moment",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 01 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "คำศัพท์พื้นฐาน 3 คำในการคำนวณสมดุลตามที่ระบุใน CAAT LO 031 04 01 01 (03) ได้แก่ จุดอ้างอิง (Datum), แขนโมเมนต์ (Moment arm) และโมเมนต์ (Moment)"
+  },
+  {
+    "id": 24,
+    "question": "What is the centre of gravity in mass-and-balance calculations?",
+    "options": [
+      "The aircraft datum itself",
+      "The geometric centre of the fuselage in every aircraft",
+      "The point at which the resultant aircraft mass may be considered to act for balance calculations.",
+      "The aerodynamic centre of the wing only"
+    ],
+    "answer": 2,
+    "explanation": "ความหมายและหลักการของจุดศูนย์ถ่วง (Centre of Gravity - CG):\n1. นิยามทางกลศาสตร์การบิน: CG คือจุดที่น้ำหนักรวมทั้งหมดของอากาศยาน (Total Gravity Force / Resultant Mass) เสมือนมารวมกระทำอยู่ ณ จุดเดียว หากนำจุดหมุนมารองรับที่จุด CG พอดี เครื่องบินจะอยู่ในสภาวะสมดุล (ผลรวมของโมเมนต์รอบ CG เป็นศูนย์)\n2. ความแตกต่างที่ข้อสอบชอบหลอก:\n- CG **ไม่ใช่** จุดกึ่งกลางทางเรขาคณิตของลำตัวเครื่องบิน (Geometric centre) เพราะตำแหน่ง CG เปลี่ยนแปลงได้ตามการจัดวางผู้โดยสาร สินค้า และเชื้อเพลิง\n- CG **ไม่ใช่** จุด Datum (Datum เป็นจุดอ้างอิงคงที่ที่ผู้ผลิตกำหนดไว้สำหรับวัดระยะ)\n- CG **ไม่ใช่** จุด Aerodynamic Centre / Centre of Pressure (ซึ่งเป็นจุดที่แรงยกกระทำ)",
+    "correct": "The point at which the resultant aircraft mass may be considered to act for balance calculations.",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 02 (04)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "จุดศูนย์ถ่วง (Centre of Gravity: CG) คือ จุดเสมือนที่ถือว่ามวลลัพธ์ทั้งหมดของอากาศยาน (Resultant aircraft mass) กระทำผ่านจุดนั้นในการคำนวณความสมดุล"
+  },
+  {
+    "id": 25,
+    "question": "LEMAC is 6.0 m from datum, MAC is 2.0 m and CG is 7.0 m. What is CG as %MAC?",
+    "options": [
+      "70% MAC",
+      "35% MAC",
+      "25% MAC",
+      "50% MAC"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณตำแหน่งจุดศูนย์ถ่วงเป็นร้อยละของคอร์ดอากาศพลศาสตร์เฉลี่ย (CG Position as %MAC):\n1. หลักการและสูตรมาตรฐาน:\nการระบุตำแหน่ง CG เป็น $\\%\\text{MAC}$ คือการวัดว่าจุด CG อยู่ห่างจากชายหน้าของคอร์ดเฉลี่ย (Leading Edge of MAC: LEMAC) คิดเป็นกี่เปอร์เซ็นต์ของความยาวคอร์ดเฉลี่ย (MAC):\n$$\\%\\text{MAC} = \\frac{\\text{CG} - \\text{LEMAC}}{\\text{MAC}} \\times 100$$\n2. แทนค่าคำนวณในข้อนี้:\n- ตำแหน่งชายหน้าคอร์ดเฉลี่ยจาก Datum ($\\text{LEMAC}$) = $6\\text{ m}$\n- ความยาวคอร์ดอากาศพลศาสตร์เฉลี่ย ($\\text{MAC}$) = $2\\text{ m}$\n- ตำแหน่งจุดศูนย์ถ่วงจาก Datum ($\\text{CG}$) = $7\\text{ m}$\n$$\\%\\text{MAC} = \\frac{7 - 6}{2} \\times 100 = \\frac{1}{2} \\times 100 = 50\\%\\text{ MAC}$$\n3. เทคนิคทำข้อสอบย้อนกลับในอนาคต:\n- หากโจทย์ให้ค่า $\\%\\text{MAC}$ มา แล้วถามหาระยะ $\\text{CG}$ จากจุด Datum ให้จัดรูปสมการย้อนกลับเป็น:\n$$\\text{CG} = \\text{LEMAC} + \\left(\\frac{\\%\\text{MAC}}{100} \\times \\text{MAC}\\right)$$\n- หากโจทย์ให้ตำแหน่งขอบหลัง (TEMAC) แทนความยาว MAC ให้หา $\\text{MAC} = \\text{TEMAC} - \\text{LEMAC}$ ก่อนเข้าสูตร",
+    "correct": "50% MAC",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 03 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "CG (%MAC) = [(CG − LEMAC) ÷ MAC] × 100 = [(7 − 6) ÷ 2] × 100 = 50% MAC"
+  },
+  {
+    "id": 26,
+    "question": "An aircraft weighs 4,000 kg on one reaction point and 6,000 kg on another. What total mass is represented?",
+    "options": [
+      "24,000 kg",
+      "10,000 kg",
+      "2,000 kg",
+      "6,000 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $4,000\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $6,000\\text{ kg}$\n$$\\text{Total Mass} = 4,000 + 6,000 = 10,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "10,000 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 4,000 kg + 6,000 kg = 10,000 kg"
+  },
+  {
+    "id": 27,
+    "question": "Where should BEM or DOM values be obtained for a formal mass-and-balance exercise?",
+    "options": [
+      "From the radio navigation chart",
+      "From the applicable aircraft mass-and-balance documentation.",
+      "From the weather forecast",
+      "From the ATC flight plan only"
+    ],
+    "answer": 1,
+    "explanation": "แหล่งข้อมูลมาตรฐานสำหรับค่า BEM และ DOM (Aircraft Mass & Balance Documentation):\n1. หลักการปฏิบัติการบิน: ค่า Basic Empty Mass (BEM) และตำแหน่ง CG ของเครื่องบินเปล่าได้จากการชั่งน้ำหนักจริงของเครื่องบินแต่ละลำ (Aircraft Weighing) และบันทึกไว้ใน **Mass and Balance Report / Weighing Schedule** ในคู่มือประจำเครื่อง (AFM / Operations Manual)\n2. ส่วนค่า Dry Operating Mass (DOM) และ Dry Operating Index (DOI) จะถูกจัดทำโดยสายการบินในเอกสาร **Mass and Balance Documentation / Load & Trim Sheet Manual** ตามรูปแบบการจัดลูกเรือและอุปกรณ์ของเที่ยวบินนั้น\n3. เทคนิคตัดตัวเลือกในข้อสอบ: แผนที่เดินอากาศ (Navigation chart), พยากรณ์อากาศ (Weather forecast) หรือแผนการบิน ATC ไม่ได้ระบุข้อมูลการชั่งน้ำหนักและแขนโมเมนต์ของเครื่องบิน",
+    "correct": "From the applicable aircraft mass-and-balance documentation.",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "ค่ามวลเครื่องบินเปล่า (BEM) หรือมวลปฏิบัติการแห้ง (DOM) ต้องดึงข้อมูลมาจากเอกสารด้านมวลและสมดุลของอากาศยานลำนั้นๆ (Aircraft Mass-and-Balance Documentation)"
+  },
+  {
+    "id": 28,
+    "question": "Why can consuming fuel from a particular tank move the aircraft CG?",
+    "options": [
+      "CG changes only because of radio transmissions",
+      "Fuel consumption can never change CG",
+      "Fuel has no mass once consumed",
+      "Fuel mass is removed from a known location with a particular moment arm."
+    ],
+    "answer": 3,
+    "explanation": "การเคลื่อนที่ของจุดศูนย์ถ่วงเมื่อเผาผลาญเชื้อเพลิง (CG Movement with Fuel Consumption):\n1. หลักการคำนวณ: ถังเชื้อเพลิงแต่ละถังมีตำแหน่งแขนโมเมนต์ (Moment arm / Station) เฉพาะตัว เมื่อเชื้อเพลิงถูกใช้ไป มวลรวมจะลดลง ($-m_{\\text{fuel}}$) และโมเมนต์รวมจะเปลี่ยนแปลงไปเท่ากับ $\\Delta M = -m_{\\text{fuel}} \\times \\text{Arm}_{\\text{tank}}$\n2. กฎทิศทางการเคลื่อนที่ของ CG เมื่อใช้น้ำมัน (จำไปใช้ทำข้อสอบวิเคราะห์ทิศทาง CG ได้ทันที):\n- **ใช้น้ำมันจากถังที่อยู่หน้า CG (Forward of CG)** $\\rightarrow$ หัวเบาลง $\\rightarrow$ **CG เลื่อนถอยหลัง (Moves Aft)**\n- **ใช้น้ำมันจากถังที่อยู่หลัง CG (Aft of CG)** $\\rightarrow$ หางเบาลง $\\rightarrow$ **CG เลื่อนไปข้างหน้า (Moves Forward)**\n- **สำหรับปีกลู่หลัง (Swept-back wing)**: ถังปีกด้านนอก (Outer wing tank) อยู่ค่อนไปด้านหลังมากกว่าถังด้านใน (Inner wing tank) และถังกลาง (Centre tank) อยู่ด้านหน้าสุด ลำดับการใช้เชื้อเพลิงที่ถูกต้องจึงสำคัญมากต่อการคุม CG",
+    "correct": "Fuel mass is removed from a known location with a particular moment arm.",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 07 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "การใช้เชื้อเพลิงจากถังใดถังหนึ่งทำให้จุดศูนย์ถ่วง (CG) เปลี่ยนแปลง เพราะมวลเชื้อเพลิงถูกดึงออกจากตำแหน่งที่ทราบระยะแขนโมเมนต์ (Moment arm) เฉพาะตัว ทำให้โมเมนต์รวมเปลี่ยนไป"
+  },
+  {
+    "id": 29,
+    "question": "What is a specific consideration for fuel tanks in the fin or horizontal stabiliser?",
+    "options": [
+      "Tail fuel automatically increases structural limits",
+      "Fuel consumption can cause significant CG movement because the fuel is far from the aircraft reference balance point.",
+      "Tail fuel can never affect CG",
+      "Tail fuel eliminates trim considerations"
+    ],
+    "answer": 1,
+    "explanation": "ข้อดีและความเสี่ยงของถังเชื้อเพลิงบริเวณหาง (Tail / Trim Tank in Fin or Horizontal Stabiliser):\n1. หลักการทางวิศวกรรม: ถังเชื้อเพลิงที่ติดตั้งบริเวณแพนหางระดับหรือแพนหางดิ่ง (Trim Tank) มีระยะแขนโมเมนต์ (Moment Arm) ยาวมากเมื่อเทียบกับจุด CG ของเครื่องบิน ดังนั้น มวลเชื้อเพลิงเพียงเล็กน้อยในถังหางจึงสร้างโมเมนต์ขนาดใหญ่ ($M = m \\times d$) ส่งผลให้ตำแหน่ง CG เปลี่ยนแปลงได้อย่างมีนัยสำคัญ\n2. ข้อดี (Advantages) ที่ออกสอบ:\n- ในระยะบินเดินทาง (Cruise) คอมพิวเตอร์จะสูบน้ำมันไปเก็บที่ถังหางเพื่อเลื่อน CG ไปทางด้านหลัง (Aft CG) ช่วยลดแรงกดลงของแพนหางระดับ (Reduced tailplane downforce) ทำให้ **ลดแรงต้านจากการปรับสมดุล (Trim Drag)** และ **ประหยัดเชื้อเพลิงเพิ่มขึ้น**\n3. ความเสี่ยง (Risks) ที่ออกสอบ:\n- ก่อนลดระดับลงจอด ต้องสูบน้ำมันจากถังหางกลับมายังถังหลักด้านหน้า หากระบบปั๊มถ่ายเทเชื้อเพลิงขัดข้อง (Fuel transfer failure) จนน้ำมันค้างอยู่ที่ถังหาง จะทำให้เครื่องบินมีภาวะ **Aft CG เกินขีดจำกัด** ขณะร่อนลงจอด เสี่ยงต่อการสูญเสียเสถียรภาพทางดิ่ง",
+    "correct": "Fuel consumption can cause significant CG movement because the fuel is far from the aircraft reference balance point.",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 07 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "ข้อควรพิจารณาสำคัญของถังเชื้อเพลิงบริเวณแพนหางดิ่งหรือแพนหางระดับ (Fin / Horizontal Stabiliser Fuel Tank) คือ การใช้หรือถ่ายเทเชื้อเพลิงจะทำให้ CG เปลี่ยนแปลงอย่างมาก เนื่องจากอยู่ห่างจากจุดสมดุลอ้างอิงมาก (แขนโมเมนต์ยาวมาก)"
+  },
+  {
+    "id": 30,
+    "question": "Why must optional equipment be included in mass-and-balance calculations?",
+    "options": [
+      "Optional equipment has no mass",
+      "It affects only radio frequency selection",
+      "It can change aircraft mass and moment/CG.",
+      "It changes only the call sign"
+    ],
+    "answer": 2,
+    "explanation": "การปรับแก้ค่าความคลาดเคลื่อนจากรูปแบบมาตรฐาน (Deviations from Standard Configuration):\n1. หลักการ: ค่า BEM หรือ DOM มาตรฐานในตารางถูกกำหนดไว้ภายใต้รายการอุปกรณ์มาตรฐาน (Standard Equipment List) หากเที่ยวบินใดมีการเพิ่มหรือถอดอุปกรณ์เสริม (Optional equipment เช่น ชุดแพชูชีพเสริม, อุปกรณ์ซ่อมบำรุง Fly-away kit, ถังเชื้อเพลิงเสริม หรือจำนวนลูกเรือที่เปลี่ยนไป) จะทำให้ทั้งมวล ($\\Delta m$) และโมเมนต์ ($\\Delta M = \\Delta m \\times \\text{Arm}$) เปลี่ยนไปจากค่ามาตรฐาน\n2. วิธีคำนวณปรับแก้ค่า DOM และ CG ในข้อสอบ:\n$$\\text{Adjusted DOM} = \\text{Standard DOM} \\pm m_{\\text{equipment}} \\pm m_{\\text{crew deviation}}$$\n$$\\text{Adjusted Moment} = \\text{Standard Moment} \\pm (m_{\\text{item}} \\times \\text{Arm}_{\\text{item}})$$",
+    "correct": "It can change aircraft mass and moment/CG.",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "อุปกรณ์เสริม (Optional equipment) ต้องนำมาคำนวณใน Mass and Balance เสมอ เพราะการติดตั้งหรือถอดออกจะเปลี่ยนแปลงทั้งมวลรวมและโมเมนต์/ตำแหน่ง CG ของอากาศยาน"
+  },
+  {
+    "id": 31,
+    "question": "An aircraft has total mass 10,000 kg and total moment 500,000 kg·m. What is CG?",
+    "options": [
+      "500 m",
+      "50 m",
+      "5,000 m",
+      "0.02 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $500,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $10,000\\text{ kg}$\n$$\\text{CG} = \\frac{500,000}{10,000} = 50\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "50 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 500,000 kg·m ÷ 10,000 kg = 50 m"
+  },
+  {
+    "id": 32,
+    "question": "What is the purpose of the graphic method?",
+    "options": [
+      "To determine CG using loading graphs supplied in sample documentation.",
+      "To replace all mass limitations",
+      "To calculate engine thrust directly",
+      "To determine outside air temperature"
+    ],
+    "answer": 0,
+    "explanation": "วิธีการหาตำแหน่ง CG ทั้ง 3 รูปแบบตามหลักสูตร CAAT (Computational, Graphic, and Index Methods):\n1. **Computational Method (วิธีคำนวณด้วยสูตร)**: ใช้สูตร $\\text{Moment} = \\text{Mass} \\times \\text{Arm}$ แล้วนำ $\\text{CG} = \\frac{\\sum \\text{Moment}}{\\sum \\text{Mass}}$ ให้ความแม่นยำสูงแต่ใช้เวลาคิดเลข\n2. **Graphic Method (วิธีใช้กราฟ)**: ใช้แผนภูมิ Loading Graph (แกนตั้งเป็นมวล แกนนอนเป็นโมเมนต์หรือดัชนี มีเส้นทแยงมุมประจำแต่ละสถานีบรรทุก) เพื่ออ่านค่าโมเมนต์และพล็อตจุดลงในกราฟ CG Envelope โดยตรง ช่วยให้ทำงานได้รวดเร็วและลดความผิดพลาดจากการคูณเลขหลายหลัก\n3. **Index Method (วิธีดัชนี)**: แปลงค่าโมเมนต์ตัวเลขหลักแสนให้เป็นตัวเลขดัชนี (Index) หลักสิบหรือหลักร้อย ใช้คู่กับตารางหรือ Trim Sheet",
+    "correct": "To determine CG using loading graphs supplied in sample documentation.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Determine",
+    "explanation_quick": "วัตถุประสงค์ของวิธีกราฟิก (Graphic Method) คือ การหาตำแหน่งจุดศูนย์ถ่วง (CG) และโมเมนต์โดยใช้กราฟการบรรทุก (Loading Graphs / CG Envelope Charts) ที่ให้มาในคู่มืออากาศยาน"
+  },
+  {
+    "id": 33,
+    "question": "What is the basic principle of the index method?",
+    "options": [
+      "It uses an indexed/scaled representation of balance or moment information to simplify calculations.",
+      "It removes the need for aircraft mass",
+      "It replaces CG limits with engine limits",
+      "It calculates only fuel density"
+    ],
+    "answer": 0,
+    "explanation": "หลักการและสูตรคำนวณของวิธีดัชนี (The Index Method & Dry Operating Index - DOI):\n1. แนวคิดหลัก: ในเครื่องบินพาณิชย์ขนาดใหญ่ ผลคูณของมวลกับแขนโมเมนต์ ($W \\times \\text{Arm}$) จะมีค่าเป็นหลักแสนหรือหลักล้าน ซึ่งยุ่งยากและเกิดความผิดพลาดในการบวกลบได้ง่าย จึงมีการแปลงโมเมนต์ให้อยู่ในรูปตัวเลขไร้หน่วยที่ย่อส่วนลงมา เรียกว่า **Index**\n2. สูตรมาตรฐานของ Index (จำไปใช้ทำข้อสอบคำนวณ DOI):\n$$\\text{Index} = \\frac{W \\times (\\text{Arm} - \\text{Reference Datum})}{C} + K$$\nโดยที่:\n- $W$ = มวลของอากาศยานหรือสิ่งของที่บรรทุก\n- $\\text{Arm}$ = แขนโมเมนต์ของสิ่งของนั้น (ถ้าเป็นจุดเริ่มต้นคือ $\\text{CG}_{\\text{DOM}}$ เพื่อหาค่า **Dry Operating Index: DOI**)\n- $C$ = ค่าคงที่ตัวหารเพื่อย่อขนาดตัวเลข (Scale factor เช่น $1,000$ หรือ $10,000$)\n- $K$ = ค่าคงที่บวกเพิ่ม (เช่น $50$ หรือ $100$) เพื่อป้องกันไม่ให้ค่า Index ติดลบ",
+    "correct": "It uses an indexed/scaled representation of balance or moment information to simplify calculations.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "หลักการพื้นฐานของวิธีดัชนี (Index Method) คือ การย่อสเกลตัวเลขโมเมนต์ที่มีค่าสูงมากให้อยู่ในรูปตัวเลขดัชนี (Index) ขนาดเล็กที่จัดการง่าย เพื่อลดความซับซ้อนในการคำนวณสมดุล"
+  },
+  {
+    "id": 34,
+    "question": "What is the purpose of a load sheet?",
+    "options": [
+      "To determine weather minima",
+      "To replace the flight manual",
+      "To determine radio frequencies",
+      "To document the loading condition and support determination of aircraft mass and balance."
+    ],
+    "answer": 3,
+    "explanation": "หลักการและวัตถุประสงค์ของ Load Sheet (Mass and Balance Documentation):\n1. หน้าที่หลัก: Load Sheet เป็นเอกสารปฏิบัติการตามกฎหมายที่กัปตัน (PIC) ต้องตรวจสอบและลงนามรับรองก่อนการบินทุกเที่ยวบิน เพื่อยืนยันว่า:\n- มวลจริงในทุกขั้นตอน (Actual ZFM, Actual TOM, Actual LM) **ไม่เกิน** ขีดจำกัดสูงสุดที่อนุญาต (MZFM, RTOM, RLM)\n- ข้อมูลผู้โดยสาร ลูกเรือ สัมภาระ สินค้า และเชื้อเพลิง ถูกบันทึกอย่างครบถ้วน รวมถึงการแก้ไขนาทีสุดท้าย (Last-Minute Changes: LMC)\n2. ความแตกต่างระหว่าง Load Sheet กับ Trim Sheet:\n- **Load Sheet**: เน้นการรวบรวมและตรวจสอบ **มวล (Mass)** และคำนวณค่าน้ำหนักที่ยังบรรทุกเพิ่มได้ (Underload)\n- **Trim Sheet**: เน้นการคำนวณหา **ตำแหน่ง CG (%MAC / Index)** และการตั้งค่าแพนหางระดับ (**Stabiliser Trim Units**)",
+    "correct": "To document the loading condition and support determination of aircraft mass and balance.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "วัตถุประสงค์ของใบแจ้งน้ำหนักและสมดุล (Load Sheet) คือ เพื่อบันทึกสภาพการบรรทุกจริงและใช้ตรวจสอบยืนยันว่ามวลและจุดศูนย์ถ่วง (CG) ของอากาศยานอยู่ในเกณฑ์ที่ปลอดภัยก่อนทำการบิน"
+  },
+  {
+    "id": 35,
+    "question": "What calculation is required after loading data are entered in a balance schedule?",
+    "options": [
+      "Calculate only engine RPM",
+      "Calculate moments and CG positions.",
+      "Calculate only runway heading",
+      "Calculate only fuel temperature"
+    ],
+    "answer": 1,
+    "explanation": "ขั้นตอนการคำนวณในตารางสมดุล (Balance Schedule / Loading Manifest Workflow):\n1. ลำดับขั้นตอนมาตรฐานในการทำโจทย์ Balance Schedule:\n- **ขั้นที่ 1**: กรอกมวลของแต่ละรายการ (BEM/DOM, นักบิน, ผู้โดยสารแต่ละแถว, สัมภาระ, เชื้อเพลิง) และคูณด้วยแขนโมเมนต์ (Arm) ของสถานีนั้น เพื่อหาค่า **Moment ของแต่ละรายการ** ($M_i = m_i \\times d_i$)\n- **ขั้นที่ 2**: รวมมวลทั้งหมด ($\\sum m_i$) และรวมโมเมนต์ทั้งหมด ($\\sum M_i$) ณ สภาวะ ZFM, TOM และ LM\n- **ขั้นที่ 3**: คำนวณหา **ตำแหน่งจุดศูนย์ถ่วง (CG Position)** จากสูตร $\\text{CG} = \\frac{\\sum M_i}{\\sum m_i}$ แล้วนำไปตรวจสอบกับกรอบขีดจำกัด (CG Envelope)",
+    "correct": "Calculate moments and CG positions.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 02 02 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "หลังจากกรอกข้อมูลการบรรทุกลงในตารางคำนวณสมดุล (Balance Schedule) แล้ว ขั้นตอนที่ต้องทำต่อไปคือ การคำนวณหาค่าโมเมนต์รวมและตำแหน่งจุดศูนย์ถ่วง (Calculate moments and CG positions)"
+  },
+  {
+    "id": 36,
+    "question": "A last-minute passenger change adds 80 kg at a rear seat. What should be checked?",
+    "options": [
+      "Only the magnetic compass",
+      "The revised mass and CG should be checked against the applicable limits.",
+      "Only the weather radar",
+      "Nothing, because passenger mass cannot affect CG"
+    ],
+    "answer": 1,
+    "explanation": "การจัดการการเปลี่ยนแปลงนาทีสุดท้าย (Last-Minute Changes - LMC):\n1. หลักการปฏิบัติการบิน: หากหลังจากออกเอกสาร Load & Trim Sheet แล้ว มีการเพิ่มหรือลดผู้โดยสาร สัมภาระ หรือสินค้า (LMC) จะส่งผลกระทบต่อทั้ง:\n- **มวลรวม (Total Mass)**: เพิ่มขึ้น 80 kg ต้องตรวจสอบว่าไม่เกินค่า Allowed Take-Off Mass, MZFM หรือ MLM (กล่าวคือไม่เกินค่า Underload ที่เหลืออยู่)\n- **ตำแหน่งจุดศูนย์ถ่วง (CG Position)**: การเพิ่มน้ำหนัก 80 kg ที่ที่นั่งด้านหลัง (Aft seat) จะดึงให้ CG เลื่อนถอยหลัง (Aft shift) ต้องตรวจสอบว่า CG ใหม่ไม่หลุดออกนอกขอบเขต Aft CG limit และปรับค่า Stabiliser trim หากจำเป็น\n2. สูตรคำนวณการเลื่อนของ CG จากการเพิ่มน้ำหนักใหม่ (สำหรับโจทย์คำนวณ):\n$$\\Delta \\text{CG} = \\frac{m_{\\text{added}} \\times |\\text{Arm}_{\\text{seat}} - \\text{Old CG}|}{\\text{New Total Mass}}$$",
+    "correct": "The revised mass and CG should be checked against the applicable limits.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 02 02 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Check",
+    "explanation_quick": "เมื่อมีการเปลี่ยนแปลงผู้โดยสารในนาทีสุดท้าย (Last-Minute Change: LMC) เช่น เพิ่มผู้โดยสาร 80 kg ที่ที่นั่งด้านหลัง ต้องตรวจสอบว่ามวลรวมใหม่และตำแหน่ง CG ใหม่ยังคงอยู่ภายในขีดจำกัดที่อนุญาตหรือไม่"
+  },
+  {
+    "id": 37,
+    "question": "Why are boxed maximum figures on a large-aircraft load sheet used?",
+    "options": [
+      "To identify radio frequencies",
+      "To cross-check actual and limiting mass values.",
+      "To show weather minima",
+      "To determine the datum automatically"
+    ],
+    "answer": 1,
+    "explanation": "การอ่านและตรวจสอบ Boxed Maximum Figures บน Load Sheet มาตรฐาน:\n1. ใน Load Sheet ของเครื่องบินพาณิชย์ขนาดใหญ่ จะมีช่องกรอบสี่เหลี่ยมเน้นทึบ (Boxed figures) อยู่ 3 สภาวะหลัก ได้แก่:\n- **ZFM (Zero Fuel Mass)**: เทียบ Actual ZFM กับ **MZFM** ในกรอบ\n- **TOM (Take-Off Mass)**: เทียบ Actual TOM กับ **MTOM / RTOM** ในกรอบ\n- **LAW / LM (Landing Mass)**: เทียบ Actual LM กับ **MLM / RLM** ในกรอบ\n2. วัตถุประสงค์: เพื่อให้เจ้าหน้าที่ควบคุมน้ำหนัก (Loadmaster / Dispatcher) และนักบินสามารถตรวจสอบเปรียบเทียบ (Cross-check) ด้วยสายตาได้ทันทีว่ามวลจริงในทุกช่องไม่เกินตัวเลขขีดจำกัดสูงสุดในกรอบ และใช้หาค่าขีดจำกัดที่เป็นตัวบังคับหลัก (Most limiting mass) เพื่อคำนวณหา Allowed Traffic Load และ Underload",
+    "correct": "To cross-check actual and limiting mass values.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 02 03 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "ตัวเลขขีดจำกัดสูงสุดที่อยู่ในกรอบสี่เหลี่ยม (Boxed maximum figures) บน Load Sheet ของเครื่องบินใหญ่ มีไว้เพื่อใช้ตรวจสอบเปรียบเทียบ (Cross-check) มวลจริงกับค่าขีดจำกัดสูงสุดในแต่ละสภาวะ"
+  },
+  {
+    "id": 38,
+    "question": "What must be determined for take-off in the large-aeroplane trim-sheet LO?",
+    "options": [
+      "Tyre pressure",
+      "Stabiliser trim units.",
+      "Cabin altitude",
+      "Fuel density"
+    ],
+    "answer": 1,
+    "explanation": "การใช้ Trim Sheet เพื่อหาค่า Stabiliser Trim Units สำหรับการวิ่งขึ้น:\n1. ลำดับขั้นตอนการใช้ Trim Sheet ของเครื่องบินขนาดใหญ่ (ออกสอบตามลำดับนี้เสมอ):\n- เริ่มต้นที่ค่า **Dry Operating Index (DOI)** ที่ด้านบนของตาราง\n- ลากเส้นปรับแก้ตามน้ำหนักสินค้าในแต่ละห้องเก็บของ (Cargo compartments) และผู้โดยสารในแต่ละโซนที่นั่ง (Passenger cabin zones) ลงมาจนได้เส้น **ZFM Index** (ตรวจสอบว่าอยู่ในกรอบ ZFM CG Envelope)\n- บวกหรือลบค่า **Fuel Index** จากตาราง Fuel Index Correction Table เพื่อลากไปยังจุดตัดกับเส้นน้ำหนักวิ่งขึ้นจริง (**TOM**)\n- อ่านค่า **Take-Off CG เป็น %MAC** และอ่านสเกลคู่ขนานด้านข้างเพื่อหาค่า **Stabiliser Trim Units** สำหรับตั้งค่า Trimmable Horizontal Stabiliser (THS) ในห้องนักบินก่อนวิ่งขึ้น",
+    "correct": "Stabiliser trim units.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 02 04 (05)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Determine",
+    "explanation_quick": "ในวัตถุประสงค์การเรียนรู้เรื่อง Trim Sheet ของเครื่องบินขนาดใหญ่ สิ่งสำคัญที่ต้องหาค่าออกมาสำหรับการวิ่งขึ้นคือ ค่าการตั้งมุมแพนหางระดับ (Stabiliser trim units for take-off)"
+  },
+  {
+    "id": 39,
+    "question": "Why is CG position operationally significant to pitch control?",
+    "options": [
+      "CG position influences pitching moment and the trim/control condition required.",
+      "Pitch control is independent of mass distribution",
+      "CG affects only radio systems",
+      "CG has no relation to pitch control"
+    ],
+    "answer": 0,
+    "explanation": "ความสัมพันธ์ระหว่างตำแหน่ง CG กับการควบคุมมุม Pitch และการตั้งค่า Stabiliser Trim:\n1. หลักการทางอากาศพลศาสตร์: การทรงตัวในแนวนอนขึ้นอยู่กับสมดุลโมเมนต์รอบจุด CG ตำแหน่งของ CG เทียบกับจุดศูนย์กลางแรงยกของปีก (Centre of Lift) จะเป็นตัวกำหนดขนาดของ Nose-down pitching moment ที่แพนหางระดับ (Horizontal Stabiliser / Elevator) ต้องสร้างแรงต้านเพื่อรักษาสมดุล\n2. การตั้งค่า Trim ตามตำแหน่ง CG (ข้อสอบชอบถามเปรียบเทียบ):\n- **กรณี Forward CG (หัวหนัก)**: เกิดโมเมนต์หัวทิ่มมาก ต้องตั้ง Stabiliser Trim ให้ช่วยดึงหัวขึ้น (**More Nose-Up Trim**) เพื่อให้เมื่อถึงความเร็ว $V_R$ นักบินสามารถดึงหัวเครื่องบินขึ้นได้ด้วยแรงปกติ\n- **กรณี Aft CG (ท้ายหนัก)**: โมเมนต์หัวทิ่มน้อย ต้องตั้ง Stabiliser Trim ไปทางด้านกดหัวลงมากกว่า (**Less Nose-Up / More Nose-Down Trim**) เพื่อป้องกันไม่ให้หัวเครื่องบินเชิดขึ้นเร็วเกินไป (Premature / Over-rotation) จนหางกระแทกพื้น (Tail strike) หรือเกิดอาการ Stall ตอนวิ่งขึ้น",
+    "correct": "CG position influences pitching moment and the trim/control condition required.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 02 04 (08)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) มีความสำคัญต่อการควบคุมมุมเงย-ก้ม (Pitch control) เพราะตำแหน่ง CG เป็นตัวกำหนดขนาดของโมเมนต์ดัดหัวเครื่องบิน (Pitching moment) และค่ามุม Trim หรือระยะคันบังคับที่ต้องใช้"
+  },
+  {
+    "id": 40,
+    "question": "An aircraft weighs 20,000 kg. A 2,000 kg load must create a 0.50 m CG shift. How far should it be moved using the simple moment relation?",
+    "options": [
+      "5.0 m",
+      "2.5 m",
+      "10.0 m",
+      "0.25 m"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาระยะทางในการย้ายมวลหรือถ่วงน้ำหนักเพื่อเปลี่ยนตำแหน่งจุดศูนย์ถ่วง (Distance to Move Load / Ballast for Desired CG Shift):\n1. สมการสัดส่วนการย้ายมวล (Mass Shift Formula — ใช้ได้กับโจทย์ย้ายสิ่งของทุกข้อ):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\iff m \\times d = W \\times \\Delta \\text{CG}$$\nเมื่อจัดรูปเพื่อหาระยะทาง ($d$) จะได้:\n$$d = \\frac{W \\times \\Delta \\text{CG}}{m}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลรวมของอากาศยาน ($W$) = $20,000\\text{ kg}$\n- ระยะที่ต้องการให้ CG เลื่อนไป ($\\Delta \\text{CG}$) = $0.5\\text{ m}$\n- มวลของสิ่งของ/น้ำหนักถ่วง ($m$) = $2,000\\text{ kg}$\n$$d = \\frac{20,000 \\times 0.5}{2,000} = \\frac{10,000}{2,000} = 5\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากต้องการให้ CG เลื่อนไปทางไหน (หน้า หรือ หลัง) ต้องย้ายมวล $m$ ไปในทิศทางนั้นเป็นระยะทาง $d$\n- หากโจทย์กำหนดระยะทางระหว่างห้องเก็บของ 2 ห้อง ($d$) มาให้ แล้วถามว่าต้องย้ายของกี่กิโลกรัม ($m$) ให้จัดรูปสูตรเป็น $m = \\frac{W \\times \\Delta \\text{CG}}{d}$",
+    "correct": "5.0 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะทางที่ต้องย้ายน้ำหนัก (Distance, d) = (มวลรวม W × ระยะเลื่อน ΔCG) ÷ มวลที่ย้าย m = (20,000 × 0.5) ÷ 2,000 = 5 m"
+  },
+  {
+    "id": 41,
+    "question": "A 1,000 kg load is moved 4 m on a 20,000 kg aircraft. What CG change results?",
+    "options": [
+      "4.00 m",
+      "0.50 m",
+      "0.05 m",
+      "0.20 m"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาระยะการเลื่อนของจุดศูนย์ถ่วงเมื่อย้ายตำแหน่งสิ่งของบนเครื่องบิน (CG Shift from Moving Mass):\n1. สูตรความสัมพันธ์หลัก (Mass Shift Formula):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\implies \\Delta \\text{CG} = \\frac{m \\times d}{W}$$\nโดยที่:\n- $m$ = มวลของสิ่งของที่ถูกย้าย ($1,000\\text{ kg}$)\n- $d$ = ระยะทางที่ย้ายสิ่งของ ($4\\text{ m}$)\n- $W$ = มวลรวมทั้งหมดของอากาศยาน ($20,000\\text{ kg}$)\n2. แทนค่าคำนวณในข้อนี้:\n$$\\Delta \\text{CG} = \\frac{1,000 \\times 4}{20,000} = \\frac{4,000}{20,000} = 0.2\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ทิศทางที่ CG เลื่อนไป จะเป็น **ทิศทางเดียวกับทิศทางที่ย้ายมวล** เสมอ (ย้ายของไปข้างหลัง CG ก็เลื่อนไปข้างหลัง; ย้ายของไปข้างหน้า CG ก็เลื่อนไปข้างหน้า)\n- หากโจทย์ให้ตำแหน่งเดิม ($\\text{CG}_{\\text{old}}$) มาด้วย ให้นำ $\\Delta \\text{CG}$ ไปบวก (ถ้าเลื่อนไปทางหาง) หรือลบ (ถ้าเลื่อนไปทางหัว) เพื่อหา $\\text{CG}_{\\text{new}}$",
+    "correct": "0.20 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะที่จุดศูนย์ถ่วงเปลี่ยนไป (ΔCG) = (มวลที่ย้าย m × ระยะทางที่ย้าย d) ÷ มวลรวมของเครื่องบิน W = (1,000 × 4) ÷ 20,000 = 0.20 m"
+  },
+  {
+    "id": 42,
+    "question": "An aircraft weighs 15,000 kg and needs a 0.20 m CG shift. A 500 kg ballast load is available. What distance is required?",
+    "options": [
+      "30.0 m",
+      "6.0 m",
+      "3.0 m",
+      "0.067 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาระยะทางในการย้ายมวลหรือถ่วงน้ำหนักเพื่อเปลี่ยนตำแหน่งจุดศูนย์ถ่วง (Distance to Move Load / Ballast for Desired CG Shift):\n1. สมการสัดส่วนการย้ายมวล (Mass Shift Formula — ใช้ได้กับโจทย์ย้ายสิ่งของทุกข้อ):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\iff m \\times d = W \\times \\Delta \\text{CG}$$\nเมื่อจัดรูปเพื่อหาระยะทาง ($d$) จะได้:\n$$d = \\frac{W \\times \\Delta \\text{CG}}{m}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลรวมของอากาศยาน ($W$) = $15,000\\text{ kg}$\n- ระยะที่ต้องการให้ CG เลื่อนไป ($\\Delta \\text{CG}$) = $0.2\\text{ m}$\n- มวลของสิ่งของ/น้ำหนักถ่วง ($m$) = $500\\text{ kg}$\n$$d = \\frac{15,000 \\times 0.2}{500} = \\frac{3,000}{500} = 6\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากต้องการให้ CG เลื่อนไปทางไหน (หน้า หรือ หลัง) ต้องย้ายมวล $m$ ไปในทิศทางนั้นเป็นระยะทาง $d$\n- หากโจทย์กำหนดระยะทางระหว่างห้องเก็บของ 2 ห้อง ($d$) มาให้ แล้วถามว่าต้องย้ายของกี่กิโลกรัม ($m$) ให้จัดรูปสูตรเป็น $m = \\frac{W \\times \\Delta \\text{CG}}{d}$",
+    "correct": "6.0 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะทางที่ต้องย้ายน้ำหนัก (Distance, d) = (มวลรวม W × ระยะเลื่อน ΔCG) ÷ มวลที่ย้าย m = (15,000 × 0.2) ÷ 500 = 6 m"
+  },
+  {
+    "id": 43,
+    "question": "What hazard is specifically identified when cargo is loaded in reverse order?",
+    "options": [
+      "It changes the aircraft registration",
+      "The resulting loading condition may differ from the intended manifest and affect CG.",
+      "It changes fuel density",
+      "It has no possible CG effect"
+    ],
+    "answer": 1,
+    "explanation": "อันตรายและการตรวจสอบการบรรทุกสินค้าผิดลำดับหรือผิดตำแหน่ง (Cargo Loaded in Reverse Order / Incorrect Location):\n1. สาเหตุและอันตรายร้ายแรง: หากเจ้าหน้าที่ภาคพื้นนำตู้สินค้า (ULDs) บรรทุกเข้าสู่ห้องเก็บสัมภาระสลับลำดับจากหน้าไปหลัง (Reverse order) เช่น นำตู้หนักที่ควรอยู่ด้านหน้าไปไว้ด้านหลังสุด และนำตู้เบาไปไว้ด้านหน้า:\n- **มวลรวม (Total Mass)** ของเครื่องบินจะยังคงเท่าเดิม (ทำให้ดูเหมือนน้ำหนักไม่เกิน)\n- แต่ **ตำแหน่งจุดศูนย์ถ่วงจริง (Actual CG)** จะคลาดเคลื่อนไปจากค่าที่คำนวณไว้ใน Load Sheet อย่างมาก! นักบินจึงตั้งค่า Stabiliser Trim ผิดพลาด ซึ่งอาจทำให้เครื่องบินหงายท้อง (Tail tipping) ขณะจอด หรือเชิดหัวขึ้นเองอย่างรุนแรง/ดึงหัวไม่ขึ้นขณะวิ่งขึ้น\n2. วิธีป้องกันตามมาตรฐาน CAAT: ต้องทำการตรวจสอบด้วยสายตา (Visual inspection of ULDs) เทียบหมายเลขตู้และน้ำหนักกับใบคำสั่งบรรทุก (Loading Instruction / Manifest) และตรวจสอบล็อกยึด (Latches) ก่อนปิดประตูห้องสัมภาระเสมอ",
+    "correct": "The resulting loading condition may differ from the intended manifest and affect CG.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "อันตรายจากการบรรทุกสินค้าสลับลำดับ (Loaded in reverse order) คือ สภาพการกระจายน้ำหนักจริงบนเครื่องบินจะไม่ตรงกับที่ระบุในใบแจ้งรายการบรรทุก (Manifest) ส่งผลให้ตำแหน่ง CG จริงคลาดเคลื่อนไปอย่างอันตราย"
+  },
+  {
+    "id": 44,
+    "question": "If cargo is loaded in an incorrect compartment, what should be determined?",
+    "options": [
+      "Only paint condition",
+      "Whether the resulting CG remains within limits.",
+      "Only radio frequency",
+      "Only cabin temperature"
+    ],
+    "answer": 1,
+    "explanation": "การประเมินและแก้ไขเมื่อบรรทุกสินค้าผิดตำแหน่ง (Cargo Loaded in Incorrect Compartment):\n1. หลักการปฏิบัติการ: เมื่อพบว่าสินค้าถูกวางผิดช่องเก็บของ (Compartment) แขนโมเมนต์ (Moment arm) ของสินค้านั้นจะเปลี่ยนไปจากแผนเดิม ต้องทำการคำนวณใหม่ทันทีเพื่อตรวจสอบว่า:\n- **ตำแหน่ง CG ใหม่ (Resulting CG)** ทั้งที่ ZFM, TOM และ LM ยังคงอยู่ภายในกรอบขีดจำกัด (Within CG limits) หรือไม่\n- น้ำหนักในช่องเก็บของนั้นเกินขีดจำกัดของช่อง (Compartment load limit), Floor load limit หรือ Running load limit หรือไม่\n2. สูตรคำนวณ CG ที่เปลี่ยนไปเมื่อวางสินค้าผิดช่อง (สำหรับทำข้อสอบคำนวณ):\nให้หาผลต่างของระยะทางระหว่างช่องที่วางจริงกับช่องที่ตั้งใจวาง ($d = |\\text{Arm}_{\\text{actual}} - \\text{Arm}_{\\text{intended}}|$) แล้วใช้สูตร:\n$$\\Delta \\text{CG} = \\frac{m_{\\text{cargo}} \\times d}{\\text{Total Mass}}$$\nโดยทิศทางของ $\\Delta \\text{CG}$ จะเลื่อนไปตามทิศทางที่วางผิด (เช่น วางค่อนไปทางหางกว่าแผนเดิม CG จริงก็จะถอยหลังกว่าแผนเดิม)",
+    "correct": "Whether the resulting CG remains within limits.",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (04)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Determine",
+    "explanation_quick": "หากตรวจพบว่ามีการบรรทุกสินค้าลงในห้องเก็บของผิดตำแหน่ง (Incorrect compartment) สิ่งที่ต้องดำเนินการตรวจสอบทันทีคือ คำนวณดูว่าตำแหน่งจุดศูนย์ถ่วง (CG) ที่เกิดขึ้นยังคงอยู่ภายในขีดจำกัดที่อนุญาตหรือไม่"
+  },
+  {
+    "id": 45,
+    "question": "Which set contains cargo types explicitly listed by CAAT?",
+    "options": [
+      "Containerised, palletised and bulk cargo.",
+      "Only liquid fuel and hydraulic fluid",
+      "Only passenger baggage and mail",
+      "Only dangerous goods and live animals"
+    ],
+    "answer": 0,
+    "explanation": "การจำแนกประเภทสินค้าทางอากาศและข้อดี (Types of Cargo: Containerised, Palletised, and Bulk Cargo):\n1. **Containerised Cargo (สินค้าบรรจุตู้คอนเทนเนอร์)** และ **Palletised Cargo (สินค้าวางบนแผ่นพาเลทคลุมตาข่าย)**:\n- ทั้งสองแบบจัดอยู่ในกลุ่มอุปกรณ์รวมหน่วยบรรทุก หรือ **ULD (Unit Load Devices)**\n- **ข้อดีสำคัญ (ออกสอบบ่อย)**: ช่วยให้การขนถ่ายสินค้าขึ้น-ลงเครื่องบินทำได้อย่างรวดเร็วมาก (Rapid loading/unloading ลดเวลา Turnaround time), กระจายน้ำหนักลงบนรางเลื่อน (Roller tracks) อย่างสม่ำเสมอ, ล็อกยึดได้ง่ายและปลอดภัยด้วยสลักยึด (Latches), และปกป้องสินค้าจากความเสียหายหรือสภาพอากาศ\n- **ข้อเสีย**: ตัวตู้และพาเลทมีน้ำหนักเปล่า (Tare weight) ซึ่งลดปริมาณน้ำหนักบรรทุกสุทธิลงเล็กน้อย\n2. **Bulk Cargo (สินค้าบรรทุกรายชิ้น / เทกอง)**:\n- เป็นสัมภาระหรือกล่องสินค้าที่ขนใส่ห้องเก็บของ (Bulk hold) ทีละชิ้นโดยไม่ใช้ตู้ ULD และยึดตรึงด้วยตาข่ายกั้น (Restraining nets) เหมาะสำหรับเครื่องบินขนาดเล็กหรือพื้นที่ส่วนท้ายของลำตัวเครื่องบินที่โค้งแคบ",
+    "correct": "Containerised, palletised and bulk cargo.",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "ประเภทของสินค้า (Cargo types) ที่ระบุไว้อย่างชัดเจนตามมาตรฐาน CAAT ได้แก่ สินค้าในตู้คอนเทนเนอร์ (Containerised cargo), สินค้าบนพาเลท (Palletised cargo) และสินค้าเทกอง/รายชิ้น (Bulk cargo)"
+  },
+  {
+    "id": 46,
+    "question": "A 2,400 kg load is subject to a 600 kg/m² floor-load limit. What minimum floor-contact area is required?",
+    "options": [
+      "0.25 m²",
+      "4,000 m²",
+      "4.0 m²",
+      "1.5 m²"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาพื้นที่หน้าสัมผัสขั้นต่ำเพื่อไม่ให้เกินขีดจำกัดพื้นห้องสัมภาระ (Minimum Floor-Contact Area):\n1. สูตรความสัมพันธ์ของภาระน้ำหนักกดทับพื้น (Floor Load Intensity):\n$$\\text{Floor Load} = \\frac{\\text{Mass}}{\\text{Contact Area}} \\implies \\text{Minimum Contact Area} = \\frac{\\text{Mass}}{\\text{Maximum Permissible Floor Load}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของสินค้า ($\\text{Mass}$) = $2400\\text{ kg}$\n- ขีดจำกัดการรับน้ำหนักของพื้นสูงสุด ($\\text{Max Floor Load}$) = $600\\text{ kg/m}^2$\n$$\\text{Minimum Area} = \\frac{2400}{600} = 4\\text{ m}^2$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากฐานของกล่องสินค้ามีพื้นที่เล็กกว่าค่าที่คำนวณได้ จะต้องใช้แผ่นไม้รองกระจายน้ำหนัก (Spreader board / Dunnage) ที่มีความกว้าง × ความยาว ให้ได้พื้นที่ไม่น้อยกว่า $4\\text{ m}^2$\n- หากโจทย์ระบุน้ำหนักของแผ่นไม้รองมาด้วย ต้องนำ **มวลสินค้า + มวลแผ่นไม้รอง** มาเป็นตัวตั้งก่อนหารด้วยขีดจำกัดพื้นเสมอ",
+    "correct": "4.0 m²",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "พื้นที่หน้าสัมผัสขั้นต่ำ (Minimum Contact Area) = มวลสิ่งของ ÷ ขีดจำกัดการรับน้ำหนักพื้น = 2400 kg ÷ 600 kg/m² = 4.0 m²"
+  },
+  {
+    "id": 47,
+    "question": "A 3 m² floor-contact area has a 500 kg/m² limit. What maximum mass is allowed?",
+    "options": [
+      "167 kg",
+      "3,000 kg",
+      "1,500 kg",
+      "500 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหามวลสูงสุดของตู้สินค้าจากพื้นที่หน้าสัมผัสและขีดจำกัดพื้น (Maximum Mass from Floor-Contact Area):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Maximum Mass} = \\text{Floor-Contact Area} \\times \\text{Maximum Permissible Floor Load}$$\n2. แทนค่าคำนวณในข้อนี้:\n- พื้นที่หน้าสัมผัสพื้น ($\\text{Area}$) = $3\\text{ m}^2$\n- ขีดจำกัดน้ำหนักกดทับพื้นสูงสุด ($\\text{Floor Load Limit}$) = $500\\text{ kg/m}^2$\n$$\\text{Maximum Mass} = 3 \\times 500 = 1,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ขนาดของกล่องเป็นความกว้าง × ความยาว × ความสูง ให้คำนวณพื้นที่ฐานที่สัมผัสพื้นจริง ($\\text{Area} = \\text{Width} \\times \\text{Length}$) ก่อนนำไปคูณกับขีดจำกัดพื้น ($\\text{kg/m}^2$)\n- หากโจทย์ให้ขีดจำกัดมาทั้ง Floor Load ($\\text{kg/m}^2$) และ Running Load ($\\text{kg/m}$) ให้คำนวณมวลสูงสุดจากทั้งสองเงื่อนไข แล้วเลือก **ค่าที่น้อยกว่า** เป็นคำตอบ",
+    "correct": "1,500 kg",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลสูงสุดที่อนุญาต (Maximum Allowed Mass) = พื้นที่หน้าสัมผัส × ขีดจำกัดการรับน้ำหนักพื้น = 3 m² × 500 kg/m² = 1,500 kg"
+  },
+  {
+    "id": 48,
+    "question": "A 1,800 kg container is distributed over 6 m. What running load results?",
+    "options": [
+      "108 kg/m",
+      "1,806 kg/m",
+      "10,800 kg/m",
+      "300 kg/m"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1800\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $6\\text{ m}$\n$$\\text{Running Load} = \\frac{1800}{6} = 300 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "300 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (03)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1800 kg ÷ 6 m = 300 kg/m"
+  },
+  {
+    "id": 49,
+    "question": "Why must cargo and baggage be restrained?",
+    "options": [
+      "To increase maximum structural mass",
+      "To prevent unintended movement during aircraft operation.",
+      "To eliminate CG limitations",
+      "To change the datum"
+    ],
+    "answer": 1,
+    "explanation": "ความสำคัญและเหตุผลในการยึดตรึงสินค้าและสัมภาระ (Reasons to Restrain or Secure Cargo and Baggage):\n1. อันตรายจากการไม่ยึดตรึงสินค้า (Unrestrained Load Hazards):\n- **การเลื่อนตำแหน่งของจุดศูนย์ถ่วงกะทันหัน (Sudden CG Shift)**: ขณะเครื่องบินเชิดหัววิ่งขึ้น (Rotation), เผชิญหลุมอากาศรุนแรง (Turbulence), หรือเบรกอย่างแรงตอนลงจอด สินค้าที่ไม่ได้ยึดตรึงจะไหลเลื่อนไปด้านหลังหรือด้านหน้า ทำให้ CG หลุดออกนอกกรอบขีดจำกัด (Out of CG limits) จนสูญเสียการควบคุมเครื่องบินทันที\n- **ความเสียหายต่อโครงสร้างและระบบบังคับการบิน (Structural & System Damage)**: สินค้าที่มีน้ำหนักมากเมื่อกระแทกอาจทะลุผนังกั้นห้องความดัน (Pressure bulkhead), ตัดสายเคเบิลบังคับการบิน, หรือทำลายท่อไฮดรอลิก\n2. ดังนั้น กฎการบินจึงกำหนดให้สัมภาระและสินค้าทุกชิ้นต้องได้รับการผูกยึดเพื่อรับแรงเฉื่อย (G-loads) ในทุกทิศทาง (หน้า-หลัง, ซ้าย-ขวา, และขึ้น-ลง)",
+    "correct": "To prevent unintended movement during aircraft operation.",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Explain",
+    "explanation_quick": "สินค้าและสัมภาระต้องได้รับการยึดตรึง (Restrained / Secured) เพื่อป้องกันการเคลื่อนที่โดยไม่ตั้งใจระหว่างปฏิบัติการบิน ซึ่งอาจทำให้จุดศูนย์ถ่วง (CG) เปลี่ยนแปลงกะทันหันหรือทำลายโครงสร้างเครื่องบิน"
+  },
+  {
+    "id": 50,
+    "question": "Which pairing matches the CAAT securement examples?",
+    "options": [
+      "ULDs—radio antennas; bulk—circuit breakers",
+      "ULDs—tyre valves; bulk—pitot covers",
+      "ULDs—latches/straps; bulk cargo—restraining nets.",
+      "ULDs—fuel caps; bulk—seat belts"
+    ],
+    "answer": 2,
+    "explanation": "วิธีการพื้นฐานในการยึดตรึงสินค้าบนอากาศยาน (Basic Methods to Restrain or Secure Loads):\n1. **การยึดตรึง ULD (Unit Load Devices — ตู้ Container และแผ่น Pallet)**:\n- เคลื่อนย้ายบนระบบรางลูกกลิ้ง (Roller tracks / Ball mats) บนพื้นห้องเก็บสินค้า\n- ยึดตรึงให้แน่นกับโครงสร้างเครื่องบินด้วย **สลักล็อกนิรภัย (Locks / Latches / Stops)** บนรางเลื่อน หรือใช้ **สายรัด (Tie-down straps)** ยึดเข้ากับจุดยึด (Tie-down points) บนพื้น\n2. **การยึดตรึง Bulk Cargo (สินค้ารายชิ้นและกระเป๋าสัมภาระ)**:\n- ใช้ **ตาข่ายกั้นและคลุมสินค้า (Restraining nets)** เกี่ยวเข้ากับจุดยึดบนพื้นและผนังห้องเก็บของ (Attachment points and tie-down rings) เพื่อแบ่งโซนและป้องกันไม่ให้สัมภาระไหลกองรวมกัน",
+    "correct": "ULDs—latches/straps; bulk cargo—restraining nets.",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 03 01 (02)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Describe",
+    "explanation_quick": "วิธีการยึดตรึงสินค้าตามมาตรฐาน CAAT คือ: อุปกรณ์รวมหน่วยบรรทุก (ULDs) ยึดด้วยสลักล็อกบนรางเลื่อนหรือสายรัด (Latches/straps) ส่วนสินค้าเทกองรายชิ้น (Bulk cargo) ยึดด้วยตาข่ายกั้น (Restraining nets)"
+  },
+  {
+    "id": 51,
+    "question": "Fuel density is 0.75 kg/L. What volume corresponds to 300 kg of fuel?",
+    "options": [
+      "400 L",
+      "300 L",
+      "225 L",
+      "800 L"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $75\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.75\\text{ kg/L}$\n$$\\text{Volume} = \\frac{75}{0.75} = 400 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "400 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 75 kg ÷ 0.75 kg/L = 400 L"
+  },
+  {
+    "id": 52,
+    "question": "A load of 1200 kg is placed on 4 m² of floor-contact area. What floor load results?",
+    "options": [
+      "4 kg/m²",
+      "1200 kg/m²",
+      "4800 kg/m²",
+      "300 kg/m²"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาค่าภาระน้ำหนักกดทับต่อหน่วยพื้นที่ (Floor Load / Area Load Calculation):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Floor Load} = \\frac{\\text{Mass (kg)}}{\\text{Floor-Contact Area (m}^2\\text{)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของน้ำหนักบรรทุก ($\\text{Mass}$) = $1200\\text{ kg}$\n- พื้นที่หน้าสัมผัสพื้น ($\\text{Contact Area}$) = $4\\text{ m}^2$\n$$\\text{Floor Load} = \\frac{1200}{4} = 300 kg/m²$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของคำตอบคือ $\\text{kg/m}^2$ แปลว่าต้องนำกิโลกรัม ($\\text{kg}$) ตั้งแล้วหารด้วยตารางเมตร ($\\text{m}^2$) เสมอ\n- ค่าที่ได้นี้จะต้องมีค่าไม่เกิน Maximum Permissible Floor Load ของห้องเก็บสัมภาระนั้นๆ เพื่อป้องกันไม่ให้แผ่นพื้นห้องเก็บของยุบตัวหรือเสียหาย",
+    "correct": "300 kg/m²",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักกดทับพื้น (Floor Load) = มวลสิ่งของ ÷ พื้นที่หน้าสัมผัส = 1200 kg ÷ 4 m² = 300 kg/m²"
+  },
+  {
+    "id": 53,
+    "question": "A 1560 kg container is distributed over 7 m. What running load results?",
+    "options": [
+      "10920 kg/m",
+      "7 kg/m",
+      "1560 kg/m",
+      "222.857 kg/m"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1560\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $7\\text{ m}$\n$$\\text{Running Load} = \\frac{1560}{7} = 222.857 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "222.857 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1560 kg ÷ 7 m = 222.857 kg/m"
+  },
+  {
+    "id": 54,
+    "question": "An aircraft has total mass 12,000 kg and total moment 540,000 kg·m. What is CG from datum?",
+    "options": [
+      "90 m",
+      "22.5 m",
+      "45 m",
+      "0.0222222 m"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $540,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $12,000\\text{ kg}$\n$$\\text{CG} = \\frac{540,000}{12,000} = 45\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "45 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 540,000 kg·m ÷ 12,000 kg = 45 m"
+  },
+  {
+    "id": 55,
+    "question": "A 1000 kg load is moved 4 m on an aircraft weighing 20,000 kg. What CG shift results?",
+    "options": [
+      "4 m",
+      "0.2 m",
+      "0.1 m",
+      "0.4 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาระยะการเลื่อนของจุดศูนย์ถ่วงเมื่อย้ายตำแหน่งสิ่งของบนเครื่องบิน (CG Shift from Moving Mass):\n1. สูตรความสัมพันธ์หลัก (Mass Shift Formula):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\implies \\Delta \\text{CG} = \\frac{m \\times d}{W}$$\nโดยที่:\n- $m$ = มวลของสิ่งของที่ถูกย้าย ($1,000\\text{ kg}$)\n- $d$ = ระยะทางที่ย้ายสิ่งของ ($4\\text{ m}$)\n- $W$ = มวลรวมทั้งหมดของอากาศยาน ($20,000\\text{ kg}$)\n2. แทนค่าคำนวณในข้อนี้:\n$$\\Delta \\text{CG} = \\frac{1,000 \\times 4}{20,000} = \\frac{4,000}{20,000} = 0.2\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ทิศทางที่ CG เลื่อนไป จะเป็น **ทิศทางเดียวกับทิศทางที่ย้ายมวล** เสมอ (ย้ายของไปข้างหลัง CG ก็เลื่อนไปข้างหลัง; ย้ายของไปข้างหน้า CG ก็เลื่อนไปข้างหน้า)\n- หากโจทย์ให้ตำแหน่งเดิม ($\\text{CG}_{\\text{old}}$) มาด้วย ให้นำ $\\Delta \\text{CG}$ ไปบวก (ถ้าเลื่อนไปทางหาง) หรือลบ (ถ้าเลื่อนไปทางหัว) เพื่อหา $\\text{CG}_{\\text{new}}$",
+    "correct": "0.2 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะที่จุดศูนย์ถ่วงเปลี่ยนไป (ΔCG) = (มวลที่ย้าย m × ระยะทางที่ย้าย d) ÷ มวลรวมของเครื่องบิน W = (1,000 × 4) ÷ 20,000 = 0.2 m"
+  },
+  {
+    "id": 56,
+    "question": "Allowed take-off mass is 24,000 kg, operating mass 12,000 kg and fuel 3,000 kg. What traffic load remains?",
+    "options": [
+      "12,000 kg",
+      "15,000 kg",
+      "9,000 kg",
+      "3,000 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $24,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $12,000\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $3,000\\text{ kg}$\n$$\\text{Traffic Load} = 24,000 - 12,000 - 3,000 = 9,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "9,000 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (24,000 kg) − Operating Mass (12,000 kg) − Fuel (3,000 kg) = 9,000 kg"
+  },
+  {
+    "id": 57,
+    "question": "19 passengers are assigned a standard mass of 78 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "97 kg",
+      "1,482 kg",
+      "1,382 kg",
+      "1,560 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $19\\text{ คน}$\n- มวลมาตรฐานต่อคน = $78\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 19 \\times 78 = 1,482\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,482 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 19 คน × 78 kg = 1,482 kg"
+  },
+  {
+    "id": 58,
+    "question": "LEMAC is 5 m, MAC is 4 m and CG is 6.6 m from datum. What is CG in %MAC?",
+    "options": [
+      "20% MAC",
+      "60% MAC",
+      "40% MAC",
+      "50% MAC"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณตำแหน่งจุดศูนย์ถ่วงเป็นร้อยละของคอร์ดอากาศพลศาสตร์เฉลี่ย (CG Position as %MAC):\n1. หลักการและสูตรมาตรฐาน:\nการระบุตำแหน่ง CG เป็น $\\%\\text{MAC}$ คือการวัดว่าจุด CG อยู่ห่างจากชายหน้าของคอร์ดเฉลี่ย (Leading Edge of MAC: LEMAC) คิดเป็นกี่เปอร์เซ็นต์ของความยาวคอร์ดเฉลี่ย (MAC):\n$$\\%\\text{MAC} = \\frac{\\text{CG} - \\text{LEMAC}}{\\text{MAC}} \\times 100$$\n2. แทนค่าคำนวณในข้อนี้:\n- ตำแหน่งชายหน้าคอร์ดเฉลี่ยจาก Datum ($\\text{LEMAC}$) = $5\\text{ m}$\n- ความยาวคอร์ดอากาศพลศาสตร์เฉลี่ย ($\\text{MAC}$) = $4\\text{ m}$\n- ตำแหน่งจุดศูนย์ถ่วงจาก Datum ($\\text{CG}$) = $6.6\\text{ m}$\n$$\\%\\text{MAC} = \\frac{6.6 - 5}{4} \\times 100 = \\frac{1.6}{4} \\times 100 = 40\\%\\text{ MAC}$$\n3. เทคนิคทำข้อสอบย้อนกลับในอนาคต:\n- หากโจทย์ให้ค่า $\\%\\text{MAC}$ มา แล้วถามหาระยะ $\\text{CG}$ จากจุด Datum ให้จัดรูปสมการย้อนกลับเป็น:\n$$\\text{CG} = \\text{LEMAC} + \\left(\\frac{\\%\\text{MAC}}{100} \\times \\text{MAC}\\right)$$\n- หากโจทย์ให้ตำแหน่งขอบหลัง (TEMAC) แทนความยาว MAC ให้หา $\\text{MAC} = \\text{TEMAC} - \\text{LEMAC}$ ก่อนเข้าสูตร",
+    "correct": "40% MAC",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "CG (%MAC) = [(CG − LEMAC) ÷ MAC] × 100 = [(6.6 − 5) ÷ 4] × 100 = 40% MAC"
+  },
+  {
+    "id": 59,
+    "question": "An aircraft weighs 3,400 kg on one reaction point and 5,600 kg on another. What total mass is represented?",
+    "options": [
+      "9,000 kg",
+      "19,040,000 kg",
+      "2,200 kg",
+      "3,400 kg"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $3,400\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $5,600\\text{ kg}$\n$$\\text{Total Mass} = 3,400 + 5,600 = 9,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "9,000 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 3,400 kg + 5,600 kg = 9,000 kg"
+  },
+  {
+    "id": 60,
+    "question": "Fuel density is 0.72 kg/L. What volume corresponds to 360 kg of fuel?",
+    "options": [
+      "259.2 L",
+      "500 L",
+      "360 L",
+      "1000 L"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $72\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.72\\text{ kg/L}$\n$$\\text{Volume} = \\frac{72}{0.72} = 500 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "500 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 72 kg ÷ 0.72 kg/L = 500 L"
+  },
+  {
+    "id": 61,
+    "question": "A load of 1200 kg is placed on 3 m² of floor-contact area. What floor load results?",
+    "options": [
+      "3600 kg/m²",
+      "400 kg/m²",
+      "3 kg/m²",
+      "1200 kg/m²"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาค่าภาระน้ำหนักกดทับต่อหน่วยพื้นที่ (Floor Load / Area Load Calculation):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Floor Load} = \\frac{\\text{Mass (kg)}}{\\text{Floor-Contact Area (m}^2\\text{)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของน้ำหนักบรรทุก ($\\text{Mass}$) = $1200\\text{ kg}$\n- พื้นที่หน้าสัมผัสพื้น ($\\text{Contact Area}$) = $3\\text{ m}^2$\n$$\\text{Floor Load} = \\frac{1200}{3} = 400 kg/m²$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของคำตอบคือ $\\text{kg/m}^2$ แปลว่าต้องนำกิโลกรัม ($\\text{kg}$) ตั้งแล้วหารด้วยตารางเมตร ($\\text{m}^2$) เสมอ\n- ค่าที่ได้นี้จะต้องมีค่าไม่เกิน Maximum Permissible Floor Load ของห้องเก็บสัมภาระนั้นๆ เพื่อป้องกันไม่ให้แผ่นพื้นห้องเก็บของยุบตัวหรือเสียหาย",
+    "correct": "400 kg/m²",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักกดทับพื้น (Floor Load) = มวลสิ่งของ ÷ พื้นที่หน้าสัมผัส = 1200 kg ÷ 3 m² = 400 kg/m²"
+  },
+  {
+    "id": 62,
+    "question": "A 1680 kg container is distributed over 6 m. What running load results?",
+    "options": [
+      "1680 kg/m",
+      "6 kg/m",
+      "280 kg/m",
+      "10080 kg/m"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1680\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $6\\text{ m}$\n$$\\text{Running Load} = \\frac{1680}{6} = 280 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "280 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1680 kg ÷ 6 m = 280 kg/m"
+  },
+  {
+    "id": 63,
+    "question": "An aircraft has total mass 9,000 kg and total moment 360,000 kg·m. What is CG from datum?",
+    "options": [
+      "0.025 m",
+      "40 m",
+      "80 m",
+      "20 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $360,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $9,000\\text{ kg}$\n$$\\text{CG} = \\frac{360,000}{9,000} = 40\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "40 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 360,000 kg·m ÷ 9,000 kg = 40 m"
+  },
+  {
+    "id": 64,
+    "question": "A 700 kg load is moved 5 m on an aircraft weighing 14,000 kg. What CG shift results?",
+    "options": [
+      "0.5 m",
+      "0.25 m",
+      "5 m",
+      "0.125 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาระยะการเลื่อนของจุดศูนย์ถ่วงเมื่อย้ายตำแหน่งสิ่งของบนเครื่องบิน (CG Shift from Moving Mass):\n1. สูตรความสัมพันธ์หลัก (Mass Shift Formula):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\implies \\Delta \\text{CG} = \\frac{m \\times d}{W}$$\nโดยที่:\n- $m$ = มวลของสิ่งของที่ถูกย้าย ($700\\text{ kg}$)\n- $d$ = ระยะทางที่ย้ายสิ่งของ ($5\\text{ m}$)\n- $W$ = มวลรวมทั้งหมดของอากาศยาน ($14,000\\text{ kg}$)\n2. แทนค่าคำนวณในข้อนี้:\n$$\\Delta \\text{CG} = \\frac{700 \\times 5}{14,000} = \\frac{3,500}{14,000} = 0.25\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ทิศทางที่ CG เลื่อนไป จะเป็น **ทิศทางเดียวกับทิศทางที่ย้ายมวล** เสมอ (ย้ายของไปข้างหลัง CG ก็เลื่อนไปข้างหลัง; ย้ายของไปข้างหน้า CG ก็เลื่อนไปข้างหน้า)\n- หากโจทย์ให้ตำแหน่งเดิม ($\\text{CG}_{\\text{old}}$) มาด้วย ให้นำ $\\Delta \\text{CG}$ ไปบวก (ถ้าเลื่อนไปทางหาง) หรือลบ (ถ้าเลื่อนไปทางหัว) เพื่อหา $\\text{CG}_{\\text{new}}$",
+    "correct": "0.25 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะที่จุดศูนย์ถ่วงเปลี่ยนไป (ΔCG) = (มวลที่ย้าย m × ระยะทางที่ย้าย d) ÷ มวลรวมของเครื่องบิน W = (700 × 5) ÷ 14,000 = 0.25 m"
+  },
+  {
+    "id": 65,
+    "question": "Allowed take-off mass is 19,000 kg, operating mass 12,500 kg and fuel 2,500 kg. What traffic load remains?",
+    "options": [
+      "2,500 kg",
+      "6,500 kg",
+      "4,000 kg",
+      "15,000 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $19,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $12,500\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $2,500\\text{ kg}$\n$$\\text{Traffic Load} = 19,000 - 12,500 - 2,500 = 4,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "4,000 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (19,000 kg) − Operating Mass (12,500 kg) − Fuel (2,500 kg) = 4,000 kg"
+  },
+  {
+    "id": 66,
+    "question": "18 passengers are assigned a standard mass of 80 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "98 kg",
+      "1,340 kg",
+      "1,440 kg",
+      "1,520 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $18\\text{ คน}$\n- มวลมาตรฐานต่อคน = $80\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 18 \\times 80 = 1,440\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,440 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 18 คน × 80 kg = 1,440 kg"
+  },
+  {
+    "id": 67,
+    "question": "LEMAC is 6 m, MAC is 4 m and CG is 7.8 m from datum. What is CG in %MAC?",
+    "options": [
+      "45% MAC",
+      "22.5% MAC",
+      "55% MAC",
+      "55% MAC"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณตำแหน่งจุดศูนย์ถ่วงเป็นร้อยละของคอร์ดอากาศพลศาสตร์เฉลี่ย (CG Position as %MAC):\n1. หลักการและสูตรมาตรฐาน:\nการระบุตำแหน่ง CG เป็น $\\%\\text{MAC}$ คือการวัดว่าจุด CG อยู่ห่างจากชายหน้าของคอร์ดเฉลี่ย (Leading Edge of MAC: LEMAC) คิดเป็นกี่เปอร์เซ็นต์ของความยาวคอร์ดเฉลี่ย (MAC):\n$$\\%\\text{MAC} = \\frac{\\text{CG} - \\text{LEMAC}}{\\text{MAC}} \\times 100$$\n2. แทนค่าคำนวณในข้อนี้:\n- ตำแหน่งชายหน้าคอร์ดเฉลี่ยจาก Datum ($\\text{LEMAC}$) = $6\\text{ m}$\n- ความยาวคอร์ดอากาศพลศาสตร์เฉลี่ย ($\\text{MAC}$) = $4\\text{ m}$\n- ตำแหน่งจุดศูนย์ถ่วงจาก Datum ($\\text{CG}$) = $7.8\\text{ m}$\n$$\\%\\text{MAC} = \\frac{7.8 - 6}{4} \\times 100 = \\frac{1.8}{4} \\times 100 = 45\\%\\text{ MAC}$$\n3. เทคนิคทำข้อสอบย้อนกลับในอนาคต:\n- หากโจทย์ให้ค่า $\\%\\text{MAC}$ มา แล้วถามหาระยะ $\\text{CG}$ จากจุด Datum ให้จัดรูปสมการย้อนกลับเป็น:\n$$\\text{CG} = \\text{LEMAC} + \\left(\\frac{\\%\\text{MAC}}{100} \\times \\text{MAC}\\right)$$\n- หากโจทย์ให้ตำแหน่งขอบหลัง (TEMAC) แทนความยาว MAC ให้หา $\\text{MAC} = \\text{TEMAC} - \\text{LEMAC}$ ก่อนเข้าสูตร",
+    "correct": "45% MAC",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "CG (%MAC) = [(CG − LEMAC) ÷ MAC] × 100 = [(7.8 − 6) ÷ 4] × 100 = 45% MAC"
+  },
+  {
+    "id": 68,
+    "question": "An aircraft weighs 3,800 kg on one reaction point and 6,200 kg on another. What total mass is represented?",
+    "options": [
+      "10,000 kg",
+      "23,560,000 kg",
+      "3,800 kg",
+      "2,400 kg"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $3,800\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $6,200\\text{ kg}$\n$$\\text{Total Mass} = 3,800 + 6,200 = 10,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "10,000 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 3,800 kg + 6,200 kg = 10,000 kg"
+  },
+  {
+    "id": 69,
+    "question": "Fuel density is 0.84 kg/L. What volume corresponds to 420 kg of fuel?",
+    "options": [
+      "500 L",
+      "1000 L",
+      "352.8 L",
+      "420 L"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $84\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.84\\text{ kg/L}$\n$$\\text{Volume} = \\frac{84}{0.84} = 500 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "500 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 84 kg ÷ 0.84 kg/L = 500 L"
+  },
+  {
+    "id": 70,
+    "question": "A load of 1200 kg is placed on 2 m² of floor-contact area. What floor load results?",
+    "options": [
+      "1200 kg/m²",
+      "2400 kg/m²",
+      "600 kg/m²",
+      "2 kg/m²"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาค่าภาระน้ำหนักกดทับต่อหน่วยพื้นที่ (Floor Load / Area Load Calculation):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Floor Load} = \\frac{\\text{Mass (kg)}}{\\text{Floor-Contact Area (m}^2\\text{)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของน้ำหนักบรรทุก ($\\text{Mass}$) = $1200\\text{ kg}$\n- พื้นที่หน้าสัมผัสพื้น ($\\text{Contact Area}$) = $2\\text{ m}^2$\n$$\\text{Floor Load} = \\frac{1200}{2} = 600 kg/m²$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของคำตอบคือ $\\text{kg/m}^2$ แปลว่าต้องนำกิโลกรัม ($\\text{kg}$) ตั้งแล้วหารด้วยตารางเมตร ($\\text{m}^2$) เสมอ\n- ค่าที่ได้นี้จะต้องมีค่าไม่เกิน Maximum Permissible Floor Load ของห้องเก็บสัมภาระนั้นๆ เพื่อป้องกันไม่ให้แผ่นพื้นห้องเก็บของยุบตัวหรือเสียหาย",
+    "correct": "600 kg/m²",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักกดทับพื้น (Floor Load) = มวลสิ่งของ ÷ พื้นที่หน้าสัมผัส = 1200 kg ÷ 2 m² = 600 kg/m²"
+  },
+  {
+    "id": 71,
+    "question": "A 1800 kg container is distributed over 5 m. What running load results?",
+    "options": [
+      "9000 kg/m",
+      "360 kg/m",
+      "5 kg/m",
+      "1800 kg/m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1800\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $5\\text{ m}$\n$$\\text{Running Load} = \\frac{1800}{5} = 360 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "360 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1800 kg ÷ 5 m = 360 kg/m"
+  },
+  {
+    "id": 72,
+    "question": "An aircraft has total mass 12,000 kg and total moment 420,000 kg·m. What is CG from datum?",
+    "options": [
+      "0.0285714 m",
+      "70 m",
+      "17.5 m",
+      "35 m"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $420,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $12,000\\text{ kg}$\n$$\\text{CG} = \\frac{420,000}{12,000} = 35\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "35 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 420,000 kg·m ÷ 12,000 kg = 35 m"
+  },
+  {
+    "id": 73,
+    "question": "A 1000 kg load is moved 6 m on an aircraft weighing 20,000 kg. What CG shift results?",
+    "options": [
+      "0.15 m",
+      "0.3 m",
+      "0.6 m",
+      "6 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาระยะการเลื่อนของจุดศูนย์ถ่วงเมื่อย้ายตำแหน่งสิ่งของบนเครื่องบิน (CG Shift from Moving Mass):\n1. สูตรความสัมพันธ์หลัก (Mass Shift Formula):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\implies \\Delta \\text{CG} = \\frac{m \\times d}{W}$$\nโดยที่:\n- $m$ = มวลของสิ่งของที่ถูกย้าย ($1,000\\text{ kg}$)\n- $d$ = ระยะทางที่ย้ายสิ่งของ ($6\\text{ m}$)\n- $W$ = มวลรวมทั้งหมดของอากาศยาน ($20,000\\text{ kg}$)\n2. แทนค่าคำนวณในข้อนี้:\n$$\\Delta \\text{CG} = \\frac{1,000 \\times 6}{20,000} = \\frac{6,000}{20,000} = 0.3\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ทิศทางที่ CG เลื่อนไป จะเป็น **ทิศทางเดียวกับทิศทางที่ย้ายมวล** เสมอ (ย้ายของไปข้างหลัง CG ก็เลื่อนไปข้างหลัง; ย้ายของไปข้างหน้า CG ก็เลื่อนไปข้างหน้า)\n- หากโจทย์ให้ตำแหน่งเดิม ($\\text{CG}_{\\text{old}}$) มาด้วย ให้นำ $\\Delta \\text{CG}$ ไปบวก (ถ้าเลื่อนไปทางหาง) หรือลบ (ถ้าเลื่อนไปทางหัว) เพื่อหา $\\text{CG}_{\\text{new}}$",
+    "correct": "0.3 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะที่จุดศูนย์ถ่วงเปลี่ยนไป (ΔCG) = (มวลที่ย้าย m × ระยะทางที่ย้าย d) ÷ มวลรวมของเครื่องบิน W = (1,000 × 6) ÷ 20,000 = 0.3 m"
+  },
+  {
+    "id": 74,
+    "question": "Allowed take-off mass is 21,000 kg, operating mass 11,000 kg and fuel 4,500 kg. What traffic load remains?",
+    "options": [
+      "4,500 kg",
+      "5,500 kg",
+      "10,000 kg",
+      "15,500 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $21,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $11,000\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $4,500\\text{ kg}$\n$$\\text{Traffic Load} = 21,000 - 11,000 - 4,500 = 5,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "5,500 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (21,000 kg) − Operating Mass (11,000 kg) − Fuel (4,500 kg) = 5,500 kg"
+  },
+  {
+    "id": 75,
+    "question": "17 passengers are assigned a standard mass of 82 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "1,294 kg",
+      "99 kg",
+      "1,476 kg",
+      "1,394 kg"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $17\\text{ คน}$\n- มวลมาตรฐานต่อคน = $82\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 17 \\times 82 = 1,394\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,394 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 17 คน × 82 kg = 1,394 kg"
+  },
+  {
+    "id": 76,
+    "question": "LEMAC is 7 m, MAC is 4 m and CG is 9 m from datum. What is CG in %MAC?",
+    "options": [
+      "50% MAC",
+      "60% MAC",
+      "25% MAC",
+      "50% MAC"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณตำแหน่งจุดศูนย์ถ่วงเป็นร้อยละของคอร์ดอากาศพลศาสตร์เฉลี่ย (CG Position as %MAC):\n1. หลักการและสูตรมาตรฐาน:\nการระบุตำแหน่ง CG เป็น $\\%\\text{MAC}$ คือการวัดว่าจุด CG อยู่ห่างจากชายหน้าของคอร์ดเฉลี่ย (Leading Edge of MAC: LEMAC) คิดเป็นกี่เปอร์เซ็นต์ของความยาวคอร์ดเฉลี่ย (MAC):\n$$\\%\\text{MAC} = \\frac{\\text{CG} - \\text{LEMAC}}{\\text{MAC}} \\times 100$$\n2. แทนค่าคำนวณในข้อนี้:\n- ตำแหน่งชายหน้าคอร์ดเฉลี่ยจาก Datum ($\\text{LEMAC}$) = $7\\text{ m}$\n- ความยาวคอร์ดอากาศพลศาสตร์เฉลี่ย ($\\text{MAC}$) = $4\\text{ m}$\n- ตำแหน่งจุดศูนย์ถ่วงจาก Datum ($\\text{CG}$) = $9\\text{ m}$\n$$\\%\\text{MAC} = \\frac{9 - 7}{4} \\times 100 = \\frac{2}{4} \\times 100 = 50\\%\\text{ MAC}$$\n3. เทคนิคทำข้อสอบย้อนกลับในอนาคต:\n- หากโจทย์ให้ค่า $\\%\\text{MAC}$ มา แล้วถามหาระยะ $\\text{CG}$ จากจุด Datum ให้จัดรูปสมการย้อนกลับเป็น:\n$$\\text{CG} = \\text{LEMAC} + \\left(\\frac{\\%\\text{MAC}}{100} \\times \\text{MAC}\\right)$$\n- หากโจทย์ให้ตำแหน่งขอบหลัง (TEMAC) แทนความยาว MAC ให้หา $\\text{MAC} = \\text{TEMAC} - \\text{LEMAC}$ ก่อนเข้าสูตร",
+    "correct": "50% MAC",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "CG (%MAC) = [(CG − LEMAC) ÷ MAC] × 100 = [(9 − 7) ÷ 4] × 100 = 50% MAC"
+  },
+  {
+    "id": 77,
+    "question": "An aircraft weighs 4,200 kg on one reaction point and 6,800 kg on another. What total mass is represented?",
+    "options": [
+      "4,200 kg",
+      "2,600 kg",
+      "11,000 kg",
+      "28,560,000 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $4,200\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $6,800\\text{ kg}$\n$$\\text{Total Mass} = 4,200 + 6,800 = 11,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "11,000 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 4,200 kg + 6,800 kg = 11,000 kg"
+  },
+  {
+    "id": 78,
+    "question": "Fuel density is 0.82 kg/L. What volume corresponds to 480 kg of fuel?",
+    "options": [
+      "480 L",
+      "1170.73 L",
+      "585.366 L",
+      "393.6 L"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $82\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.82\\text{ kg/L}$\n$$\\text{Volume} = \\frac{82}{0.82} = 585.366 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "585.366 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 82 kg ÷ 0.82 kg/L = 585.366 L"
+  },
+  {
+    "id": 79,
+    "question": "A load of 1200 kg is placed on 6 m² of floor-contact area. What floor load results?",
+    "options": [
+      "1200 kg/m²",
+      "200 kg/m²",
+      "6 kg/m²",
+      "7200 kg/m²"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาค่าภาระน้ำหนักกดทับต่อหน่วยพื้นที่ (Floor Load / Area Load Calculation):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Floor Load} = \\frac{\\text{Mass (kg)}}{\\text{Floor-Contact Area (m}^2\\text{)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของน้ำหนักบรรทุก ($\\text{Mass}$) = $1200\\text{ kg}$\n- พื้นที่หน้าสัมผัสพื้น ($\\text{Contact Area}$) = $6\\text{ m}^2$\n$$\\text{Floor Load} = \\frac{1200}{6} = 200 kg/m²$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของคำตอบคือ $\\text{kg/m}^2$ แปลว่าต้องนำกิโลกรัม ($\\text{kg}$) ตั้งแล้วหารด้วยตารางเมตร ($\\text{m}^2$) เสมอ\n- ค่าที่ได้นี้จะต้องมีค่าไม่เกิน Maximum Permissible Floor Load ของห้องเก็บสัมภาระนั้นๆ เพื่อป้องกันไม่ให้แผ่นพื้นห้องเก็บของยุบตัวหรือเสียหาย",
+    "correct": "200 kg/m²",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักกดทับพื้น (Floor Load) = มวลสิ่งของ ÷ พื้นที่หน้าสัมผัส = 1200 kg ÷ 6 m² = 200 kg/m²"
+  },
+  {
+    "id": 80,
+    "question": "A 1920 kg container is distributed over 4 m. What running load results?",
+    "options": [
+      "7680 kg/m",
+      "4 kg/m",
+      "480 kg/m",
+      "1920 kg/m"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1920\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $4\\text{ m}$\n$$\\text{Running Load} = \\frac{1920}{4} = 480 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "480 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1920 kg ÷ 4 m = 480 kg/m"
+  },
+  {
+    "id": 81,
+    "question": "An aircraft has total mass 9,000 kg and total moment 270,000 kg·m. What is CG from datum?",
+    "options": [
+      "0.0333333 m",
+      "30 m",
+      "15 m",
+      "60 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $270,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $9,000\\text{ kg}$\n$$\\text{CG} = \\frac{270,000}{9,000} = 30\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "30 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 270,000 kg·m ÷ 9,000 kg = 30 m"
+  },
+  {
+    "id": 82,
+    "question": "A 700 kg load is moved 3 m on an aircraft weighing 14,000 kg. What CG shift results?",
+    "options": [
+      "3 m",
+      "0.15 m",
+      "0.3 m",
+      "0.075 m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาระยะการเลื่อนของจุดศูนย์ถ่วงเมื่อย้ายตำแหน่งสิ่งของบนเครื่องบิน (CG Shift from Moving Mass):\n1. สูตรความสัมพันธ์หลัก (Mass Shift Formula):\n$$\\frac{m}{W} = \\frac{\\Delta \\text{CG}}{d} \\implies \\Delta \\text{CG} = \\frac{m \\times d}{W}$$\nโดยที่:\n- $m$ = มวลของสิ่งของที่ถูกย้าย ($700\\text{ kg}$)\n- $d$ = ระยะทางที่ย้ายสิ่งของ ($3\\text{ m}$)\n- $W$ = มวลรวมทั้งหมดของอากาศยาน ($14,000\\text{ kg}$)\n2. แทนค่าคำนวณในข้อนี้:\n$$\\Delta \\text{CG} = \\frac{700 \\times 3}{14,000} = \\frac{2,100}{14,000} = 0.15\\text{ m}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ทิศทางที่ CG เลื่อนไป จะเป็น **ทิศทางเดียวกับทิศทางที่ย้ายมวล** เสมอ (ย้ายของไปข้างหลัง CG ก็เลื่อนไปข้างหลัง; ย้ายของไปข้างหน้า CG ก็เลื่อนไปข้างหน้า)\n- หากโจทย์ให้ตำแหน่งเดิม ($\\text{CG}_{\\text{old}}$) มาด้วย ให้นำ $\\Delta \\text{CG}$ ไปบวก (ถ้าเลื่อนไปทางหาง) หรือลบ (ถ้าเลื่อนไปทางหัว) เพื่อหา $\\text{CG}_{\\text{new}}$",
+    "correct": "0.15 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 03 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ระยะที่จุดศูนย์ถ่วงเปลี่ยนไป (ΔCG) = (มวลที่ย้าย m × ระยะทางที่ย้าย d) ÷ มวลรวมของเครื่องบิน W = (700 × 3) ÷ 14,000 = 0.15 m"
+  },
+  {
+    "id": 83,
+    "question": "Allowed take-off mass is 23,000 kg, operating mass 11,500 kg and fuel 4,000 kg. What traffic load remains?",
+    "options": [
+      "15,500 kg",
+      "4,000 kg",
+      "11,500 kg",
+      "7,500 kg"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $23,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $11,500\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $4,000\\text{ kg}$\n$$\\text{Traffic Load} = 23,000 - 11,500 - 4,000 = 7,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "7,500 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (23,000 kg) − Operating Mass (11,500 kg) − Fuel (4,000 kg) = 7,500 kg"
+  },
+  {
+    "id": 84,
+    "question": "16 passengers are assigned a standard mass of 84 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "100 kg",
+      "1,428 kg",
+      "1,244 kg",
+      "1,344 kg"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $16\\text{ คน}$\n- มวลมาตรฐานต่อคน = $84\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 16 \\times 84 = 1,344\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,344 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 16 คน × 84 kg = 1,344 kg"
+  },
+  {
+    "id": 85,
+    "question": "LEMAC is 8 m, MAC is 4 m and CG is 10.2 m from datum. What is CG in %MAC?",
+    "options": [
+      "65% MAC",
+      "27.5% MAC",
+      "55% MAC",
+      "45% MAC"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณตำแหน่งจุดศูนย์ถ่วงเป็นร้อยละของคอร์ดอากาศพลศาสตร์เฉลี่ย (CG Position as %MAC):\n1. หลักการและสูตรมาตรฐาน:\nการระบุตำแหน่ง CG เป็น $\\%\\text{MAC}$ คือการวัดว่าจุด CG อยู่ห่างจากชายหน้าของคอร์ดเฉลี่ย (Leading Edge of MAC: LEMAC) คิดเป็นกี่เปอร์เซ็นต์ของความยาวคอร์ดเฉลี่ย (MAC):\n$$\\%\\text{MAC} = \\frac{\\text{CG} - \\text{LEMAC}}{\\text{MAC}} \\times 100$$\n2. แทนค่าคำนวณในข้อนี้:\n- ตำแหน่งชายหน้าคอร์ดเฉลี่ยจาก Datum ($\\text{LEMAC}$) = $8\\text{ m}$\n- ความยาวคอร์ดอากาศพลศาสตร์เฉลี่ย ($\\text{MAC}$) = $4\\text{ m}$\n- ตำแหน่งจุดศูนย์ถ่วงจาก Datum ($\\text{CG}$) = $10.2\\text{ m}$\n$$\\%\\text{MAC} = \\frac{10.2 - 8}{4} \\times 100 = \\frac{2.2}{4} \\times 100 = 55\\%\\text{ MAC}$$\n3. เทคนิคทำข้อสอบย้อนกลับในอนาคต:\n- หากโจทย์ให้ค่า $\\%\\text{MAC}$ มา แล้วถามหาระยะ $\\text{CG}$ จากจุด Datum ให้จัดรูปสมการย้อนกลับเป็น:\n$$\\text{CG} = \\text{LEMAC} + \\left(\\frac{\\%\\text{MAC}}{100} \\times \\text{MAC}\\right)$$\n- หากโจทย์ให้ตำแหน่งขอบหลัง (TEMAC) แทนความยาว MAC ให้หา $\\text{MAC} = \\text{TEMAC} - \\text{LEMAC}$ ก่อนเข้าสูตร",
+    "correct": "55% MAC",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 01 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "CG (%MAC) = [(CG − LEMAC) ÷ MAC] × 100 = [(10.2 − 8) ÷ 4] × 100 = 55% MAC"
+  },
+  {
+    "id": 86,
+    "question": "An aircraft weighs 3,200 kg on one reaction point and 5,300 kg on another. What total mass is represented?",
+    "options": [
+      "16,960,000 kg",
+      "8,500 kg",
+      "2,100 kg",
+      "3,200 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $3,200\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $5,300\\text{ kg}$\n$$\\text{Total Mass} = 3,200 + 5,300 = 8,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "8,500 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 3,200 kg + 5,300 kg = 8,500 kg"
+  },
+  {
+    "id": 87,
+    "question": "Fuel density is 0.80 kg/L. What volume corresponds to 540 kg of fuel?",
+    "options": [
+      "1350 L",
+      "540 L",
+      "432 L",
+      "675 L"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $80\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.80\\text{ kg/L}$\n$$\\text{Volume} = \\frac{80}{0.80} = 675 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "675 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 80 kg ÷ 0.80 kg/L = 675 L"
+  },
+  {
+    "id": 88,
+    "question": "A load of 1200 kg is placed on 5 m² of floor-contact area. What floor load results?",
+    "options": [
+      "240 kg/m²",
+      "5 kg/m²",
+      "1200 kg/m²",
+      "6000 kg/m²"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาค่าภาระน้ำหนักกดทับต่อหน่วยพื้นที่ (Floor Load / Area Load Calculation):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Floor Load} = \\frac{\\text{Mass (kg)}}{\\text{Floor-Contact Area (m}^2\\text{)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของน้ำหนักบรรทุก ($\\text{Mass}$) = $1200\\text{ kg}$\n- พื้นที่หน้าสัมผัสพื้น ($\\text{Contact Area}$) = $5\\text{ m}^2$\n$$\\text{Floor Load} = \\frac{1200}{5} = 240 kg/m²$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของคำตอบคือ $\\text{kg/m}^2$ แปลว่าต้องนำกิโลกรัม ($\\text{kg}$) ตั้งแล้วหารด้วยตารางเมตร ($\\text{m}^2$) เสมอ\n- ค่าที่ได้นี้จะต้องมีค่าไม่เกิน Maximum Permissible Floor Load ของห้องเก็บสัมภาระนั้นๆ เพื่อป้องกันไม่ให้แผ่นพื้นห้องเก็บของยุบตัวหรือเสียหาย",
+    "correct": "240 kg/m²",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักกดทับพื้น (Floor Load) = มวลสิ่งของ ÷ พื้นที่หน้าสัมผัส = 1200 kg ÷ 5 m² = 240 kg/m²"
+  },
+  {
+    "id": 89,
+    "question": "A 2040 kg container is distributed over 8 m. What running load results?",
+    "options": [
+      "2040 kg/m",
+      "255 kg/m",
+      "16320 kg/m",
+      "8 kg/m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $2040\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $8\\text{ m}$\n$$\\text{Running Load} = \\frac{2040}{8} = 255 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "255 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 2040 kg ÷ 8 m = 255 kg/m"
+  },
+  {
+    "id": 90,
+    "question": "An aircraft has total mass 12,000 kg and total moment 300,000 kg·m. What is CG from datum?",
+    "options": [
+      "50 m",
+      "12.5 m",
+      "0.04 m",
+      "25 m"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $300,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $12,000\\text{ kg}$\n$$\\text{CG} = \\frac{300,000}{12,000} = 25\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "25 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 300,000 kg·m ÷ 12,000 kg = 25 m"
+  },
+  {
+    "id": 91,
+    "question": "Allowed take-off mass is 18,000 kg, operating mass 12,000 kg and fuel 3,500 kg. What traffic load remains?",
+    "options": [
+      "3,500 kg",
+      "6,000 kg",
+      "2,500 kg",
+      "15,500 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $18,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $12,000\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $3,500\\text{ kg}$\n$$\\text{Traffic Load} = 18,000 - 12,000 - 3,500 = 2,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "2,500 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (18,000 kg) − Operating Mass (12,000 kg) − Fuel (3,500 kg) = 2,500 kg"
+  },
+  {
+    "id": 92,
+    "question": "15 passengers are assigned a standard mass of 79 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "94 kg",
+      "1,085 kg",
+      "1,185 kg",
+      "1,264 kg"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $15\\text{ คน}$\n- มวลมาตรฐานต่อคน = $79\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 15 \\times 79 = 1,185\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,185 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 15 คน × 79 kg = 1,185 kg"
+  },
+  {
+    "id": 93,
+    "question": "An aircraft weighs 3,600 kg on one reaction point and 5,900 kg on another. What total mass is represented?",
+    "options": [
+      "2,300 kg",
+      "9,500 kg",
+      "21,240,000 kg",
+      "3,600 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $3,600\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $5,900\\text{ kg}$\n$$\\text{Total Mass} = 3,600 + 5,900 = 9,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "9,500 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 3,600 kg + 5,900 kg = 9,500 kg"
+  },
+  {
+    "id": 94,
+    "question": "Fuel density is 0.75 kg/L. What volume corresponds to 600 kg of fuel?",
+    "options": [
+      "450 L",
+      "600 L",
+      "1600 L",
+      "800 L"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $75\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.75\\text{ kg/L}$\n$$\\text{Volume} = \\frac{75}{0.75} = 800 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "800 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 75 kg ÷ 0.75 kg/L = 800 L"
+  },
+  {
+    "id": 95,
+    "question": "A 1200 kg container is distributed over 7 m. What running load results?",
+    "options": [
+      "8400 kg/m",
+      "171.429 kg/m",
+      "7 kg/m",
+      "1200 kg/m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1200\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $7\\text{ m}$\n$$\\text{Running Load} = \\frac{1200}{7} = 171.429 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "171.429 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1200 kg ÷ 7 m = 171.429 kg/m"
+  },
+  {
+    "id": 96,
+    "question": "An aircraft has total mass 9,000 kg and total moment 405,000 kg·m. What is CG from datum?",
+    "options": [
+      "22.5 m",
+      "90 m",
+      "0.0222222 m",
+      "45 m"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $405,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $9,000\\text{ kg}$\n$$\\text{CG} = \\frac{405,000}{9,000} = 45\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "45 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 405,000 kg·m ÷ 9,000 kg = 45 m"
+  },
+  {
+    "id": 97,
+    "question": "Allowed take-off mass is 20,000 kg, operating mass 12,500 kg and fuel 3,000 kg. What traffic load remains?",
+    "options": [
+      "15,500 kg",
+      "4,500 kg",
+      "7,500 kg",
+      "3,000 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $20,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $12,500\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $3,000\\text{ kg}$\n$$\\text{Traffic Load} = 20,000 - 12,500 - 3,000 = 4,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "4,500 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (20,000 kg) − Operating Mass (12,500 kg) − Fuel (3,000 kg) = 4,500 kg"
+  },
+  {
+    "id": 98,
+    "question": "14 passengers are assigned a standard mass of 81 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "1,034 kg",
+      "1,134 kg",
+      "1,215 kg",
+      "95 kg"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $14\\text{ คน}$\n- มวลมาตรฐานต่อคน = $81\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 14 \\times 81 = 1,134\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,134 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 14 คน × 81 kg = 1,134 kg"
+  },
+  {
+    "id": 99,
+    "question": "An aircraft weighs 4,000 kg on one reaction point and 6,500 kg on another. What total mass is represented?",
+    "options": [
+      "10,500 kg",
+      "4,000 kg",
+      "26,000,000 kg",
+      "2,500 kg"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $4,000\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $6,500\\text{ kg}$\n$$\\text{Total Mass} = 4,000 + 6,500 = 10,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "10,500 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 4,000 kg + 6,500 kg = 10,500 kg"
+  },
+  {
+    "id": 100,
+    "question": "Fuel density is 0.72 kg/L. What volume corresponds to 660 kg of fuel?",
+    "options": [
+      "1833.33 L",
+      "916.667 L",
+      "660 L",
+      "475.2 L"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $72\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.72\\text{ kg/L}$\n$$\\text{Volume} = \\frac{72}{0.72} = 916.667 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "916.667 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 72 kg ÷ 0.72 kg/L = 916.667 L"
+  },
+  {
+    "id": 101,
+    "question": "A 1320 kg container is distributed over 6 m. What running load results?",
+    "options": [
+      "1320 kg/m",
+      "220 kg/m",
+      "6 kg/m",
+      "7920 kg/m"
+    ],
+    "answer": 1,
+    "explanation": "การคำนวณหาการกระจายน้ำหนักตามแนวยาวลำตัว (Running Load / Linear Load Distribution):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Running Load} = \\frac{\\text{Mass (kg)}}{\\text{Length along fuselage (m)}}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลของตู้สินค้า ($\\text{Mass}$) = $1320\\text{ kg}$\n- ความยาวที่กระจายน้ำหนัก ($\\text{Length}$) = $6\\text{ m}$\n$$\\text{Running Load} = \\frac{1320}{6} = 220 kg/m$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- สังเกตหน่วยของ Running Load คือ $\\text{kg/m}$ (กิโลกรัมต่อเมตร) จึงต้องนำมวลเป็น $\\text{kg}$ ตั้ง แล้วหารด้วยความยาวเป็น $\\text{m}$ เสมอ\n- หากโจทย์ให้ขนาดกล่องเป็น กว้าง × ยาว และระบุทิศทางการวาง ให้ใช้ด้านที่ขนานไปกับแกนตามยาวของลำตัวเครื่องบิน (Longitudinal axis) เป็นตัวหาร",
+    "correct": "220 kg/m",
+    "topic": "031 06",
+    "topicName": "Cargo Handling",
+    "LO": "031 06 02 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ภาระน้ำหนักตามแนวยาว (Running Load) = มวลตู้สินค้า ÷ ความยาวที่กระจายตัว = 1320 kg ÷ 6 m = 220 kg/m"
+  },
+  {
+    "id": 102,
+    "question": "An aircraft has total mass 12,000 kg and total moment 480,000 kg·m. What is CG from datum?",
+    "options": [
+      "80 m",
+      "0.025 m",
+      "40 m",
+      "20 m"
+    ],
+    "answer": 2,
+    "explanation": "การคำนวณหาตำแหน่งจุดศูนย์ถ่วงจากโมเมนต์รวมและมวลรวม (CG Position from Total Moment and Total Mass):\n1. สูตรพื้นฐานสำคัญที่สุดของวิชา Mass & Balance:\n$$\\text{CG Position} = \\frac{\\text{Sum of Moments }\\left(\\sum M\\right)}{\\text{Total Mass }\\left(\\sum m\\right)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- โมเมนต์รวม ($\\text{Total Moment}$) = $480,000\\text{ kg}\\cdot\\text{m}$\n- มวลรวมทั้งหมด ($\\text{Total Mass}$) = $12,000\\text{ kg}$\n$$\\text{CG} = \\frac{480,000}{12,000} = 40\\text{ m จากจุด Datum}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- ระวังการสลับตัวตั้งกับตัวหาร! ให้ดูหน่วยเป็นหลัก: $\\frac{\\text{kg}\\cdot\\text{m}}{\\text{kg}} = \\text{m}$ (หน่วยกิโลกรัมตัดกันเหลือหน่วยความยาวเป็นเมตร)\n- หากโจทย์ให้รายการย่อยหลายรายการ ให้หาโมเมนต์ของแต่ละชิ้น ($M_i = m_i \\times \\text{Arm}_i$) นำมาบวกรวมกันเป็น $\\sum M$ แล้วหารด้วยผลรวมของมวลทั้งหมด $\\sum m$",
+    "correct": "40 m",
+    "topic": "031 05",
+    "topicName": "Determination of CG Position",
+    "LO": "031 05 01 01 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "ตำแหน่งจุดศูนย์ถ่วง (CG) = โมเมนต์รวม (Total Moment) ÷ มวลรวม (Total Mass) = 480,000 kg·m ÷ 12,000 kg = 40 m"
+  },
+  {
+    "id": 103,
+    "question": "Allowed take-off mass is 22,000 kg, operating mass 11,000 kg and fuel 2,500 kg. What traffic load remains?",
+    "options": [
+      "8,500 kg",
+      "11,000 kg",
+      "2,500 kg",
+      "13,500 kg"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณหาปริมาณน้ำหนักบรรทุกที่อนุญาตเมื่อกำหนดมวลวิ่งขึ้น มวลปฏิบัติการ และเชื้อเพลิง:\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Allowed Take-Off Mass} = \\text{Base/Dry Operating Mass} + \\text{Take-Off Fuel} + \\text{Allowed Traffic Load}$$\nดังนั้น:\n$$\\text{Allowed Traffic Load} = \\text{Allowed TOM} - \\text{Operating Mass} - \\text{Fuel}$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลวิ่งขึ้นที่อนุญาต ($\\text{Allowed TOM}$) = $22,000\\text{ kg}$\n- มวลปฏิบัติการตั้งต้น ($\\text{Operating Mass}$) = $11,000\\text{ kg}$\n- มวลเชื้อเพลิง ($\\text{Fuel}$) = $2,500\\text{ kg}$\n$$\\text{Traffic Load} = 22,000 - 11,000 - 2,500 = 8,500\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์ให้ Block Fuel และ Taxi Fuel แยกกัน ต้องคำนวณหา $\\text{Take-Off Fuel} = \\text{Block Fuel} - \\text{Taxi Fuel}$ ก่อน แล้วจึงนำไปหักออกจาก Allowed TOM",
+    "correct": "8,500 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "น้ำหนักบรรทุกที่เหลือ (Remaining Traffic Load) = Allowed TOM (22,000 kg) − Operating Mass (11,000 kg) − Fuel (2,500 kg) = 8,500 kg"
+  },
+  {
+    "id": 104,
+    "question": "13 passengers are assigned a standard mass of 83 kg each. What passenger traffic load is obtained?",
+    "options": [
+      "1,162 kg",
+      "96 kg",
+      "979 kg",
+      "1,079 kg"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณน้ำหนักบรรทุกโดยใช้มวลมาตรฐานของผู้โดยสาร (Traffic Load Calculation using Standard Masses):\n1. หลักการและสูตรคำนวณ:\nในการปฏิบัติการบินพาณิชย์ เพื่อความรวดเร็วโดยไม่ต้องชั่งน้ำหนักผู้โดยสารรายคน กฎระเบียบอนุญาตให้ใช้ค่ามวลมาตรฐาน (Standard Masses) ที่ระบุในคู่มือปฏิบัติการบิน (Operations Manual):\n$$\\text{Passenger Traffic Load} = \\text{Number of Passengers} \\times \\text{Standard Mass per Passenger}$$\n2. แทนค่าคำนวณในข้อนี้:\n- จำนวนผู้โดยสาร = $13\\text{ คน}$\n- มวลมาตรฐานต่อคน = $83\\text{ kg}$\n$$\\text{Passenger Traffic Load} = 13 \\times 83 = 1,079\\text{ kg}$$\n3. เทคนิคทำข้อสอบแนวเดียวกันในอนาคต:\n- หากโจทย์กำหนดมวลสัมภาระใต้ท้องเครื่องต่อคน (Checked baggage per passenger) หรือสินค้า (Cargo) มาด้วย ให้นำมารวมกันเป็น $\\text{Total Traffic Load} = (\\text{Pax} \\times m_{\\text{pax}}) + (\\text{Bags} \\times m_{\\text{bag}}) + m_{\\text{cargo}}$\n- ระวัง! มวลของนักบินและลูกเรือ (Flight & Cabin Crew) จะถูกนำไปรวมอยู่ใน **Dry Operating Mass (DOM)** ไม่ได้นับเป็น Traffic Load",
+    "correct": "1,079 kg",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 03 03 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Extract",
+    "explanation_quick": "น้ำหนักบรรทุกผู้โดยสารรวม (Passenger Traffic Load) = จำนวนผู้โดยสาร × มวลมาตรฐานต่อคน = 13 คน × 83 kg = 1,079 kg"
+  },
+  {
+    "id": 105,
+    "question": "An aircraft weighs 3,000 kg on one reaction point and 5,000 kg on another. What total mass is represented?",
+    "options": [
+      "8,000 kg",
+      "2,000 kg",
+      "15,000,000 kg",
+      "3,000 kg"
+    ],
+    "answer": 0,
+    "explanation": "การคำนวณมวลรวมของอากาศยานจากแรงปฏิกิริยาบนจุดขึ้นแม่แรง/ตาชั่ง (Aircraft Mass from Reaction Forces on Jacking Points):\n1. หลักการสมดุลสถิตในการชั่งน้ำหนักอากาศยาน (Static Equilibrium in Aircraft Weighing):\nผลรวมของแรงกดลง (น้ำหนักรวมของเครื่องบิน) จะต้องเท่ากับผลรวมของแรงปฏิกิริยา (Reaction forces) ที่ตาชั่งทุกจุดรองรับไว้:\n$$\\text{Total Aircraft Mass} = \\sum R_i = R_1 + R_2 (+ R_3) - \\text{Tare Mass (ถ้ามี)}$$\n2. แทนค่าคำนวณในข้อนี้:\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 1 ($R_1$) = $3,000\\text{ kg}$\n- แรงปฏิกิริยาที่จุดรองรับจุดที่ 2 ($R_2$) = $5,000\\text{ kg}$\n$$\\text{Total Mass} = 3,000 + 5,000 = 8,000\\text{ kg}$$\n3. เทคนิคทำข้อสอบขั้นสูงในอนาคต:\n- หากโจทย์ให้ค่าน้ำหนักของอุปกรณ์รองชั่ง (Tare weight / Jack adapter weight) มาด้วย ต้องนำค่า Tare ไปลบออกจากค่าที่อ่านได้จากตาชั่งก่อนเสมอ\n- หากโจทย์ถามหา **ตำแหน่ง CG** จากการชั่งน้ำหนัก ให้คูณมวลที่แต่ละจุดชั่งด้วยแขนโมเมนต์ของจุดนั้น แล้วหารด้วยมวลรวม: $\\text{CG} = \\frac{(R_1 \\times \\text{Arm}_1) + (R_2 \\times \\text{Arm}_2)}{R_1 + R_2}$",
+    "correct": "8,000 kg",
+    "topic": "031 04",
+    "topicName": "Mass and Balance Details of Aircraft",
+    "LO": "031 04 02 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Calculate",
+    "explanation_quick": "มวลรวมของอากาศยาน (Total Mass) = ผลรวมของแรงปฏิกิริยาที่จุดรองรับทั้งหมด = 3,000 kg + 5,000 kg = 8,000 kg"
+  },
+  {
+    "id": 106,
+    "question": "Fuel density is 0.84 kg/L. What volume corresponds to 240 kg of fuel?",
+    "options": [
+      "240 L",
+      "571.429 L",
+      "201.6 L",
+      "285.714 L"
+    ],
+    "answer": 3,
+    "explanation": "การคำนวณหาปริมาตรเชื้อเพลิงจากมวลและความหนาแน่น (Fuel Volume from Mass & Density):\n1. สูตรความสัมพันธ์หลัก:\n$$\\text{Volume} = \\frac{\\text{Mass}}{\\text{Density}} \\quad \\left(\\text{และหากต้องการหามวลใช้ } \\text{Mass} = \\text{Volume} \\times \\text{Density}\\right)$$\n2. แทนค่าคำนวณในข้อนี้:\n- มวลเชื้อเพลิง ($\\text{Mass}$) = $84\\text{ kg}$\n- ความหนาแน่น ($\\text{Density}$) = $0.84\\text{ kg/L}$\n$$\\text{Volume} = \\frac{84}{0.84} = 285.714 L$$\n3. ข้อควรระวังและเทคนิคทำโจทย์ในอนาคต:\n- ระวังตัวลวงที่เกิดจากการนำมวลไปคูณความหนาแน่นแทนที่จะหาร! จุดสังเกตง่ายๆ คือ เนื่องจากความหนาแน่นของน้ำมันเชื้อเพลิงอากาศยาน (Jet A-1 / AVGAS) มีค่าน้อยกว่า $1\\text{ kg/L}$ เสมอ (ปกติอยู่ระหว่าง $0.71 - 0.84\\text{ kg/L}$) ดังนั้น **ตัวเลขปริมาตรเป็นลิตร (L) จะต้องมีค่ามากกว่าตัวเลขมวลเป็นกิโลกรัม (kg) เสมอ!**",
+    "correct": "285.714 L",
+    "topic": "031 02",
+    "topicName": "Loading",
+    "LO": "031 02 01 02 (01)",
+    "difficulty": "Medium",
+    "cognitive": "APPLY",
+    "verb": "Define",
+    "explanation_quick": "ปริมาตรเชื้อเพลิง (Volume) = มวล ÷ ความหนาแน่น = 84 kg ÷ 0.84 kg/L = 285.714 L"
+  }
+]
